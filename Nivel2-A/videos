@@ -1,0 +1,29 @@
+*Clase 1*
+_Teoria_
+Video 1: Luz, espectro electromagnetico, emisión del sol
+Video 2: Radiancia e irradiancia, reflectancia
+Video 3: Reflectancia especular y lambertiana, firmas espectrales
+Video 4: Firma espectral de la vegetación
+Video 5: Firma espectral del suelo
+Video 6: Firma espectral del agua
+Video 7: Discretización de firmas espectrales. RSR.
+
+*Clase 2*
+_Teoria_
+Video 1: Firmas espectrala, operaciones entre bandas
+Video 2: Indices de dos bandas: SR, NDVI, SAVI, tSAVI
+Video 3: Espacio espectral, linea de suelo. Interpretación geométrica
+Video 4: Indices de 3 bandas: EVI, FHL, minerales
+Video 5: Modelalo de variables biofísicas. 
+Video 6: Métodos basados en índices. 
+Video 7: Métodos basados en ajuste multiespectral.
+
+*Clase 3*
+Video 1: Sistema satelite-atmosfera-tierra.
+Video 2: Calibración TOA. RSR. Ancho y centro de banda.
+Video 3: Irradiancia solar, dispersión y absorción. Ventanas atmosfericas.
+Video 4: Dispersion: Rayleigh, Mie y no selectiva.
+Video 5: Absorciones. H2O, O2, O3, CO2. 
+Video 6: Efectos en la adquisición de las imágenes.
+Video 7: Métodos de corrección estadísticos.
+Video 8: Métodos de corrección que simulan la atmósfera.
