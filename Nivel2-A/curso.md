@@ -8,13 +8,28 @@ _Practica_ Calculo de indices en SNAP, NDVI, EVI, SAVI, calculo de parametros bi
 _Teoria_ Sistema satelite-atmosfera-tierra, irradiancia solar, dispersión y absorción, ventanas atmosfericas, Rayleigh, Mie, No selectiva, calibración TOA, corrección por cuerpo obscuro, corrección por 6S
 _Practica_ Calculo de histogramas y parametros estadisticos, firmas espectrales a TOA, corrección pot DOS, corrección por 6s
 *Clase 4*
-Trabajo final. Integrador de las 3 clases. Una pregunta por clase y una pregunta integradora.
+_Teoria_ Vector pixel. Clase espectral. Clase de información. Esquema de clasificación de la FAO. Escala de una clasificación. Validación. Matriz de confusión. Presición global, del usuario y producto. Cálculo de áreas. Votación por mayoria. Entropia de una clasificación.
+_Practica_ alidación de clasificaciones. Cálculo de matriz de confusión y áreas. Comparación y entropia de una clasificación.
+*Clase 5*
+_Teoria_ Métodos de clasificación supervisada y no supervisada. Algoritmo k-means. Maximización de la espectación. Máxima verosimilitud. Random forest. KVM.
+_Practica_ Clasificación por k-means, máxima verosimilitud, random forest y KVM. Validación de las clasificaciones. Comparación.
+
+*Clase 6*
+_Teoria_ Rotaciones en R2. Interpretación de las rotaciones. Transformada tasseled-cap. Interpretación. Transformada por componentes principales. Interpretación de las componentes.
+_Practica_ Calculo de la transformada por componentes principales. Interpretación. Uso
+
+*Clase 7*
+_Teoria_ Contexto espacial. Nucleo. Filtrado estadistico. Mayoria y minoria. Variación local. Matriz de co-ocurrencia de niveles de grises. Textura y variabilidad.
+_Practica_ Filtrado. Filtrado de clasificaciones. Calculo de matriz de co-ocurrencia de niveles de grises. Interpretación.
+
+*Clase 8*
+Trabajo final. Integrador de las 7 clases. Una pregunta por clase.
 
 *Nota*
-- 55% Trabajo final. 15 puntos por pregunta y 10 puntos pregunta integradora
-- 45% Cuestionarios semanales. 15 puntos por cuestionario
+- 50% Trabajo final. 10 puntos por pregunta.
+- 50% Cuestionarios semanales. 10 puntos por cuestionario.
 Aprobación:
-60 puntos + encuesta inicial + encuesta final
+70 puntos + encuesta inicial + encuesta final
 
 *Material*
 En cada clase:
