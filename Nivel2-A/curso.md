@@ -1,6 +1,6 @@
 *Clase 1*
 _Teoria_ Luz, espectro electromagnético, radiancia e irradiancia, reflectancia, aproximación especular y lambertiana, firmas espectrales, firma espectral de la vegetación, firma espectral del agua, firma espectral del suelo.
-_Practica_ Apertura de imagenes en SNAP, combinaciones RGB, pines, firmas espectrales en SNAP, comparación de firmas espectrales, mascaras.
+_Practica_ Apertura de imagenes en SNAP, combinaciones RGB, pines, firmas espectrales en SNAP, comparación de firmas espectrales.
 *Clase 2*
 _Teoria_ Firmas espectrales, indices de dos bandas, indices de vegetación, SR, NDVI, SAVI, tSAVI, lineaa del suelo, interpretación geométrica, indices de 3 bandas, EVI, modelado espectral, calculo de variables biofísicas, LAI, % cobertura, turbidez.
 _Practica_ Calculo de indices en SNAP, NDVI, EVI, SAVI, calculo de parametros biofisicos, modelo de inversión, relación entre indices y parametros, scatterplot, modelos
