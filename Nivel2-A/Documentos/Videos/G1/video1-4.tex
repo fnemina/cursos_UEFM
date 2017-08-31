@@ -1,0 +1,95 @@
+\documentclass[]{beamer}
+\usetheme[block=fill,progressbar=frametitle,numbering=none]{metropolis}
+\input{../preamble.tex}
+\author{Francisco Nemiña}
+\title{Nivel 2: herramientas de teledetección cuantitativa}
+\subtitle{El espectro electromagnético}
+\institute{Unidad de Educación y Formación Masiva \\ Comisión Nacional de Actividades Espaciales}
+\date{}
+\graphicspath{{./figs/}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+\begin{frame}{Firma espectral}
+  Si ahora pensamos como depende la reflectancia de la longitud de onda podemos definir
+  \begin{block}{Definición}
+    Llamamos firma espectral a la función de la reflectancia como función de la longitud de onda, $\rho_\lambda$.
+  \end{block}\pause
+  Veamos algunos ejemplos y de por que sirven para describir a las coberturas.\pause
+  \begin{itemize}
+    \item Vegetación
+    \item Suelo
+    \item Agua
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Firma espectral - vegetación}
+  \begin{figure}
+  \
+  \includegraphics[width=0.8\textwidth]{clorovar.png}
+  \caption{Variaciones de la firma espectral con el contenido de clorofila.\footfullcite{liang2005quantitative}}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{Firma espectral - vegetación}
+  \begin{figure}
+
+  \includegraphics[width=0.8\textwidth]{vwvar.png}
+  \caption{Variaciones de la firma espectral con el contenido de agua.\footfullcite{liang2005quantitative}}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{Firma espectral - vegetación}
+  \begin{figure}
+
+  \includegraphics[width=0.8\textwidth]{leafvar.png}
+  \caption{Variaciones de la firma espectral con el área foliar.\footfullcite{asner1998biophysical}}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{Firma espectral - vegetación}
+    \begin{figure}
+
+    \includegraphics[width=0.8\textwidth]{vivomuerto.png}
+    \caption{Firma espectral de la vegetación en diferentes estados.\footfullcite{asner1998biophysical}}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{Firma espectral - suelo}
+    \begin{figure}
+
+    \includegraphics[width=0.6\textwidth]{soilvar.png}
+    \caption{Firma espectral del suelo con distintos contenidos de humedad.\footfullcite{liang2005quantitative}}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{Firma espectral - agua}
+    \begin{figure}
+
+    \includegraphics[width=0.8\textwidth]{waterm.png}
+    \caption{Firma espectral de agua con distinto contenido de arcilla disuelta.\footfullcite{clark2007usgs}}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{Firma espectral - agua}
+    \begin{figure}
+    \includegraphics[width=0.8\textwidth]{snow.png}
+    \caption{Firma espectral de agua en distintos estados de agregación.\footfullcite{snow}}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\end{document}
