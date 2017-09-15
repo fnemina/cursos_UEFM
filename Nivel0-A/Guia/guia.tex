@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,12pt]{book}
 \input{preamble.tex}
 \usepackage{float}
 \graphicspath{{./figs/}}
@@ -9,7 +9,7 @@
 \maketitle
 \titlepage
 
-\section{Introducción}
+\chapter{Introducción}
 Existen en la actualidad distintas formas de acceder a productos de origen satelital. Es posible obtener un amplio rango de productos que van desde imágenes en crudo hasta promedios procesados de variables biofísicas.
 
 En los últimos años, además de las formas tradicionales de procesaamiento de imagenes donde un usuario debía descargar un producto para poder manipularlo, comenzaron a apareccer soluciones WEB. Esta nueva forma de procesamiento permite al usuario, independientemente de su nivel de conocimiento, accededr a un amplio abanico de productos. Entre las soluciones existentes se destacan el EarthEngine de Google, el LandsatView de ESRI y el LandView de EOS.
@@ -18,95 +18,158 @@ Aunque todas estas soluciones se encuentran disponibles, muchas de ellas sin car
 
 Para esto, trabajaremos con una aplicación concreta e intentares determinar mediantes el uso de herramientas WEB y con el fin de incorporar conocimientos básicos de teledetección, al superficie incendiada durante el mes de septiembre de 2017 en las cercanias de Carlos Paz, provincia de Cordoba.
 
-\section{Land View}
+\chapter{Land View}
 
 LandView es un servicio web de la empresa Earth Observing System. Este permite explorar, visualizar y descargar una amplia gama de productos satelitales. El paquete gratuito de la empeza permite visualizar y descargar hasta 10 imagenes por día de sensores que incluyen la serie Landat (1982-actualidad), MODIS (2013-actualidad) y sentinel 2 (2012-actualidad).
 
-Para acceder al servicio de LandView uno debe dirigirse a \href{https://lv.eosda.com} y luego de que termine el tour podra comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en \emph{Sign in} y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn (Figura \ref{fig:main})
+\section{Registro}
+Para acceder al servicio de LandView uno debe dirigirse a \url{https://lv.eosda.com} y luego de que termine el tour podra comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en \emph{Sign in} y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn. Luego de hacerlo podrá ver todás las funcionalidades del Land Viewer.
+
+\section{Interface gráfica}
 
 Una vez registrado, accedera a un mapa  similar al de Google Maps o cualquier SIG (Figura \ref{fig:main}). Destacamos en el 3 partes:
 
+\begin{itemize}
+    \item La parte superior que nos permite buscar zonas en el mundo.
+     \begin{center}\includegraphics[scale=0.4]{in:search.png}\end{center}
+    \item La parte izquierda que nos permite hacer zoom en el mapa, marcar zonas de interes, realizar mediciones y agregar distintas capas como puede ser un mapa de alturas, una imagen satelital de base o un mapa politico.
+     \begin{center}\includegraphics[scale=0.4]{in:edit.png}\end{center}
+    \item La parte derecha donde podemos elegir distintos productos satelitales, mostrarlos, realizar combinaciones de bandas y guardar los datos obtenidos.
+     \begin{center}\includegraphics[scale=0.4]{in:sat.png}\end{center}
+\end{itemize}
+
+Podemos ver tambien la latitud y longitud de cualquier punto posicionandonos sobre el y observando el valor en la parte inferior de la pantalla.
+
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{fig:main.png}
+    \includegraphics[width=0.9\textwidth]{fig:main.png}
     \caption{Pantalla principal del Land Viewer. Abajo a izquierda de encunetra la opción de registro. A la derecha tenemos las herramietas de medición, zoom y mapas. Arriba el cuadro de busqueda. A la izquierda encontramos la selección de imágenes y productos satelitales.}
     \label{fig:main}
 \end{figure}
 
-\begin{itemize}
-    \item La parte superior que nos permite buscar zonas en el mundo.
-    \item La parte izquierda que nos permite hacer zoom en el mapa, marcar zonas de interes, realizar mediciones y agregar distintas capas como puede ser un mapa de alturas, una imagen satelital de base o un mapa politico.
-    \item La parte derecha donde podemos elegir distintos productos satelitales, mostrarlos, realizar combinaciones de bandas y guardar los datos obtenidos.
-\end{itemize}
 
-En el modo mapa, busque la ciudad de Villa Carlos Paz. Podemos utilizar la herramienta medir distancias para determinar la distancia entre Córdoba Capital y Villa Carlos Paz (Figura \ref{fig:distancia}) que es de aproximadamente $30km$ en linea recta.
+\section{Mediciones}
 
-\begin{figure}[h!]
+En el modo mapa, busque la ciudad de Villa Carlos Paz. Podemos utilizar la herramienta medir distancias \includegraphics[scale=0.2]{in:medir.png} para determinar la distancia entre Córdoba Capital y Villa Carlos Paz (Figura \ref{fig:distancia}) que es de aproximadamente $30km$ en linea recta.
+
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=0.7\textwidth]{fig:distancia.png}
+    \includegraphics[width=0.9\textwidth]{fig:distancia.png}
     \caption{Medición de distancia entre la ciudad de Córdoba y Villa Carlos Paz. La distancia aparece en la parte inferior de la pantalla.}
     \label{fig:distancia}
 \end{figure}
 
 Con la misma herramienta, es posible medir areas si uno cierra el camino obtenido sobre el primer punto.
 
+\section{Evaluación}
+
 \begin{que}
     ¿Cual es la superficie del Lago San Roque, que se encuentra inmediatamente al norte de Villa Carlos Paz?
 \end{que}
-
 \begin{que}
     ¿Cual es el perimetro del Lago San Roque?
 \end{que}
+\begin{que}
+    ¿Cual es la superficie del Lago de Mar Chiquita, Córdoba?
+\end{que}
 
-\section{Resolución espacial y temporal}
+\begin{que}
+    ¿Cuales son las coordenadas de las ciudades de Córdoba Capital, Villa Carlos Paz, Rio Cuarto y Villa Maria?
+\end{que}
+
+\begin{que}
+    ¿Cual es la distancia lineal entre la ciudad de Córdoba y la ciudad de Santa Rosa en La Pampa?
+\end{que}
+
+\chapter{Resolución espacial y temporal}
+Dos caracteristicas fundamenteles de las imágenes satelitales son la resolución espacial y la resolución temporal.
+
+La resolución espacial nos da una idea de que obtenos podemos distinguir en el terreno. Por ejemplo, una resolución espacial de $30m$ nos permitirá distinguir una plaza de una manzana construida, pero no las casas dentro de una manzana.
+
+En cambio, la resolución temporal nos da una idea de cual es el fenomeno que varia en el tiempo más corto que podemos ver. Por ejemplo, una resolución temporal de $15 dias$ nos permitirá estudiar como cambia la vegetación a lo largo de las estaciones pero no como cambian las nubes a lo largo de un día
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig:evst.jpg}
+    \caption{}
+    \label{fig:evst}
+\end{figure}
+
+Ambas resoluciones suelen estar relacionadas (Figura \ref{fig:evst}), de forma que al aumentar una disminuye la otra. Por ejemplo: GOES, una satelite meteorologico, tiene una muy alta revisita temporal, cercana a los 15 minutos mientras que su resolución espacial es baja, cercana a los 4km. En el otro extremo, SPOT 7 tiene una alta resolución espacial de hasta $1.5m$ pero con una revisita temporal del orden del mes.
+
+Es importante recordar en esta instancia que una resolución mayor o menor solo nos dice si la imagen será util para cierto estudio. No si la imagen es mejor o peor. Por ejemplo: una regla milimetrada permite medir con mucha presición, pero nunca usariamos una para medir el largo de una avenida.
+
+
+\section{Imagenes satelitales}
 Es posible hora incorporar imágenes satelitales a nuestro mapa. Para esto comenzamos dibujando un Area de Interes (AOI) sobre la imagen que incluya la zona entre Lago San Roque y Cordoba (Figura \ref{fig:aoi}).
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{fig:aoi.png}
+    \includegraphics[width=0.9\textwidth]{fig:aoi.png}
     \caption{Gráfico de un área de interes (AOI) para seleccionar la zona en la que se seleccionaran las imagenes.}
     \label{fig:aoi}
 \end{figure}
 
 Elija ahora el Satelile Landsat 8 y observe que pareceran distintas escenas a la derecha. Por defecto LandView muestra solo las escenas con cobertura nubosa de hasta un 60\% y de los últimos 3 meses. Es posible camiar hesto haciendo click en la parte superior del Scene Search.  Ponga la cobertura nubosa hasta el 100\%.
 
-Seleccione la imagen del 2 de septiembre de 2017 y observe que esta aparecerá en la pantalla. Puede ahora moverse como hacia antes y realizar mediciones, etc.
+\begin{center}\includegraphics[scale=0.4]{in:nubes.png}\end{center}
+
+Seleccione la imagen del 2 de septiembre de 2017 y observe que esta aparecerá en la pantalla (Figura \ref{fig:scene}). Puede ahora moverse como hacia antes y realizar mediciones, etc.
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.425\linewidth}
+  \includegraphics[width=\linewidth]{fig:sat.png}
+\end{minipage}
+\hspace{.05\linewidth}
+\begin{minipage}{.425\linewidth}
+  \includegraphics[width=\linewidth]{fig:imagen1.png}
+\end{minipage}
+\caption{Seleccion de satelite e imagenes en el Land Viewer.}
+\label{fig:scene}
+\end{figure}
+
+La imagen elegida pertenece al sensor OLI del satelite Landsat 8. Tiene una resolución espacial de $30m$ por lo cual podremos distinguir manzanas, parques y cosas más grandes. Pero no cosas más chicas.
 
 Seleccione ahora el producto MODIS MCD43A4. Vera en este caso que la lista de imagenes es mucho más larga teniendo una imagen por día. Seleccione la imagen correspondiente al 27 de agosto de 2017.
 
-Observe que ahora no es posible distinguir las calles de la ciudad de Córdoba como hacía con la imagen anterior. Esto muestra una relación muy importante que existe entre la resolución espacial y temporal de un producto satelital: \emph{Cuando una aumenta la otra disminuye}. Esto es normal para todos los satelites y vale hacer la observación de que ninguna es mejor o peor, solo tienen distintos usos.
-
-\begin{que}
-    ¿Cada cuantos días hay una nueva imagen Landsat 8?
-\end{que}
-
-\begin{que}
-    ¿Es posible distinguir las calles de la Ciudad de Cordoba en esta imagen?
-\end{que}
+Observe que ahora no es posible distinguir las calles de la ciudad de Córdoba como hacía con la imagen anterior. En este caso la imagen elegida pertenece al producto \emph{MCD43A4} generado a partir de los sensores MODIS de los satelites AQUA y TERRA. En este caso la resolución espacial oscila entre los 250m y los 1000m según como mostremos la imagen.
 
 \section{Comparación entre fechas}
-Comparemos ahora dos imagenes antes y después del incendio. Para esto sseleccione el satelite Sentinel 2 y elija la imagen del 21 de agosto de 2017. Haga luego click en \emph{Comparison slider}, cambie la fecha al año 2016 y seleccione la imagen del 23 de agosto de 2016.
+Comparemos ahora dos imagenes antes y después del incendio. Para esto sseleccione el satelite Sentinel 2 y elija la imagen del 21 de agosto de 2017. Haga luego click en \emph{Comparison slider} \includegraphics[scale=0.2]{in:LR.png}, cambie la fecha al año 2016 y seleccione la imagen del 23 de agosto de 2016.
 
 Es posible elegir si la imagen se posiciona a la izquierda o la derecha eligiendolo en el botón L/R.
+
+\begin{center}\includegraphics[scale=0.4]{in:LorR.png}\end{center}
 
 Puede mover ahora el slider a la izquierda y la derecha para comparar las imagenes del 2016 y 2017 (Figura \ref{fig:slider}). Elegimos comparar con el año anterior para que las imagenes correspondan a fechas similares.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{fig:slider.png}
+    \includegraphics[width=0.9\textwidth]{fig:slider.png}
     \caption{Dos imágenes con la pantalla dividida. En el medio aparece el slider que permite caambiar entre lasa dos zonas.}
     \label{fig:slider}
 \end{figure}
 
+\section{Evaluación}
+\begin{que}
+    ¿Cada cuantos días hay una nueva imagen Landsat 8?
+\end{que}
+\begin{que}
+    ¿Cada cuantos días hay una nueva imagen MODIS?
+\end{que}
+\begin{que}
+    ¿Es posible distinguir las calles de la Ciudad de Cordoba en la imagen Landsat 8?
+\end{que}
+\begin{que}
+    ¿Hay incendios en la zona durante el año 2016?
+\end{que}
 \begin{que}
     ¿Que superficie tiene el área incendiada dentro de la imagen?
 \end{que}
 
-\begin{que}
-    ¿Hay incendios en la zona durante el año 2016?
-\end{que}
-
-\section{Combinaciones de bandas}
+\chapter{Combinaciones de bandas}
 Si llego hasta acá, notará que en la combinacion de colores que estamos observando la imagen, a pesar de ser intuitiva, no permite distinguir claramente las zonas incenciadas.
 
 Para mejorar esto es necesario entender que un satelite, como cualquier sensor, puede ser configurado para medir distintas cosas. En este caso, el satelite mide la cantidad de luz (Radiancia) que proviene de la superficie terrestre como hacen nuestros ojos. Sin embargo, a diferencia de nuestros ojos es posibles cambiar la zona del espectro electromagnetico donde medimos y como la mostramos.
@@ -127,7 +190,7 @@ En nuestro caso particular, la combinación de bandas que mejor separa las zonas
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{fig:incendio.png}
+    \includegraphics[width=0.9\textwidth]{fig:incendio.png}
     \caption{Imagen en la combinación de colores que mejor resalta al incendio. La vegetación se ve en colores verde brillante, el incendio en rojo, el agua negro y la ciudad en violeta.}
     \label{fig:incendio}
 \end{figure}
@@ -142,7 +205,7 @@ Puede descargar la imagen generada haciendo click en ESCENE DOWNLOAD, eligiendo 
     Descargue un mapa de la zona donde se vea la superficie incendiada.
 \end{que}
 
-\section{Cierre}
+\chapter{Cierre}
 
 Vimos en esta actividad como utilizar las herramientas del LandView junto con nuestro conocimiento en teledetección para interpretar distintas coberturas.
 
