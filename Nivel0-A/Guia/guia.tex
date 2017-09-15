@@ -4,7 +4,7 @@
 \graphicspath{{./figs/}}
 
 \title{{\large Nivel 0a} \\ Interpretación visual de imágenes satelitales}
-\author{Francisco Nemiña \and Marina Compagnucci}
+\author{Marina Compagnucci \and Laura Rouco \and Francisco Nemiña}
 \begin{document}
 \maketitle
 \titlepage
@@ -22,22 +22,15 @@ Para esto, trabajaremos con una aplicación concreta e intentares determinar med
 
 LandView es un servicio web de la empresa Earth Observing System. Este permite explorar, visualizar y descargar una amplia gama de productos satelitales. El paquete gratuito de la empeza permite visualizar y descargar hasta 10 imagenes por día de sensores que incluyen la serie Landat (1982-actualidad), MODIS (2013-actualidad) y sentinel 2 (2012-actualidad).
 
-Para acceder al servicio de LandView uno debe dirigirse a \href{https://lv.eosda.com} y luego de que termine el tour podra comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en \emph{Sign in} y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn (Figura \ref{fig:registro})
+Para acceder al servicio de LandView uno debe dirigirse a \href{https://lv.eosda.com} y luego de que termine el tour podra comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en \emph{Sign in} y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn (Figura \ref{fig:main})
+
+Una vez registrado, accedera a un mapa  similar al de Google Maps o cualquier SIG (Figura \ref{fig:main}). Destacamos en el 3 partes:
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics{fig:registro.png}
-    \caption{}
-    \label{fig:registro}
-\end{figure}
-
-Una vez registrado, accedera a un mapa  similar al de Google Maps o cualquier SIG (Figura \ref{fig:mapa}). Destacamos en el 3 partes:
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:mapa.png}
-    \caption{}
-    \label{fig:mapa}
+    \includegraphics[width=0.7\textwidth]{fig:main.png}
+    \caption{Pantalla principal del Land Viewer. Abajo a izquierda de encunetra la opción de registro. A la derecha tenemos las herramietas de medición, zoom y mapas. Arriba el cuadro de busqueda. A la izquierda encontramos la selección de imágenes y productos satelitales.}
+    \label{fig:main}
 \end{figure}
 
 \begin{itemize}
@@ -50,8 +43,8 @@ En el modo mapa, busque la ciudad de Villa Carlos Paz. Podemos utilizar la herra
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics{fig:distancia.png}
-    \caption{}
+    \includegraphics[width=0.7\textwidth]{fig:distancia.png}
+    \caption{Medición de distancia entre la ciudad de Córdoba y Villa Carlos Paz. La distancia aparece en la parte inferior de la pantalla.}
     \label{fig:distancia}
 \end{figure}
 
@@ -65,13 +58,13 @@ Con la misma herramienta, es posible medir areas si uno cierra el camino obtenid
     ¿Cual es el perimetro del Lago San Roque?
 \end{que}
 
-\section{Resolución espacial y temporal} [3]
+\section{Resolución espacial y temporal}
 Es posible hora incorporar imágenes satelitales a nuestro mapa. Para esto comenzamos dibujando un Area de Interes (AOI) sobre la imagen que incluya la zona entre Lago San Roque y Cordoba (Figura \ref{fig:aoi}).
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics{fig:aoi.png}
-    \caption{}
+    \includegraphics[width=0.7\textwidth]{fig:aoi.png}
+    \caption{Gráfico de un área de interes (AOI) para seleccionar la zona en la que se seleccionaran las imagenes.}
     \label{fig:aoi}
 \end{figure}
 
@@ -100,8 +93,8 @@ Puede mover ahora el slider a la izquierda y la derecha para comparar las imagen
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics{fig:slider.png}
-    \caption{}
+    \includegraphics[width=0.7\textwidth]{fig:slider.png}
+    \caption{Dos imágenes con la pantalla dividida. En el medio aparece el slider que permite caambiar entre lasa dos zonas.}
     \label{fig:slider}
 \end{figure}
 
@@ -113,7 +106,7 @@ Puede mover ahora el slider a la izquierda y la derecha para comparar las imagen
     ¿Hay incendios en la zona durante el año 2016?
 \end{que}
 
-\section{Combinaciones de bandas} [6]
+\section{Combinaciones de bandas}
 Si llego hasta acá, notará que en la combinacion de colores que estamos observando la imagen, a pesar de ser intuitiva, no permite distinguir claramente las zonas incenciadas.
 
 Para mejorar esto es necesario entender que un satelite, como cualquier sensor, puede ser configurado para medir distintas cosas. En este caso, el satelite mide la cantidad de luz (Radiancia) que proviene de la superficie terrestre como hacen nuestros ojos. Sin embargo, a diferencia de nuestros ojos es posibles cambiar la zona del espectro electromagnetico donde medimos y como la mostramos.
@@ -134,8 +127,8 @@ En nuestro caso particular, la combinación de bandas que mejor separa las zonas
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics{fig:incendio.png}
-    \caption{}
+    \includegraphics[width=0.7\textwidth]{fig:incendio.png}
+    \caption{Imagen en la combinación de colores que mejor resalta al incendio. La vegetación se ve en colores verde brillante, el incendio en rojo, el agua negro y la ciudad en violeta.}
     \label{fig:incendio}
 \end{figure}
 
