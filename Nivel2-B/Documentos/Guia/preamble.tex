@@ -1,0 +1,71 @@
+% Paquetes de la ams
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% Posibilidad de mover la pagina
+\usepackage[a4paper]{geometry}
+% Saco la indentacion en todos los parrafos.
+\usepackage{parskip}
+% Codificacion UTF-8
+\usepackage[utf8]{inputenc}
+% Tablas e imagenes en espaniol
+\usepackage[spanish,es-tabla]{babel}
+% Mejores graficos
+\usepackage{graphicx}
+% tablas mas lindas
+\usepackage{booktabs}
+% Posibilidad de tocar los encabezados
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+% Posibilidad de meter subfigurasw
+%\usepackage[font=footnotesize, labelfont=it]{subcaption}
+% Links a urls
+\usepackage{url}
+% Linkear referencias en pdfs
+\usepackage{hyperref}
+% Texto mas lindo para los pie de figura
+\usepackage[margin=10pt,font=small,labelfont=bf, labelsep=endash]{caption}
+% Mejores autores
+\usepackage[affil-it]{authblk}
+% Compatibilidad con PDF/A
+\usepackage{xmpincl}
+% Hoja a4 mas ancha
+\usepackage{a4wide}
+% Citas
+%\usepackage[backend=biber,style=ieee]{biblatex}
+%\addbibresource{biblio.bib}
+% Cambio and por y
+\renewcommand\Authand{y }
+\renewcommand\Authands{, y }
+
+% Codigo
+\usepackage{listings}
+
+% Coloreo los links
+\usepackage[usenames,dvipsnames]{xcolor}
+\hypersetup{colorlinks,
+     linkcolor={red!50!black},
+     citecolor={blue!50!black},
+     urlcolor={blue!80!black} }
+% Graficos con tikz
+\usepackage{tikz}
+
+% Dir tree
+\usepackage{dirtree}
+
+% Pagina en blanco cuando ha
+\usepackage{emptypage}
+
+\definecolor{A11}{HTML}{B2DF8A}
+\definecolor{A12}{HTML}{33A02C}
+\definecolor{A23}{HTML}{FDBF6F}
+\definecolor{A24}{HTML}{FF7F00}
+\definecolor{B15}{HTML}{FB9A99}
+\definecolor{B16}{HTML}{E31A1C}
+\definecolor{B27}{HTML}{A6CEE3}
+\definecolor{B28}{HTML}{1F78B4}
+
+% Ejemplos, observaciones y teorema
+\theoremstyle{definition}
+\newtheorem{exa}{Ejemplo}[section]
+\newtheorem*{obs}{Observación}
+\newtheorem{que}{Pregunta}[section]
+\newtheorem{dex}{Definicion}[section]
