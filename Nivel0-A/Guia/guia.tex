@@ -169,21 +169,44 @@ Puede mover ahora el slider a la izquierda y la derecha para comparar las imagen
     ¿Que superficie tiene el área incendiada dentro de la imagen?
 \end{que}
 
-\chapter{Combinaciones de bandas}
-Si llego hasta acá, notará que en la combinacion de colores que estamos observando la imagen, a pesar de ser intuitiva, no permite distinguir claramente las zonas incenciadas.
+\chapter{Bandas espectrales}
+Si llego hasta acá, notará que en la combinacion de colores que estamos observando la imagen, a pesar de ser intuitiva, no permite distinguir claramente las zonas incenciadas
 
 Para mejorar esto es necesario entender que un satelite, como cualquier sensor, puede ser configurado para medir distintas cosas. En este caso, el satelite mide la cantidad de luz (Radiancia) que proviene de la superficie terrestre como hacen nuestros ojos. Sin embargo, a diferencia de nuestros ojos es posibles cambiar la zona del espectro electromagnetico donde medimos y como la mostramos.
 
-Para hacer esto, realizamos las que se llaman combinaciones RGB. Mostrando de color rojo, verde y azul distinta información.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{fig:spec.jpg}
+    \caption{Firmas espectrales para el agua, suelo y vegetación.}
+    \label{fig:spec}
+\end{figure}
 
-Para cambiarlas en el LandView, haga click en BAND COMBINATIONS y vera que la seleccionada es \emph{Natural Color}. Esta combinación muestra a la imagen de la forma más similar a como la veriamos nosotros.
+Esto es importante porque cada zona del espectro electromagnetico aparta distinta información sobre las coberturas del suelo. En particular, si miramos cuanta luz nos llega de cada cobertura y pensamos en tres coberturas típicas, vemos que cada una de ellas se comporta de distinta manera en distintas longitudes de onda (Figura \ref{fig:spec}).
+
+\section{Combinaciones de bandas}
+
+Para aprovechar esto, realizamos las que se llaman combinaciones RGB. Mostrando de color rojo, verde y azul distinta información.
+
+Para cambiarlas en el LandView, haga click en BAND COMBINATIONS (Figura \ref{fig:bandas}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{fig:bandas.png}
+    \caption{Ventana para elegir distintas combinaciones de bandas. Es posible tanto elegir una pre-armada o configurar una a mano.}
+    \label{fig:bandas}
+\end{figure}
 
 Distintas combinaciones dde bandas permiten separar distinta información:
 
 \begin{itemize}
-    \item Color infrarred (vegetation): muestra la información sobre presencia o ausencia de vegetación en color rojo. Hace esto mostrando en rojo bandas del infrarrojo cercano y en verde y azul bandas del visible.
-    \item Vegetaion analysis: muestraa la información sobre la vegetación en tonos naranjas. Hace esto mostrando en rojo información sobre la cobertura de vegetación, en verde información sobre el contenido de humedad y en azul sobre la actividad fotosintetica.
-    \item False color (urban):muestra caracteristicas urbanas de nuestra coberturaa separandolas de la vegetación.
+    \item Color real (\emph{Natural color - rojo,verde,azul}): Muestra la imagen de forma similar a como la verian nuestros ojos. Las bandas del espectro visible se asignan para que coincidan con  las del ojo. La vegetación sana se ve en verde. Los suelos y distintos tonos de marron y las ciudades en blanco. Los cuerpos de agua se muestran en colores obscuros.
+    \begin{center}\includegraphics[scale=0.4]{4-3-2.jpeg}\end{center}
+    \item Falso color (\emph{False color (urban) - SWIR2,SWIR1,Rojo}): Provee una imagen similara a como la interpretarían nuestros ojos pero eliminando parte de la incidencia de la atmósfera. La vegetación aparece en verde, las zonas urbanas en blanco y tonos de ciam y los suelos en una variedad de colores. Las zonas con agua aparecen en azul o negro.
+    \begin{center}\includegraphics[scale=0.4]{12-11-4.jpeg}\end{center}
+    \item Infrarrojo coloer (\emph{Color infrared (vegetation) - NIR, Rojo, Verde}): La combinación de color standar para separar vegetación de otras coberturas. La vegetación suele verse en color rojo brillante. Las ciudades y suelos sin cobertura se ven en tonos de cyan. Las zonas con agua se ven en negro.
+    \begin{center}\includegraphics[scale=0.4]{8-4-3.jpeg}\end{center}
+    \item Falso color (\emph{Land/water - NIR, SWIR1, Rojo}): Combinación de bandas util para separar agua de vegetación y obtener caracteristicas sobre esta última. La vegetación se verá en tonos de naranja, dependiendo de su contenido de humedad, las zonas con agua en azul y las ciudades y suelos desnudos en blanco y verde.
+    \begin{center}\includegraphics[scale=0.4]{8-11-4.jpeg}\end{center}
 \end{itemize}
 
 En nuestro caso particular, la combinación de bandas que mejor separa las zonas incenciadas de las no incendiadas es la \emph{Short wave infrared}. Esta combinación muestra en rojo las zonas que se incendiaron recientemente y en verde las zonas con vegetación. Eligala en el LandView y compare la imagen antes y después del incendio (Figura \ref{fig:incendio}).
@@ -197,12 +220,30 @@ En nuestro caso particular, la combinación de bandas que mejor separa las zonas
 
 Puede descargar la imagen generada haciendo click en ESCENE DOWNLOAD, eligiendo la opción de \emph{Crop by extente} y luego haciendo click en Download.
 
+\section{Evaluación}
+
 \begin{que}
     ¿Cual es la superficie incendiada al oeste del Lago San Roque?
 \end{que}
 
 \begin{que}
-    Descargue un mapa de la zona donde se vea la superficie incendiada.
+    ¿En que color se la zona incendiada en cada una de las combinaciones de bandas descriptas arriba?
+\end{que}
+
+\begin{que}
+    ¿Que combinación de bandas le permite distinguir más detalles en el Lago San Roque?
+\end{que}
+
+\begin{que}
+    ¿Que combinación de bandas le permite distinguir mejor vegetación dentro de la ciudad de Córdoba?
+\end{que}
+
+\begin{que}
+    ¿Cuanto creció la superficie incendiada entre el 21 de agosto y el 17 de septiembre de 2017 al este de Villa Carlos Paz?
+\end{que}
+
+\begin{que}
+    Descargue un mapa de la zona donde se vea la superficie incendiada al 21 de agosto de 2017 en las cercanias de Villa Carlos Paz.
 \end{que}
 
 \chapter{Cierre}
