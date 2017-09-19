@@ -4,7 +4,7 @@
 \graphicspath{{./figs/}}
 
 \title{{\large Nivel 0} \\ Interpretación visual de imágenes satelitales}
-\author{Marina Compagnucci \and Laura Rouco \and Francisco Nemiña}
+\author{Marina Compagnucci \and Francisco Nemiña}
 \begin{document}
 \maketitle
 \titlepage
@@ -12,27 +12,27 @@
 \chapter{Introducción}
 Existen en la actualidad distintas formas de acceder a productos de origen satelital. Es posible obtener un amplio rango de productos que van desde imágenes en crudo hasta promedios procesados de variables biofísicas.
 
-En los últimos años, además de las formas tradicionales de procesaamiento de imagenes donde un usuario debía descargar un producto para poder manipularlo, comenzaron a apareccer soluciones WEB. Esta nueva forma de procesamiento permite al usuario, independientemente de su nivel de conocimiento, accededr a un amplio abanico de productos. Entre las soluciones existentes se destacan el EarthEngine de Google, el LandsatView de ESRI y el LandView de EOS.
+En los últimos años, además de las formas tradicionales de procesamiento de imágenes donde un usuario debía descargar un producto para poder manipularlo, comenzaron a aparecer soluciones web. Esta nueva forma de procesamiento permite al usuario, independientemente de su nivel de conocimiento, acceder a un amplio abanico de productos. Entre las soluciones existentes se destacan el EarthEngine de Google, el LandsatView de ESRI y el Land Viewer de EOS.
 
-Aunque todas estas soluciones se encuentran disponibles, muchas de ellas sin cargo, existe siempre la necesidad latente de capacitación para un mejor uso de estas herramientas. Pretendemos entonces, en este curso, incorporar los conocimientos básicos de teledetección que permitan a usuarios sin conocimientos previos el acceso a productos satelitales de una forma sencilla y clara.
+Aunque todas estas soluciones se encuentran disponibles, muchas de ellas sin cargo, existe siempre la necesidad de capacitación para un mejor uso de estas herramientas. Pretendemos entonces, en este taller, incorporar los conocimientos básicos de teledetección óptica en interpretación visual que permitan a usuarios sin conocimientos previos el acceso a productos satelitales de una forma sencilla y clara.
 
-Para esto, trabajaremos con una aplicación concreta e intentares determinar mediantes el uso de herramientas WEB y con el fin de incorporar conocimientos básicos de teledetección, al superficie incendiada durante el mes de septiembre de 2017 en las cercanias de Carlos Paz, provincia de Cordoba.
+Para esto, trabajaremos con una aplicación concreta e intentares determinar, mediante el uso de herramientas web y con el fin de incorporar conocimientos básicos de teledetección, la superficie incendiada durante el mes de septiembre de 2017 en las cercanias de Carlos Paz, provincia de Cordoba.
 
-\chapter{Land View}
+\chapter{Land Viewer}
 
-LandView es un servicio web de la empresa Earth Observing System. Este permite explorar, visualizar y descargar una amplia gama de productos satelitales. El paquete gratuito de la empeza permite visualizar y descargar hasta 10 imagenes por día de sensores que incluyen la serie Landat (1982-actualidad), MODIS (2013-actualidad) y sentinel 2 (2012-actualidad).
+LandView es un servicio web de la empresa Earth Observing System. Este permite explorar, visualizar y descargar una amplia gama de productos satelitales. El paquete gratuito de la empresa permite visualizar y descargar hasta 10 imagenes por día de sensores que incluyen la serie Landsat (1982-actualidad), MODIS (2013-actualidad) y Sentinel 2 (2012-actualidad).
 
 \section{Registro}
 Para acceder al servicio de LandView uno debe dirigirse a \url{https://lv.eosda.com} y luego de que termine el tour podra comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en \emph{Sign in} y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn. Luego de hacerlo podrá ver todás las funcionalidades del Land Viewer.
 
 \section{Interface gráfica}
 
-Una vez registrado, accedera a un mapa  similar al de Google Maps o cualquier SIG (Figura \ref{fig:main}). Destacamos en el 3 partes:
+Una vez registrado, accedera a un mapa  similar al de Google Maps (Figura \ref{fig:main}). Destacamos en el 3 partes:
 
 \begin{itemize}
-    \item La parte superior que nos permite buscar zonas en el mundo.
+    \item La parte superior que nos permite buscar en el mundo.
      \begin{center}\includegraphics[scale=0.4]{in:search.png}\end{center}
-    \item La parte izquierda que nos permite hacer zoom en el mapa, marcar zonas de interes, realizar mediciones y agregar distintas capas como puede ser un mapa de alturas, una imagen satelital de base o un mapa politico.
+    \item La parte izquierda que nos permite hacer zoom en el mapa, marcar zonas de interés, realizar mediciones y agregar distintas capas como puede ser un mapa de alturas, una imagen satelital de base o un mapa político.
      \begin{center}\includegraphics[scale=0.4]{in:edit.png}\end{center}
     \item La parte derecha donde podemos elegir distintos productos satelitales, mostrarlos, realizar combinaciones de bandas y guardar los datos obtenidos.
      \begin{center}\includegraphics[scale=0.4]{in:sat.png}\end{center}
@@ -43,7 +43,7 @@ Podemos ver tambien la latitud y longitud de cualquier punto posicionandonos sob
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{fig:main.png}
-    \caption{Pantalla principal del Land Viewer. Abajo a izquierda de encunetra la opción de registro. A la derecha tenemos las herramietas de medición, zoom y mapas. Arriba el cuadro de busqueda. A la izquierda encontramos la selección de imágenes y productos satelitales.}
+    \caption{Pantalla principal del Land Viewer. Abajo a derecha de encuentra la opción de registro. A la derecha tenemos las herramietas de medición, zoom y mapas. Arriba el cuadro de busqueda. A la izquierda encontramos la selección de imágenes y productos satelitales.}
     \label{fig:main}
 \end{figure}
 
@@ -59,7 +59,7 @@ En el modo mapa, busque la ciudad de Villa Carlos Paz. Podemos utilizar la herra
     \label{fig:distancia}
 \end{figure}
 
-Con la misma herramienta, es posible medir areas si uno cierra el camino obtenido sobre el primer punto.
+Con la misma herramienta, es posible medir áreas si uno cierra el camino obtenido sobre el primer punto.
 
 \section{Evaluación}
 
@@ -82,11 +82,11 @@ Con la misma herramienta, es posible medir areas si uno cierra el camino obtenid
 \end{que}
 
 \chapter{Resolución espacial y temporal}
-Dos caracteristicas fundamenteles de las imágenes satelitales son la resolución espacial y la resolución temporal.
+Dos características fundamenteles de las imágenes satelitales son la resolución espacial y la resolución temporal.
 
-La resolución espacial nos da una idea de que obtenos podemos distinguir en el terreno. Por ejemplo, una resolución espacial de $30m$ nos permitirá distinguir una plaza de una manzana construida, pero no las casas dentro de una manzana.
+La resolución espacial nos da una idea de que objenos podemos distinguir en el terreno. Por ejemplo, una resolución espacial de $30m$ nos permitirá distinguir una plaza de una manzana construida, pero no las casas dentro de una manzana.
 
-En cambio, la resolución temporal nos da una idea de cual es el fenomeno que varia en el tiempo más corto que podemos ver. Por ejemplo, una resolución temporal de $15 dias$ nos permitirá estudiar como cambia la vegetación a lo largo de las estaciones pero no como cambian las nubes a lo largo de un día
+A su vez la resolución temporal nos da una idea de cual es el fenomeno que varia en el tiempo más corto que podemos ver. Por ejemplo, una resolución temporal de $15$ días nos permitirá estudiar como cambia la vegetación a lo largo de las estaciones pero no como cambian las nubes a lo largo de un día
 
 
 \begin{figure}[h!]
@@ -96,13 +96,13 @@ En cambio, la resolución temporal nos da una idea de cual es el fenomeno que va
     \label{fig:evst}
 \end{figure}
 
-Ambas resoluciones suelen estar relacionadas (Figura \ref{fig:evst}), de forma que al aumentar una disminuye la otra. Por ejemplo: GOES, una satelite meteorologico, tiene una muy alta revisita temporal, cercana a los 15 minutos mientras que su resolución espacial es baja, cercana a los 4km. En el otro extremo, SPOT 7 tiene una alta resolución espacial de hasta $1.5m$ pero con una revisita temporal del orden del mes.
+Ambas resoluciones suelen estar relacionadas (Figura \ref{fig:evst}), de forma que al aumentar una disminuye la otra. Por ejemplo: GOES, una satélite meteorológico, tiene una muy alta revisita temporal, cercana a los 15 minutos mientras que su resolución espacial es baja, cercana a los 4km. En el otro extremo, SPOT 7 tiene una alta resolución espacial, de hasta $1.5$m, pero con una revisita temporal del orden del mes.
 
 Es importante recordar en esta instancia que una resolución mayor o menor solo nos dice si la imagen será util para cierto estudio. No si la imagen es mejor o peor. Por ejemplo: una regla milimetrada permite medir con mucha presición, pero nunca usariamos una para medir el largo de una avenida.
 
 
-\section{Imagenes satelitales}
-Es posible hora incorporar imágenes satelitales a nuestro mapa. Para esto comenzamos dibujando un Area de Interes (AOI) sobre la imagen que incluya la zona entre Lago San Roque y Cordoba (Figura \ref{fig:aoi}).
+\section{Imágenes satelitales}
+Es posible hora incorporar imágenes satelitales a nuestro mapa. Para esto comenzamos dibujando un Área de Interes (AOI) sobre la imagen que incluya la zona entre Lago San Roque y Córdoba (Figura \ref{fig:aoi}).
 
 \begin{figure}[h!]
     \centering
@@ -111,11 +111,11 @@ Es posible hora incorporar imágenes satelitales a nuestro mapa. Para esto comen
     \label{fig:aoi}
 \end{figure}
 
-Elija ahora el Satelile Landsat 8 y observe que pareceran distintas escenas a la derecha. Por defecto LandView muestra solo las escenas con cobertura nubosa de hasta un 60\% y de los últimos 3 meses. Es posible camiar hesto haciendo click en la parte superior del Scene Search.  Ponga la cobertura nubosa hasta el 100\%.
+Elija ahora el satélite Landsat 8 y observe que pareceran distintas escenas a la derecha. Por defecto Land Viewer muestra solo las escenas con cobertura nubosa de hasta un 60\% y de los últimos 3 meses. Es posible cambiar esto haciendo click en la parte superior del Scene Search.  Ponga la cobertura nubosa hasta el 100\%.
 
 \begin{center}\includegraphics[scale=0.4]{in:nubes.png}\end{center}
 
-Seleccione la imagen del 2 de septiembre de 2017 y observe que esta aparecerá en la pantalla (Figura \ref{fig:scene}). Puede ahora moverse como hacia antes y realizar mediciones, etc.
+Seleccione la imagen del 2 de septiembre de 2017 (Figura \ref{fig:scene}) y observe que esta aparecerá en la pantalla. Puede ahora moverse como hacia antes y realizar mediciones.
 
 \begin{figure}[h!]
 \centering
@@ -126,29 +126,29 @@ Seleccione la imagen del 2 de septiembre de 2017 y observe que esta aparecerá e
 \begin{minipage}{.425\linewidth}
   \includegraphics[width=\linewidth]{fig:imagen1.png}
 \end{minipage}
-\caption{Seleccion de satelite e imagenes en el Land Viewer.}
+\caption{Selección de satélite e imágenes en Land Viewer.}
 \label{fig:scene}
 \end{figure}
 
-La imagen elegida pertenece al sensor OLI del satelite Landsat 8. Tiene una resolución espacial de $30m$ por lo cual podremos distinguir manzanas, parques y cosas más grandes. Pero no cosas más chicas.
+La imagen elegida pertenece al sensor OLI del satelite Landsat 8. Tiene una resolución espacial de $30m$ por lo cual podremos distinguir manzanas, parques y objetos más grandes, pero no más chicos.
 
-Seleccione ahora el producto MODIS MCD43A4. Vera en este caso que la lista de imagenes es mucho más larga teniendo una imagen por día. Seleccione la imagen correspondiente al 27 de agosto de 2017.
+Seleccione ahora el producto MODIS MCD43A4. Verá en este caso que la lista de imágenes es mucho más densa teniendo una imagen por día. Seleccione la imagen correspondiente al 27 de agosto de 2017.
 
-Observe que ahora no es posible distinguir las calles de la ciudad de Córdoba como hacía con la imagen anterior. En este caso la imagen elegida pertenece al producto \emph{MCD43A4} generado a partir de los sensores MODIS de los satelites AQUA y TERRA. En este caso la resolución espacial oscila entre los 250m y los 1000m según como mostremos la imagen.
+Observe que ahora no es posible distinguir las manzanas de la ciudad de Córdoba como hacía con la imagen anterior. En este caso la imagen elegida pertenece al producto \emph{MCD43A4} generado a partir del sensor MODIS de los satélites AQUA y TERRA. En este caso la resolución espacial oscila entre los 250m y los 1000m según como mostremos la imagen.
 
 \section{Comparación entre fechas}
-Comparemos ahora dos imagenes antes y después del incendio. Para esto sseleccione el satelite Sentinel 2 y elija la imagen del 21 de agosto de 2017. Haga luego click en \emph{Comparison slider} \includegraphics[scale=0.2]{in:LR.png}, cambie la fecha al año 2016 y seleccione la imagen del 23 de agosto de 2016.
+Comparemos ahora dos imágenes antes y después del incendio. Para esto seleccione el satélite Sentinel 2 y elija la imagen del 21 de agosto de 2017. Haga luego click en \emph{Comparison slider} \includegraphics[scale=0.2]{in:LR.png}, cambie la fecha al año 2016 y seleccione la imagen del 23 de agosto de 2016.
 
 Es posible elegir si la imagen se posiciona a la izquierda o la derecha eligiendolo en el botón L/R.
 
 \begin{center}\includegraphics[scale=0.4]{in:LorR.png}\end{center}
 
-Puede mover ahora el slider a la izquierda y la derecha para comparar las imagenes del 2016 y 2017 (Figura \ref{fig:slider}). Elegimos comparar con el año anterior para que las imagenes correspondan a fechas similares.
+Puede mover ahora el slider a la izquierda y la derecha para comparar las imágenes del 2016 y 2017 (Figura \ref{fig:slider}). Elegimos comparar con el año anterior para que las imágenes correspondan a fechas similares.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{fig:slider.png}
-    \caption{Dos imágenes con la pantalla dividida. En el medio aparece el slider que permite caambiar entre lasa dos zonas.}
+    \caption{Dos imágenes con la pantalla dividida. En el medio aparece el slider que permite cambiar entre las dos zonas.}
     \label{fig:slider}
 \end{figure}
 
@@ -160,7 +160,7 @@ Puede mover ahora el slider a la izquierda y la derecha para comparar las imagen
     ¿Cada cuantos días hay una nueva imagen MODIS?
 \end{que}
 \begin{que}
-    ¿Es posible distinguir las calles de la Ciudad de Cordoba en la imagen Landsat 8?
+    ¿Es posible distinguir las manzanas de la Ciudad de Cordoba en la imagen Landsat 8?
 \end{que}
 \begin{que}
     ¿Hay incendios en la zona durante el año 2016?
@@ -169,10 +169,10 @@ Puede mover ahora el slider a la izquierda y la derecha para comparar las imagen
     ¿Que superficie tiene el área incendiada dentro de la imagen?
 \end{que}
 
-\chapter{Bandas espectrales}
+\chapter{Combinaciones espectrales}
 Si llego hasta acá, notará que en la combinacion de colores que estamos observando la imagen, a pesar de ser intuitiva, no permite distinguir claramente las zonas incenciadas
 
-Para mejorar esto es necesario entender que un satelite, como cualquier sensor, puede ser configurado para medir distintas cosas. En este caso, el satelite mide la cantidad de luz (Radiancia) que proviene de la superficie terrestre como hacen nuestros ojos. Sin embargo, a diferencia de nuestros ojos es posibles cambiar la zona del espectro electromagnetico donde medimos y como la mostramos.
+Para mejorar la detección del incendio es necesario entender que un satélite, como cualquier sensor, puede ser configurado para medir distintas coberturas. En este caso, el satélite mide la cantidad de luz\footnore{Conocida como radiancia en teledetección.} que proviene de la superficie terrestre como hacen nuestros ojos. Sin embargo, a diferencia de nuestros ojos es posibles cambiar la zona del espectro electromagnético donde medimos y como la mostramos.
 
 \begin{figure}[h!]
     \centering
@@ -181,13 +181,13 @@ Para mejorar esto es necesario entender que un satelite, como cualquier sensor, 
     \label{fig:spec}
 \end{figure}
 
-Esto es importante porque cada zona del espectro electromagnetico aparta distinta información sobre las coberturas del suelo. En particular, si miramos cuanta luz nos llega de cada cobertura y pensamos en tres coberturas típicas, vemos que cada una de ellas se comporta de distinta manera en distintas longitudes de onda (Figura \ref{fig:spec}).
+Esto es importante porque cada zona del espectro electromagnético aporta distinta información sobre las coberturas del suelo. Si miramos cuanta luz nos llega para coberturas de vegetación, suelo sin cobertura vegetal y cuerpos de agua, observamos que cada una de ellas se comporta de distinta manera como función de la longitud de onda (Figura \ref{fig:spec}).
 
-\section{Combinaciones de bandas}
+\section{Combinaciones RGB}
 
 Para aprovechar esto, realizamos las que se llaman combinaciones RGB. Mostrando de color rojo, verde y azul distinta información.
 
-Para cambiarlas en el LandView, haga click en BAND COMBINATIONS (Figura \ref{fig:bandas}).
+Para cambiarlas en Land Viewer, haga click en BAND COMBINATIONS (Figura \ref{fig:bandas}).
 
 \begin{figure}[h!]
     \centering
@@ -196,20 +196,20 @@ Para cambiarlas en el LandView, haga click en BAND COMBINATIONS (Figura \ref{fig
     \label{fig:bandas}
 \end{figure}
 
-Distintas combinaciones dde bandas permiten separar distinta información:
+Distintas combinaciones de bandas permiten mostrar distinta información:
 
 \begin{itemize}
-    \item Color real (\emph{Natural color - rojo,verde,azul}): Muestra la imagen de forma similar a como la verian nuestros ojos. Las bandas del espectro visible se asignan para que coincidan con  las del ojo. La vegetación sana se ve en verde. Los suelos y distintos tonos de marron y las ciudades en blanco. Los cuerpos de agua se muestran en colores obscuros.
+    \item Color real (\emph{Natural color - rojo,verde,azul}): Muestra la imagen de forma similar a como la verían nuestros ojos. Las bandas del espectro visible se asignan para que coincidan con  las del ojo. La vegetación se ve verde. Los suelos y distintos tonos de marrón. Las ciudades en blanco. Los cuerpos de agua se muestran en colores oscuros.
     \begin{center}\includegraphics[scale=0.4]{4-3-2.jpeg}\end{center}
-    \item Falso color (\emph{False color (urban) - SWIR2,SWIR1,Rojo}): Provee una imagen similara a como la interpretarían nuestros ojos pero eliminando parte de la incidencia de la atmósfera. La vegetación aparece en verde, las zonas urbanas en blanco y tonos de ciam y los suelos en una variedad de colores. Las zonas con agua aparecen en azul o negro.
+    \item Falso color (\emph{False color (urban) - SWIR2,SWIR1,Rojo}): Provee una imagen similar a como la interpretarían nuestros ojos pero eliminando parte de la incidencia de la atmósfera. La vegetación aparece en verde. Las zonas urbanas en blanco y ciam. Los suelos en una variedad de colores. Las zonas con agua aparecen en azul o negro.
     \begin{center}\includegraphics[scale=0.4]{12-11-4.jpeg}\end{center}
-    \item Infrarrojo coloer (\emph{Color infrared (vegetation) - NIR, Rojo, Verde}): La combinación de color standar para separar vegetación de otras coberturas. La vegetación suele verse en color rojo brillante. Las ciudades y suelos sin cobertura se ven en tonos de cyan. Las zonas con agua se ven en negro.
+    \item Infrarrojo color (\emph{Color infrared (vegetation) - NIR, Rojo, Verde}): La combinación de color standar para separar vegetación de otras coberturas. La vegetación suele verse en color rojo brillante. Las ciudades y suelos sin cobertura se ven en tonos de cyan. Las zonas con agua se ven en negro.
     \begin{center}\includegraphics[scale=0.4]{8-4-3.jpeg}\end{center}
-    \item Falso color (\emph{Land/water - NIR, SWIR1, Rojo}): Combinación de bandas util para separar agua de vegetación y obtener caracteristicas sobre esta última. La vegetación se verá en tonos de naranja, dependiendo de su contenido de humedad, las zonas con agua en azul y las ciudades y suelos desnudos en blanco y verde.
+    \item Falso color (\emph{Land/water - NIR, SWIR1, Rojo}): Combinación de bandas útil para separar agua de vegetación y obtener características sobre esta última. La vegetación se verá en tonos de naranja, dependiendo de su contenido de humedad. Las zonas con agua en azul. Las ciudades y suelos desnudos en blanco y verde.
     \begin{center}\includegraphics[scale=0.4]{8-11-4.jpeg}\end{center}
 \end{itemize}
 
-En nuestro caso particular, la combinación de bandas que mejor separa las zonas incenciadas de las no incendiadas es la \emph{Short wave infrared}. Esta combinación muestra en rojo las zonas que se incendiaron recientemente y en verde las zonas con vegetación. Eligala en el LandView y compare la imagen antes y después del incendio (Figura \ref{fig:incendio}).
+En nuestro caso particular, la combinación de bandas que mejor separa las zonas incenciadas de las no incendiadas es la \emph{Short wave infrared}. Esta combinación muestra en rojo las zonas que se incendiaron recientemente y en verde las zonas con vegetación. Eligala en el Land Viewer y compare la imagen antes y después del incendio (Figura \ref{fig:incendio}).
 
 \begin{figure}[h!]
     \centering
@@ -218,7 +218,7 @@ En nuestro caso particular, la combinación de bandas que mejor separa las zonas
     \label{fig:incendio}
 \end{figure}
 
-Puede descargar la imagen generada haciendo click en ESCENE DOWNLOAD, eligiendo la opción de \emph{Crop by extente} y luego haciendo click en Download.
+Puede descargar la imagen generada haciendo click en ESCENE DOWNLOAD, eligiendo la opción de \emph{Crop by extent} y luego haciendo click en Download.
 
 \section{Evaluación}
 
@@ -248,17 +248,17 @@ Puede descargar la imagen generada haciendo click en ESCENE DOWNLOAD, eligiendo 
 
 \chapter{Cierre}
 
-Vimos en esta actividad como utilizar las herramientas del LandView junto con nuestro conocimiento en teledetección para interpretar distintas coberturas.
+Vimos en este taller actividad como utilizar las herramientas del LandView junto con nuestro conocimiento en teledetección para interpretar distintas coberturas.
 
-Aprendimos que hay 3 caracteristicas fundamentales de un conjunto satelite/sensor a la hora de usar productos geoespaciales
+Aprendimos que hay 3 características fundamentales de un conjunto satélite/sensor a la hora de usar productos geoespaciales
 
 \begin{itemize}
-    \item Resolucion espacial: que tan bien puedo ver algo en el suelo.
-    \item Resolución temporal: cada cuanto vuelvo a tener una imagen.
-    \item Resolución espectral: cuantas zonas del espectro puedo distnguir.
+    \item Resolución espacial: que tan bien puedo distinguir un objeto en el terreno.
+    \item Resolución temporal: cada cuanto vuelvo a tener una imagen de la misma zona.
+    \item Resolución espectral: cuantas zonas del espectro puedo distinguir.
 \end{itemize}
 
-Este es el puntapie inicial al trabajo en teledetección donde la interpretación visual se combina con el procesamiento digital para extraer información de la vegetación. Los invitamos a que sigan de aquí en adelante.
+Este es el puntapié inicial al trabajo en teledetección donde la interpretación visual se combina con el procesamiento digital para extraer información sobre la tierra. Los invitamos a que sigan de aquí en adelante.
 
 
 \end{document}
