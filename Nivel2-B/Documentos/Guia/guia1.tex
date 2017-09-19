@@ -1,6 +1,6 @@
 \chapter{SNAP}
 
-Esta clase tiene como objetivo familiarizarse con el entorno gráfico del \emph{Sentinel Aplication Toolbox (SNAP)}.
+Esta clase tiene como objetivo familiarizarse con el entorno gráfico del \emph{Sentinel Aplication Toolbox (SNAP)}. El SNAP es el software de procesamiento de imágenes diseñado por la \emph{Agencia Espacial Europera (ESA)}. Este tiene distintas herramientas que simplifican el trabajo con imágenes radar y ópticas, además de la realización de procesamiento de imágenes en general.
 
 \section{Interfaz gráfica del SNAP}
 
@@ -9,7 +9,7 @@ Descomprima los archivos decargados que se denominan \path{material.tar.gz}. Abr
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=1.1]{fig:int.png}
-    \caption{Interfáz gráfica del usuario. El árbol de capas y el área de visualización del programa.}
+    \caption{Interfáz gráfica del usuario. El \emph{Producto Explorer} y el área de visualización del programa.}
     \label{fig:int}
 \end{figure}
 
@@ -17,30 +17,30 @@ Descomprima los archivos decargados que se denominan \path{material.tar.gz}. Abr
 
 En el menú principal, seleccione \emph{Open product...} y dentro de la carpeta \path{material/raster_data}, seleccione \path{S2A_MSIL2A_20170720.dim}.
 
-Haga doble click sobre el nombre y se desplegará un árbol que incluye las siguientes opciones:
+Haga doble click sobre el nombre de la imgen y se desplegará un árbol que incluye las siguientes opciones:
 \dirtree{%
     .1 [1] S2\_MSIL2A\_20170702.
-    .2 Metadaata.
+    .2 Metadata.
     .2 Index Codings.
     .2 Vector Data.
     .2 Bands.
     .2 Masks.
 }
 
-De esta cobertura se destaca:
+En esta cobertura encontramos
 
 \begin{itemize}
-    \item \emph{[1] S2\_MSIL2A\_20170702}: El número de elemento entre corchetes y el nombre de la imagen.
+    \item \emph{[1] S2\_MSIL2A\_20170702}: El número de elemento entre corchetes, que marca en que orden se abrieron los productos y el nombre de la imagen.
     \item \emph{Metadata}: Los metadatos asociados a la imagen y su historial de procesamiento.
-    \item \emph{Index Codings}: Los valores de referencia de como interpretar dentro de la imagen y las máscaras distintos valores.
+    \item \emph{Index Codings}: Los valores de referencia para interpretar los números digitales de la imagen.
     \item \emph{Vector data}: Las capas vectoriales asociadas a la imagen.
-    \item \emph{Bands}: Las bandas de la imagen y las operaciones de álgebra entre bandas. Haciendo doble click puede mostrarlas en el visualizador.
-    \item \emph{Masks}: Las máscaras que sean incluidas en la imagen o las que crearán.
+    \item \emph{Bands}: Las bandas de la imagen y las operaciones de álgebra entre bandas.
+    \item \emph{Masks}: Las máscaras que sean incluidas en la imagen.
 \end{itemize}
 
 \section{Visualización}
 
-Puede visualizar una de las bandas de la imagen haciendo doble click sobre ella. La banda se mostrará en escala de grises (Figura \ref{fig:mono})
+Para visualizar una de las bandas de la imagen haciendo doble click sobre ella. La banda se mostrará en escala de grises (Figura \ref{fig:mono})
 
 \begin{figure}[h!]
     \centering
@@ -49,7 +49,7 @@ Puede visualizar una de las bandas de la imagen haciendo doble click sobre ella.
     \label{fig:mono}
 \end{figure}
 
-Es posible abrir varias bandas en simultaneo y cada una de ella se mostrará en una pestaña nueva.
+Es posible abrir varias bandas en simultaneo, cada una de ella se mostrará en una pestaña nueva arriba del área de visualización.
 
 Explore la imagen utilizando las herramientas de navegación y zoom (Figura \ref{fig:NAV})
 
@@ -60,7 +60,7 @@ Explore la imagen utilizando las herramientas de navegación y zoom (Figura \ref
     \label{fig:NAV}
 \end{figure}
 
-En \emph{Product Explorer} haga click derecho sobre el nombre y seleccione \emph{Open RGB image windows.}. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas.
+En el \emph{Product Explorer} haga click derecho sobre el nombre y seleccione \emph{Open RGB image windows}. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas.
 
 \begin{figure}[h!]
     \centering
@@ -69,7 +69,7 @@ En \emph{Product Explorer} haga click derecho sobre el nombre y seleccione \emph
     \label{fig:RGB}
 \end{figure}
 
-Por defecto elegirá la combinación que utiliza las bandas 4, 3 y 2 de Sentinel 2 y la desplegará haciendo click en OK (Figura \ref{fig:RVA}).
+Por defecto elegirá, para la imagen seleccionada, la combinación que utiliza las bandas 4, 3 y 2 de Sentinel 2 y la desplegará haciendo click en OK (Figura \ref{fig:RVA}).
 
 \begin{figure}[h!]
     \centering
@@ -81,9 +81,7 @@ Por defecto elegirá la combinación que utiliza las bandas 4, 3 y 2 de Sentinel
 
 \section{Consulta de píxel}
 
-Haciendo click en la pestaña píxel info es posible obtener la información sobre un píxel para todas las bandas que se encuentren abiertas.
-
-Para utilizarla haga click en la pestaña \emph{píxel info} y posicionese sobre un píxel en la imagen (Figura \ref{fig:pixel}).
+Haciendo click en la pestaña \emph{Pixel info}, junto al \emph{Product explorer}, es posible obtener la información sobre un píxel para todas las bandas que se encuentren abiertas. Para utilizarla haga click en ella y posicionese sobre un píxel en la imagen (Figura \ref{fig:pixel}).
 
 \begin{figure}[h!]
     \centering
@@ -92,11 +90,11 @@ Para utilizarla haga click en la pestaña \emph{píxel info} y posicionese sobre
     \label{fig:pixel}
 \end{figure}
 
-Obsevará información que incluye el píxel en el que se encuentra, la latitud y longitud del píxel, las coordenadas dentro del mapa y el valor de la banda que se encuentre abierta.
+Obsevará información que incluye el píxel en el que se encuentra, la latitud y longitud del píxel, las coordenadas dentro del mapa y el valor de la bandas que se encuentren abiertas.
 
 \section{Actividad}
 
-Abrá la imagen \path{S2A_MSIL2A_20170720} de la  carpeta \path{material/raster_data}. Abra la banda \path{Sigma0_VH}.
+Abrá la imagen \path{S1B_GRDH_20170727.dimg} de la  carpeta \path{material/raster_data}. Abra la banda \path{Sigma0_VH}.
 
 \begin{que}
     ¿A que coberturas dentro de la imagen pertenecen las regiones de la imagen con mayor nivel de brillo?
