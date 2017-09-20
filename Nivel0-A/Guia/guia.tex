@@ -23,11 +23,18 @@ Para esto, trabajaremos con una aplicación concreta e intentares determinar, me
 LandView es un servicio web de la empresa Earth Observing System. Este permite explorar, visualizar y descargar una amplia gama de productos satelitales. El paquete gratuito de la empresa permite visualizar y descargar hasta 10 imagenes por día de sensores que incluyen la serie \href{https://landsat.usgs.gov/}{Landsat} (1982-actualidad), \href{https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mcd43a4}{MODIS} (2013-actualidad) y \href{https://sentinel.esa.int/web/sentinel/missions/sentinel-2}{Sentinel 2} (2012-actualidad).
 
 \section{Registro}
-Para acceder al servicio de LandView debe dirigirse a \url{https://lv.eosda.com} y luego de que termine el tour podrá comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en la imagen de la esquina inferir derecha y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn. Luego de hacerlo podrá ver todás las funcionalidades del Land Viewer.
+Para acceder al servicio de LandView debe dirigirse a \url{https://lv.eosda.com} y luego de que termine el tour podrá comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en la imagen de la esquina inferir derecha y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn.
 
 \section{Interface gráfica}
 
 Una vez registrado, accederá a un mapa  similar al de Google Maps (Figura \ref{fig:main}). Destacamos en el tres partes:
+
+\begin{figure}[hb!]
+    \centering
+    \includegraphics[width=0.85\textwidth]{fig:main.png}
+    \caption{Pantalla principal del Land Viewer. Abajo a derecha de encuentra la opción de registro. A la derecha tenemos las herramietas de medición, zoom y mapas. Arriba el cuadro de busqueda. A la izquierda encontramos la selección de imágenes y productos satelitales.}
+    \label{fig:main}
+\end{figure}
 
 \begin{itemize}
     \item La parte superior que nos permite buscar en el mundo.
@@ -40,12 +47,7 @@ Una vez registrado, accederá a un mapa  similar al de Google Maps (Figura \ref{
 
 Podemos ver tambien la latitud y longitud de cualquier punto posicionandonos sobre el y observando el valor en la parte inferior de la pantalla.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.9\textwidth]{fig:main.png}
-    \caption{Pantalla principal del Land Viewer. Abajo a derecha de encuentra la opción de registro. A la derecha tenemos las herramietas de medición, zoom y mapas. Arriba el cuadro de busqueda. A la izquierda encontramos la selección de imágenes y productos satelitales.}
-    \label{fig:main}
-\end{figure}
+
 
 
 \section{Mediciones}
@@ -54,7 +56,7 @@ En el modo mapa, busque la ciudad de Villa Carlos Paz. Podemos utilizar la herra
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.9\textwidth]{fig:distancia.png}
+    \includegraphics[width=0.85\textwidth]{fig:distancia.png}
     \caption{Medición de distancia entre la ciudad de Córdoba y Villa Carlos Paz. La distancia aparece en la parte inferior de la pantalla.}
     \label{fig:distancia}
 \end{figure}
@@ -106,7 +108,7 @@ Es posible hora incorporar imágenes satelitales a nuestro mapa. Para esto comen
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\textwidth]{fig:aoi.png}
+    \includegraphics[width=0.85\textwidth]{fig:aoi.png}
     \caption{Gráfico de un área de interes (AOI) para seleccionar la zona en la que se seleccionaran las imagenes.}
     \label{fig:aoi}
 \end{figure}
@@ -147,7 +149,7 @@ Puede mover ahora el slider a la izquierda y la derecha para comparar las imáge
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\textwidth]{fig:slider.png}
+    \includegraphics[width=0.85\textwidth]{fig:slider.png}
     \caption{Dos imágenes con la pantalla dividida. En el medio aparece el slider que permite cambiar entre las dos zonas.}
     \label{fig:slider}
 \end{figure}
@@ -176,7 +178,7 @@ Para mejorar la detección del incendio es necesario entender que un satélite, 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\textwidth]{fig:spec.png}
+    \includegraphics[width=0.85\textwidth]{fig:spec.png}
     \caption{Firmas espectrales para el agua, suelo y vegetación.}
     \label{fig:spec}
 \end{figure}
@@ -200,20 +202,20 @@ Distintas combinaciones de bandas permiten mostrar distinta información:
 
 \begin{itemize}
     \item Color real (\emph{Natural color - rojo,verde,azul}): Muestra la imagen de forma similar a como la verían nuestros ojos. Las bandas del espectro visible se asignan para que coincidan con  las del ojo. La vegetación se ve verde. Los suelos y distintos tonos de marrón. Las ciudades en blanco. Los cuerpos de agua se muestran en colores oscuros.
-    \begin{center}\includegraphics[scale=0.4]{4-3-2.jpeg}\end{center}
+    \begin{center}\includegraphics[scale=0.3]{4-3-2.jpeg}\end{center}
     \item Falso color (\emph{False color (urban) - SWIR2,SWIR1,Rojo}): Provee una imagen similar a como la interpretarían nuestros ojos pero eliminando parte de la incidencia de la atmósfera. La vegetación aparece en verde. Las zonas urbanas en blanco y ciam. Los suelos en una variedad de colores. Las zonas con agua aparecen en azul o negro.
-    \begin{center}\includegraphics[scale=0.4]{12-11-4.jpeg}\end{center}
+    \begin{center}\includegraphics[scale=0.3]{12-11-4.jpeg}\end{center}
     \item Infrarrojo color (\emph{Color infrared (vegetation) - NIR, Rojo, Verde}): La combinación de color standar para separar vegetación de otras coberturas. La vegetación suele verse en color rojo brillante. Las ciudades y suelos sin cobertura se ven en tonos de cyan. Las zonas con agua se ven en negro.
-    \begin{center}\includegraphics[scale=0.4]{8-4-3.jpeg}\end{center}
+    \begin{center}\includegraphics[scale=0.3]{8-4-3.jpeg}\end{center}
     \item Falso color (\emph{Land/water - NIR, SWIR1, Rojo}): Combinación de bandas útil para separar agua de vegetación y obtener características sobre esta última. La vegetación se verá en tonos de naranja, dependiendo de su contenido de humedad. Las zonas con agua en azul. Las ciudades y suelos desnudos en blanco y verde.
-    \begin{center}\includegraphics[scale=0.4]{8-11-4.jpeg}\end{center}
+    \begin{center}\includegraphics[scale=0.3]{8-11-4.jpeg}\end{center}
 \end{itemize}
 
 En nuestro caso particular, la combinación de bandas que mejor separa las zonas incenciadas de las no incendiadas es la \emph{Short wave infrared}. Esta combinación muestra en rojo las zonas que se incendiaron recientemente y en verde las zonas con vegetación. Eligala en el Land Viewer y compare la imagen antes y después del incendio (Figura \ref{fig:incendio}).
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\textwidth]{fig:incendio.png}
+    \includegraphics[width=0.85\textwidth]{fig:incendio.png}
     \caption{Imagen en la combinación de colores que mejor resalta al incendio. La vegetación se ve en colores verde brillante, el incendio en rojo, el agua negro y la ciudad en violeta.}
     \label{fig:incendio}
 \end{figure}
