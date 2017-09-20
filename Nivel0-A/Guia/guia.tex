@@ -10,9 +10,9 @@
 \titlepage
 
 \chapter{Introducción}
-Existen en la actualidad distintas formas de acceder a productos de origen satelital. Es posible obtener un amplio rango de productos que van desde imágenes en crudo hasta promedios procesados de variables biofísicas.
+Existen en la actualidad distintas formas de acceder a productos de origen satelital. Es posible obtener un amplio rango de productos que van desde imágenes en crudo hasta mapas de propiedades y usos del suelo.
 
-En los últimos años, además de las formas tradicionales de procesamiento de imágenes donde un usuario debía descargar un producto para poder manipularlo, comenzaron a aparecer soluciones web. Esta nueva forma de procesamiento permite al usuario, independientemente de su nivel de conocimiento, acceder a un amplio abanico de productos. Entre las soluciones existentes se destacan el EarthEngine de Google, el LandsatView de ESRI y el Land Viewer de EOS.
+En los últimos años, además de las formas tradicionales de procesamiento de imágenes donde un usuario debía descargar un producto para poder manipularlo, comenzaron a aparecer soluciones web. Esta nueva forma de procesamiento permite al usuario, independientemente de su nivel de conocimiento, acceder a un amplio abanico de productos. Entre las soluciones existentes se destacan el \href{https://explorer.earthengine.google.com/#workspace}{EarthEngine} de Google, el \href{http://landsatexplorer.esri.com/}{LandsatExplorer} de ESRI, el \href{http://apps.sentinel-hub.com/eo-browser/}{EO Browser} de Sentinel-hub y el \href{lv.eosda.com}{Land Viewer} de EOS.
 
 Aunque todas estas soluciones se encuentran disponibles, muchas de ellas sin cargo, existe siempre la necesidad de capacitación para un mejor uso de estas herramientas. Pretendemos entonces, en este taller, incorporar los conocimientos básicos de teledetección óptica en interpretación visual que permitan a usuarios sin conocimientos previos el acceso a productos satelitales de una forma sencilla y clara.
 
@@ -20,14 +20,14 @@ Para esto, trabajaremos con una aplicación concreta e intentares determinar, me
 
 \chapter{Land Viewer}
 
-LandView es un servicio web de la empresa Earth Observing System. Este permite explorar, visualizar y descargar una amplia gama de productos satelitales. El paquete gratuito de la empresa permite visualizar y descargar hasta 10 imagenes por día de sensores que incluyen la serie Landsat (1982-actualidad), MODIS (2013-actualidad) y Sentinel 2 (2012-actualidad).
+LandView es un servicio web de la empresa Earth Observing System. Este permite explorar, visualizar y descargar una amplia gama de productos satelitales. El paquete gratuito de la empresa permite visualizar y descargar hasta 10 imagenes por día de sensores que incluyen la serie \href{https://landsat.usgs.gov/}{Landsat} (1982-actualidad), \href{https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mcd43a4}{MODIS} (2013-actualidad) y \href{https://sentinel.esa.int/web/sentinel/missions/sentinel-2}{Sentinel 2} (2012-actualidad).
 
 \section{Registro}
-Para acceder al servicio de LandView uno debe dirigirse a \url{https://lv.eosda.com} y luego de que termine el tour podra comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en \emph{Sign in} y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn. Luego de hacerlo podrá ver todás las funcionalidades del Land Viewer.
+Para acceder al servicio de LandView debe dirigirse a \url{https://lv.eosda.com} y luego de que termine el tour podrá comenzar a utilizarlo. Es recomendable registrar una cuenta gratuita para poder aprovechar más funcionalidades del servicio. Para esto haga click en la imagen de la esquina inferir derecha y registrese utilizando su dirección de correo electronico o acceda con los servicios de Facebook, Google o LinkedIn. Luego de hacerlo podrá ver todás las funcionalidades del Land Viewer.
 
 \section{Interface gráfica}
 
-Una vez registrado, accedera a un mapa  similar al de Google Maps (Figura \ref{fig:main}). Destacamos en el 3 partes:
+Una vez registrado, accederá a un mapa  similar al de Google Maps (Figura \ref{fig:main}). Destacamos en el tres partes:
 
 \begin{itemize}
     \item La parte superior que nos permite buscar en el mundo.
@@ -61,7 +61,7 @@ En el modo mapa, busque la ciudad de Villa Carlos Paz. Podemos utilizar la herra
 
 Con la misma herramienta, es posible medir áreas si uno cierra el camino obtenido sobre el primer punto.
 
-\section{Evaluación}
+\section{Actividades}
 
 \begin{que}
     ¿Cual es la superficie del Lago San Roque, que se encuentra inmediatamente al norte de Villa Carlos Paz?
@@ -86,7 +86,7 @@ Dos características fundamenteles de las imágenes satelitales son la resoluci�
 
 La resolución espacial nos da una idea de que objenos podemos distinguir en el terreno. Por ejemplo, una resolución espacial de $30m$ nos permitirá distinguir una plaza de una manzana construida, pero no las casas dentro de una manzana.
 
-A su vez la resolución temporal nos da una idea de cual es el fenomeno que varia en el tiempo más corto que podemos ver. Por ejemplo, una resolución temporal de $15$ días nos permitirá estudiar como cambia la vegetación a lo largo de las estaciones pero no como cambian las nubes a lo largo de un día
+A su vez la resolución temporal nos da una idea de cual es el fenomeno que varía en el tiempo más corto que podemos ver. Por ejemplo, una resolución temporal de $15$ días nos permitirá estudiar como cambia la vegetación a lo largo de las estaciones pero no como cambian las nubes a lo largo de un día.
 
 
 \begin{figure}[h!]
@@ -115,7 +115,7 @@ Elija ahora el satélite Landsat 8 y observe que pareceran distintas escenas a l
 
 \begin{center}\includegraphics[scale=0.4]{in:nubes.png}\end{center}
 
-Seleccione la imagen del 2 de septiembre de 2017 (Figura \ref{fig:scene}) y observe que esta aparecerá en la pantalla. Puede ahora moverse como hacia antes y realizar mediciones.
+Seleccione la imagen del 2 de septiembre de 2017 (Figura \ref{fig:scene}) y observe que esta aparecerá en la pantalla. Puede ahora moverse como hacía antes y realizar mediciones.
 
 \begin{figure}[h!]
 \centering
@@ -152,7 +152,7 @@ Puede mover ahora el slider a la izquierda y la derecha para comparar las imáge
     \label{fig:slider}
 \end{figure}
 
-\section{Evaluación}
+\section{Actividades}
 \begin{que}
     ¿Cada cuantos días hay una nueva imagen Landsat 8?
 \end{que}
@@ -220,7 +220,7 @@ En nuestro caso particular, la combinación de bandas que mejor separa las zonas
 
 Puede descargar la imagen generada haciendo click en ESCENE DOWNLOAD, eligiendo la opción de \emph{Crop by extent} y luego haciendo click en Download.
 
-\section{Evaluación}
+\section{Actividades}
 
 \begin{que}
     ¿Cual es la superficie incendiada al oeste del Lago San Roque?
