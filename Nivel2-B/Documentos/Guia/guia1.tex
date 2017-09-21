@@ -92,6 +92,22 @@ Haciendo click en la pestaña \emph{Pixel info}, junto al \emph{Product explorer
 
 Obsevará información que incluye el píxel en el que se encuentra, la latitud y longitud del píxel, las coordenadas dentro del mapa y el valor de la bandas que se encuentren abiertas.
 
+\section{Exportar pantalla}
+
+Es posible exportar la visualización de la pantalla del SNAP para ser abierta en distintos software.
+
+En el caso de querer abrirla imagen en Google Earth ingrese al menú \emph{File, Export, Other, View as KMZ}. Seleccione donde quiere guardar el archivo y obtendrá un archivo \path{.kmz}.
+
+Para abrir la imagen en otro software de GIS o exportar una imagen jpg ingrese al menú \emph{File, Export, Other, View}. En este caso deberá seleccionar el tipo de archivo en \emph{File of type}. En caso de querer mantener la georreferencia debe seleccionar el tipo \emph{GeoTIFF - TIFF with geo-location} (Figura \ref{fig:export}). Conviene elegir en este caso elegir la opción \emph{Full resolution} para mantener la resolución original de la imagen.
+.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{fig:export.png}
+    \caption{Menu para exportar vista como archivo. Incluye las opciones para elegir el recorte, la resolución y el tipo de dato de saalida.}
+    \label{fig:export}
+\end{figure}
+
 \section{Actividad}
 
 Abrá la imagen \path{S1B_GRDH_20170727.dimg} de la  carpeta \path{material/raster_data}. Abra la banda \path{Sigma0_VH}.
