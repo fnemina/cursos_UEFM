@@ -1,80 +1,319 @@
 \documentclass[]{beamer}
+
 \usetheme[block=fill,progressbar=frametitle,numbering=none]{metropolis}
+
 \input{preamble.tex}
+
+\title{Interpretación visual}
+\subtitle{Nivel 0}
+
 \author{Marina Compagnucci \and Francisco Nemiña}
-\title{Nivel 0: interpretación visual}
-\subtitle{Introducción}
+
 \institute{Unidad de Educación y Formación Masiva \\ Comisión Nacional de Actividades Espaciales}
+
 \date{}
 \graphicspath{{./figs/}}
 
 \begin{document}
 
 \maketitle
-%--- Next Frame ---%
-\section{Descripción del curso}
 
-\begin{frame}{Área de estudio}
-    \begin{block}{Definición:}
-        Hablaremos de teledetección cuantitativa en el rango óptico cuando queramos obtener valores numéricos a partir de la utilización de imágenes obtenidas en la región entre los $0,4\mu m$ y los $14\mu m$.
+\begin{frame}{Esquema de la presentación}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{La teledetección}
+\subsection{Definición}
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Definición}
+    La teledetección es medir un sistema sin estar en contacto con el. En particular, en el contexto espacial, hablamos de teledetección cuando hablamos de las mediciones de la tierra realizadas por un satélite
     \end{block}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}{Objetivos}
-    Son objetivos del curso
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %%\includegraphics{/path/to/figure}
+        \caption{Esquema de adquisición de datos satelitales tradicional.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%}
+
+\subsection{Aplicaciones}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{exampleblock}{Google Earth}
+        \begin{figure}[h!]
+            \centering
+            %%\includegraphics{/path/to/figure}
+            \caption{Uso recreativo e institucional de imágenes de alta resolución en forma web con el Google Earth.}
+            \label{}
+        \end{figure}
+    \end{exampleblock}
+\end{frame}
+%--- Next Frame ---%}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{exampleblock}{Humedad del suelo}
+        \begin{figure}[h!]
+            \centering
+            %\includegraphics{/path/to/figure}
+            \caption{Obtención de mapas de humedad de suelo con imágenes de radar activos y pasivos para aplicaciones de agricultura mediante el uso de imágenes SMOS.}
+            \label{}
+        \end{figure}
+    \end{exampleblock}
+\end{frame}
+%--- Next Frame ---%}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{exampleblock}{Uso del suelo}
+        \begin{figure}[h!]
+            \centering
+            %\includegraphics{/path/to/figure}
+            \caption{Clasificación de cultivos y estimación de áreas mediante el uso de imágenes opticas Landsat Thematic Mappers}
+            \label{}
+        \end{figure}
+    \end{exampleblock}
+\end{frame}
+%--- Next Frame ---%}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{exampleblock}{Habitat marina}
+        \begin{figure}[h!]
+            \centering
+            %\includegraphics{/path/to/figure}
+            \caption{Obtención de mapas de disponibilidad de nutrientres mediante la estimación de clorofila \emph{a} con imágenes MODIS-AQUA.}
+            \label{}
+        \end{figure}
+    \end{exampleblock}
+\end{frame}
+%--- Next Frame ---%}
+
+\section{Formas de trabajo}
+\subsection{Tradicional}
+\begin{frame}{\secname : \subsecname}
     \begin{itemize}[<+->]
-        \item Incorporar los conceptos de firma espectral y espacio espectral.
-        \item Conocer las aproximaciones realizadas al trabajar en teledetección.
-        \item Poder realizar modelos que predigan los valores de variables biofísicas utilizando herramientas de teledetección.
-        \item Realizar y validar mapas de uso y cobertura utilizando imágenes satelitales.
+        \item Obtención de los productos satelitales de su agencia espacial amiga.
+        \item Pre-procesamiento de los productos utilizando softwares especificos de procesamiento de imagenes.
+        \item Obtención de datos mediante el uso de softwares de GIS y estadísticos.
     \end{itemize}
 \end{frame}
 %--- Next Frame ---%
 
-\section{Estructura del curso}
-\begin{frame}{Organización}
-    El curso se dividirá en dos partes con 3 clases cada una
-    \begin{enumerate}[<+->]
-        \item Variables continuas:
+\subsection{Servicio}
+\begin{frame}{\secname : \subsecname}
+    \begin{itemize}[<+->]
+        \item Conectarse a un sitio web que disponga de las productos deseados.
+        \item Pre-procesamiento de los productos utilizando las capacidades web.
+        \item Obtención de datos a partir del procesamiento y su posterior publicación.
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{exampleblock}{Ejemplos}
         \begin{itemize}[<+->]
-            \item Análisis de firmas espectrales.
-            \item Estimación de parámetros biofísicos.
-            \item Corrección radiométrica de imágenes.
+            \item \href{http://lv.eosda.com}{Land Viewer}
+            \item \href{https://earth.google.com/web/}{Google Earth}
+            \item \href{https://earthengine.google.com}{EarthEngine}
+            \item \href{http://landsatexplorer.esri.com/}{LandsatExplorer}
+            \item \href{http://apps.sentinel-hub.com/eo-browser/}{EO Browser}
+            \item \href{https://worldview.earthdata.nasa.gov/}{Nasa WorldView}
+            \item Y creciendo...
         \end{itemize}
-        \item Variables discretas:
-        \begin{itemize}[<+->]
-            \item Validación de clasificaciones
-            \item Clasificación supervisada y no supervisada de imágenes.
-            \item Análisis multifuente
+    \end{exampleblock}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Actividad}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{alertblock}{Land Viewer}
+        Medición de distancias, áreas y posiciones en el Land Viewer de EOSDA.
+    \end{alertblock}
+\end{frame}
+%--- Next Frame ---%
+
+
+\section{Resolución espacial y temporal}
+\subsection{Resolución espacial}
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Definición}
+        Es la capacidad del sensor de distinguir objetos en el terreno.
+    \end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{/path/to/figure}
+        \caption{Misma imagen en distinas resoluciones espaciales.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Resolución temporal}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Definición}
+        Es la capacidad del sensor de distinguir cambios en el tiempo.
+    \end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{/path/to/figure}
+        \caption{Evolución de un fenomeno en distintas resoluciones temporales.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Aplicaciones}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{/path/to/figure}
+        \caption{Comparación de distintos usos de productos satelitales y las resoluciones espaciales y temporales necesarias.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Actividad}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{alertblock}{Resolución espacial y temporal}
+        Comparación de imágenes con distintas resoluciones espaciles y temporales.
+    \end{alertblock}
+\end{frame}
+%--- Next Frame ---%
+
+
+\section{Combinaciones espectrales}
+\subsection{Luz visible}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{/path/to/figure}
+        \caption{Firma espectral de la vegetación en el espectro visible.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{/path/to/figure}
+        \caption{Firma espectral del suelo en el espectro visible.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{/path/to/figure}
+        \caption{Firma espectral del agua en el espectro visible.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Luz no visible}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{}
+        \caption{Firmas espectrales de distintass coberturas en otras zonas del espectro.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Combinaciones típicas}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{}
+        \caption{Combinación en color real.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{}
+        \caption{Combinación en falso color - urbano.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{}
+        \caption{Combinación en infrarrojo color.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        %\includegraphics{}
+        \caption{Combinación en falso color - tierra/agua.}
+        \label{}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Actividad}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{alertblock}{Combinaciones espectrales}
+        Cambio de combinaciones espectrales y medición de áreas incendiadas.
+    \end{alertblock}
+\end{frame}
+%--- Next Frame ---%
+
+\section{Capacitaciones}
+\subsection{CONAE}
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Areas de capacitación}
+    \begin{itemize}
+        \item Unidad de educación
+        \begin{itemize}
+            \item \href{https://2mp.conae.gov.ar}{Proyecto 2Mp}
+            \item \href{https://sopi.conae.gov.ar}{Proyecto SoPI}
         \end{itemize}
-    \end{enumerate}
-\end{frame}
-%--- Next Frame ---%
-
-\section{Aprobación}
-\begin{frame}{Actividades}
-    El curso se dividirá en distintas actividades durante su duración:
-    \begin{itemize}[<+->]
-        \item Videos teóricos.
-        \item Actividades prácticas.
-        \item Cuestionarios.
-        \item Un trabajo práctico final.
+        \item \href{http://ufs.conae.gov.ar/}{Unidad de formación superior}
+        \item \href{http://ig.edu.ar/}{Instituto Gullich}
     \end{itemize}
-    \pause Todas las actividades serán semanales y recomendamos revisar el conograma del curso.
+    \end{block}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}{Aprobación}
-    Para aprobar el curso se debe:
-    \begin{itemize}[<+->]
-        \item Obtener más de 60 puntos entre las distintas actividades.
-        \item Completar la encuenta de inicio del curso.
-        \item Completar la encuesta de finalización del curso.
-    \end{itemize}
+\begin{frame}{\secname : \subsecname}
+    Muchas gracias.
 \end{frame}
 %--- Next Frame ---%
-
-
 
 \end{document}
