@@ -1,4 +1,4 @@
-\documentclass[]{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \usetheme[block=fill,progressbar=frametitle,numbering=none]{metropolis}
 
@@ -35,9 +35,19 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %%\includegraphics{/path/to/figure}
-        \caption{Esquema de adquisición de datos satelitales tradicional.}
-        \label{}
+        \includegraphics[width=0.9\textwidth]{fig:pasivo.png}
+        \caption{Esquema de adquisición de datos para un sensor pasivo. \cite{wiki:rs}}
+        \label{fig:pasivo}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\textwidth]{fig:activo.png}
+        \caption{Esquema de adquisición de datos para un sensor activo. \cite{wiki:rs}}
+        \label{fig:activo}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%}
@@ -48,45 +58,41 @@
     \begin{exampleblock}{Google Earth}
         \begin{figure}[h!]
             \centering
-            %%\includegraphics{/path/to/figure}
-            \caption{Uso recreativo e institucional de imágenes de alta resolución en forma web con el Google Earth.}
-            \label{}
+            \includegraphics[width=0.75\textwidth]{fig:GE.png}
+            \label{fig:GE}
         \end{figure}
     \end{exampleblock}
 \end{frame}
 %--- Next Frame ---%}
 
 \begin{frame}{\secname : \subsecname}
-    \begin{exampleblock}{Humedad del suelo}
+    \begin{exampleblock}{Mapas de humedad del suelo \cite{web:smos}}
         \begin{figure}[h!]
             \centering
-            %\includegraphics{/path/to/figure}
-            \caption{Obtención de mapas de humedad de suelo con imágenes de radar activos y pasivos para aplicaciones de agricultura mediante el uso de imágenes SMOS.}
-            \label{}
+            \includegraphics[width=0.75\textwidth]{fig:smos.jpg}
+            \label{fig:smos}
         \end{figure}
     \end{exampleblock}
 \end{frame}
 %--- Next Frame ---%}
 
 \begin{frame}{\secname : \subsecname}
-    \begin{exampleblock}{Uso del suelo}
+    \begin{exampleblock}{Mapas de uso y cobertura \cite{web:lc}}
         \begin{figure}[h!]
             \centering
-            %\includegraphics{/path/to/figure}
-            \caption{Clasificación de cultivos y estimación de áreas mediante el uso de imágenes opticas Landsat Thematic Mappers}
-            \label{}
+            \includegraphics[width=0.75\textwidth]{fig:landcover.jpg}
+            \label{fig:landcover}
         \end{figure}
     \end{exampleblock}
 \end{frame}
 %--- Next Frame ---%}
 
 \begin{frame}{\secname : \subsecname}
-    \begin{exampleblock}{Habitat marina}
+    \begin{exampleblock}{Mapas de clorofila-a \cite{web:lc}}
         \begin{figure}[h!]
             \centering
-            %\includegraphics{/path/to/figure}
-            \caption{Obtención de mapas de disponibilidad de nutrientres mediante la estimación de clorofila \emph{a} con imágenes MODIS-AQUA.}
-            \label{}
+            \includegraphics[width=0.75\textwidth]{fig:chl.png}
+            \label{fig:chl}
         \end{figure}
     \end{exampleblock}
 \end{frame}
@@ -115,13 +121,14 @@
 
 \begin{frame}{\secname : \subsecname}
     \begin{exampleblock}{Ejemplos}
-        \begin{itemize}[<+->]
+        \begin{itemize}
             \item \href{http://lv.eosda.com}{Land Viewer}
             \item \href{https://earth.google.com/web/}{Google Earth}
             \item \href{https://earthengine.google.com}{EarthEngine}
             \item \href{http://landsatexplorer.esri.com/}{LandsatExplorer}
             \item \href{http://apps.sentinel-hub.com/eo-browser/}{EO Browser}
             \item \href{https://worldview.earthdata.nasa.gov/}{Nasa WorldView}
+            \item \href{http://maps.elie.ucl.ac.be/CCI/viewer/index.php}{Land Cover Maps}
             \item Y creciendo...
         \end{itemize}
     \end{exampleblock}
@@ -150,9 +157,44 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{/path/to/figure}
-        \caption{Misma imagen en distinas resoluciones espaciales.}
-        \label{}
+        \includegraphics[width=0.7\textwidth]{fig:10m.jpg}
+        \caption{Imagen con resolución espacial de 10m.}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{fig:30m.jpg}
+        \caption{Imagen con resolución espacial de 30m.}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{fig:90m.jpg}
+        \caption{Imagen con resolución espacial de 90m.}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{fig:300m.jpg}
+        \caption{Imagen con resolución espacial de 300m.}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{fig:1000m.jpg}
+        \caption{Imagen con resolución espacial de 1000m.}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -169,9 +211,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{/path/to/figure}
-        \caption{Evolución de un fenomeno en distintas resoluciones temporales.}
-        \label{}
+        \includegraphics[width=0.6\textwidth]{fig:restemp.jpg}
+        \caption{Evolución de un fenomeno temporal.}
+        \label{fig:restemp}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -181,9 +223,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{/path/to/figure}
+        \includegraphics[width=0.7\textwidth]{fig:evst.png}
         \caption{Comparación de distintos usos de productos satelitales y las resoluciones espaciales y temporales necesarias.}
-        \label{}
+        \label{fig:evst}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -204,9 +246,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{/path/to/figure}
+        \includegraphics[width=0.8\textwidth]{fig:v.png}
         \caption{Firma espectral de la vegetación en el espectro visible.}
-        \label{}
+        \label{fig:v}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -214,9 +256,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{/path/to/figure}
+        \includegraphics[width=0.8\textwidth]{fig:s.png}
         \caption{Firma espectral del suelo en el espectro visible.}
-        \label{}
+        \label{fig:s}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -224,9 +266,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{/path/to/figure}
+        \includegraphics[width=0.8\textwidth]{fig:a.png}
         \caption{Firma espectral del agua en el espectro visible.}
-        \label{}
+        \label{fig:a}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -236,9 +278,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{}
+        \includegraphics[width=0.8\textwidth]{fig:spec.png}
         \caption{Firmas espectrales de distintass coberturas en otras zonas del espectro.}
-        \label{}
+        \label{fig:spec}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -248,9 +290,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{}
+        \includegraphics[width=0.6\textwidth]{4-3-2.jpeg}
         \caption{Combinación en color real.}
-        \label{}
+        \label{4-3-2}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -258,9 +300,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{}
+        \includegraphics[width=0.6\textwidth]{12-11-4.jpeg}
         \caption{Combinación en falso color - urbano.}
-        \label{}
+        \label{12-11-4}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -268,9 +310,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{}
+        \includegraphics[width=0.6\textwidth]{8-4-3.jpeg}
         \caption{Combinación en infrarrojo color.}
-        \label{}
+        \label{8-4-3}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -278,9 +320,9 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        %\includegraphics{}
+        \includegraphics[width=0.6\textwidth]{8-11-4.jpeg}
         \caption{Combinación en falso color - tierra/agua.}
-        \label{}
+        \label{8-11-4}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
@@ -315,5 +357,10 @@
     Muchas gracias.
 \end{frame}
 %--- Next Frame ---%
+
+\begin{frame}[t,allowframebreaks]
+        %\frametitle{Bibliografía}
+        \printbibliography
+\end{frame}
 
 \end{document}
