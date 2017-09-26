@@ -1,8 +1,10 @@
-\documentclass[aspectratio=169]{beamer}
-
+\documentclass[handout,aspectratio=169]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm]
 \usetheme[block=fill,progressbar=frametitle,numbering=none]{metropolis}
-
+\usepackage{animate}
 \input{preamble.tex}
+\usepackage{multimedia}
 
 \title{Interpretación visual}
 \subtitle{Nivel 0}
@@ -66,7 +68,7 @@
 %--- Next Frame ---%}
 
 \begin{frame}{\secname : \subsecname}
-    \begin{exampleblock}{Mapas de humedad del suelo \cite{web:smos}}
+    \begin{exampleblock}{Mapas de humedad del suelo - SMOS}
         \begin{figure}[h!]
             \centering
             \includegraphics[width=0.75\textwidth]{fig:smos.jpg}
@@ -77,7 +79,7 @@
 %--- Next Frame ---%}
 
 \begin{frame}{\secname : \subsecname}
-    \begin{exampleblock}{Mapas de uso y cobertura \cite{web:lc}}
+    \begin{exampleblock}{Mapas de uso y cobertura - ESA/LANDCOVER}
         \begin{figure}[h!]
             \centering
             \includegraphics[width=0.75\textwidth]{fig:landcover.jpg}
@@ -88,7 +90,7 @@
 %--- Next Frame ---%}
 
 \begin{frame}{\secname : \subsecname}
-    \begin{exampleblock}{Mapas de clorofila-a \cite{web:lc}}
+    \begin{exampleblock}{Mapas de clorofila-a - SUOMI-NPP/VIIRS}
         \begin{figure}[h!]
             \centering
             \includegraphics[width=0.75\textwidth]{fig:chl.png}
@@ -211,12 +213,42 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}[h!]
         \centering
-        \includegraphics[width=0.6\textwidth]{fig:restemp.jpg}
-        \caption{Evolución de un fenomeno temporal.}
-        \label{fig:restemp}
+        \includegraphics[width=0.6\textwidth]{fig:lake-beg.jpeg}
+        \caption{Evolución temporal del contenido de clorofila en superficie en el lago San Roque. Imagen del 12 de febrero de 2017.}
+        \label{fig:lake-beg}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\textwidth]{fig:lake-end.jpeg}
+        \caption{Evolución temporal del contenido de clorofila en superficie en el lago San Roque. Imagen del 22 de febrero de 2017.}
+        \label{fig:lake-end}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\textwidth]{fig:lake-aft.jpeg}
+        \caption{Evolución temporal del contenido de clorofila en superficie en el lago San Roque. Imagen del 14 de marzo de 2017. (\href{https://goo.gl/M5595z}{https://goo.gl/M5595z}).}
+        \label{fig:lake-aft}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{figure}[h!]
+    \centering
+    \movie[width = 0.6 \textwidth,loop]{\centering\includegraphics[width=0.6\textwidth]{Pic.png}}{./figs/1.mp4}
+    \caption{Evolución del huracan Maria en el mes de septiembre. (\href{https://goo.gl/M5595z}{https://goo.gl/M5595z}).}
+    \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
 
 \subsection{Aplicaciones}
 
@@ -358,9 +390,5 @@
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t,allowframebreaks]
-        %\frametitle{Bibliografía}
-        \printbibliography
-\end{frame}
 
 \end{document}
