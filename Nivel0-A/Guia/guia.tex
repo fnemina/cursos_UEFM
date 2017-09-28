@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt]{book}
 \input{preamble.tex}
 \usepackage{float}
+\usepackage{array}%
 \graphicspath{{./figs/}}
 
 \title{{\large Nivel 0} \\ Interpretación visual de imágenes satelitales}
@@ -13,51 +14,45 @@
 Existen en la actualidad distintas formas de acceder a productos de origen satelital. Es posible obtener resultados que varían desde imágenes en crudo hasta mapas de propiedades y usos del suelo.
 
 En los últimos años, además de las formas tradicionales de procesamiento de imágenes, donde un usuario debía descargar un producto y luego manipularlo, comenzaron a aparecer soluciones web, permitiendo el acceso a un amplio abanico de productos, independientemente de su nivel de conocimiento. Entre ellas se destacan el \href{https://explorer.earthengine.google.com/#workspace}{EarthEngine} de Google, el \href{http://landsatexplorer.esri.com/}{LandsatExplorer} de ESRI, el \href{http://apps.sentinel-hub.com/eo-browser/}{EO Browser} de Sentinel-hub y el \href{lv.eosda.com}{Land Viewer} de EOS.
-%ver
+
 No obstante esta posibilidad, es importante disponer de capacitaciones que permitan mejorar el uso de las herramientas. Este taller pretende incorporar los conocimientos básicos de teledetección óptica en interpretación visual, para que los usuarios sin conocimientos previos, puedan acercarce al manejo de productos satelitales de forma clara y sencilla.
-%ver
-Se trabajará con la aplicación Land Viewer, con el objetivo de analizar los efectos producidos por el invendio en las cercanias de Carlos Paz, provincia de Córdoba en septiembre de 2017.
+
+Se trabajará con la aplicación Land Viewer, con el objetivo de analizar los efectos producidos por el incendio en las cercanías de Carlos Paz, provincia de Córdoba en septiembre de 2017.
 
 \chapter{Land Viewer}
 
-LandView es un servicio web de la empresa Earth Observing System, el cual permite explorar, visualizar y descargar, de forma gratuita, hasta 10 imagenes por día de sensores que incluyen la serie \href{https://landsat.usgs.gov/}{Landsat} (1982-actualidad), \href{https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mcd43a4}{MODIS} (2013-actualidad) y \href{https://sentinel.esa.int/web/sentinel/missions/sentinel-2}{Sentinel 2} (2012-actualidad). % yo no pondría o que esta entre parentesis.
+LandView es un servicio web de la empresa Earth Observing System, el cual permite explorar, visualizar y descargar, de forma gratuita, hasta 10 imagenes por día de sensores que incluyen la serie \href{https://landsat.usgs.gov/}{Landsat}, \href{https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mcd43a4}{MODIS} y \href{https://sentinel.esa.int/web/sentinel/missions/sentinel-2}{Sentinel 2} .
 
 \section{Registro}
 Para acceder al servicio de LandView debe dirigirse a \url{https://lv.eosda.com} y registrarse
 
 \section{Interface gráfica}
 
-Una vez que ingresa, accederá a un mapa  similar al de Google Maps (Figura \ref{fig:main}). % pondria una única figura
+Una vez que ingresa, accederá a un mapa  similar al de Google Maps (Figura \ref{fig:main}).
 Destacamos en el tres partes:
 
-\begin{figure}[hb!]
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.85\textwidth]{fig:main.png}
-    \caption{Pantalla principal del Land Viewer. Abajo a derecha de encuentra la opción de registro. A la derecha tenemos las herramietas de medición, zoom y mapas. Arriba el cuadro de busqueda. A la izquierda encontramos la selección de imágenes y productos satelitales.}
+    \includegraphics[width=0.75\textwidth]{fig:main.png}
+    \caption{Pantalla principal del Land Viewer. Abajo a derecha se encuentra en fucsia la opción de registro. A la derecha en rojo tenemos las herramietas de medición, zoom y mapas. Arriba en verde el cuadro de busqueda. A la izquierda en azul encontramos la selección de imágenes y productos satelitales.}
     \label{fig:main}
 \end{figure}
 
 \begin{itemize}
-    \item La parte superior que nos permite buscar en el mundo.
-     \begin{center}\includegraphics[scale=0.4]{in:search.png}\end{center}
-    \item La parte izquierda que nos permite hacer zoom en el mapa, marcar zonas de interés, realizar mediciones y agregar distintas capas como puede ser un mapa de alturas, una imagen satelital de base o un mapa político.
-     \begin{center}\includegraphics[scale=0.4]{in:edit.png}\end{center}
-    \item La parte derecha donde podemos elegir distintos productos satelitales, mostrarlos, realizar combinaciones de bandas y guardar los datos obtenidos.
-     \begin{center}\includegraphics[scale=0.4]{in:sat.png}\end{center}
+    \item La parte superior que nos permite buscar en el mundo (en verde).
+    \item La parte izquierda que nos permite hacer zoom en el mapa, marcar zonas de interés, realizar mediciones y agregar distintas capas como puede ser un mapa de alturas, una imagen satelital de base o un mapa político (en rojo).
+    \item La parte derecha donde podemos elegir distintos productos satelitales, mostrarlos, realizar combinaciones de bandas y guardar los datos obtenidos (en azul).
 \end{itemize}
 
 Podemos ver tambien la latitud y longitud de cualquier punto posicionandonos sobre el y observando el valor en la parte inferior de la pantalla.
 
-
-
-
 \section{Mediciones}
 
-En el mapa, busque la ciudad de Villa Carlos Paz. Podrá ver sus coordenadas en el margen inferior izquierdo. Utilice la herramienta "Medir distancias" \includegraphics[scale=0.2]{in:medir.png} la distancia entre Córdoba Capital y Villa Carlos Paz (Figura \ref{fig:distancia}). Para realizaro, haga un click en el sitiode inicio y otro en el lugar de finalización.
+En el mapa, busque la ciudad de Villa Carlos Paz. Podrá ver sus coordenadas en el margen inferior izquierdo. Utilice la herramienta \emph{Medir distancias} \includegraphics[scale=0.2]{in:medir.png} la distancia entre Córdoba Capital y Villa Carlos Paz (Figura \ref{fig:distancia}). Para realizaro, haga un click en el sitiode inicio y otro en el lugar de finalización.
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.85\textwidth]{fig:distancia.png}
+    \includegraphics[width=0.75\textwidth]{fig:distancia.png}
     \caption{Medición de distancia entre la ciudad de Córdoba y Villa Carlos Paz. El valor aparece en la parte inferior de la pantalla.}
     \label{fig:distancia}
 \end{figure}
@@ -94,8 +89,8 @@ La resolución temporal indica la la duración del fenomeno ma chico que se pued
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.85\textwidth]{fig:evst.png}
-    \caption{}
+    \includegraphics[width=0.75\textwidth]{fig:evst.png}
+    \caption{Distintos usos de productos satelitales según la resolución espacial y temporal recomendada.}
     \label{fig:evst}
 \end{figure}
 
@@ -105,24 +100,38 @@ Ambas resoluciones suelen estar relacionadas (Figura \ref{fig:evst}), de forma  
 Es importante destacar que no existen mejores o peores imágenes, sino que su elección dependerá del objeto de estudio.
 
 \section{Imágenes satelitales}
-Para seleccionar una imagen es necesario definir un area de interes (AOI), la herramienta "Draw rectangular"   %poner el icono o marcar en la figura.
-En este caso dibuje un rectanglo que incluya la zona entre el Lago San Roque y Córdoba (Figura \ref{fig:aoi}) y seleccione el satélite Landsat 8 desde % poner el icono o mostrar en la imagen.
+Para seleccionar una imagen es necesario definir un area de interes (AOI), la herramienta \emph{Draw rectangular} \includegraphics[scale=0.2]{in:draw.png}
+En este caso dibuje un rectanglo que incluya la zona entre el Lago San Roque y Córdoba (Figura \ref{fig:aoi}) y seleccione el satélite Landsat 8 desde \includegraphics[scale=0.2]{in:sat.png}.
+
 A continuación, en el margen derecho, aparecerán todas las escena disponibles.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.85\textwidth]{fig:aoi.png}
+    \includegraphics[width=0.75\textwidth]{fig:aoi.png}
     \caption{Gráfico de un área de interes (AOI) para seleccionar la zona en la que se seleccionaran las imagenes.}
     \label{fig:aoi}
 \end{figure}
 
- Por defecto, Land Viewer muestra solo aquellas escenas que poseen una cobertura nubosa de hasta un 60\% y de los últimos 3 meses. Es posible cambiarlo haciendo click en la parte superior del Scene Search.  Modifique la cobertura nubosa al 100\%.
-%yo pondria la captura con el grafiquito de nubes desplegado
-\begin{center}\includegraphics[scale=0.4]{in:nubes.png}\end{center}
+ Por defecto, Land Viewer muestra solo aquellas escenas que poseen una cobertura nubosa de hasta un 60\% (Figura \ref{fig:nube}) y de los últimos 3 meses (Figura \ref{fig:fecha}). Es posible cambiarlo haciendo click en la parte superior del Scene Search.  Modifique la cobertura nubosa al 100\%.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig:nube.png}
+    \caption{Herramienta de selección de cobertura de nubes y ángulo de incidencia solar.}
+    \label{fig:nube}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig:fecha.png}
+    \caption{Herramienta de selección de fechas para las imágenes.}
+    \label{fig:fecha}
+\end{figure}
+
 
 Elija la imagen del 2 de Septiembre de 2017 (Figura \ref{fig:scene}) y se mostrará sobre el mapa. Puede moverse sobre ella y realizar mediciones.
 
-\begin{figure}[h!]
+\begin{figure}[hb!]
 \centering
 \begin{minipage}{.425\linewidth}
   \includegraphics[width=\linewidth]{fig:sat.png}
@@ -135,7 +144,8 @@ Elija la imagen del 2 de Septiembre de 2017 (Figura \ref{fig:scene}) y se mostra
 \label{fig:scene}
 \end{figure}
 
-La imagen pertenece al sensor OLI del satelite Landsat 8, con una resolución espacial de $30m$, por lo tanto, solo podrá distinguir objetos de tamaño mayor como manzanas o parques, pero no más chicos.% ver
+La imagen pertenece al sensor OLI del satelite Landsat 8, con una resolución espacial de $30m$, por lo tanto, solo podrá distinguir objetos de tamaño mayor como manzanas o parques, pero no más chicos.
+
 Vuelva a la lista de satélite y seleccione el producto MODIS MCD43A4, ahora encontrará una imagen por día. Seleccione la correspondiente al 27 de Agosto de 2017.
 
 Observe que no es posible distinguir las manzanas de la ciudad de Córdoba como en el caso anterior. La imagen elegida pertenece al producto \emph{MCD43A4} generado a partir del sensor MODIS de los satélites AQUA y TERRA. Con una resolución espacial entre los 250m y los 1000m, según como mostremos la imagen.
@@ -151,7 +161,7 @@ Desplace el slider a ambos lados y visualice la zona cercana al Lago San Roque (
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.85\textwidth]{fig:slider.png}
+    \includegraphics[width=0.75\textwidth]{fig:slider.png}
     \caption{Dos imágenes en pantalla, separadas por el slider que permite cambiar entre las dos zonas.}
     \label{fig:slider}
 \end{figure}
@@ -182,7 +192,7 @@ Los satélite miden la cantida de luz que proviene de la superficie terrestre. L
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.85\textwidth]{fig:spec.png}
+    \includegraphics[width=0.75\textwidth]{fig:spec.png}
     \caption{Firmas espectrales para el agua, suelo y vegetación.}
     \label{fig:spec}
 \end{figure}
@@ -201,27 +211,48 @@ En Land Viewer, puede modificarlo haciendo click en BAND COMBINATIONS (Figura \r
     \label{fig:bandas}
 \end{figure}
 
-Las combinaciones espectrales permiten mostrar distinta información:
-
-\begin{itemize}
-    \item Color real (\emph{Natural color - rojo,verde,azul}): Muestra la imagen de forma similar a como la verían nuestros ojos. La vegetación se ve verde, los suelos en distintos tonos de marrón, las ciudades en blanco y los cuerpos de agua se observan en colores oscuros.
-    \begin{center}\includegraphics[scale=0.3]{4-3-2.jpeg}\end{center}
-    \item Falso color (\emph{False color (urban) - SWIR2,SWIR1,Rojo}): Proporciona una interpretación similar a la observada por el ojo humano, sin tener en cuenta la incidencia de la atmosfera. La vegetación se visualiza en verde, las zonas urbanas en blanco y ciam, los suelos en una variedad de colores y las zonas con agua se notan en azul o negro.
-    \begin{center}\includegraphics[scale=0.3]{12-11-4.jpeg}\end{center}
-    \item Infrarrojo color (\emph{Color infrared (vegetation) - NIR, Rojo, Verde}): La combinación de color hsbitual para separar vegetación de otras coberturas. Auí la vegetación suele verse en color rojo brillante, las ciudades y suelos sin cobertura en tonos de cian y las zonas con agua se ven en negro.
-    \begin{center}\includegraphics[scale=0.3]{8-4-3.jpeg}\end{center}
-    \item Falso color (\emph{Land/water - NIR, SWIR1, Rojo}): Combinación de bandas útil para caracteriza la vegetacion y separarla de la cobertura agua. La vegetación se verá en tonos de naranja, dependiendo de su contenido de humedad, las zonas con agua en azul y las ciudades y el suelo desnudo en  color blanco o verde.
-    \begin{center}\includegraphics[scale=0.3]{8-11-4.jpeg}\end{center}
-\end{itemize}
-
-En nuestro caso particular, la combinación espectral que mejor separa las zonas incenciadas de las no incendiadas es la \emph{Short wave infrared}, donde se muestra en rojo las zonas que se incendiaron recientemente y en verde las zonas con vegetación. Seleccione la combinación en Land Viewer y compare ambas imágenes. (Figura \ref{fig:incendio}).
+Las combinaciones espectrales permiten mostrar distinta información (Tabla \ref{tab:ce}).
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.85\textwidth]{fig:incendio.png}
+    \includegraphics[width=0.75\textwidth]{fig:incendio.png}
     \caption{Imagen en combinación espectral \emph{Short wave infrared}. La vegetación se observa en colores verde brillante, el incendio en rojo, el agua en negro y la ciudad en violeta.}
     \label{fig:incendio}
 \end{figure}
+
+En nuestro caso particular, la combinación espectral que mejor separa las zonas incenciadas de las no incendiadas es la \emph{Short wave infrared}, donde se muestra en rojo las zonas que se incendiaron recientemente y en verde las zonas con vegetación. Seleccione la combinación en Land Viewer y compare ambas imágenes. (Figura \ref{fig:incendio}).
+
+\pagebreak
+\hspace{0pt}
+\vfill
+\begin{table}[H]
+    \begin{tabular}{m{0.55\textwidth} c}
+        \toprule
+        \multicolumn{2}{c}{Combinaciones espectrales}\\
+        \midrule\\
+        Color real (\emph{Natural color - rojo, verde, azul}): Muestra la imagen de forma similar a como la verían nuestros ojos. La vegetación se ve verde, los suelos en distintos tonos de marrón, las ciudades en blanco y los cuerpos de agua se observan en colores oscuros. &
+        \begin{minipage}{.4\textwidth} \includegraphics[width=\linewidth]{4-3-2.jpeg}
+        \end{minipage}\\
+        &\\
+        Falso color (\emph{False color (urban) - SWIR2, SWIR1, Rojo}): Proporciona una interpretación similar a la observada por el ojo humano, sin tener en cuenta la incidencia de la atmosfera. La vegetación se visualiza en verde, las zonas urbanas en blanco y ciam, los suelos en una variedad de colores y las zonas con agua se notan en azul o negro. &
+        \begin{minipage}{.4\textwidth} \includegraphics[width=\linewidth]{12-11-4.jpeg}
+        \end{minipage}\\
+        &\\
+        Infrarrojo color (\emph{Color infrared (vegetation) - NIR, Rojo, Verde}): La combinación de color hsbitual para separar vegetación de otras coberturas. Aquí la vegetación suele verse en color rojo brillante, las ciudades y suelos sin cobertura en tonos de cian y las zonas con agua se ven en negro. &
+        \begin{minipage}{.4\textwidth} \includegraphics[width=\linewidth]{8-4-3.jpeg}
+        \end{minipage}\\
+        &\\
+        Falso color (\emph{Land/water - NIR, SWIR1, Rojo}): Combinación de bandas útil para caracteriza la vegetacion y separarla de la cobertura agua. La vegetación se verá en tonos de naranja, dependiendo de su contenido de humedad, las zonas con agua en azul y las ciudades y el suelo desnudo en  color blanco o verde. &
+        \begin{minipage}{.4\textwidth} \includegraphics[width=\linewidth]{8-11-4.jpeg}
+        \end{minipage}\\
+        &\\
+        \bottomrule
+    \end{tabular}
+    \caption{Combinaciones espectrales típicas.}
+    \label{tab:ce}
+\end{table}
+\vfill
+\hspace{0pt}
 
 Puede descargar la imagen generada haciendo click en ESCENE DOWNLOAD, elija la opción  \emph{Crop by extent} y luego haga click en Download.
 
