@@ -1,10 +1,10 @@
 \chapter{Interacciones con el blanco}
 
-Esta clase tiene como objetivo familiarizarnos con la interpretación visual de imágenes SAR en las bandas L, C y X. Para esto se estudiaran las interacciones con distintos blancos para cada una de las bandas.
+Esta clase tiene como objetivo familiarizarse con la interpretación visual de imágenes SAR. Para ello se estudiaran las interacciones de los distintos blancos para las bandas X, C y L.
 
 \section{Interpretación visual}
 
-Para las imágenes radar hay 3 grandes grupos de interacciones posibles entre el blanco: doble rebote, en volumen y especular. Como será esta interacción va a depender tanto del blanco como de la banda en la que funciona el satélite (Figura \ref{fig:interacciones})
+En las microondas se suele hablar de tres grupos de interacciones: doble rebote, en volumen y especular, las cuales dependerán del blanco y la banda del satélite (Figura \ref{fig:interacciones}).
 
 \begin{figure}[h!]
     \centering
@@ -15,80 +15,84 @@ Para las imágenes radar hay 3 grandes grupos de interacciones posibles entre el
 
 \subsection{Banda-X}
 
-Las imágenes adquiridas en \emph{Banda X} son las que tienen menor longitud de onda. Serán por lo tanto las que menos penetración tengan en la vegetación y las que más componente de backscatter presenten en suelos sin cobertura (Figura \ref{fig:interacciones}).
+Las imágenes adquiridas en \emph{Banda X} son las que tienen menor longitud de onda, por lo tanto tiene menos penetración en la vegetación y mayor backscatter en suelos sin cobertura (Figura \ref{fig:interacciones}).
 
 
 Abra la imagen \path{CSKS3_GEC_B_S2_03_HH_RD_SF_20141221211655_20141221211703.h5} de la carpeta \path{material/raster_data/COSMO}. Despliege la banda \path{Sigma_HH_db}.
 
-Observe guiandose con la imagen óptica:
+Utilice la imagen óptica para identificar:
 
 \begin{enumerate}
-    \item En que color se observa la pista de aterrizaje.
-    \item En que color se ven las zonas urbanas.
-    \item En que color se observan las zonas con vegetación.
-    \item En que color se observa el agua que está en el lago.
-    \item En que color se observa el agua del canal.
+    \item La pista de aterrizaje.
+    \item Zonas urbanas.
+    \item Zonas con vegetación.
+    \item El agua que está en el lago.
+    \item El agua del canal.
 \end{enumerate}
-
+Luego especifique en que colores los observa en la imágen SAR.
 \begin{que}
-    ¿Que le permite decir sobre la geometría de cada blanco los valores de backscatter encontrados arriba?
+    ¿A qué interacciones corresponde cada uno de los blancos enunciados anteriormente?
 \end{que}
 
 \subsection{Banda C}
 
-Las imágenes adquiridas en \emph{Banda C} son las que tienen longitudes de onda intermedias. Tendrán por lo tanto menos reflectancia en los suelos sin coberturaa y nos permitiran extraer información sobre el scattering en volumnes (Figura \ref{fig:interacciones}).
+Las imágenes adquiridas en \emph{Banda C} tienen longitudes de onda intermedias, entonces tendrán menos reflectancia en los suelos sin cobertura, dando información sobre el scattering en volumnes (Figura \ref{fig:interacciones}).
 
 Abra la imagen \path{SENTINEL} de la carpeta \path{material/raster_data/SENTINEL1}. Despliege la banda \path{Sigma_HH_db}.
 
-Observe guiandose con la imagen óptica:
+Utilice la imagen óptica para identificar:
 
 \begin{enumerate}
-    \item En que color se observa la pista de aterrizaje.
-    \item En que color se ven las zonas urbanas.
-    \item En que color se observan las zonas con vegetación.
-    \item En que color se observa el agua que está en el lago.
-    \item En que color se observa el agua del canal.
+    \item La pista de aterrizaje.
+    \item Zonas urbanas.
+    \item Zonas con vegetación.
+    \item El agua que está en el lago.
+    \item El agua del canal.
+\end{enumerate}
+Luego especifique en que colores los observa en la imágen SAR.
 \end{enumerate}
 
 \begin{que}
-    ¿Que le permite decir sobre la geometría de cada blanco los valores de backscatter encontrados arriba?
+    ¿A qué interacciones corresponde cada uno de los blancos enunciados anteriormente?
 \end{que}
+
 \subsection{Banda L}
 
-Las imágenes adquiridas en \emph{Banda L} son las que tienen mayor longitud de onda. Tendran en general interacciones especulares con los suelos sin cobertura, pero una buena longitud de penetración en la superficie. Además permitirán identificar propiedades de las coberturas vegetadas por debajo del canopeo (Figura \ref{fig:interacciones}).
+Las imágenes adquiridas en \emph{Banda L} son las que poseen mayor longitud de onda. En general, mantendrá interacciones especulares con los suelos sin cobertura, pudiendo penetrar en funcion del grado de humedad. Además, permitirá identificar propiedades de las coberturas vegetadas por debajo del canopeo (Figura \ref{fig:interacciones}).
 
 Abra la imagen \path{ALOS} de la carpeta \path{material/raster_data/ALOS}. Despliege la banda \path{Sigma_HH_db}.
 
 
-Observe guiandose con la imagen óptica:
+Utilice la imagen óptica para identificar:
 
 \begin{enumerate}
-    \item En que color se observa la pista de aterrizaje.
-    \item En que color se ven las zonas urbanas.
-    \item En que color se observan las zonas con vegetación.
-    \item En que color se observa el agua que está en el lago.
-    \item En que color se observa el agua del canal.
+    \item La pista de aterrizaje.
+    \item Zonas urbanas.
+    \item Zonas con vegetación.
+    \item El agua que está en el lago.
+    \item El agua del canal.
 \end{enumerate}
 
 \begin{que}
-    ¿Que le permite decir sobre la geometría de cada blanco los valores de backscatter encontrados arriba?
+    ¿A qué interacciones corresponde cada uno de los blancos enunciados anteriormente?
 \end{que}
 
 \section{Valores de $dB$}
 
-Es habitual expresar el valor del coeficiente de backscatter en dB para las imágenes SAR. Para calcularlo en distintos sectores de la imagen puede posicionarse sobre un píxel y observar en \emph{Pixel info} el valor de \path{Sigma0_HH_db} en dB.
+Es habitual expresar el valor del coeficiente de backscatter en dB para las imágenes SAR. Para calcularlo en distintos sectores de la imagen, puede posicionarse sobre un píxel y observar en \emph{Pixel info} el valor de \path{Sigma0_HH_db} en dB.
 
-Observe guiandose con la imagen óptica para la imagen \path{COSMO}:
 
-\begin{enumerate}
-    \item Cuanto vale el valor de dB para la pista de aterrizaje.
-    \item Cuanto vale el valor de dB para las zonas urbanas.
-    \item Cuanto vale el valor de dB para las zonas con vegetación.
-    \item Cuanto vale el valor de dB para el agua que está en el lago.
-    \item Cuanto vale el valor de dB para el agua del canal.
-\end{enumerate}
+Utilice la imagen óptica para identificar en la imagen \path{COSMO}:
 
-Otra forma de obtener estos valores es calculando el promedio sobre una región. Para esto haga click en \emph{Vector, New Vector Data Container} y ponga el nombre \emph{Úrbano} (Figura \ref{fig:vector-cont}). Seleccione luego la herramienta \emph{Rectangle drawing tool} de la barra de herramienta y digitalice un rectangulo sobre la zona úrbana. Para confirmar la geometría haga click fuera de ella luego de crearla
+ \begin{enumerate}
+     \item El valor de dB de la pista de aterrizaje.
+     \item El valor de dB de las zonas urbanas.
+     \item El valor de dB de las zonas con vegetación.
+     \item El valor de dB para el agua del lago.
+     \item El valor de dB para el agua del canal.
+ \end{enumerate}
+
+Se puede calcular el valor promedio de dB seleccionando una región especifica en la imagen. En primer lugar, debe crear el contenedor del vector haciendo click en \emph{Vector, New Vector Data Container}. Nombrelo \emph{Urbano} (Figura \ref{fig:vector-cont}). Seleccione luego  \emph{Rectangle drawing tool} de la barra de herramienta y digitalice un rectángulo sobre la zona urbana. Para confirmar la geometría haga click fuera de ella.
 
 \begin{figure}[h!]
     \centering
@@ -99,7 +103,7 @@ Otra forma de obtener estos valores es calculando el promedio sobre una región.
 
 Repita el proceso y cree contenedores de vectores para zonas de vegetación, agua con alto y bajo brillo y la pista de aterrizaje.
 
-Dirijase luego al menú \emph{Analysis, Statistics} y en la ventana que aparece tilde la opción \emph{Use ROI maks(s)} (Figura \ref{fig:estadistica}). Seleccione la región Urbano y haga click en el botón \emph{Refresh view}. El SNAP calculará la estadística para la zona y devolverá la estadística para la región seleccionada. Puede seleccionar varias regiones en simultaneo para calcular la estadística en cada una.
+En el menú \emph{Analysis, Statistics} y tilde la opción \emph{Use ROI maks(s)} (Figura \ref{fig:estadistica}). Seleccione la región Urbano, haga click en el botón \emph{Refresh view} y el SNAP calculará la estadística. Puede hacerlo para varias regiones en simultaneo.
 
 \begin{figure}[h!]
     \centering
@@ -108,28 +112,28 @@ Dirijase luego al menú \emph{Analysis, Statistics} y en la ventana que aparece 
     \label{fig:estadistica}
 \end{figure}
 
-Repita este analisis para las imágenes en banda L y C.
+Repita este análisis para las imágenes en banda L y C.
 
 \section{Actividad}
 
-Comparando las tres imágenes SAR utilizadas responda
+Comparando las tres imágenes SAR utilizadas responda:
 
 \begin{que}
-    ¿Que coberturas tienen siempre valores altos de brillo? ¿Como se puede interpretar geometricamente?
+    ¿Qué coberturas tienen siempre valores altos de brillo? ¿Cómo se puede interpretar la interacción?
 \end{que}
 
 \begin{que}
-    ¿Que coberturas tienen siempre valores bajos de brillo? ¿Como se puede interpretar geometricamente?
+    ¿Qué coberturas tienen siempre valores bajos de brillo? ¿Como se puede interpretar la interacción?
 \end{que}
 
 \begin{que}
-    ¿Cual es la cobertura que más cambian al cambiar de una banda a otra?
+    ¿Cuál es la cobertura que más varía al cambiar de banda?
 \end{que}
 
 \begin{que}
-    ¿Cuales son las coberturas con más ruido dentro de las imágenes?
+    ¿Cuáles son las coberturas con más ruido dentro de las imágenes?
 \end{que}
 
 \begin{que}
-    Observe las imágenes que no se encuentran en dB. ¿Que diferencia encuentra en la distribución de valores de brillo?
+    Observe las imágenes que no se encuentran en dB. ¿Qué diferencia encuentra en la distribución de valores de brillo?
 \end{que}
