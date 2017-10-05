@@ -8,7 +8,7 @@ Para descargar imágenes SAR utilizaremos el catálogo del \href{https://vertex.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{fig:region.png}
+    \includegraphics[width=0.8\textwidth]{fig:region.png}
     \caption{}
     \label{fig:region}
 \end{figure}
@@ -17,18 +17,18 @@ Seleccione luego en \emph{Dataset} el set de datos de \emph{ALOS PALSAR} (Figura
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{fig:dataset.png}
+    \includegraphics[width=0.8\textwidth]{fig:dataset.png}
     \caption{}
-    \label{fit:dataset}
+    \label{fig:dataset}
 \end{figure}
 
-Aparecera a la derecha de la pantalla una lista de producto. Seleccione de ellos el de nombre \emph{ALOS PALSAR PLR} del 20 de abril del 2040 pertenenciente al frame 6070 y el path 119 (Figura \ref{fig:dataset}).
+Aparecera a la derecha de la pantalla una lista de producto. Seleccione de ellos el de nombre \emph{ALOS PALSAR PLR} del 20 de abril del 2040 pertenenciente al frame 6070 y el path 119 (Figura \ref{fig:descarga}).
 
 Descarge el producto \emph{Level 1.1 Complex (661.42 MB)} (Figura \ref{fig:descarga}). En caso de que el sistema así se lo pida, registrese.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{fig:descarga.png}
+    \includegraphics[width=0.8\textwidth]{fig:descarga.png}
     \caption{}
     \label{fig:descarga}
 \end{figure}
@@ -43,7 +43,9 @@ Para calibrar la imagen, dirijase al menu \emph{Radar, Radiometric, Calibrate} (
 
  \begin{figure}[h!]
      \centering
-     \includegraphics{fig:calibrar.png}
+     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar1.png}}
+     \hfill
+     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar2.png}}
      \caption{}
      \label{fig:calibrar}
  \end{figure}
@@ -62,7 +64,9 @@ Para calibrar la imagen, dirijase al menu \emph{Radar, Radiometric, Calibrate} (
 
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:multilook.png}
+    \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:multilook1.png}}
+    \hfill
+    \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:multilook2.png}}
     \caption{}
     \label{fig:multilook}
 \end{figure}
@@ -76,14 +80,18 @@ Observe la banda \path{sigma_0_HH} de la imagen multilookeada.
 
 Existen otros filtros que ayudan a disminuir el ruido de la imagen. Uno de los más comunes es el filtro \emph{Lee Sigma}. Para aplicarlo a la imagen multilookeada vaya al menu \emph{Radar, Speckle Filter, Single Product Speckle Filter}.
 
-Seleccione en source la imagen \path{ALOS-P1_1__A-ORBIT__ALPSRP278916070_Cal_ML} que generó al aplicar el multilook. En processing parameter elija el filtro de \emph{Lee Sigma} con un numero de looks igual a 1 y una ventana de 7x7 (Figura \ref{fig:lee})
-
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:lee.png}
+    \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:lee1.png}}
+    \hfill
+    \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:lee2.png}}
     \caption{}
     \label{fig:lee}
 \end{figure}
+
+Seleccione en source la imagen \path{ALOS-P1_1__A-ORBIT__ALPSRP278916070_Cal_ML} que generó al aplicar el multilook. En processing parameter elija el filtro de \emph{Lee Sigma} con un numero de looks igual a 1 y una ventana de 7x7 (Figura \ref{fig:lee})
+
+
 
 \begin{que}
     Observe y compare la banda \path{sigma_0_HH} de la imagen filtrada con la imagen multilookeada.
@@ -103,7 +111,9 @@ Para hacerlo, vaya al menú \emph{Radar, Geometric, Ellipsoid Correction, Averag
 
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:elipsoide.png}
+    \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:elipsoide1.png}}
+    \hfill
+    \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:elipsoide2.png}}
     \caption{}
     \label{fig:elipsoide}
 \end{figure}
@@ -120,7 +130,10 @@ Para hacerlo, vaya al menú \emph{Radar, Geometric, Terrain Correction, Range Do
 
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:gtc.png}
+    \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:gtc1.png}}
+    \hfill
+    \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:gtc2.png}}
+    \caption{}
     \caption{}
     \label{fig:gtc}
 \end{figure}
