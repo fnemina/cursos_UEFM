@@ -3,29 +3,27 @@
 Esta clase tiene como objetivo aplicar los conceptos vistos en el curso para la detección se espejos de agua utilizando imagenes \emph{Sentinel 1}.
 
 % Imagen antes
-% S1B_IW_GRDH_1SDV_20170318T094500_20170318T094525_004761_008514_AA78
+% S1B_IW_GRDH_1SDV_20171007T090618_20171007T090643_007721_00DA33_E6D1
 
-
-% Imagen despues
-% S1B_IW_GRDH_1SDV_20170411T094500_20170411T094525_005111_008F1E_B19C
-
+\section{Actividad}
 
 \begin{que}
-    Descargue la imagen \path{ S1B_IW_GRDH_1SDV_20170423T094501_20170423T094526_005286_00942F_BE42} del \href{https://vertex.daac.asf.alaska.edu/}{Alaska Satellite Facility}. Utilice la busqueda por \emph{Granule} en lugar de la \emph{Geospatial}. La imagen del 23 de abril de 2017 incluye la zona de La Madrid en la Provincia de Tucuman, Argentina.
+    Descargue la imagen
+    \begin{center}\path{ S1B_IW_GRDH_1SDV_20171007T090618_20171007T090643_007721_00DA33_E6D1}\end{center} del \href{https://vertex.daac.asf.alaska.edu/}{Alaska Satellite Facility}. Utilice la busqueda por \emph{Granule} en lugar de la \emph{Geospatial}. La imagen del 10 de octubre de 2017 e incluye la zona de Chascomus, provincia de Buenos Aires, Argentina.
 \end{que}
 
 \begin{que}
     Utilizando la herramienta \emph{Raster, Subset} haga un recorte entre las coordenadas geográficas ABCD.
     \begin{figure}[h!]
         \centering
-        \includegraphics{fig:coordenadas.png}
+        %\includegraphics{fig:coordenadas.png}
         \caption{}
         \label{}
     \end{figure}
 \end{que}
 
 \begin{que}
-    Procese la imagen como se vio en la clase 3. Calibrela para obtener el coeficiente de backscatter, aplique los filtros correspondientes y proyectela en terreno utilizando un DEM.
+    Procese la imagen como se vio en la clase 3. Calibrela para obtener el coeficiente de backscatter, aplique los filtros correspondientes y proyectela en terreno utilizando un DEM. Exporte como imagen la vista obtenida en dB.
 \end{que}
 
 \begin{que}
@@ -41,9 +39,5 @@ Esta clase tiene como objetivo aplicar los conceptos vistos en el curso para la 
     \begin{verbatim}
         255*(Amplitude < T)
     \end{verbatim}
-    donde T es el valor que obtuvo en el punto anterior.
-\end{que}
-
-\begin{que}
-    Repita el proceso para la imagen \path{S1B_IW_GRDH_1SDV_20170318T094500_20170318T094525_004761_008514_AA78} previa a la inundacion
+    donde T es el valor que obtuvo en el punto anterior. Exporte como KMZ el mapa obtenido.
 \end{que}
