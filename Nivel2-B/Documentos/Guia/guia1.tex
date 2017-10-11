@@ -5,7 +5,7 @@ Esta clase tirno vomo objetivo familiarizarce con el entorno gráfico del progra
 
 \section{Interfaz gráfica del SNAP}
 
-Descomprima los archivos decargados denominanados \path{material.tar.gz}. Abra el programa SNAP, allí encontrará la interfaz gráfica del usuario (Figura \ref{fig:int})
+Descomprima los archivos decargados denominanados \directory{material.tar.gz}. Abra el programa SNAP, allí encontrará la interfaz gráfica del usuario (Figura \ref{fig:int})
 
 \begin{figure}[h!]
     \centering
@@ -16,9 +16,9 @@ Descomprima los archivos decargados denominanados \path{material.tar.gz}. Abra e
 
 \section{Apertura de imágenes}
 
-En el menú principal, seleccione \emph{Open product...} y dentro de la carpeta \path{material/raster_data}, elija \path{S2A_USER_MTD_SAFL2A_PDMC_20161206.dim}.
+En el menú principal, seleccione \menu{Open product...} y dentro de la carpeta \directory{material/raster\_data}, elija \directory{S2A\_USER\_MTD\_SAFL2A\_PDMC\_20161206.dim}.
 
-Haga doble click sobre el nombre de la imgen y se desplegará, en el \emph{Producto Explorer} un árbol que incluye las siguientes opciones:
+Haga doble click sobre el nombre de la imágen y se desplegará, en el \menu{Producto Explorer} un árbol que incluye las siguientes opciones:
 \dirtree{%
     .1 [1] S2\_MSIL2A\_20170702.
     .2 Metadata.
@@ -55,16 +55,16 @@ Para visualizar una de las bandas de la imagen haga doble click sobre el nombre 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.5]{fig:NAV.png}
-    \caption{Herramientass de navegación. De izquierda a derecha: \emph{Selection tool}, para seleccionar objetos en la imagen, \emph{Panning tool}, para moverse dentro de la imagen, y \emph{Zooming tool}, para hacer zoom en la imagen.}
+    \caption{Herramientass de navegación. De izquierda a derecha: \menu{Selection tool}, para seleccionar objetos en la imagen, \menu{Panning tool}, para moverse dentro de la imagen, y \menu{Zooming tool}, para hacer zoom en la imagen.}
     \label{fig:NAV}
 \end{figure}
 
-En el \emph{Product Explorer} haga click derecho sobre el nombre y seleccione \emph{Open RGB image windows}. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación que utiliza las bandas 4, 3 y 2 de Sentinel 2, desplieguela haciendo click en OK (Figura \ref{fig:RVA}).
+En el \menu{Product Explorer} haga click derecho sobre el nombre y seleccione \menu{Open RGB image windows}. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación que utiliza las bandas 4, 3 y 2 de Sentinel 2, desplieguela haciendo click en OK (Figura \ref{fig:RVA}).
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.7]{fig:RGB.png}
-    \caption{Ventana de combinación de bandas. Puede eligir una banda para cada canal del monitor (\emph{Red, Green, Blue}) o puede optarpor una preseleccionada del menú \emph{Profile}}
+    \caption{Ventana de combinación de bandas. Puede eligir una banda para cada canal del monitor (\emph{Red, Green, Blue}) o puede optar por una preseleccionada del menú \emph{Profile}}
     \label{fig:RGB}
 \end{figure}
 
@@ -80,7 +80,7 @@ En el \emph{Product Explorer} haga click derecho sobre el nombre y seleccione \e
 
 \section{Consulta de píxel}
 
-Para obtener información sobre un pixel posicionese sobre uno en la imagen y seleccione la pestaña \emph{Pixel info}, junto al \emph{Product explorer} (Figura \ref{fig:pixel}).
+Para obtener información sobre un pixel posicionese sobre uno en la imagen y seleccione la pestaña \menu{Pixel info}, junto al \menu{Product explorer} (Figura \ref{fig:pixel}).
 
 \begin{figure}[h!]
     \centering
@@ -93,7 +93,7 @@ Allí encontrará la latitud y longitud, las coordenadas dentro del mapa y el va
 
 \section{Exportar pantalla}
 
-Es posible exportar la visualización de la imagen completa o de una región específica desde \emph{File, Export view}. Si selecciona \emph{View as KMZ} obtendrá un archivo \path{.kmz} que luego podrá abrir desde Google Earth; o elegir \emph{View as image} generando archivos \path{.GeoTiff o .JPG} para visualizarlo en otro software. Para mantener la georreferencia debe optar por \emph{GeoTIFF - TIFF with geo-location} con la opción \emph{Full resolution}. De esta manera sse mantiene la resolucion original de la imagen.(Figura \ref{fig:export}).
+Es posible exportar la visualización de la imagen completa o de una región específica desde \menu{File>Export view}. Si selecciona \menu{View as KMZ} obtendrá un archivo \directory{.kmz} que luego podrá abrir desde Google Earth; o elegir \menu{View as image} generando archivos \directory{.GeoTiff} o \directory{.jpg} para visualizarlo en otro software. Para mantener la georreferencia debe optar por \emph{GeoTIFF - TIFF with geo-location} con la opción \emph{Full resolution}. De esta manera sse mantiene la resolucion original de la imagen.(Figura \ref{fig:export}).
 .
 
 \begin{figure}[h!]
@@ -105,7 +105,7 @@ Es posible exportar la visualización de la imagen completa o de una región esp
 
 \section{Actividad}
 
-Abra la imagen que se encuentra en la carpeta \path{material/raster_data/COSMO}. Abra la banda \path{Sigma0_VH}.
+Abra la imagen que se encuentra en la carpeta \directory{material/raster\_data>COSMO}. Abra la banda \path{Sigma0_VH}.
 
 \begin{que}
     ¿A qué coberturas pertenecen las regiones de la imagen con mayor nivel de brillo?
