@@ -18,7 +18,7 @@ En las microondas se suele hablar de tres grupos de interacciones: doble rebote,
 Las imágenes adquiridas en \emph{Banda X} son las que tienen menor longitud de onda, por lo tanto tiene menos penetración en la vegetación y mayor backscatter en suelos sin cobertura (Figura \ref{fig:interacciones}).
 
 
-Abra la imagen \path{CSKS3_GEC_B_S2_03_HH_RD_SF_20141221211655_20141221211703.h5} de la carpeta \path{material/raster_data/COSMO}. Despliege la banda \path{Sigma_HH_db}.
+Abra la imagen \directory{CSKS3\_GEC\_B\_S2\_03\_HH\_RD\_SF\_20141221211655\_20141221211703.h5} de la carpeta \directory{material/raster\_data>COSMO}. Despliege la banda \path{Sigma_HH_db}.
 
 Utilice la imagen óptica para identificar:
 
@@ -38,7 +38,7 @@ Luego especifique en que colores los observa en la imágen SAR.
 
 Las imágenes adquiridas en \emph{Banda C} tienen longitudes de onda intermedias, entonces tendrán menos reflectancia en los suelos sin cobertura, dando información sobre el scattering en volumnes (Figura \ref{fig:interacciones}).
 
-Abra la imagen \path{SENTINEL} de la carpeta \path{material/raster_data/SENTINEL1}. Despliege la banda \path{Sigma_HH_db}.
+Abra la imagen \path{SENTINEL} de la carpeta \directory{material/raster\_data/SENTINEL1}. Despliege la banda \path{Sigma_HH_db}.
 
 Utilice la imagen óptica para identificar:
 
@@ -60,7 +60,7 @@ Luego especifique en que colores los observa en la imágen SAR.
 
 Las imágenes adquiridas en \emph{Banda L} son las que poseen mayor longitud de onda. En general, mantendrá interacciones especulares con los suelos sin cobertura, pudiendo penetrar en funcion del grado de humedad. Además, permitirá identificar propiedades de las coberturas vegetadas por debajo del canopeo (Figura \ref{fig:interacciones}).
 
-Abra la imagen \path{ALOS} de la carpeta \path{material/raster_data/ALOS}. Despliege la banda \path{Sigma_HH_db}.
+Abra la imagen \path{ALOS} de la carpeta \directory{material/raster\_data/ALOS}. Despliege la banda \path{Sigma_HH_db}.
 
 
 Utilice la imagen óptica para identificar:
@@ -79,8 +79,14 @@ Utilice la imagen óptica para identificar:
 
 \section{Valores de $dB$}
 
+<<<<<<< HEAD
 Es habitual expresar el valor del coeficiente de backscatter en dB para las imágenes SAR. Para calcularlo en distintos sectores de la imagen, puede posicionarse sobre un píxel y observar en \emph{Pixel info} el valor de \path{Sigma0_HH_db} en dB.
 
+=======
+Es habitual expresar el valor del coeficiente de backscatter en dB para las imágenes SAR. Para calcularlo en distintos sectores de la imagen puede posicionarse sobre un píxel y observar en \menu{Pixel info} el valor de \path{Sigma_HH_db} en dB.
+
+Observe guiandose con la imagen óptica para la imagen \emph{COSMO}:
+>>>>>>> 9cad12d80de0edb141987ff58af94e4c618cbd9f
 
 Utilice la imagen óptica para identificar en la imagen \path{COSMO}:
 
@@ -92,7 +98,11 @@ Utilice la imagen óptica para identificar en la imagen \path{COSMO}:
      \item El valor de dB para el agua del canal.
  \end{enumerate}
 
+<<<<<<< HEAD
 Se puede calcular el valor promedio de dB seleccionando una región especifica en la imagen. En primer lugar, debe crear el contenedor del vector haciendo click en \emph{Vector, New Vector Data Container}. Nombrelo \emph{Urbano} (Figura \ref{fig:vector-cont}). Seleccione luego  \emph{Rectangle drawing tool} de la barra de herramienta y digitalice un rectángulo sobre la zona urbana. Para confirmar la geometría haga click fuera de ella.
+=======
+Otra forma de obtener estos valores es calculando el promedio sobre una región. Para esto haga click en \menu{Vector>New Vector Data Container} y ponga el nombre \emph{Úrbano} (Figura \ref{fig:vector-cont}). Seleccione luego la herramienta \menu{Rectangle drawing tool} de la barra de herramienta y digitalice un rectangulo sobre la zona úrbana. Para confirmar la geometría haga click fuera de ella luego de crearla
+>>>>>>> 9cad12d80de0edb141987ff58af94e4c618cbd9f
 
 \begin{figure}[h!]
     \centering
@@ -103,7 +113,11 @@ Se puede calcular el valor promedio de dB seleccionando una región especifica e
 
 Repita el proceso y cree contenedores de vectores para zonas de vegetación, agua con alto y bajo brillo y la pista de aterrizaje.
 
+<<<<<<< HEAD
 En el menú \emph{Analysis, Statistics} y tilde la opción \emph{Use ROI maks(s)} (Figura \ref{fig:estadistica}). Seleccione la región Urbano, haga click en el botón \emph{Refresh view} y el SNAP calculará la estadística. Puede hacerlo para varias regiones en simultaneo.
+=======
+Dirijase luego al menú \menu{Analysis>Statistics} y en la ventana que aparece tilde la opción \emph{Use ROI maks(s)} (Figura \ref{fig:estadistica}). Seleccione la región Urbano y haga click en el botón \emph{Refresh view}. El SNAP calculará la estadística para la zona y devolverá la estadística para la región seleccionada. Puede seleccionar varias regiones en simultaneo para calcular la estadística en cada una.
+>>>>>>> 9cad12d80de0edb141987ff58af94e4c618cbd9f
 
 \begin{figure}[h!]
     \centering
