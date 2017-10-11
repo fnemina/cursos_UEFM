@@ -7,7 +7,7 @@ Esta clase tiene como objetivo comprender los conceptos básicos de polarimetria
 Para poder realizar descomposiciones polatrimétricas es necesario conservar la información completa de la imagen SAR a lo largo de todo el proceso. Para hacer esto repetiremos los pasos vistos en la clase anterior, pero haciendo foco en como mantener dicha información.
 
 \subsection{Calibración}
-Abra la imagen \path{ALPSRP278916070-L1.1.zip} que descargo del Alaska Satellite Facility.  Dirijase al menu \emph{Radar, Radiometric, Calibrate} (Figura \ref{fig:calibrar}). En este caso, tilde la opción \emph{Save as complex output} en \emph{Processing parameters}
+Abra la imagen \directory{ALPSRP278916070-L1.1.zip} que descargo del Alaska Satellite Facility.  Dirijase al menu \menu{Radar>Radiometric>Calibrate} (Figura \ref{fig:calibrar}). En este caso, tilde la opción \emph{Save as complex output} en \emph{Processing parameters}
 
 \begin{figure}[h!]
     \centering
@@ -20,7 +20,7 @@ Abra la imagen \path{ALPSRP278916070-L1.1.zip} que descargo del Alaska Satellite
 
 \subsection{Calculo de matriz de coherencia}
 
-Para calcular la matriz de coherencia, una vez calibrada la imagen utilice la herramienta \emph{Radar, Polarimetric, Polarimetric matrix generation}. Seleccione la imagen \path{ALOS-P1_1__A-ORBIT__ALPSRP278916070_Cal} y en Processing parameters elija la matrix T3. No se preocupe por el significado de esta matriz actualmente (Figura \ref{fig:t3}).
+Para calcular la matriz de coherencia, una vez calibrada la imagen utilice la herramienta \menu{Radar>Polarimetric>Polarimetric matrix generation}. Seleccione la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} y en Processing parameters elija la matrix T3. No se preocupe por el significado de esta matriz actualmente (Figura \ref{fig:t3}).
 
 \begin{figure}[h!]
     \centering
@@ -33,7 +33,7 @@ Para calcular la matriz de coherencia, una vez calibrada la imagen utilice la he
 
 \subsection{Filtrado}
 
-En el caso de imagenes full polarimetricas existen distintos tipos de filtros para aplicar. Para usarlos vaya al menu \emph{Radar, Polarimetric, Polarimetric speckle filter}. Utilice en este caso el filtro \emph{Refined Lee} sobre la imagen \path{ALOS-P1_1__A-ORBIT__ALPSRP278916070_Cal_mat} (Fitra \ref{fig:plee})
+En el caso de imagenes full polarimetricas existen distintos tipos de filtros para aplicar. Para usarlos vaya al menu \menu{Radar>Polarimetric>Polarimetric speckle filter}. Utilice en este caso el filtro \menu{Refined Lee} sobre la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_mat} (Figura \ref{fig:plee})
 
 \begin{figure}[h!]
     \centering
@@ -60,7 +60,7 @@ La descomposición general da tres canales que suelen interpretarse de la siguie
     \item Azul: Información por procesos de doble rebote o un número par de rebotes.
 \end{itemize}
 
-Obtenga la descomposición de Pauli usando la herramienta \emph{Radar, Polarimetric, Polarimetric Decomposition} seleccionando como imagen de entrada la corregida en terreno y como descomposición la de Pauli (Figura \ref{fig:pauli})
+Obtenga la descomposición de Pauli usando la herramienta \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como imagen de entrada la corregida en terreno y como descomposición la de Pauli (Figura \ref{fig:pauli})
 
 \begin{figure}[h!]
     \centering
