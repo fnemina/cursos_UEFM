@@ -1,13 +1,13 @@
 \chapter{Polarimetría}
 
-Esta clase tiene como objetivo comprender los conceptos básicos de polarimetria. Para ello veremos como obtener las matrices polarimétricas y generar a partir de ellas distintas descomposiciones que nos den información sobre el blanco.
+Esta clase tiene como objetivo comprender los conceptos básicos de polarimetria. Para ello se estudiará la forma de obtener las matrices polarimétricas y generar a partir de ellas, distintas descomposiciones que proporcionen información sobre el blanco.
 
-\section{Calculo de matrices polarimétricas}
+\section{Cálculo de matrices polarimétricas}
 
 Para poder realizar descomposiciones polatrimétricas es necesario conservar la información completa de la imagen SAR a lo largo de todo el proceso. Para hacer esto repetiremos los pasos vistos en la clase anterior, pero haciendo foco en como mantener dicha información.
 
 \subsection{Calibración}
-Abra la imagen \directory{ALPSRP278916070-L1.1.zip} que descargo del Alaska Satellite Facility.  Dirijase al menu \menu{Radar>Radiometric>Calibrate} (Figura \ref{fig:calibrar}). En este caso, tilde la opción \emph{Save as complex output} en \emph{Processing parameters}
+Abra la imagen \directory{ALPSRP278916070-L1.1.zip} que descargo del Alaska Satellite Facility.  Dirijase al menu \menu{Radar>Radiometric>Calibrate} (Figura \ref{fig:calibrar}) y, en este caso, tilde la opción \emph{Save as complex output} en \emph{Processing parameters}. Recuerde siempre asignar la ruta de guardado.
 
 \begin{figure}[h!]
     \centering
@@ -20,9 +20,9 @@ Abra la imagen \directory{ALPSRP278916070-L1.1.zip} que descargo del Alaska Sate
 
 \subsection{Calculo de matriz de coherencia}
 
-Para calcular la matriz de coherencia, una vez calibrada la imagen utilice la herramienta \menu{Radar>Polarimetric>Polarimetric matrix generation}.
+Para calcular la matriz de coherencia, una vez calibrada la imagen, utilice la herramienta \menu{Radar>Polarimetric>Polarimetric matrix generation}.
 
-Seleccione la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} y en Processing parameters elija la matrix T3. No se preocupe por el significado de esta matriz actualmente (Figura \ref{fig:t3}).
+Seleccione la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} y en Processing parameters elija la matrix T3. Por el momento, no se preocupe por el significado de esta matriz (Figura \ref{fig:t3}).
 
 \begin{figure}[h!]
     \centering
@@ -35,7 +35,7 @@ Seleccione la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} y
 
 \subsection{Filtrado}
 
-En el caso de imagenes full polarimetricas existen distintos tipos de filtros para aplicar. Para usarlos vaya al menu \menu{Radar>Polarimetric>Polarimetric speckle filter}. Utilice en este caso el filtro \menu{Refined Lee} sobre la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_mat} (Figura \ref{fig:plee})
+En el caso de imágenes full polarimetricas se pueden aplicar distintos tipos de filtros, que se encuentran en el menu \menu{Radar>Polarimetric>Polarimetric speckle filter}. Utilice en este caso el filtro \menu{Refined Lee} sobre la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_mat} (Figura \ref{fig:plee})
 
 \begin{figure}[h!]
     \centering
@@ -48,13 +48,13 @@ En el caso de imagenes full polarimetricas existen distintos tipos de filtros pa
 
 \subsection{Proyección}
 
-Puede ahora reproyectar la imagen en el terreno aplicando los procesos de \emph{Deskewing} y proyección sobre un modelo de elevación digital.
+Reproyecte la imagen en el terreno aplicando los procesos de \emph{Deskewing} sobre un modelo de elevación digital.
 
 \section{Descomposición de Pauli}
 
-La descomposición de Pauli nos permite en una imagen full polarimétrica separar la información sobre interacciones de tipo doble rebote, en volumen y especulares.
+La descomposición de Pauli permite separar la información sobre interacciones de tipo doble rebote, en volumen y especulares, en una imagen full polarimétrica
 
-La descomposición general da tres canales que suelen interpretarse de la siguiente manera:
+La descomposición genera tres canales que suelen interpretarse de la siguiente manera:
 
 \begin{itemize}
     \item Rojo: Información por procesos de un solo rebote o un número impar par de rebotes.
@@ -62,7 +62,7 @@ La descomposición general da tres canales que suelen interpretarse de la siguie
     \item Azul: Información por procesos de doble rebote o un número par de rebotes.
 \end{itemize}
 
-Obtenga la descomposición de Pauli usando la herramienta \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como imagen de entrada la corregida en terreno y como descomposición la de Pauli (Figura \ref{fig:pauli})
+Obtenga la descomposición de Pauli usando la herramienta \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como entrada la imagen corregida en terreno y la descomposición la de Pauli en Processing parametric(Figura \ref{fig:pauli})
 
 \begin{figure}[h!]
     \centering
@@ -73,7 +73,7 @@ Obtenga la descomposición de Pauli usando la herramienta \menu{Radar>Polarimetr
     \label{fig:pauli}
 \end{figure}
 
-Observe la descomposición de Pauli haciendo click derecho sobre la imagen obtenida y seleccionando la opción \emph{Open RGB image window} (Figura \ref{fig:pauli}).
+Observe los resultados haciendo click derecho sobre la imagen obtenida en la opción \emph{Open RGB image window} (Figura \ref{fig:pauli}).
 
 \begin{figure}[h!]
     \centering
@@ -83,19 +83,14 @@ Observe la descomposición de Pauli haciendo click derecho sobre la imagen obten
 \end{figure}
 
 \section{Actividades}
-
+En la descomposición de Paulin:
 \begin{que}
-    ¿De que color se ven las zonas urbanas en la descomposición de Pauli?
-\end{que}
+    ¿De qué color  se observan:
+\begin{\begin{itemize}
+  \item las zonas urbanas
+  \item los bosques
+  \item el agua
+  \item la pista de aterrizaje
+\end{itemize}
 
-\begin{que}
-    ¿De que color se ven los bosques en la descomposición de Pauli?
-\end{que}
-
-\begin{que}
-    ¿De que color se ve el agua en la descomposición de Pauli?
-\end{que}
-
-\begin{que}
-    ¿De que color se ve la pista de aterrizaje en la descomposición de Pauli?
 \end{que}
