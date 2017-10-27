@@ -18,7 +18,11 @@ En las microondas se suele hablar de tres grupos de interacciones: doble rebote,
 Las imágenes adquiridas en \emph{Banda X} son las que tienen menor longitud de onda, por lo tanto tiene menos penetración en la vegetación y mayor backscatter en suelos sin cobertura (Figura \ref{fig:interacciones}).
 
 
-Abra la imagen \directory{CSKS3\_GEC\_B\_S2\_03\_HH\_RD\_SF\_20141221211655\_20141221211703.h5} de la carpeta \directory{material/raster\_data>COSMO}. Despliege la banda \path{Sigma_HH_db}.
+Abra la imagen
+\begin{center}
+\directory{raster\_data/CSKS1\_SCS\_B\_S2\_04\_HH\_RA\_FF\_20090321.dim}
+\end{center}
+Despliege la banda \path{Sigma_HH_db}.
 
 Utilice la imagen óptica para identificar:
 
@@ -38,7 +42,12 @@ Luego especifique en que colores los observa en la imágen SAR.
 
 Las imágenes adquiridas en \emph{Banda C} tienen longitudes de onda intermedias, entonces tendrán menos reflectancia en los suelos sin cobertura, dando información sobre el scattering en volumnes (Figura \ref{fig:interacciones}).
 
-Abra la imagen \path{SENTINEL} de la carpeta \directory{material/raster\_data/SENTINEL1}. Despliege la banda \path{Sigma_HH_db}.
+Abra la imagen
+\begin{center}
+  \directory{raster\_data/S1B\_IW\_SLC\_\_1SDV\_20171012.dim}
+  \end{center}
+
+Despliege la banda \path{Sigma_VV_db}.
 
 Utilice la imagen óptica para identificar:
 
@@ -60,7 +69,11 @@ Luego especifique en que colores los observa en la imágen SAR.
 
 Las imágenes adquiridas en \emph{Banda L} son las que poseen mayor longitud de onda. En general, mantendrá interacciones especulares con los suelos sin cobertura, pudiendo penetrar en funcion del grado de humedad. Además, permitirá identificar propiedades de las coberturas vegetadas por debajo del canopeo (Figura \ref{fig:interacciones}).
 
-Abra la imagen \path{ALOS} de la carpeta \directory{material/raster\_data/ALOS}. Despliege la banda \path{Sigma_HH_db}.
+Abra la imagen
+\begin{center}
+  \directory{raster\_data/ALOS-H1\_1\_\_A-ORBIT\_\_ALPSRP054716060.dim}
+\end{center}
+Despliege la banda \path{Sigma_HH_db}.
 
 
 Utilice la imagen óptica para identificar:
@@ -99,7 +112,7 @@ Se puede calcular el valor promedio de dB seleccionando una región especifica e
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.4]{fig:vector-cont.png}
-    \caption{}
+    \caption{Herramenta de creación de contenedores vectoriales. Debe serse un nombre único a cada uno y puede agregarse una descripción.}
     \label{fig:vector-cont}
 \end{figure}
 
@@ -111,7 +124,7 @@ En el menú \emph{Analysis, Statistics} y tilde la opción \emph{Use ROI maks(s)
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.4]{fig:estadistica.png}
-    \caption{}
+    \caption{Calculo de parámetros estadísticos en SNAP. Es posible calcularlos sobre una región seleccionando \emph{Use ROI maks(s)} y luego la región de interés.}
     \label{fig:estadistica}
 \end{figure}
 

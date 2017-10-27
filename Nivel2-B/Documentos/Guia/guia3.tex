@@ -1,4 +1,4 @@
-\chapter{Preprocesamiento}
+\chapter{Spleckle y procesamiento}
 
 Esta clase tiene como objetivo comprender los pasos básicos de preprocesamiento de imágenes SAR. Para ello se descargarán imágenes de la web y se procesarán a distintos niveles de corrección geométrica y radiométrica.
 
@@ -9,7 +9,7 @@ Para descargar imágenes SAR utilizaremos el catálogo del \href{https://vertex.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{fig:region.png}
-    \caption{}
+    \caption{Selección de un área de interés en el catálogo \emph{Vertex} del \emph{Alaska Satellite Facility}}
     \label{fig:region}
 \end{figure}
 
@@ -18,7 +18,7 @@ Seleccione en \emph{Dataset} el set de datos de \emph{ALOS PALSAR} (Figura \ref{
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{fig:dataset.png}
-    \caption{}
+    \caption{Selección de \emph{Dataset} en el catálogo \emph{Vertex} del \emph{Alaska Satellite Facility}}
     \label{fig:dataset}
 \end{figure}
 
@@ -29,7 +29,7 @@ Descarge el producto \emph{Level 1.1 Complex (661.42 MB)} (Figura \ref{fig:desca
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{fig:descarga.png}
-    \caption{}
+    \caption{Slección de producto para la descarga en el catálogo \emph{Vertex} del \emph{Alaska Satellite Facility}}
     \label{fig:descarga}
 \end{figure}
 
@@ -46,7 +46,7 @@ Para calibrar la imagen, dirijase al menu \menu{Radar>Radiometric>Calibrate} (Fi
      \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar1.png}}
      \hfill
      \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar2.png}}
-     \caption{} % arreglar figura
+     \caption{Calibración de productos SAR utilizando el SNAP. Recuerde seleccionar el directorio de salida en \emph{Directory}.} % arreglar figura
      \label{fig:calibrar}
  \end{figure}
 
@@ -67,7 +67,7 @@ Para calibrar la imagen, dirijase al menu \menu{Radar>Radiometric>Calibrate} (Fi
     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:multilook1.png}}
     \hfill
     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:multilook2.png}}
-    \caption{}
+    \caption{Multilook de una imagen SAR utilizando el SNAP.}
     \label{fig:multilook}
 \end{figure}
 
@@ -85,7 +85,7 @@ Existen otros filtros que ayudan a disminuir el ruido de la imagen. Uno de los m
     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:lee1.png}}
     \hfill
     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:lee2.png}}
-    \caption{}
+    \caption{Filtrado para reducir el ruido Speckle utilizando el filtro \emph{Lee Sigma}.}
     \label{fig:lee}
 \end{figure}
 
@@ -114,7 +114,7 @@ Para hacerlo, vaya al menú \menu{Radar>Geometric>Ellipsoid Correction>Average H
     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:elipsoide1.png}}
     \hfill
     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:elipsoide2.png}}
-    \caption{}
+    \caption{Proyección de un producto SAR sobre el elipsoide.}
     \label{fig:elipsoide}
 \end{figure}
 
@@ -124,17 +124,18 @@ Para hacerlo, vaya al menú \menu{Radar>Geometric>Ellipsoid Correction>Average H
 
 \subsection{Elipsoide - GTC}
 
-Al proyectar la imagen sobre un modelo de elevación digital está teniendo en cuenta el relieve del lugar, mejorando algunos aspectos de la imagen como el forshortening y el foreshadowinf.
+Al proyectar la imagen sobre un modelo de elevación digital está teniendo en cuenta el relieve del lugar, mejorando algunos aspectos de la imagen como el forshortening y el foreshadowing.
 
 Para hacerlo, vaya al menú \menu{Radar>Geometric>Terrain Correction>Range Doppler Terrain Correction}. Seleccione la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML\_Spk\_DSk} y en \menu{processing parameters} destilde la opción \emph{Mask out areas without elevation} (Figura \ref{fig:gtc}).
+
+{\bf Importante:} Al realizar la proyección sobre un DEM el SNAP lo descarga automaticamente. Esto puede tomar varios minutos dependiendo de su conexión.
 
 \begin{figure}[h!]
     \centering
     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:gtc1.png}}
     \hfill
     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:gtc2.png}}
-    \caption{}
-    \caption{}
+    \caption{Proyección de un producto SAR sobre un DEM.}
     \label{fig:gtc}
 \end{figure}
 
