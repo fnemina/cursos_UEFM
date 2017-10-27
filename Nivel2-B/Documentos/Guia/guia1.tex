@@ -1,24 +1,39 @@
-\chapter{SNAP}
+\chapter{Introducción al radar}
 
 El \emph{Sentinel Aplication Toolbox (SNAP)} es un  software de procesamiento de imágenes diseñado por la \emph{Agencia Espacial Europera (ESA)}, cuyas herramientas simplifican el trabajo con imágenes radar y ópticas.
 Esta clase tirno vomo objetivo familiarizarce con el entorno gráfico del programa.
 
+\section{Sobre esta guía}
+
+A lo largo de la guía usaremos como referencia:
+
+\begin{itemize}
+  \item \menu{Archivo>Abrir...} para indicar una ruta en el menú de un programa o una herramienta.
+  \item \directory{Docucmentos/archivo.doc} para indicar una carpeta o archivo dentro de una carpeta.
+  \item \emph{Opción} para indicar una opción de configuración de un programa.
+  \item \keys{ctrl + c} para indicar una combinación de teclas.
+\end{itemize}
+
+Además las rutas estarán siempre definidas a partir de la carpeta \directory{material}.
+
 \section{Interfaz gráfica del SNAP}
 
-Descomprima los archivos decargados denominanados \directory{material.tar.gz}. Abra el programa SNAP, allí encontrará la interfaz gráfica del usuario (Figura \ref{fig:int})
+Descomprima los archivos decargados denominanados \directory{material.zip}. Abra el programa SNAP, allí encontrará la interfaz gráfica del usuario (Figura \ref{fig:int})
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=1.1]{fig:int.png}
-    \caption{Interfáz gráfica del usuario. El area de visualización con el \emph{Producto Explorer} a la izquierda.}
+    \caption{Interfáz gráfica del usuario. El área de visualización con el \emph{Producto Explorer} a la izquierda.}
     \label{fig:int}
 \end{figure}
 
 \section{Apertura de imágenes}
 
-En el menú principal, seleccione \menu{Open product...} y dentro de la carpeta \directory{material/raster\_data}, elija \directory{S2A\_USER\_MTD\_SAFL2A\_PDMC\_20161206.dim}.
-
-Haga doble click sobre el nombre de la imágen y se desplegará, en el \menu{Producto Explorer} un árbol que incluye las siguientes opciones:
+Desde el menú \menu{File>Open product...} abra la imagen
+\begin{center} \directory{raster\_data/S2A\_USER\_MTD\_SAFL2A\_PDMC\_20161206.dim}.
+\end{center}
+Haga doble click sobre el nombre de la imágen y se desplegará, en el \menu{Product Explorer} un árbol que incluye:
+\\
 \dirtree{%
     .1 [1] S2\_MSIL2A\_20170702.
     .2 Metadata.
@@ -68,8 +83,6 @@ En el \menu{Product Explorer} haga click derecho sobre el nombre y seleccione \m
     \label{fig:RGB}
 \end{figure}
 
-
-
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.5]{fig:RVA.png}
@@ -85,7 +98,7 @@ Para obtener información sobre un pixel posicionese sobre uno en la imagen y se
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\textwidth]{fig:pixel.png}
-    \caption{}
+    \caption{Herramienta de consulta de píxel. Puede verse la posición del píxel en la imagen, su latitud y longitud y el valor del píxel para la banda desplegada.}
     \label{fig:pixel}
 \end{figure}
 
@@ -105,7 +118,11 @@ Es posible exportar la visualización de la imagen completa o de una región esp
 
 \section{Actividad}
 
-Abra la imagen que se encuentra en la carpeta \directory{material/raster\_data>COSMO}. Abra la banda \path{Sigma0_VH}.
+Abra la imagen que se encuentra en la
+\begin{center}
+\directory{raster\_data/CSKS1\_SCS\_B\_S2\_04\_HH\_RA\_FF\_20090321.dim}
+\end{center}
+Abra la banda \path{Sigma0_HH}.
 
 \begin{que}
     ¿A qué coberturas pertenecen las regiones de la imagen con mayor nivel de brillo?
