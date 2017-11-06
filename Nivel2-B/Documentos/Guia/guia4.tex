@@ -12,7 +12,7 @@ Abra la imagen \directory{ALPSRP278916070-L1.1.zip} que descargo del Alaska Sate
 \begin{figure}[h!]
     \centering
     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar1.png}}
-    \hfill
+    \hspace{1cm}
     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar3.png}}
     \caption{Calibración de productos SAR utilizando el SNAP. Recuerde seleccionar marcar en este caso la opcíon \emph{Save as complex output}.}
     \label{fig:calibrar}
@@ -27,7 +27,7 @@ Seleccione la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} y
 \begin{figure}[h!]
     \centering
     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:t31.png}}
-    \hfill
+    \hspace{1cm}
     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:t32.png}}
     \caption{Cálculo de matrices polarimétricas en el SNAP.}
     \label{fig:t3}
@@ -35,12 +35,13 @@ Seleccione la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} y
 
 \subsection{Filtrado}
 
-En el caso de imágenes full polarimetricas se pueden aplicar distintos tipos de filtros, que se encuentran en el menu \menu{Radar>Polarimetric>Polarimetric speckle filter}. Utilice en este caso el filtro \menu{Refined Lee} sobre la imagen \directory{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_mat} (Figura \ref{fig:plee})
+En el caso de imágenes full polarimetricas se pueden aplicar distintos tipos de filtros, que se encuentran en \menu{Radar>Polarimetric>Polarimetric speckle filter}. Utilice en este caso el filtro \menu{Refined Lee Filter} sobre la imagen (Figura \ref{fig:plee})
+\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_mat}\end{center}
 
 \begin{figure}[h!]
     \centering
     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:plee1.png}}
-    \hfill
+    \hspace{1cm}
     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:plee2.png}}
     \caption{Filtro \emph{Refined Lee Filter} para imágenes full polarimétricas.}
     \label{fig:plee}
@@ -48,13 +49,13 @@ En el caso de imágenes full polarimetricas se pueden aplicar distintos tipos de
 
 \subsection{Proyección}
 
-Reproyecte la imagen en el terreno aplicando los procesos de \emph{Deskewing} sobre un modelo de elevación digital.
+Reproyecte la imagen en el terreno aplicando (GTC) los procesos de \emph{Deskewing} sobre un modelo de elevación digital.
 
 \section{Descomposición de Pauli}
 
-La descomposición de Pauli permite separar la información sobre interacciones de tipo doble rebote, en volumen y especulares, en una imagen full polarimétrica
+La descomposición de Pauli permite separar la información sobre interacciones de tipo doble rebote, en volumen y especulares, en una imagen \emph{full polarimétrica}
 
-La descomposición genera tres canales que suelen interpretarse de la siguiente manera:
+La descomposición genera tres bandas que suelen mostrarse de la siguiente manera:
 
 \begin{itemize}
     \item Rojo: Información por procesos de un solo rebote o un número impar par de rebotes.
@@ -62,12 +63,12 @@ La descomposición genera tres canales que suelen interpretarse de la siguiente 
     \item Azul: Información por procesos de doble rebote o un número par de rebotes.
 \end{itemize}
 
-Obtenga la descomposición de Pauli usando la herramienta \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como entrada la imagen corregida en terreno y la descomposición la de Pauli en Processing parametric(Figura \ref{fig:pauli})
+Obtengala usando \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como entrada la imagen corregida en terreno y la descomposición la de Pauli en Processing parametric(Figura \ref{fig:pauli})
 
 \begin{figure}[h!]
     \centering
     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:pauli1.png}}
-    \hfill
+    \hspace{1cm}
     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:pauli2.png}}
     \caption{Cálculo de la descomposición de Pauli utilizando las matrices polarimétricas en el SNAP.}
     \label{fig:pauli}
@@ -82,15 +83,15 @@ Observe los resultados haciendo click derecho sobre la imagen obtenida en la opc
     \label{fig:pauli}
 \end{figure}
 
-\section{Actividades}
-En la descomposición de Paulin:
-\begin{que}
-    ¿De qué color  se observan:
-\begin{itemize}
-  \item las zonas urbanas
-  \item los bosques
-  \item el agua
-  \item la pista de aterrizaje
-\end{itemize}
+\section{Preguntas disparadoras}
 
+\begin{que}
+    En la descomposición de Pauli, de qué color  se observan:
+    \begin{enumerate}
+        \item La pista de aterrizaje de la ciudad de Ushuaia.
+        \item Zonas urbanas en la ciudad de Ushuaia.
+        \item Zonas con vegetación sobre la ladera de la montaña.
+        \item El agua que está en el lago con coordenadas $54^\circ 48^\prime 51^{\prime\prime}$ latitud sur y $68^\circ 18^\prime 58^{\prime\prime}$ longitud oeste.
+        \item El agua del canal de Beagle.
+    \end{enumerate}
 \end{que}
