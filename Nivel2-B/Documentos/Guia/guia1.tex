@@ -1,7 +1,8 @@
 \chapter{Introducción al radar}
 
-El \emph{Sentinel Aplication Toolbox (SNAP)} es un  software de procesamiento de imágenes diseñado por la \emph{Agencia Espacial Europea (ESA)}, cuyas herramientas simplifican el trabajo con imágenes radar y ópticas.
-Esta clase tiene como objetivo familiarizarce con el entorno gráfico del programa.
+Esta clase tiene como objetivo familiarizarce con el entorno gráfico del \emph{SNAP}. El \emph{SNAP (Sentinel Aplication Toolbox)} es un  software de procesamiento de imágenes diseñado por la \emph{Agencia Espacial Europea (ESA)}, cuyas herramientas simplifican el trabajo con imágenes radar y ópticas.
+
+Durante el cuerso utilizaremos imágenes ópticas y radar de la zona del Canal de Beagle frente a la ciudad de Ushuaia, Tierra del Fuego, Argentina.
 
 \section{Sobre esta guía}
 
@@ -10,26 +11,27 @@ A lo largo de la guía usaremos como referencia:
 \begin{itemize}
   \item \menu{Archivo>Abrir...} para indicar una ruta en el menú de un programa o una herramienta.
   \item \directory{Docucmentos/archivo.doc} para indicar una carpeta o archivo dentro de una carpeta.
-  \item \emph{Opción} para indicar una opción de configuración de un programa.
+  \item \texttt{Opción} para indicar una opción de configuración de un programa.
   \item \keys{ctrl + c} para indicar una combinación de teclas.
+  \item \emph{SAR} para indicar un termino específico o importante para la clase.
 \end{itemize}
 
 Además las rutas estarán siempre definidas a partir de la carpeta \directory{material}.
 
 \section{Interfaz gráfica del SNAP}
 
-Descomprima los archivos decargados denominanados \directory{material.zip}. Abra el programa SNAP, allí encontrará la interfaz gráfica del usuario (Figura \ref{fig:int})
+Descomprima el archivo \directory{material.zip}. Abra el programa SNAP, allí encontrará la interfaz gráfica del usuario (Figura \ref{fig:int})
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=1.1]{fig:int.png}
-    \caption{Interfáz gráfica del usuario. El área de visualización con el \emph{Producto Explorer} a la izquierda.}
+    \includegraphics[width=0.7\textwidth]{fig:int.png}
+    \caption{Interfaz gráfica del usuario. El área de visualización con el \menu{Product Explorer} a la izquierda.}
     \label{fig:int}
 \end{figure}
 
 \section{Apertura de imágenes}
 
-Desde el menú \menu{File>Open product...} abra la imagen
+Desde el menú \menu{File>Open product...} abra la imagen óptica
 \begin{center} \directory{raster\_data/S2A\_USER\_MTD\_SAFL2A\_PDMC\_20161206.dim}.
 \end{center}
 Haga doble click sobre el nombre de la imágen y se desplegará, en el \menu{Product Explorer} un árbol que incluye:
@@ -37,10 +39,8 @@ Haga doble click sobre el nombre de la imágen y se desplegará, en el \menu{Pro
 \dirtree{%
     .1 [1] S2\_MSIL2A\_20170702.
     .2 Metadata.
-    .2 Index Codings.
     .2 Vector Data.
     .2 Bands.
-    .2 Masks.
 }
 
 En esta cobertura encontramos
@@ -49,32 +49,24 @@ En esta cobertura encontramos
     \item \emph{[1] S2\_MSIL2A\_20170702}: El número de elemento entre corchetes, que marca en que orden se abrieron los productos y el nombre de la imagen.
     \item \emph{Metadata}: Los metadatos asociados a la imagen y su historial de procesamiento.
     \item \emph{Index Codings}: Los valores de referencia para interpretar los números digitales de la imagen.
-    \item \emph{Vector data}: Las capas vectoriales asociadas a la imagen.
     \item \emph{Bands}: Las bandas de la imagen y las operaciones de álgebra entre bandas.
-    \item \emph{Masks}: Las máscaras que sean incluídas en la imagen.
 \end{itemize}
 
 \section{Visualización}
 
-Para visualizar una de las bandas de la imagen haga doble click sobre el nombre y se mostrará en escala de grises (Figura \ref{fig:mono}). Es posible abrir varias bandas en simultáneo, cada una se mostrará en una pestaña nueva arriba del área de visualización. Explore la imagen utilizando las herramientas de navegación y zoom (Figura \ref{fig:NAV})
+Para visualizar una de las bandas de la imagen haga doble click sobre el nombre y se mostrará en escala de grises (Figura \ref{fig:mono}). Es posible abrir varias bandas en simultáneo, cada una se mostrará en una pestaña nueva arriba del área de visualización. Explore la imagen utilizando las herramientas de navegación y zoom (Figura \ref{fig:mono})
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.7]{fig:mono.png}
-    \caption{Imagen monobanda desplegada en el visualizador.}
+    \subfloat[]{\includegraphics[width=0.7\textwidth]{fig:mono.png}}
+    \\
+    \subfloat[]{\includegraphics[scale=0.5]{fig:NAV.png}}
+    \caption{Imagen monobanda desplegada en el visualizador. Herramientas de navegación. De izquierda a derecha: \menu{Selection tool}, para seleccionar objetos, \menu{Panning tool}, para moverse, y \menu{Zooming tool}, para hacer zoom.}
     \label{fig:mono}
 \end{figure}
 
 
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.5]{fig:NAV.png}
-    \caption{Herramientas de navegación. De izquierda a derecha: \menu{Selection tool}, para seleccionar objetos en la imagen, \menu{Panning tool}, para moverse dentro de la imagen, y \menu{Zooming tool}, para hacer zoom en la imagen.}
-    \label{fig:NAV}
-\end{figure}
-
-En el \menu{Product Explorer} haga click derecho sobre el nombre y seleccione \menu{Open RGB image windows}. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación que utiliza las bandas 4, 3 y 2 de Sentinel 2, desplieguela haciendo click en OK (Figura \ref{fig:RVA}).
+En el \menu{Product Explorer} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación que utiliza las bandas 4, 3 y 2 de Sentinel 2, desplieguela haciendo click en OK.
 
 \begin{figure}[h!]
     \centering
@@ -83,17 +75,10 @@ En el \menu{Product Explorer} haga click derecho sobre el nombre y seleccione \m
     \label{fig:RGB}
 \end{figure}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.5]{fig:RVA.png}
-    \caption{Imagen en combinación de colores de color real.}
-    \label{fig:RVA}
-\end{figure}
-
 
 \section{Consulta de píxel}
 
-Para obtener información sobre un pixel posicionese sobre uno en la imagen y seleccione la pestaña \menu{Pixel info}, junto al \menu{Product explorer} (Figura \ref{fig:pixel}).
+Para obtener información sobre un pixel seleccione la pestaña \menu{Pixel info}, junto al \menu{Product explorer} (Figura \ref{fig:pixel}), y posicionese  sobre uno en la imagen.
 
 \begin{figure}[h!]
     \centering
@@ -106,30 +91,32 @@ Allí encontrará la latitud y longitud, las coordenadas dentro del mapa y el va
 
 \section{Exportar pantalla}
 
-Es posible exportar la visualización de la imagen completa o de una región específica desde \menu{File>Export view}. Si selecciona \menu{View as KMZ} obtendrá un archivo \directory{.kmz} que luego podrá abrir desde Google Earth; o elegir \menu{View as image} generando archivos \directory{.GeoTiff} o \directory{.jpg} para visualizarlo en otro software. Para mantener la georreferencia debe optar por \emph{GeoTIFF - TIFF with geo-location} con la opción \emph{Full resolution}. De esta manera se mantiene la resolución original de la imagen.(Figura \ref{fig:export}).
-.
+Es posible exportar la visualización de la imagen completa o de una región específica desde \menu{File>Export>Other}.
+Si selecciona \menu{View as image} generará archivos \texttt{.GeoTiff} o \texttt{.jpg} para visualizarlo en otro software. Para mantener la georreferencia debe optar por \texttt{GeoTIFF - TIFF with geo-location} con la opción \texttt{Full resolution}. De esta manera se mantiene la resolución original de la imagen (Figura \ref{fig:export}).
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{fig:export.png}
+    \includegraphics[width=0.4\textwidth]{fig:export.png}
     \caption{Menú de \menu{Export image}. Incluye las opciones para elegir el recorte, la resolución y el tipo de dato de salida.}
     \label{fig:export}
 \end{figure}
 
-\section{Actividad}
+Si selecciona \menu{View as Google Earth KMZ} obtendrá un archivo \directory{.kmz} que luego podrá abrir desde Google Earth (Apéndice \ref{ap:GE}).
 
-Abra la imagen que se encuentra en la
+\section{Preguntas disparadoras}
+
+Abra la imagen radar correspondiente al satélite \emph{COSMO-SKYMED} que se encuentra en
 \begin{center}
 \directory{raster\_data/CSKS1\_SCS\_B\_S2\_04\_HH\_RA\_FF\_20090321.dim}
 \end{center}
-Abra la banda \path{Sigma0_HH}.
+Abra la banda \texttt{Sigma0\_HH\_db}.
 
 \begin{que}
-    ¿A qué coberturas pertenecen las regiones de la imagen con mayor nivel de brillo?
+    Identifique en la imagen zonas brillantes o oscuras. ¿A que cobertura pertenecen?
 \end{que}
 
 \begin{que}
-    ¿Cómo es el valor de brillo para los cuerpos de agua?
+    ¿Cómo es el nivel de brillo para los cuerpos de agua?
 \end{que}
 
 \begin{que}

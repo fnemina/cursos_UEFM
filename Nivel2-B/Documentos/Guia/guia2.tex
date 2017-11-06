@@ -6,96 +6,88 @@ Esta clase tiene como objetivo familiarizarse con la interpretación visual de i
 
 En las microondas se suele hablar de tres grupos de interacciones: doble rebote, en volumen y especular, las cuales dependerán del blanco y la banda del satélite (Figura \ref{fig:interacciones}).
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{fig:interacciones.png}
-    \caption{Interacciónes con distintos blancos: -a- superficial, -b- subsuperficial, -c- doble rebote y -d- en volumen.}
-    \label{fig:interacciones}
-\end{figure}
-
 \subsection{Banda-X}
 
-Las imágenes adquiridas en \emph{Banda X} son las que tienen menor longitud de onda, por lo tanto tiene menos penetración en la vegetación y mayor backscatter en suelos sin cobertura (Figura \ref{fig:interacciones}).
-
+La región del espectro electromagnético de la \emph{Banda X} es la de menor longitud de onda dentro de las imágenes radar. Las imágenes adquiridas utilizando esta región tienen menos penetración en la vegetación y mayor backscatter en suelos sin cobertura (Figura \ref{fig:interacciones}).
 
 Abra la imagen
 \begin{center}
 \directory{raster\_data/CSKS1\_SCS\_B\_S2\_04\_HH\_RA\_FF\_20090321.dim}
 \end{center}
-Despliege la banda \path{Sigma_HH_db}.
+correspondiente al satélite \emph{Cosmo-SKYMED}. Despliege la banda \texttt{Sigma\_HH\_db}.
 
-Utilice la imagen óptica para identificar:
+Identifique en ella
 
 \begin{enumerate}
-    \item La pista de aterrizaje.
-    \item Zonas urbanas.
-    \item Zonas con vegetación.
-    \item El agua que está en el lago.
-    \item El agua del canal.
+    \item La pista de aterrizaje de la ciudad de Ushuaia.
+    \item Zonas urbanas en la ciudad de Ushuaia.
+    \item Zonas con vegetación sobre la ladera de la montaña.
+    \item El agua que está en el lago con coordenadas $54^\circ 48^\prime 51^{\prime\prime}$ latitud sur y $68^\circ 18^\prime 58^{\prime\prime}$ longitud oeste.
+    \item El agua del canal de Beagle.
 \end{enumerate}
-Luego especifique en que colores los observa en la imágen SAR.
-\begin{que}
-    ¿A qué interacciones corresponde cada uno de los blancos enunciados anteriormente?
-\end{que}
+
+Puede ayudarse utilizando la imagen óptica.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{fig:interacciones.png}
+    \caption{Interacciónes con distintos blancos: -a- superficial, -b- subsuperficial, -c- doble rebote y -d- en volumen.}
+    \label{fig:interacciones}
+\end{figure}
+
 
 \subsection{Banda C}
 
-Las imágenes adquiridas en \emph{Banda C} tienen longitudes de onda intermedias, entonces tendrán menos reflectancia en los suelos sin cobertura, dando información sobre el scattering en volumnes (Figura \ref{fig:interacciones}).
+La región del espectro electromagnético de la \emph{Banda C} tiene longitudes de onda intermedias. Las imágenes adquiridas utilizando esta región tendrán menos reflectancia en los suelos sin cobertura, dando información sobre el scattering en volumnes (Figura \ref{fig:interacciones}).
 
 Abra la imagen
 \begin{center}
   \directory{raster\_data/S1B\_IW\_SLC\_\_1SDV\_20171012.dim}
   \end{center}
 
-Despliege la banda \path{Sigma_VV_db}.
+correspondiente al satélite \emph{Sentinel 1-b}. Despliege la banda \texttt{Sigma\_VV\_db}.
 
-Utilice la imagen óptica para identificar:
+Identifique en ella
 
 \begin{enumerate}
-    \item La pista de aterrizaje.
-    \item Zonas urbanas.
-    \item Zonas con vegetación.
-    \item El agua que está en el lago.
-    \item El agua del canal.
+    \item La pista de aterrizaje de la ciudad de Ushuaia.
+    \item Zonas urbanas en la ciudad de Ushuaia.
+    \item Zonas con vegetación sobre la ladera de la montaña.
+    \item El agua que está en el lago con coordenadas $54^\circ 48^\prime 51^{\prime\prime}$ latitud sur y $68^\circ 18^\prime 58^{\prime\prime}$ longitud oeste.
+    \item El agua del canal de Beagle.
 \end{enumerate}
-Luego especifique en que colores los observa en la imágen SAR.
 
-
-\begin{que}
-    ¿A qué interacciones corresponde cada uno de los blancos enunciados anteriormente?
-\end{que}
+Puede ayudarse utilizando la imagen óptica.
 
 \subsection{Banda L}
 
-Las imágenes adquiridas en \emph{Banda L} son las que poseen mayor longitud de onda. En general, mantendrá interacciones especulares con los suelos sin cobertura, pudiendo penetrar en funcion del grado de humedad. Además, permitirá identificar propiedades de las coberturas vegetadas por debajo del canopeo (Figura \ref{fig:interacciones}).
+La región del espectro electromagnético de la \emph{Banda L} es la de mayor longitud de onda dentro de las imágenes radar. En general, mantendrá interacciones especulares con los suelos sin cobertura, pudiendo penetrar en funcion del grado de humedad. Además, permitirá identificar propiedades de las coberturas vegetadas por debajo del canopeo (Figura \ref{fig:interacciones}).
 
 Abra la imagen
 \begin{center}
   \directory{raster\_data/ALOS-H1\_1\_\_A-ORBIT\_\_ALPSRP054716060.dim}
 \end{center}
-Despliege la banda \path{Sigma_HH_db}.
+correspondiente al satélite \emph{ALOS-PALSAR 1}. Despliege la banda \texttt{Sigma\_HH\_db}.
 
-
-Utilice la imagen óptica para identificar:
+Identifique en ella
 
 \begin{enumerate}
-    \item La pista de aterrizaje.
-    \item Zonas urbanas.
-    \item Zonas con vegetación.
-    \item El agua que está en el lago.
-    \item El agua del canal.
+    \item La pista de aterrizaje de la ciudad de Ushuaia.
+    \item Zonas urbanas en la ciudad de Ushuaia.
+    \item Zonas con vegetación sobre la ladera de la montaña.
+    \item El agua que está en el lago con coordenadas $54^\circ 48^\prime 51^{\prime\prime}$ latitud sur y $68^\circ 18^\prime 58^{\prime\prime}$ longitud oeste.
+    \item El agua del canal de Beagle.
 \end{enumerate}
 
-\begin{que}
-    ¿A qué interacciones corresponde cada uno de los blancos enunciados anteriormente?
-\end{que}
+Puede ayudarse utilizando la imagen óptica.
+
 
 \section{Valores de $dB$}
 
-Es habitual expresar el valor del coeficiente de backscatter en dB para las imágenes SAR. Para calcularlo en distintos sectores de la imagen, puede posicionarse sobre un píxel y observar en \emph{Pixel info} el valor de \path{Sigma0_HH_db} en dB.
+Es habitual expresar el valor del coeficiente de backscatter en dB para las imágenes SAR. Para calcularlo en distintos sectores de la imagen, puede posicionarse sobre un píxel y observar en \menu{Pixel info} el valor de \texttt{Sigma0\_HH\_db} en dB.
 
 
-Utilice la imagen óptica para identificar en la imagen \path{COSMO}:
+Utilice la imagen óptica para identificar en la imagen \emph{Sentinel-1b}:
 
  \begin{enumerate}
      \item El valor de dB de la pista de aterrizaje.
@@ -105,32 +97,11 @@ Utilice la imagen óptica para identificar en la imagen \path{COSMO}:
      \item El valor de dB para el agua del canal.
  \end{enumerate}
 
+Se puede calcular el valor promedio de dB seleccionando una región especifica en la imagen (Apéndice \ref{ap:EV}).
 
-Se puede calcular el valor promedio de dB seleccionando una región especifica en la imagen. En primer lugar, debe crear el contenedor del vector haciendo click en \emph{Vector, New Vector Data Container}. Nombrelo \emph{Urbano} (Figura \ref{fig:vector-cont}). Seleccione luego  \emph{Rectangle drawing tool} de la barra de herramienta y digitalice un rectángulo sobre la zona urbana. Para confirmar la geometría haga click fuera de ella.
+Repita este análisis para las imágenes en banda X y L.
 
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.4]{fig:vector-cont.png}
-    \caption{Herramenta de creación de contenedores vectoriales. Debe serse un nombre único a cada uno y puede agregarse una descripción.}
-    \label{fig:vector-cont}
-\end{figure}
-
-Repita el proceso y cree contenedores de vectores para zonas de vegetación, agua con alto y bajo brillo y la pista de aterrizaje.
-
-En el menú \emph{Analysis, Statistics} y tilde la opción \emph{Use ROI maks(s)} (Figura \ref{fig:estadistica}). Seleccione la región Urbano, haga click en el botón \emph{Refresh view} y el SNAP calculará la estadística. Puede hacerlo para varias regiones en simultaneo.
-
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.4]{fig:estadistica.png}
-    \caption{Calculo de parámetros estadísticos en SNAP. Es posible calcularlos sobre una región seleccionando \emph{Use ROI maks(s)} y luego la región de interés.}
-    \label{fig:estadistica}
-\end{figure}
-
-Repita este análisis para las imágenes en banda L y C.
-
-\section{Actividad}
+\section{Preguntas disparadoras}
 
 Comparando las tres imágenes SAR utilizadas responda:
 
@@ -143,13 +114,9 @@ Comparando las tres imágenes SAR utilizadas responda:
 \end{que}
 
 \begin{que}
-    ¿Cuál es la cobertura que más varía al cambiar de banda?
+  ¿Que sucede sobre el bosque al observar las imágenes en banda X, C y L.
 \end{que}
 
 \begin{que}
-    ¿Cuáles son las coberturas con más ruido dentro de las imágenes?
-\end{que}
-
-\begin{que}
-    Observe las imágenes que no se encuentran en dB. ¿Qué diferencia encuentra en la distribución de valores de brillo?
+  ¿A que tipo de interacción corresponde cada uno de los blancos estudiados durante esta clase? ¿Depende de la imagen utilizada?
 \end{que}
