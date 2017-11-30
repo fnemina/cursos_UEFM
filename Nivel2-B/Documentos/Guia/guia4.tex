@@ -63,7 +63,7 @@ La descomposición genera tres bandas que suelen mostrarse de la siguiente maner
     \item Azul: Información por procesos de doble rebote o un número par de rebotes.
 \end{itemize}
 
-Obtengala usando \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como entrada la imagen corregida en terreno y la descomposición la de Pauli en Processing parametric(Figura \ref{fig:pauli})
+Obtengala usando \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como entrada la imagen corregida en terreno y la descomposición la de \texttt{Pauli Decomposition} en \texttt{Processing parametric} (Figura \ref{fig:pauli})
 
 \begin{figure}[h!]
     \centering
@@ -83,10 +83,65 @@ Observe los resultados haciendo click derecho sobre la imagen obtenida en la opc
     \label{fig:pauli}
 \end{figure}
 
+\section{Descomposición de Freeman-Durden}
+
+La descomposición de Freeman-Durden permite interpretar la matriz de scattering en una imagen \emph{full polarimétrica}
+
+La descomposición genera tres bandas que suelen mostrarse de la siguiente manera:
+
+\begin{itemize}
+    \item Rojo: Información por procesos de scattering  de doble rebote.
+    \item Verde: Información por procesos de scattering en volumen.
+    \item Azul: Información por procesos de scattering especular.
+\end{itemize}
+
+Obtengala usando \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como entrada la imagen corregida en terreno y la descomposición la de \texttt{Freeman-Durden Decomposition} en \texttt{Processing parametric} (Figura \ref{fig:pauli})
+
+Observe los resultados haciendo click derecho sobre la imagen obtenida en la opción \emph{Open RGB image window} (Figura \ref{fig:pauli}).
+
+\section{Descomposición H-A-$\alpha$}
+
+La descomposición H-A-$\alpha$ permite interpretar la matriz de scattering en una imagen \emph{full polarimétrica}
+
+La descomposición genera tres bandas que suelen mostrarse de la siguiente manera:
+
+\begin{itemize}
+    \item Entropía.
+    \item Anisotropía.
+    \item Alpha.
+\end{itemize}
+
+Obtengala usando \menu{Radar>Polarimetric>Polarimetric Decomposition} seleccionando como entrada la imagen corregida en terreno y la descomposición la de \texttt{H-A-Alpha Quadpole decomposition} en \texttt{Processing parametric} (Figura \ref{fig:pauli}). Seleccione la opcíon \texttt{Entropy(H), Anisotropy (A), Alpha}.
+
+Observe los resultados haciendo click derecho sobre la imagen obtenida en la opción \emph{Open RGB image window} (Figura \ref{fig:pauli}).
+
+
 \section{Preguntas disparadoras}
 
 \begin{que}
     En la descomposición de Pauli, de qué color  se observan:
+    \begin{enumerate}
+        \item La pista de aterrizaje de la ciudad de Ushuaia.
+        \item Zonas urbanas en la ciudad de Ushuaia.
+        \item Zonas con vegetación sobre la ladera de la montaña.
+        \item El agua que está en el lago con coordenadas $54^\circ 48^\prime 51^{\prime\prime}$ latitud sur y $68^\circ 18^\prime 58^{\prime\prime}$ longitud oeste.
+        \item El agua del canal de Beagle.
+    \end{enumerate}
+\end{que}
+
+\begin{que}
+    En la descomposición de Freeman-Durden, de qué color  se observan:
+    \begin{enumerate}
+        \item La pista de aterrizaje de la ciudad de Ushuaia.
+        \item Zonas urbanas en la ciudad de Ushuaia.
+        \item Zonas con vegetación sobre la ladera de la montaña.
+        \item El agua que está en el lago con coordenadas $54^\circ 48^\prime 51^{\prime\prime}$ latitud sur y $68^\circ 18^\prime 58^{\prime\prime}$ longitud oeste.
+        \item El agua del canal de Beagle.
+    \end{enumerate}
+\end{que}
+
+\begin{que}
+    En la descomposición de H-A-$\alpha$, de qué color  se observan:
     \begin{enumerate}
         \item La pista de aterrizaje de la ciudad de Ushuaia.
         \item Zonas urbanas en la ciudad de Ushuaia.
