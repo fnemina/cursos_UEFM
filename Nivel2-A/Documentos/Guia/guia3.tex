@@ -1,233 +1,200 @@
-
-\chapter{Correcciones atmosféricas}
-El objetivo de esta clase es estudiar los efectos de la atmósfera sobre los parametros ópticos y biofísicos obtenidos a partir de una imagen satelital.
-
-\section{Efecto de no conciderar la atmósfera}
-
-Para motivar la necesidad de realizar correcciones atmosféricas a las imágenes es de utilidad observar cual es el efecto de trabajar a tope de la atmósfera para dos situaciones:
+\chapter{Variables biofísicas}
+El objetivo de esta clase es obtener, de distintas maneras, variables biofísicas utilizando imágenes satelitales. Para hacerlo se utilizarán dos tipos de modelos:
 
 \begin{itemize}
-    \item La extracción de firmas espectrales.
-    \item La estimación de variables biofísicas.
+    \item Semi-empiricos: obtenidos a partir de datos de campo.
+    \item Multiespectrales: obtenidos utilizando el \emph{Biophysical processor} del SNAP.
 \end{itemize}
 
-\subsection{Comparación de firmas espectrales}
+\section{Diagramas de dispersión}
 
-Abra las imágenes \path{S2A_MSIL1C_20161212} y \path{S2A_MSIL2A_20161212} que se encuentran en la carpeta \path{material/raster_data}. La primera corresponde a las reflectancias a tope de la atmósfera mientras que la segunda corresponde a las reflectancias corregidas atmosfericamente.
+Abra la imágen \path{S2A_MSIL2A_20170720.dim} que se encuentra en la carpeta \path{material/raster_data}.
 
-Desplieguelas y comparelas visualmente. Sobre la imagen corregida hubique \emph{pins} en distintas coberturas. Incluya al menos una cobertura vegetal, una de agua y una de suelo desnudo. Observe las firmas espectrales en dicha imagen para las distintass coberturas. Exporte luego estos valores a un archivo \path{.csv} utilizando la opción \emph{Export spectra to text file}.
-
-Desde el \emph{Pin manager} es posible copiar los \emph{pins} a otra imagen utilizando la herramienta \emph{Transfer the selected pins to other product}. Utilicela y copie los pins a la imagen a tope de la atmósfera.
-
-Obtenga ahora la firma espectral para los \emph{pins} en la imagen no corregida y exportelas a un archivo \emph{.csv}.
-
-Abra ambos en una planilla de calculo y gráfique en conjunto las firmas espectrales a tope de la atmósfera y corregidas (Figura \ref{fig:firmas}). Deberá eliminar la banda de los $1374nm$ cuya única utilidad es realizar correcciones atmosfericas.
+Una herramienta util para explorer el comportamiento de la capa raster es observar los distintos cortes del espacio espectral. Para ello habra la herramienta \emph{Analysis/Scatter plot} (Figura \ref{fig:scatter}).
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics{fig:firmas.png}
+    \includegraphics{fig:scatter.png}
     \caption{}
-    \label{fig:firmas}
+    \label{fig:scatter}
+\end{figure}
+
+Seleccione la imagen y banda que corresponde a cada eje. Use en este caso la banda 4 (B4 - correspondiente a la region del rojo) y la banda 8 (B8 - correspodiente a la region del infrarrojo cercano) y haga click en el boton \emph{Refresh}.
+
+Es posible cambiar los minimos y máximos para cada una de las bandas o dejar que el SNAP los configure automaticamente. Luego de cada cambio deberá presionar el boton refresh. Configure los valores para observar mejor el scatterplot.
+
+Es posible también mostrar el scatterplot para una sola región de la imagen. Puede hacer esto seleccionando la opción \emph{Use ROI mask} y luego la mascara correspodiente. Utilice las máscaras
+
+\begin{itemize}
+    \item scl\_vegetation
+    \item scl\_bare\_soil\_desert
+    \item scl\_water
+\end{itemize}
+
+para comparar que regiones del scatterplot corresponden a cada tipo de cobertura (Figura \ref{fig:scatterVSW}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{fig:scatterVSW.png}
+    \caption{}
+    \label{fig:scatterVSW}
+\end{figure}
+
+Muevase en el scatterplot a la región correspodiente al agua y cambie los limites de los ejes para centrarse en dicha region. Haciendo click derecho sobre el gráfico seleccione la opción \emph{Select Mask 'scatter\_plot\_area'} y seleccione los daatos correspondientes a los pixeles con reflectancia en rojo de 0.07 y en nir de 0.005. (Figura \ref{fig:scatterwater}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{fig:scatterwater}
+    \caption{}
+    \label{fig:scatterwater}
+\end{figure}
+
+Observe en la imagen cuales son los pixeles enmascarados y  que cobertura pertenecen.
+
+\begin{que}
+    ¿Puede distinguir en el scatterplot red-nir los distintos tipos de coberturas de agua? ¿Cual de las dos bandas le permite distinguirlos mejor? ¿Que pasa con las coberturas de vegetacion? ¿Es posible distinguir en este scatterplot las coberturas de selva y forestacion?  ¿Y con las de suelo desnudo? ¿Es posible distinguir en este scatterplot las zonas correspondientes a areas urbanas y con suelo desnudo? ¿Como interpreta la linea por debajo de la cual no hay valores? ¿A que cobertura pertenece?
+\end{que}
+
+\section{Cálculo de índices}
+
+Existen distintos índices de vegetación que puede calcular utilizando el SNAP. En el menú \emph{Optical/Thematic Land processing/Vegetation Radiometric Indices} puede encontrar distintos indices de vegetación. Seleccione el NDVI de la lista y calculelo para la imagen. Deberá elegir en la sección de \emph{Processing parameters} las bandas a utilizar. Elija la banda 4 y 8 para los parametros red y nir respectivamente (Figura \ref{fig:ndviconfig}). El proceso tomara unos segundos y creará un nuevo archivo con los indices de vegetacion.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=1.2]{fig:ndviconfig.png}
+    \caption{}
+    \label{fig:ndviconfig}
+\end{figure}
+
+Muestre el NDVI generado. Puede cambiar los colores y la parte del histograma en la que se muestra la imagen desde la pestaña \emph{Colour managment} (Figura \ref{fig:cman}). Es posible además guardar y cargar paletass externas. Utilice en este caso la paleta \path{ndvi.cpd} que se encuentra en la carpeta \path{material/aux_data} para mostrar el NDVI haciendo click en \emph{Import colour palette from text file}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=1.2]{fig:cman.png}
+    \caption{}
+    \label{fig:cman}
+\end{figure}
+
+Calcule el SAVI para la misma imagen (Figura \ref{fig:saviconfig}). comparelo con el NDVI. Puede ver ambas imagenes en simultaneo haciendo click en \emph{Windows/Tile horizontaly} o \emph{Windows/Tile vertically}. Para volver a la vista de una sola imagen haga click en \emph{Windows/Tile single}.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=1.2]{fig:saviconfig.png}
+    \caption{}
+    \label{fig:saviconfig}
+\end{figure}
+
+Finalmente, construya el scatterplot entre el NDVI y el SAVI. Deberá en este caso seleccionar 2 imágenes distintas como fuente. Restrinja ademas el NDVI a los valores mayores que 0 (Figura \ref{fig:ndviscat}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{fig:ndviscat.png}
+    \caption{}
+    \label{fig:ndviscat}
 \end{figure}
 
 \begin{que}
-    ¿Que diferencia nota entre las dos firmas? ¿En que zona es mayor la diferencia? ¿Que sucede en el infrarrojo medio? ¿Que sucede en la banda de los $945nm$? ¿Que efecto atmosférico domina en casa zona?
+    ¿En que regiones es más alto el NDVI? ¿En que regiones es más bajo? ¿Coinciden estas regiones para el SAVI? ¿Cual de los dos índices le permite distinguir mayor variabilidad en las coberturas? ¿Que le dice esto sobre la saturación de los índices? ¿Por debajo de que valores el NDVI y el SAVI se comportan linealmente? ¿Por arriba de que valores dejan de hacer? ¿Que le dice esto sobre la saturación del SAVI comparada con el NDVI?
 \end{que}
 
-\subsection{Estimación de variables biofísicas}
+\section{Modelos de inversión}
 
-Calcule el SAVI para ambas imágenes y luego utilice el modelo obtenido para el LAI en la clase anterior para estimar el LAI en la nueva fecha. Recuerde utilizar
+Para construir los dinstintos tipos de modelo será de utilidad incorporar datos de campo con los que comparar. Para hacerlo seleccione la imagen \path{S2A_MSIL2A_20170720} del \emph{Product Explorer} y luego haga click en la herramienta \emph{Vector/Import/Vector from CSV}. Seleccione el archivo \path{mediciones.csv} de la carpeta \path{material/vector_data}. Se abrirá una nueva ventana que le pedirá el sistema de referencia (Figura \ref{fig:importV}) y luego otra que le pedira como interpretar los puntos importantes (Figura \ref{fig:importVI}).
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=1.2]{fig:importV.png}
+    \caption{}
+    \label{fig:importV}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=1.2]{fig:importVI.png}
+    \caption{}
+    \label{fig:importVI}
+\end{figure}
+
+Mantenga en ambas las opciones por defecto haciendo click en \emph{Ok}.
+
+Puede explorar los contenidos del vector haciendo click en el vector \emph{Mediciones} dentor de \emph{Vector\_data} en el product explorer.
+
+Incorpore estos datos a las imágenes creadas para el NDVI y el SAVI como lo hizo para la imagen multiespectral.
+
+\subsection{Modelos semi-empiricos}
+
+La herramienta \emph{Analysys/Correlative Plot} permite hacer gráficos entre los valores de un vector de tipo punto y los correspondientes valores en una imagen. Seleccione la banda \emph{ndvi} del NDVI en el arbol de capas y abrá la herramienta. Luego elija el \emph{Poing data source} como \emph{Mediciones} y el \emph{data field} como \emph{Lai mean}. (Figura \ref{fig:corndvi})
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{fig:corndvi.png}
+    \caption{}
+    \label{fig:corndvi}
+\end{figure}
+
+Verá en este caso la linea 1:1 junto con los puntos medidos (en el eje horizontal) y los puntos de la imagen (en el eje vertical).
+
+Agregue marcando la casilla \emph{Show regression line} la linea de tendencia y obtenga el valor que relaciona el NDVI con el LAI. Repita el proceso utilizando ahora la imagen correspondiente al SAVI.
+
+Es posible utilizar este modelo sencillo para calcular un mapa de LAI. Para ello hacemos click derecho sobre la banda de NDVI y seleccionamos la opción \emph{Band maths...} (Figura \ref{fig:bm})
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{fig:bm.png}
+    \caption{}
+    \label{fig:bm}
+\end{figure}
+
+Recuerde que la relación aquí obtenida es
+\begin{equation}
+    \nu = m \times \beta + b
+\end{equation}
+donde $\nu$ es el índice de vegetación y $\beta$ alguna variable biofísica. Por lo tanto la ecuación que debemos utilizar es
 \begin{equation}
     \beta = \frac{\nu - b}{m}
 \end{equation}
 
-con $b = 0.23$ y $m=0.11$. Compare visualmente ambas imágenes. Calcule luego la diferencia entre ambas bandas y gráfique el histograma para dicha diferencia (Figura \ref{fig:hist}).
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:hist.png}
-    \caption{}
-    \label{fig:hist}
-\end{figure}
-
-\begin{que}
-    ¿Que regiones de la imagen presentan mayor diferencia? ¿Que regiones menos? ¿Es la diferencia uniforme a lo largo de la imagen? ¿Que diferencia observa en el histograma? ¿Es uniforme? ¿Cual es la difrencia promedio? ¿Coinciden los valores obtenidos utilizando la imagen corregida y no corregida? ¿Cómo es el histograma de la diferencia porcentual?
-\end{que}
-
-\section{Corrección por simple dos}
-
-El metodo de corrección por substracción de cuerpo obscuro (simple dos) consiste en restar a cada banda su valor mínimo, estimando que dicho valor coincide con la radiancia de camino debída a la atmósfera. Este método funcionará mejor en los cosas donde haya un cuerpo de reflectancia nula o casi nula.
-
-Para aplicarlo comenzamos obteniendo el valor mínimo de reflectancia utilizando la herramienta \emph{Statistics} para todas las bandas salvo la de los $1374nm$ . Gráficamos dicho valor como función de la longitud de onda (Figura \ref{fig:rlambda}) utilizando el archivo \path{dos.xlsx} de la carpeta \path{material/aux_data}
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:rlambda.png}
-    \caption{}
-    \label{fig:rlambda}
-\end{figure}
-
-Corrija ahora la imagen por el método de simple DOS utilizando la herramienta \emph{Band math...}. La formula a utilizar es
-
-\begin{equation}
-    \rho_{sdos} = \rho_{toa} - \rho_{A} + 0.01
-\end{equation}
-
-donde $\rho_{A}$ corresponde a la reflectancia ajustada obtenida de la planilla de Excel. Por ejemplo, para corregir la banda uno utilice
+Utilice la ecuación
 
 \begin{verbatim}
-    B1 - 0.09 + 0.01
+    (ndvi - 0.532)/0.153
 \end{verbatim}
 
-Configure además en \emph{Band math...} los parametros como
+y ponga como nombre a la banda \emph{LAI}. Repita el proceso para el SAVI.
 
-\begin{itemize}
-    \item name: sdos\_B1
-    \item Unit: dl
-    \item Spectral wavelength: 443.0
-\end{itemize}
-
-Cambiando la longitud de onda y la banda para cada banda (Figura \emph{fig:sdosbm}).
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:sdosbm.png}
-    \caption{}
-    \label{fig:sdosbm}
-\end{figure}
+Compare utilizando la herramienta \emph{Correlative plot} el resultado del modelo obtenido con los datos medidos a campo.
 
 \begin{que}
-    ¿En que zonas del espectro electromagnético es más grande el cambio? ¿Cómo se comporta la reflectancia mínima con la longitud de onda? ¿Que le dice el valor del exponente de decaimiento sobre la atmósfera?
+    ¿Cual de los dos índices se comporta de forma más lineal con el LAI? ¿Que pasa para el NDVI a medida que el LAI aumenta? ¿En que zona es lineal el NDVI y el LAI? ¿En que zona es lineal el SAVI y el LAI? ¿Cual de los dos modélos ajusta mejor a los datos a campo?
 \end{que}
 
-\section{Corrección por 6S}
+\subsection{Modelos multiespectrales}
 
-Para realizar la corrección utilizando el 6S es necesario no solamente contar con la imagen, sino también con datos del satélite y atmosféricos que le permitan simular las condiciones de la atmósfera.
+Otra opción para calcular parametros biofísicos, en el caso de SENTINEL 2, es utilizar el \emph{Biophysical processor}. Este algorítmo considera en simultaneo todas las bandas de la imagen y medienta un modelo de inversión, obtiene los parametros biofísicos para la imagen.
 
-Para los datos del satélite, es necesario conocer los centros y anchos de banda para cada una de las bandas. Estos pueden encontrarse en \href{https://goo.gl/epQ6cw}. De la tabla para cada una de las longitudes de onda puede obtenerse los valores minimos y máximos de la función de respuesta del sensor como
-
-\begin{equation}
-    \lambda_{min} = \lambda_{c} - \Delta \lambda /2
-\end{equation}
-
-y
-
-\begin{equation}
-    \lambda_{min} = \lambda_{c} + \Delta \lambda /2
-\end{equation}
-
-con $\lambda_c$ la longitud de onda central \footnote{Central wavelength} y $\Delta \lambda$ el ancho de banda \footnote{Bandwidth}.
-
-Además necesitará la visibilidad que puede obtener para la fecha de la imagen de \href{https://goo.gl/6ozXfH}.
-
-Ingrese a la página de 6S en \href{http://6s.ltdri.org/pages/run6SV.html} y haga click en \emph{Submit} para iniciar el proceso de corrección (Figura \ref{fig:s61}).
+Para utilizarlo elija la herramienta en \emph{Optical/Thematic Land processing/Vegetation Radiometric Indices}. Seleccione la imagen \path{S2A_MSIL2A_20170720} y elija computar el LAI (Figura \ref{fig:bio}). Haga click en \emph{Run} para ejecutar el modelo.
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics{fig:s61.png}
+    \includegraphics[scale=1.2]{fig:bio.png}
     \caption{}
-    \label{fig:s61}
+    \label{fig:bio}
 \end{figure}
 
-Elija luego el paso \emph{1. Geometric conditions} para comenzar a configurar el 6S. Seleccione \emph{User's} y haga click en submit.
+\textbf{Importante:} Este proceso puede tomar entre algunos minutos y varias horas según el tamaño de la imagen y la computadora utilizada.
 
-Cuando aparezca la página \emph{User's Geometrical Conditions} ponga el més y el día de la imagen. Obtenga luego los parametros de ángulos cenitales y asimutales para el sol y el sensor calculando los promedios de \emph{sun\_zenit}, \emph{sun\_azimuth}, \emph{view\_zenith\_mean} y \emph{view\_azimuth\_mean} (Figura \ref{fig:6sgeo}).  Haga luego click en submit.
+Compare los resultados medidos a campo con los obtenidos aplicando el procesador incluido en el SNAP \footnote{En este caso, el coeficiente de correlación será artificialmente alto. Los valores obtenidos a campo utilizados en el curso fueron obtenidos utilizando el \emph{Biophysical processor} e incorporandoles ruido gaussiano.}.
+
+Por último, es posible comparar los resultados obtenidos para el LAI por los distintos métodos. Una forma de hacer esto es utilizar la herramienta \emph{Band maths...} para calcular la diferencia entre el LAI calculado por cada uno. En este caso utilice la opción \emph{Edit expression...} para poder utilizar bandas de distintas imágenes. Luego de hacer este proceso, utilice la herramienta de estadistica en \emph{Analysis/Statistics} para calcular los parametros de la imagen y el histograma (Figura \ref{fig:sta}).
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics{fig:6sgeo.png}
+    \includegraphics{fig:sta.png}
     \caption{}
-    \label{fig:6sgeo}
+    \label{fig:sta}
 \end{figure}
-
-Seleccione a continuación \emph{2. Atmospheric model}. Seleccione para el \emph{Atmospheric profile} del menú desplegable \emph{Midlatitude Summer} y del \emph{Aerosol Model}  la opción \emph{Continental model} (Figura \ref{fig:6satmo}).
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:6satmo.png}
-    \caption{}
-    \label{fig:6satmo}
-\end{figure}
-
-Cuando le pregunte \emph{AOT o Visibility} seleccione \emph{Visibility (km)} del menú e ingrese el valor meteorológico obtenido.
-
-Seleccione luego \emph{3. Target Sensor Altitude} elija \emph{Sea level} para el \emph{Target altitude} y \emph{Satellite level} para \emph{Sensor altitude} (Figura \ref{fig:6salt}) haga luego click en submit.
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:6salt.png}
-    \caption{}
-    \label{fig:6salt}
-\end{figure}
-
-Seleccione luego \emph{4. Spectral Conditions}. Elija en \emph{Spectraal conditions} la opción \emph{Same filter function=1} (Figura \ref{fig:6sspec})
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:6sspec.png}
-    \caption{}
-    \label{fig:6sspec}
-\end{figure}
-
-haga click en \emph{submit}, ingrese los valores mínimos y máximos para longitud de onda de la banda 1 \footnote{Recuerde convertirla en $\mu m$.} (Figura \ref{fig:6smm})
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:6smm.png}
-    \caption{}
-    \label{fig:6smm}
-\end{figure}
-
-Configure luego la opción \emph{5. Ground Reflectance} dejando la configuración por defecto y poniendo $0$ cuando le pregunte \emph{input constant value for ro}.
-
-Por ultimo en \emph{6. Signal} deje los valores por defecto. Haga click en submit nuevamente y por último seleccione \emph{7. Results}. Habra el \emph{Output file} (Figura \ref{fig:6sres})
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:6sres.png}
-    \caption{}
-    \label{fig:6sres}
-\end{figure}
-
-Y del archivo de texto obtenido anote los parámetros:
-
-\begin{itemize}
-    \item \texttt{global gas. trans. :} de la columna \texttt{total} ($\alpha$)
-    \item \texttt{total  sca.   "    :} de la columna \texttt{total} ($\beta$)
-    \item \texttt{spherical albedo   :} de la columna \texttt{total} ($\gamma$)
-    \item \texttt{reflectance I      :} de la columna \texttt{total} ($\rho_I$)
-\end{itemize}
-
-Repita el procecso para todas las bandas salvo la 10.
-
-Una vez obtenidos los parametros de arriba para cada banda, puede corregir la imagen utilizando la ecuación
-
-\begin{equation}
-    \rho_{sdos} = \frac{\frac{\rho_{toa}}{\alpha \beta} - \frac{\rho_I}{\beta}}{1+\gamma \left(\frac{\rho_{toa}}{\alpha \beta} - \frac{\rho_I}{\beta}\right)}
-\end{equation}
 
 \begin{que}
-    ¿Que zonas del espectro presentan más cambio? ¿Donde aumenta la reflectancia y donde disminuye? ¿A que fenomeno de interacción entre la luz y la atmósfera se debe cada cambio?
-\end{que}
-
-\section{Comparación entre los resultados TOA y corregidos}
-
-Hasta este momento traabajo con bandas virtuales dentro de \emph{SNAP}. Al utilizarlas no se calculan hasta que no hace falta mostrar la información. Puede forzar a que el software las calcule haciendo click derecho sobre la banda y eligiendo la opción \emph{Convert band}. Convierta todas las bandas que generó en las clases anteriores.
-
-Utilice la herramienta \emph{Raster/Subset} y en \emph{Band subset} seleccione solo las bandas correspondientes a la corrección por simple dos (Figura \ref{fig:subset}). Repita el proceso utilizando solo las bandas obtenidas utilizando el 6S web.
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics{fig:subset.png}
-    \caption{}
-    \label{fig:subset}
-\end{figure}
-
-Con las dos nuevas imágenes obtenidas, calcule las firmas espectrales y utilizando el modelo obtenido para el SAVI, el LAI que obtendría de cada una.
-
-Compare los resultados con los obtenidos en la sección 1.
-
-\begin{que}
-    ¿Como se comparan las firmas espectrales de las imagenes corregidas con la imagen TOA?¿Cual es la diferencia promedio entre el SAVI para cada tipo de corrección?
+    ¿Cómo es el ajuste de los datos medidos a campo del procesador comparado con los índices? ¿Cual es la diferencia promedio entre el LAI calculado con cada uno de los índices y el del biophysical processor? ¿Cómo es el desvio? ¿Que modelos coincide?
 \end{que}

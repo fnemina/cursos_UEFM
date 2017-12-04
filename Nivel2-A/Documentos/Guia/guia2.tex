@@ -1,200 +1,136 @@
-\chapter{Variables biofísicas}
-El objetivo de esta clase es obtener, de distintas maneras, variables biofísicas utilizando imágenes satelitales. Para hacerlo se utilizarán dos tipos de modelos:
+\chapter{Firmas espectrales}
+Esta clase contien dos objetivos: en principio familiarizarse con el entorno gráfico del \emph{Sentinel Aplication Toolbox (SNAP)} y además comprender el concepto de firma espectral estudiando sus valores dentro de la imagen.
 
-\begin{itemize}
-    \item Semi-empiricos: obtenidos a partir de datos de campo.
-    \item Multiespectrales: obtenidos utilizando el \emph{Biophysical processor} del SNAP.
-\end{itemize}
+\section{Combinaciones espectrales}
 
-\section{Diagramas de dispersión}
-
-Abra la imágen \path{S2A_MSIL2A_20170720.dim} que se encuentra en la carpeta \path{material/raster_data}.
-
-Una herramienta util para explorer el comportamiento de la capa raster es observar los distintos cortes del espacio espectral. Para ello habra la herramienta \emph{Analysis/Scatter plot} (Figura \ref{fig:scatter}).
+En \emph{Product Explorer} haga click derecho sobre el nombre y seleccione \emph{Open RGB image windows.}. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:scatter.png}
-    \caption{}
-    \label{fig:scatter}
+    \includegraphics[scale=0.7]{fig:RGB.png}
+    \caption{Ventana de combinación de bandas. Puede eligir una banda para cada canal del monitor ()\emph{Red, Green, Blue}) o puede optarpor una preseleccionada del menú \emph{Profile}}
+    \label{fig:RGB}
 \end{figure}
 
-Seleccione la imagen y banda que corresponde a cada eje. Use en este caso la banda 4 (B4 - correspondiente a la region del rojo) y la banda 8 (B8 - correspodiente a la region del infrarrojo cercano) y haga click en el boton \emph{Refresh}.
-
-Es posible cambiar los minimos y máximos para cada una de las bandas o dejar que el SNAP los configure automaticamente. Luego de cada cambio deberá presionar el boton refresh. Configure los valores para observar mejor el scatterplot.
-
-Es posible también mostrar el scatterplot para una sola región de la imagen. Puede hacer esto seleccionando la opción \emph{Use ROI mask} y luego la mascara correspodiente. Utilice las máscaras
-
-\begin{itemize}
-    \item scl\_vegetation
-    \item scl\_bare\_soil\_desert
-    \item scl\_water
-\end{itemize}
-
-para comparar que regiones del scatterplot corresponden a cada tipo de cobertura (Figura \ref{fig:scatterVSW}).
+Por defecto elegirá la combinación que utiliza las bandas 4, 3 y 2 de Sentinel 2 y la desplegará haciendo click en OK (Figura \ref{fig:RVA}).
 
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:scatterVSW.png}
-    \caption{}
-    \label{fig:scatterVSW}
+    \includegraphics[scale=0.5]{fig:RVA.png}
+    \caption{Imagen en combinación de colores de color real.}
+    \label{fig:RVA}
 \end{figure}
-
-Muevase en el scatterplot a la región correspodiente al agua y cambie los limites de los ejes para centrarse en dicha region. Haciendo click derecho sobre el gráfico seleccione la opción \emph{Select Mask 'scatter\_plot\_area'} y seleccione los daatos correspondientes a los pixeles con reflectancia en rojo de 0.07 y en nir de 0.005. (Figura \ref{fig:scatterwater}).
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:scatterwater}
-    \caption{}
-    \label{fig:scatterwater}
-\end{figure}
-
-Observe en la imagen cuales son los pixeles enmascarados y  que cobertura pertenecen.
 
 \begin{que}
-    ¿Puede distinguir en el scatterplot red-nir los distintos tipos de coberturas de agua? ¿Cual de las dos bandas le permite distinguirlos mejor? ¿Que pasa con las coberturas de vegetacion? ¿Es posible distinguir en este scatterplot las coberturas de selva y forestacion?  ¿Y con las de suelo desnudo? ¿Es posible distinguir en este scatterplot las zonas correspondientes a areas urbanas y con suelo desnudo? ¿Como interpreta la linea por debajo de la cual no hay valores? ¿A que cobertura pertenece?
+    ¿A qué longitudes de onda pertenecen cada una de estas bandas? ¿Con qué colores las identificamos?
 \end{que}
 
-\section{Cálculo de índices}
-
-Existen distintos índices de vegetación que puede calcular utilizando el SNAP. En el menú \emph{Optical/Thematic Land processing/Vegetation Radiometric Indices} puede encontrar distintos indices de vegetación. Seleccione el NDVI de la lista y calculelo para la imagen. Deberá elegir en la sección de \emph{Processing parameters} las bandas a utilizar. Elija la banda 4 y 8 para los parametros red y nir respectivamente (Figura \ref{fig:ndviconfig}). El proceso tomara unos segundos y creará un nuevo archivo con los indices de vegetacion.
+Explore la imagen utilizando las herramientas de navegación y zoom (Figura \ref{fig:NAV})
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=1.2]{fig:ndviconfig.png}
-    \caption{}
-    \label{fig:ndviconfig}
+    \includegraphics[scale=0.5]{fig:NAV.png}
+    \caption{Herramientass de navegación.}
+    \label{fig:NAV}
 \end{figure}
 
-Muestre el NDVI generado. Puede cambiar los colores y la parte del histograma en la que se muestra la imagen desde la pestaña \emph{Colour managment} (Figura \ref{fig:cman}). Es posible además guardar y cargar paletass externas. Utilice en este caso la paleta \path{ndvi.cpd} que se encuentra en la carpeta \path{material/aux_data} para mostrar el NDVI haciendo click en \emph{Import colour palette from text file}.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:cman.png}
-    \caption{}
-    \label{fig:cman}
-\end{figure}
-
-Calcule el SAVI para la misma imagen (Figura \ref{fig:saviconfig}). comparelo con el NDVI. Puede ver ambas imagenes en simultaneo haciendo click en \emph{Windows/Tile horizontaly} o \emph{Windows/Tile vertically}. Para volver a la vista de una sola imagen haga click en \emph{Windows/Tile single}.
-
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:saviconfig.png}
-    \caption{}
-    \label{fig:saviconfig}
-\end{figure}
-
-Finalmente, construya el scatterplot entre el NDVI y el SAVI. Deberá en este caso seleccionar 2 imágenes distintas como fuente. Restrinja ademas el NDVI a los valores mayores que 0 (Figura \ref{fig:ndviscat}).
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:ndviscat.png}
-    \caption{}
-    \label{fig:ndviscat}
-\end{figure}
 
 \begin{que}
-    ¿En que regiones es más alto el NDVI? ¿En que regiones es más bajo? ¿Coinciden estas regiones para el SAVI? ¿Cual de los dos índices le permite distinguir mayor variabilidad en las coberturas? ¿Que le dice esto sobre la saturación de los índices? ¿Por debajo de que valores el NDVI y el SAVI se comportan linealmente? ¿Por arriba de que valores dejan de hacer? ¿Que le dice esto sobre la saturación del SAVI comparada con el NDVI?
+    ¿Observa diferencias en los colores de los distintos cuerpos de agua? ¿Y en los colores de la selva y las forestaciones? ¿Que le dice la diferencia observada sobre la firma espectral de los distintos cuerpos de agua? ¿Será posible separar espectralmente las forestaciones de la selva utilizando unicamente la zona visible del espectro electromagnetico?
 \end{que}
 
-\section{Modelos de inversión}
-
-Para construir los dinstintos tipos de modelo será de utilidad incorporar datos de campo con los que comparar. Para hacerlo seleccione la imagen \path{S2A_MSIL2A_20170720} del \emph{Product Explorer} y luego haga click en la herramienta \emph{Vector/Import/Vector from CSV}. Seleccione el archivo \path{mediciones.csv} de la carpeta \path{material/vector_data}. Se abrirá una nueva ventana que le pedirá el sistema de referencia (Figura \ref{fig:importV}) y luego otra que le pedira como interpretar los puntos importantes (Figura \ref{fig:importVI}).
+Seleccione ahora la combinacion de color RGB \emph{Sentinel 2 MSI False-color Infrarred} que incluye a una banda del infrarrojo cercano y dos del visible (Figura \ref{fig:NRG}). Explore la imagen desplegada en esta combinación de color.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=1.2]{fig:importV.png}
-    \caption{}
-    \label{fig:importV}
+    \includegraphics[scale=0.5]{fig:NRG.png}
+    \caption{Imagen en combinación de colores infrarrojo color.}
+    \label{fig:NRG}
 \end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:importVI.png}
-    \caption{}
-    \label{fig:importVI}
-\end{figure}
-
-Mantenga en ambas las opciones por defecto haciendo click en \emph{Ok}.
-
-Puede explorar los contenidos del vector haciendo click en el vector \emph{Mediciones} dentor de \emph{Vector\_data} en el product explorer.
-
-Incorpore estos datos a las imágenes creadas para el NDVI y el SAVI como lo hizo para la imagen multiespectral.
-
-\subsection{Modelos semi-empiricos}
-
-La herramienta \emph{Analysys/Correlative Plot} permite hacer gráficos entre los valores de un vector de tipo punto y los correspondientes valores en una imagen. Seleccione la banda \emph{ndvi} del NDVI en el arbol de capas y abrá la herramienta. Luego elija el \emph{Poing data source} como \emph{Mediciones} y el \emph{data field} como \emph{Lai mean}. (Figura \ref{fig:corndvi})
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:corndvi.png}
-    \caption{}
-    \label{fig:corndvi}
-\end{figure}
-
-Verá en este caso la linea 1:1 junto con los puntos medidos (en el eje horizontal) y los puntos de la imagen (en el eje vertical).
-
-Agregue marcando la casilla \emph{Show regression line} la linea de tendencia y obtenga el valor que relaciona el NDVI con el LAI. Repita el proceso utilizando ahora la imagen correspondiente al SAVI.
-
-Es posible utilizar este modelo sencillo para calcular un mapa de LAI. Para ello hacemos click derecho sobre la banda de NDVI y seleccionamos la opción \emph{Band maths...} (Figura \ref{fig:bm})
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:bm.png}
-    \caption{}
-    \label{fig:bm}
-\end{figure}
-
-Recuerde que la relación aquí obtenida es
-\begin{equation}
-    \nu = m \times \beta + b
-\end{equation}
-donde $\nu$ es el índice de vegetación y $\beta$ alguna variable biofísica. Por lo tanto la ecuación que debemos utilizar es
-\begin{equation}
-    \beta = \frac{\nu - b}{m}
-\end{equation}
-
-Utilice la ecuación
-
-\begin{verbatim}
-    (ndvi - 0.532)/0.153
-\end{verbatim}
-
-y ponga como nombre a la banda \emph{LAI}. Repita el proceso para el SAVI.
-
-Compare utilizando la herramienta \emph{Correlative plot} el resultado del modelo obtenido con los datos medidos a campo.
 
 \begin{que}
-    ¿Cual de los dos índices se comporta de forma más lineal con el LAI? ¿Que pasa para el NDVI a medida que el LAI aumenta? ¿En que zona es lineal el NDVI y el LAI? ¿En que zona es lineal el SAVI y el LAI? ¿Cual de los dos modélos ajusta mejor a los datos a campo?
+    ¿Observa diferencias en los colores de los distintos cuerpos de agua? ¿Pueded distinguir más o menos detalles dentro de los mismos que con la combinación de color real? ¿Y en los colores de la selva y las forestaciones? ¿Será posible separar espectralmente las forestaciones de la selva utilizando unicamente la zona del espectro visible del visible y el infrarrojo cercano? ¿Considerando la relación entre la reflectancia en el NIR y los parametros biofísicos, que pueded predecir sobre el porcentaje de cobertura de la selva y las forestaciones?
 \end{que}
 
-\subsection{Modelos multiespectrales}
-
-Otra opción para calcular parametros biofísicos, en el caso de SENTINEL 2, es utilizar el \emph{Biophysical processor}. Este algorítmo considera en simultaneo todas las bandas de la imagen y medienta un modelo de inversión, obtiene los parametros biofísicos para la imagen.
-
-Para utilizarlo elija la herramienta en \emph{Optical/Thematic Land processing/Vegetation Radiometric Indices}. Seleccione la imagen \path{S2A_MSIL2A_20170720} y elija computar el LAI (Figura \ref{fig:bio}). Haga click en \emph{Run} para ejecutar el modelo.
+Seleccione ahora la combinacion de color RGB \emph{Sentinel 2 MSI Healthy Vegetation} que incluye a una banda del infrarrojo cercano, una del infrarrojo medio y una del visible (Figura \ref{fig:SNR}). Explore la imagen desplegada en esta combinación de color.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=1.2]{fig:bio.png}
-    \caption{}
-    \label{fig:bio}
+    \includegraphics[scale=0.5]{fig:SNR.png}
+    \caption{Imagen en combinación de colores falso color compuesto.}
+    \label{fig:SNR}
 \end{figure}
 
-\textbf{Importante:} Este proceso puede tomar entre algunos minutos y varias horas según el tamaño de la imagen y la computadora utilizada.
-
-Compare los resultados medidos a campo con los obtenidos aplicando el procesador incluido en el SNAP \footnote{En este caso, el coeficiente de correlación será artificialmente alto. Los valores obtenidos a campo utilizados en el curso fueron obtenidos utilizando el \emph{Biophysical processor} e incorporandoles ruido gaussiano.}.
-
-Por último, es posible comparar los resultados obtenidos para el LAI por los distintos métodos. Una forma de hacer esto es utilizar la herramienta \emph{Band maths...} para calcular la diferencia entre el LAI calculado por cada uno. En este caso utilice la opción \emph{Edit expression...} para poder utilizar bandas de distintas imágenes. Luego de hacer este proceso, utilice la herramienta de estadistica en \emph{Analysis/Statistics} para calcular los parametros de la imagen y el histograma (Figura \ref{fig:sta}).
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:sta.png}
-    \caption{}
-    \label{fig:sta}
-\end{figure}
 
 \begin{que}
-    ¿Cómo es el ajuste de los datos medidos a campo del procesador comparado con los índices? ¿Cual es la diferencia promedio entre el LAI calculado con cada uno de los índices y el del biophysical processor? ¿Cómo es el desvio? ¿Que modelos coincide?
+    ¿Es posible separar a las forestaciones de la selva en ésta combinación de bandas? ¿Cuál es la caracteristica biofísica que  manifiesta mayor cambio entre la selva y las forestaciones? ¿Es posible distinguir grandes diferencias entre los cuerpos de agua en esta combinación de bandas?
+\end{que}
+
+\begin{que}
+    ¿Que combinación de bandas le aporta más información sobre la vegetación? Explique desde el punto de vista de la firma espectral de la vegetación,  según sus variaciones en cada zona y teniendo en cuenta las propiedades biofísicas. ¿Qué combinación de bandas le aporta más información sobre los cuerpos de agua?
+\end{que}
+
+\section{Firmas espectrales}
+
+En el menú principal \emph{Optical} seleccione la opción \emph{Spectrum view}. Esta herramienta permite extraer los valores de un píxel en función de la longitud de onda, mostrarlo como gráfico de lineas (Figura \ref{fig:sps}) o guardados en un archivo de texto.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.7]{fig:sps.png}
+    \caption{Herraamienta \emph{Spectrum view} que permite mostrar lass firmas espectrales de distintos píxeles de la imagen.YO PONDRIA EL  NOMBRE DE LOS BOTONES LATERALES}
+    \label{fig:sps}
+\end{figure}
+
+Despliegue la imagen \path{S2A_MSIL2A_20170720.dim} en una combinación de bandas conveniente para identificar distintas coberturas de vegetación Y observe sus firmas espectrales.
+
+\begin{que}
+    ¿Cómo es la la firma espectral de la vegetación para las zonas de la selva que parecen hallarse más altas? %ver lo de alto
+    ¿Y para las zonas de forestación? ¿Qué pasa con la firma espectral de la ciudad de Puerto Iguazu?
+\end{que}
+
+Es posiblemostrar varias firmas espectrales en simultaneo utilizando marcas (PIN). Para hacerlo seleccione la herramienta \emph{Pin placement tool}  de la barra de herramienta %icono
+ y haga click sobre la imagen (Figura \ref{fig:pin}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.7]{fig:pin.png}
+    \caption{Pin sobre un píxel en la imagen.}
+    \label{fig:pin}
+\end{figure}
+
+Utilice la herramienta \emph{Pin placement tool} para generar pines en distintas zonas de la imagen. Incluya al menos dos zonas de la selva cualitativamente ditintas, una zona de forestación y al menos un pin en el embalce Urugua-I, uno en el Rio Parana y otro en el Iguazu.
+
+Haciendo click en \emph{Pin manager} se desplegará una nueva ventana con sus propiedades. Puede observar el pixel sobre el que se encuentra, su latitud y longitud, el color que se mostraŕa y la etiqueta \footnote{Label}. Asgine a cada pin una etiqueta y color diferenciado (Figura \ref{fig:pmg}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.7]{fig:pmg}
+    \caption{Ping manager}
+    \label{fig:pmg}
+\end{figure}
+
+Con la herramienta \emph{Spectrum view} puede mmostrar todas las firmas espectrales al mismo tiempo \emph{Show spectra for all pins}, o por separado \emph{Show spectra for selected pins} (Figura \ref{fig:spn}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.7]{fig:spn.png}
+    \caption{Firmas espectrles de los pines seleccionados}
+    \label{fig:spn}
+\end{figure}
+
+Haciendo click derecho sobre la firma espectral se despliega una lista de opciones. Entre ellas \emph{Zoom in}, \emph{Zoom out} y \emph{Auto-range} para cambiar la escala del gráfico o \emph{Save as...} para guardarlo.
+Con el botón \emph{Export spectra to text file} de la banda lateral puede exportar los valores de reflectancia.
+
+Compare las firmas espectrales de las zonas de forestación y selva paranense (Figura \ref{fig:spn}).%?????
+
+\begin{que}
+    ¿En qué zonas del espectro son similares las firmas de Selva Alta %ver
+    y Forestación? ¿En qué zonas del espectro son distintas las tres firmasa espectrales? ¿Qué le permite decir esto sobre el contenido de contenido de relativo de pigmentos de las tres coberturas? ¿Y sobre el contenido relativo de humedad en la vegetación? ¿Qué suposición está realizando al comparar las tres firmas de vegetación?
+\end{que}
+
+Compare las firmas espectrales del río Parana y el río Iguazu cerca de la zona donde se juntan.
+
+\begin{que}
+    ¿En que zona del espectro electromagnético son más distintass las firmas espectrales? ¿A que se debe esta diferencia? ¿Qué le dice sobre la combinación de bandas que más nos permite distinguir propiedades en los cuerpos de agua? ¿Cuál de los dos ríos parece tener mayor contenido de sedimento? ¿Por qué?
 \end{que}
