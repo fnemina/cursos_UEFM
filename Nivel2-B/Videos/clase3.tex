@@ -1,0 +1,135 @@
+\section{Speckle y procesamiento}
+\subsection{Speckle}
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{fig:suma}
+    \caption{ }
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{fig:suma2.png}
+    \caption{ }
+    \label{}
+  \end{figure}
+  \begin{itemize}
+    \item El radar suma su señal de manera compleja, modulo y fase.
+    \item Como todos los blancos no están en fase la suma no es siempre constructiva.
+    \item El specke no es ruido en el sentido que es determinístico. Si repito la adquisición manteniendo la geometría el patrón de specke resulta idéntico.
+    \item Si promedio dos pixeles continuos va a volver a pasar lo mismo. Salvo que lo haga en potencia (multilooking)
+  \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Reducción de speckle y ruido}
+\begin{frame}{\secname : \subsecname}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+     \begin{block}{SAR}
+       \begin{itemize}
+         \item Se promedian en potencia varios píxeles vecinos y se los asigna a uno nuevo
+         \item Se pierde resolución.
+         \item Efectivo contra el speckle.
+       \end{itemize}
+     \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{fig:filtro}
+          \caption{}
+          \label{}
+        \end{figure}
+    \end{column}
+    \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{fig:original}
+    \caption{ }
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{fig:multilook}
+    \caption{ }
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+     \begin{block}{SAR}
+       \begin{itemize}
+         \item Se promedia el mismo pixel en varias imagenes.
+         \item No se pierde resolución.
+         \item Implica un buen corregistro.
+         \item No muy efectivo contra el speckle, pero muy bueno contra el ruido.
+       \end{itemize}
+     \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{fig:tiempo}
+          \caption{}
+          \label{}
+        \end{figure}
+    \end{column}
+    \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{fig:original}
+    \caption{ }
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{fig:temporal}
+    \caption{ }
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Niveles de procesamiento}
+\begin{frame}{\secname : \subsecname}
+  % Please add the following required packages to your document preamble:
+  % \usepackage{booktabs}
+  % \usepackage{graphicx}
+  \begin{table}[]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}cccc@{}}
+  \toprule
+  L1A (SLC)                                                                                                    & L1B (GRD)                                                                  & L1C (GEC)                                                                              & L1D (GTC)                                                                                     \\ \midrule
+  Single Look Complex                                                                                          & Ground Range Detected                                                      & Geocoded Elipsoid Corrected                                                            & Geocoded Terrain Corrected                                                                    \\
+  \multicolumn{1}{p{4.5cm}}{Datos en formato complejo (real e imaginario), sin multilook y en la geometria del radar} & \multicolumn{1}{p{4.5cm}}{Datos en potencia, con multilook y proyectada al suelo} & \multicolumn{1}{p{4.5cm}}{Datos en potencia, con multilook y geocodificada sobe el elipsoide} & \multicolumn{1}{p{4.5cm}}{Datos en potencia, con multilook y geocodificada sobe el el terreno (DEM)}
+  \end{tabular}%
+  }
+  \caption{My caption}
+  \label{my-label}
+  \end{table}
+\end{frame}
