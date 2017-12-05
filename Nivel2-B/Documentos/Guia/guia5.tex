@@ -1,6 +1,9 @@
 \chapter{Introducción a aplicaciones}
+Esta clase tiene como objetivo aplicar los conceptos estudiados durante el curso en distintas aplicaciones utilizando imágenes de distintos satélites.
 
-Esta clase tiene como objetivo aplicar los conceptos estudiados durante el curso, para la detección se espejos de agua, utilizando imágenes \emph{Sentinel 1}. Se trabajará con las inundaciones de octubre de 2017 en la zona de Chascomús, provincia de Buenos Aires, Argentina.
+\section{Detección de espejos de agua}
+
+Para la detección se espejos de agua, utilizando imágenes \emph{Sentinel 1}, durante octubre de 2017 en la zona de Chascomús, provincia de Buenos Aires, Argentina.
 
 % Imagen antes
 % S1B_IW_GRDH_1SDV_20171007T090618_20171007T090643_007721_00DA33_E6D1
@@ -11,7 +14,7 @@ Esta clase tiene como objetivo aplicar los conceptos estudiados durante el curso
 % S = -35.933
 % E = -58.569
 
-\section{Actividades}
+\subsection{Actividades}
 
 \begin{que}
     Descargue la imagen del 7 de octubre del 2017
@@ -51,21 +54,15 @@ Esta clase tiene como objetivo aplicar los conceptos estudiados durante el curso
 \end{que}
 
 \begin{que}
-    Obtenga un mapa de zonas anegadas. Seleccione la herramienta \menu{Band maths...} (Figura \ref{fig:bm}) con click derecho sobre el nombre de la imagen e ingrese la formula
+    Obtenga un mapa de zonas anegadas. Utilice la herramienta \menu{Band math...} (Apéndice \ref{ap:HA}) con click derecho sobre el nombre de la imagen e ingrese la formula
     \begin{center}
         \path{BANDA < T}
     \end{center}
     donde T es el valor obtenido en el punto anterior.
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[scale=0.4]{fig:bm.png}
-        \caption{Álgebra de bandas en el SNAP.}
-        \label{fig:bm}
-    \end{figure}
 \end{que}
 
 \begin{que}
-    Exporte el mapa como KMZ.
+    Exporte el mapa como KMZ (Apéndice \ref{ap:GE}).
 \end{que}
 
 \begin{que}
@@ -78,3 +75,88 @@ Esta clase tiene como objetivo aplicar los conceptos estudiados durante el curso
 \begin{que}
     Compare las zonas inundadas en 2016 y 2017.
 \end{que}
+
+\section{Detección derrames de aceite.}
+
+Para la detección se derramos de aceite y petroleo, utilizando imágenes \emph{Sentinel 1}, durante enero de 2017 en la costa de Portugal.
+
+% Imagen antes
+% S1A_IW_GRDH_1SDV_20170102T063506_20170102T063531_014649_017D2D_D901
+
+% Subset
+% N =
+% W =
+% S =
+% E =
+
+\subsection{Actividades}
+
+\begin{que}
+    Descargue la imagen del 7 de octubre del 2017
+    \begin{center}\path{ S1A_IW_GRDH_1SDV_20170102T063506_20170102T063531_014649_017D2D_D901}\end{center} del \href{https://vertex.daac.asf.alaska.edu/}{Alaska Satellite Facility}. Utilice la búsqueda por \emph{Granule} en lugar de la \emph{Geospatial}.
+\end{que}
+
+\begin{que}
+    Con la herramienta \menu{Raster>Subset} (Figura \ref{fig:coordenadas})
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.35]{fig:coordenadas.png}
+        \caption{Subset espacial de una imagen en SNAP. Se reliza en este caso utilizando las coordenadas geográficas.}
+        \label{fig:coordenadas}
+    \end{figure}
+
+    haga un recorte entre las coordenadas geográficas
+    \begin{itemize}
+        \item Latitud norte:
+        \item Longitud oeste:
+        \item Latitud sur:
+        \item Longitud este:
+    \end{itemize}
+
+\end{que}
+
+\begin{que}
+    Procese la imagen como se realizó en la clase 3. Calíbrela para obtener el coeficiente de backscatter, aplique los filtros correspondientes y proyectela en terreno utilizando un DEM. Exporte la vista obtenida en dB.
+\end{que}
+
+\begin{que}
+    En la imagen, identifique zonas con agua y aceite. Estas últimas se observarán más oscuras. Mida su coeficiente de retrodispersión en las bandas VV y VH. Seleccione que polarización separa mejor las zonas con y sin aceite.
+\end{que}
+
+\begin{que}
+  Utilizando la he
+\end{que}
+
+\begin{que}
+    Utilizando la herramienta \menu{Analysis>Histogram} calcule el histograma de la imagen e identifique un valor por debajo del cual, el coeficiente de retrodispersión corresponde a agua.
+\end{que}
+
+\begin{que}
+  Obtenga un mapa de zonas anegadas. Utilice la herramienta \menu{Band math...} (Apéndice \ref{ap:HA}) con click derecho sobre el nombre de la imagen e ingrese la formula
+  \begin{center}
+      \path{BANDA < T}
+  \end{center}
+  donde T es el valor obtenido en el punto anterior.
+\end{que}
+
+\begin{que}
+    Exporte el mapa como KMZ (Apéndice \ref{ap:GE}).
+\end{que}
+
+\begin{que}
+    Mida el tamaño de la mancha de aceite más grande de la imagen.
+\end{que}
+
+\section{Deforestación en Salta}
+
+
+
+% Imagen antes
+% S1A_IW_GRDH_1SSV_20141122T224900_20141122T224925_003400_003F6A_A171
+% S1B_IW_GRDH_1SDV_20171124T224831_20171124T224859_008429_00EEE9_992C
+
+% Subset
+% N =
+% W =
+% S =
+% E =
