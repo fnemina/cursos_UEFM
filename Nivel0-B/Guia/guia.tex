@@ -1,0 +1,278 @@
+\documentclass[a4paper,12pt]{book}
+\input{preamble.tex}
+\usepackage{float}
+\usepackage{array}%
+\graphicspath{{./figs/}}
+
+\title{{\large Nivel 0} \\ Interpretación visual de imágenes satelitales}
+\author{Marina Compagnucci \and Francisco Nemiña \and Laura Rouco}
+\begin{document}
+\maketitle
+\titlepage
+
+\chapter{Introducción}
+Existen en la actualidad distintas formas de acceder a productos de origen satelital. Es posible obtener resultados que varían desde imágenes en crudo, hasta mapas de propiedades y usos del suelo.
+
+En los últimos años, además de las formas tradicionales de procesamiento de imágenes, donde un usuario debía descargar un producto y luego manipularlo, comenzaron a aparecer soluciones web, permitiendo el acceso a un amplio abanico de propuestass, independientemente de su nivel de conocimiento. Entre ellas se destacan el \href{https://explorer.earthengine.google.com/#workspace}{EarthEngine} de Google, el \href{http://landsatexplorer.esri.com/}{LandsatExplorer} de ESRI, el \href{http://apps.sentinel-hub.com/eo-browser/}{EO Browser} de Sentinel-hub y el \href{lv.eosda.com}{Land Viewer} de EOS.
+
+No obstante, es importante disponer de capacitaciones que permitan mejorar el uso de las herramientas. Este taller pretende incorporar los conocimientos básicos de teledetección óptica en interpretación visual, para que los usuarios sin conocimientos previos, puedan acercarce al manejo de productos satelitales de forma clara y sencilla.
+
+Se trabajará con la aplicación Land Viewer, con el objetivo de analizar los efectos producidos por el incendio en las cercanías de Carlos Paz, provincia de Córdoba, en septiembre de 2017.
+
+\chapter{Land Viewer}
+
+LandView es un servicio web de la empresa Earth Observing System, el cual permite explorar, visualizar y descargar de forma gratuita, hasta 10 imagenes por día de sensores que incluyen la serie \href{https://landsat.usgs.gov/}{Landsat}, \href{https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mcd43a4}{MODIS} y \href{https://sentinel.esa.int/web/sentinel/missions/sentinel-2}{Sentinel 2} .
+
+\section{Registro}
+Para acceder al servicio de LandView debe dirigirse a \url{https://lv.eosda.com} y registrarse
+
+\section{Interface gráfica}
+
+Una vez que ingresa, accederá a un mapa  similar al de Google Maps.
+Destacamos en él tres partes (Figura \ref{fig:main}):
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{fig:main.png}
+    \caption{Pantalla principal del Land Viewer. Abajo a derecha se encuentra en fucsia la opción de registro. A la derecha en rojo tenemos las herramietas de medición, zoom y mapas. Arriba en verde el cuadro de busqueda. A la izquierda en azul encontramos la selección de imágenes y productos satelitales.}
+    \label{fig:main}
+\end{figure}
+
+\begin{itemize}
+    \item Sector de busqueda (en verde).
+    \item Herramientas de zoom en el mapa, marcación de zonas de interés,  mediciones e incorporación de capas como ser un mapa de alturas, una imagen satelital de base o un mapa político (en rojo).
+    \item Selección de productos satelitales, formas de mostrarlos, realizar combinaciones de bandas y guardar los datos obtenidos (en azul).
+\end{itemize}
+
+\section{Mediciones}
+
+En el mapa, busque la ciudad de Villa Carlos Paz. Podrá ver sus coordenadas en el margen inferior izquierdo. Utilice la herramienta \emph{Medir distancias} \includegraphics[scale=0.2]{in:medir.png} para calcular la distancia entre Córdoba Capital y Villa Carlos Paz (Figura \ref{fig:distancia}). Para realizaro, haga un click en el sitiode inicio y otro en el lugar de finalización.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{fig:distancia.png}
+    \caption{Medición de distancia entre la ciudad de Córdoba y Villa Carlos Paz. El valor aparece en la parte inferior de la pantalla.}
+    \label{fig:distancia}
+\end{figure}
+
+Puede medir un área cerrando el polígono sobre el punto inicial.
+
+\section{Actividades}
+
+\begin{que}
+    ¿Cuál es la superficie del Lago San Roque, que se encuentra al norte de Villa Carlos Paz?
+\end{que}
+\begin{que}
+    ¿Cuál es el perímetro del Lago San Roque?
+\end{que}
+\begin{que}
+    ¿Cuál es la superficie de la Laguna Mar Chiquita que se encuentra en Córdoba?
+\end{que}
+
+\begin{que}
+    ¿Cuál es la distancia lineal entre la ciudad de Córdoba y la ciudad de Santa Rosa, La Pampa?
+\end{que}
+
+\begin{que}
+    ¿Cuáles son las coordenadas de las ciudades de Córdoba Capital, Villa Carlos Paz, Río Cuarto y Villa María?
+\end{que}
+
+\chapter{Resolución espacial y temporal}
+Dos características fundamenteles de las imágenes satelitales son la resolución espacial y la resolución temporal. La primera, da una idea de los objetos que podemos distinguir en el terreno; por ejemplo, una resolución espacial de $30m$ nos permitirá distinguir una plaza de una manzana construida, pero no las casas dentro de una manzana. La resolución temporal indica la la duración del fenomeno ma chico que se puede detectar; por ejemplo, una resolución temporal de $15$ días posibilita estudiar el cambio de vegetación a lo largo de las estaciones, pero no la variación de nubes a lo largo del día.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{fig:evst.png}
+    \caption{Distintos usos de productos satelitales según la resolución espacial y temporal recomendada.}
+    \label{fig:evst}
+\end{figure}
+
+Ambas resoluciones suelen estar relacionadas de forma  tal que al aumentar una disminuye la otra (Figura \ref{fig:evst}). Por ejemplo: GOES, un satélite meteorológico, tiene alta revisita temporal (aproximadamente de 15 minutos), mientras que su resolución espacial es baja (4km). En el otro extremo, SPOT 7 tiene una alta resolución espacial, de hasta 1.5m, pero con una revisita temporal del orden del mes.
+
+Es importante destacar que no existen mejores o peores imágenes, sino que su elección dependerá del objeto de estudio.
+
+\section{Imágenes satelitales}
+Para seleccionar una imagen es necesario definir un área de interés (AOI) con la herramienta \emph{Draw rectangular} \includegraphics[scale=0.2]{in:draw.png}.
+En este caso, dibuje un rectanglo que incluya la zona entre el Lago San Roque y Córdoba (Figura \ref{fig:aoi}) y seleccione el satélite Landsat 8 desde \includegraphics[scale=0.2]{in:sat.png}. A continuación, en el margen derecho, aparecerán todas las escena disponibles.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{fig:aoi.png}
+    \caption{Gráfico de un área de interes (AOI).}
+    \label{fig:aoi}
+\end{figure}
+
+ Por defecto, Land Viewer muestra solo aquellas escenas que poseen una cobertura nubosa de hasta un 60\% y de los últimos 3 meses (Figuras \ref{fig:nube} y \ref{fig:fecha}). Es posible cambiarlo haciendo click en la parte superior del Scene Search.  Modifique la cobertura nubosa al 100\%.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig:nube.png}
+    \caption{Herramienta de selección de cobertura de nubes y ángulo de incidencia solar.}
+    \label{fig:nube}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig:fecha.png}
+    \caption{Herramienta de selección de fechas para las imágenes.}
+    \label{fig:fecha}
+\end{figure}
+
+
+Elija la imagen del 2 de Septiembre de 2017 (Figura \ref{fig:scene}) y se mostrará sobre el mapa. Puede moverse sobre ella y realizar mediciones.
+
+\begin{figure}[hb!]
+\centering
+  \includegraphics[width=0.5\textwidth]{fig:imagen1.png}
+\caption{Selección de satélite e imágenes en Land Viewer.}
+\label{fig:scene}
+\end{figure}
+
+La imagen pertenece al sensor OLI del satelite Landsat 8, con una resolución espacial de $30m$, por lo tanto, solo podrá distinguir objetos de tamaño mayor, como manzanas o parques, pero no más pequeños.
+
+Vuelva a la lista de satélite y elija el producto MODIS MCD43A4, ahora dispondrá de una imagen por día. Seleccione la correspondiente al 27 de Agosto de 2017.
+
+Observe que no es posible distinguir las manzanas de la ciudad de Córdoba como en el caso anterior. La imagen pertenece al producto \emph{MCD43A4} generado a partir del sensor MODIS de los satélites AQUA y TERRA, con una resolución espacial de 500m.
+
+\section{Comparación entre fechas}
+Realice la comparación entre una imagen anterior y una porsterior al incendio, correspondientes a la misma época, en años consecutivos. Para ello, seleccione el satélite Sentinel 2 y elija la imagen del 21 de Agosto de 2017. Haga click en \emph{Comparison slider} \includegraphics[scale=0.2]{in:LR.png} y seleccione la imagen del 23 de Agosto de 2016, modificando la fecha en el calendario.
+
+Puede cambiar la posición de las imágenes a izquierda o la derecha con el botón L/R (Figura \ref{fig:slider} - en verde). Desplace el slider a ambos lados y visualice la zona cercana al Lago San Roque.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{fig:slider.png}
+    \caption{Dos imágenes en pantalla, separadas por el slider.}
+    \label{fig:slider}
+\end{figure}
+
+\section{Actividades}
+\begin{que}
+    ¿Cada cuantos días hay una nueva imagen Landsat 8?
+\end{que}
+\begin{que}
+    ¿Cada cuantos días hay una nueva imagen MODIS?
+\end{que}
+\begin{que}
+    ¿Es posible distinguir las manzanas de la Ciudad de Córdoba en la imagen Landsat 8?
+\end{que}
+\begin{que}
+    ¿Hay incendios en la zona durante el año 2016?
+\end{que}
+\begin{que}
+    ¿Qué superficie tiene el área incendiada dentro de la imagen?
+\end{que}
+
+\chapter{Combinaciones espectrales}
+
+Hasta ahora ha trabajado con imágenes cuya combinación de colores resulta intuitiva, pero no permite distinguir claramente las zonas incendiadas. Para mejorar esta situación se utilizaran zonas del espectro electromagnetico que normalmente no pueden ser distinguídas por el ojo humano, pero sí por el sensor.
+
+Los satélite miden la cantidad de luz que proviene de la superficie terrestre. Las distintas coberturas como vegetación, agua y suelo sin cobertura vegetal tienen un comportamiento característico dentro del espectro, que puede ser utilizado para extraer información sobre ellos (Figura \ref{fig:spec}).
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{fig:spec.png}
+    \caption{Firmas espectrales para el agua, suelo y vegetación.}
+    \label{fig:spec}
+\end{figure}
+
+
+\section{Combinaciones espectrales}
+
+Las combinaciones espectrales muestran en color azul, verde y rojo la información de cada longitud de onda. En Land Viewer, puede modificarlo haciendo click en BAND COMBINATIONS (Figura \ref{fig:bandas}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{fig:bandas.png}
+    \caption{Ventana de combinaciones de bandas. Es posible elegir una disponible o configurar una nueva.}
+    \label{fig:bandas}
+\end{figure}
+
+Las combinaciones espectrales permiten mostrar distinta información (Tabla \ref{tab:ce}).
+
+En nuestro caso particular, la combinación espectral que mejor separa las zonas incenciadas de las no incendiadas es la \emph{Short wave infrared}, donde se muestra en rojo los sitios que se incendiaron recientemente y en verde las zonas con vegetación. Seleccione esa combinación y compare ambas imágenes. (Figura \ref{fig:incendio}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{fig:incendio.png}
+    \caption{Imagen en combinación espectral \emph{Short wave infrared}. La vegetación se observa en colores verde brillante, el incendio en rojo, el agua en negro y la ciudad en violeta.}
+    \label{fig:incendio}
+\end{figure}
+
+
+\pagebreak
+\hspace{0pt}
+\vfill
+\begin{table}[H]
+    \begin{tabular}{m{0.55\textwidth} c}
+        \toprule
+        \multicolumn{2}{c}{Combinaciones espectrales}\\
+        \midrule\\
+        Color real (\emph{Natural color - rojo, verde, azul}): Muestra la imagen de forma similar a como la verían nuestros ojos. La vegetación se ve verde, los suelos en distintos tonos de marrón, las ciudades en blanco y los cuerpos de agua en colores oscuros. &
+        \begin{minipage}{.4\textwidth} \includegraphics[width=\linewidth]{4-3-2.jpeg}
+        \end{minipage}\\
+        &\\
+        Falso color (\emph{False color (urban) - SWIR2, SWIR1, Rojo}): Proporciona una interpretación similar a la observada por el ojo humano, sin tener en cuenta la incidencia de la atmósfera. La vegetación se visualiza en verde, las zonas urbanas en blanco y ciam, los suelos en una variedad de colores y las zonas con agua se notan en azul o negro. &
+        \begin{minipage}{.4\textwidth} \includegraphics[width=\linewidth]{12-11-4.jpeg}
+        \end{minipage}\\
+        &\\
+        Infrarrojo color (\emph{Color infrared (vegetation) - NIR, Rojo, Verde}): La combinación de color habitual para separar vegetación de otras coberturas. Aquí la vegetación suele verse en color rojo brillante, las ciudades y suelos sin cobertura en tonos de cian y las zonas con agua en negro. &
+        \begin{minipage}{.4\textwidth} \includegraphics[width=\linewidth]{8-4-3.jpeg}
+        \end{minipage}\\
+        &\\
+        Falso color (\emph{Land/water - NIR, SWIR1, Rojo}): Combinación de bandas útil para caracteriza la vegetacion y separarla de la cobertura agua. La vegetación se verá en tonos de naranja, dependiendo de su contenido de humedad, las zonas con agua en azul y las ciudades y el suelo desnudo en  color blanco o verde. &
+        \begin{minipage}{.4\textwidth} \includegraphics[width=\linewidth]{8-11-4.jpeg}
+        \end{minipage}\\
+        &\\
+        \bottomrule
+    \end{tabular}
+    \caption{Combinaciones espectrales típicas.}
+    \label{tab:ce}
+\end{table}
+\vfill
+\hspace{0pt}
+
+Puede descargar la imagen generada haciendo click en ESCENE DOWNLOAD, elija la opción  \emph{Crop by extent} y luego haga click en Download.
+
+\section{Actividades}
+
+\begin{que}
+    ¿Cuál es la superficie incendiada al este del Lago San Roque?
+\end{que}
+
+\begin{que}
+    ¿En qué color se visualiza la zona incendiada en cada una de las combinaciones de bandas descriptas arriba?
+\end{que}
+
+\begin{que}
+    ¿Qué combinación espectral le permite distinguir más detalles en el Lago San Roque?
+\end{que}
+
+\begin{que}
+    ¿Qué combinación espectral le permite distinguir vegetación dentro de la ciudad de Córdoba?
+\end{que}
+
+\begin{que}
+    ¿Cuanto creció la superficie incendiada entre el 21 de Agosto y el 17 de septiembre de 2017 al este de Villa Carlos Paz?
+\end{que}
+
+\begin{que}
+    Descargue un mapa de la zona donde se vea la superficie incendiada al 21 de Agosto de 2017 en la cercanía de Villa Carlos Paz.
+\end{que}
+
+\chapter{Cierre}
+
+En este taller se mostró como utilizar las herramientas de Land Viewer junto con algunos conceptos básicos de teledetección, para la interpretación de imágenes.
+
+Aprendimos que hay 3 características fundamentales de un conjunto satélite/sensor para el uso de productos geoespaciales
+
+\begin{itemize}
+    \item Resolución espacial: capacidad de diferenciar objetos en el terreno.
+    \item Resolución temporal: cada cuanto tiempo se tiene una imagen de la misma zona.
+    \item Resolución espectral: cantidad de zonas del espectro que se pueden distinguir.
+\end{itemize}
+
+Esta es una primera aproximación al trabajo en teledetección, donde la interpretación visual se combina con el procesamiento digital para extraer información sobre la superficie terrestre.
+
+\end{document}
