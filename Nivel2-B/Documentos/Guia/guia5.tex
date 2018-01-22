@@ -22,20 +22,14 @@ Para la detección se espejos de agua, utilizando imágenes \emph{Sentinel 1}, d
 \end{que}
 
 \begin{que}
-    Con la herramienta \menu{Raster>Subset} (Figura \ref{fig:coordenadas})
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[scale=0.35]{fig:coordenadas.png}
-        \caption{Subset espacial de una imagen en SNAP. Se reliza en este caso utilizando las coordenadas geográficas.}
-        \label{fig:coordenadas}
-    \end{figure}
-    haga un recorte entre las coordenadas geográficas
+    Haga un recorte entre las coordenadas geográficas
     \begin{itemize}
         \item Latitud norte: -35.632
         \item Longitud oeste: -57.395
         \item Latitud sur: -35.933
         \item Longitud este: -58.569
     \end{itemize}
+    utilizando la herramienta \menu{Raster subset} (Apéndice \ref{ap:HA})
 \end{que}
 
 \begin{que}
@@ -88,10 +82,10 @@ Para la detección se derramos de aceite y petroleo, utilizando imágenes \emph{
 \begin{que}
     Con la herramienta \menu{Raster>Subset} (Apéndice \ref{ap:HA}) haga un recorte entre las coordenadas geográficas
     \begin{itemize}
-        \item Latitud norte:
-        \item Longitud oeste:
-        \item Latitud sur:
-        \item Longitud este:
+        \item Latitud norte: 25.313
+        \item Longitud oeste: 53.930
+        \item Latitud sur: 26.089
+        \item Longitud este: 54.933
     \end{itemize}
 
 \end{que}
@@ -186,13 +180,102 @@ Para la detección se derramos de aceite y petroleo, utilizando imágenes \emph{
 \end{que}
 
 
-\section{Expansión urbana}
+\section{Areas urbanas}
+
+% Imagen
+% S1B_IW_GRDH_1SDV_20180105T005129_20180105T005154_009029_010222_5BA1
+% Subset
+% N = 33.323
+% W = -102.433
+% S = 33.789
+% E = -101.763
+
+\subsection{Actividades}
+
+\begin{que}
+    Descargue las imagenes
+    \begin{center}\path{S1B_IW_GRDH_1SDV_20180105T005129_20180105T005154_009029_010222_5BA1}\end{center}
+      del \href{https://vertex.daac.asf.alaska.edu/}{Alaska Satellite Facility}. Utilice la búsqueda por \emph{Granule} en lugar de la \emph{Geospatial}.
+\end{que}
+
+\begin{que}
+    Con la herramienta \menu{Raster>Subset} (Apéndice \ref{ap:HA}) haga un recorte entre las coordenadas geográficas
+    \begin{itemize}
+        \item Latitud norte: -31.752
+        \item Longitud oeste: -64.014
+        \item Latitud sur: -31.546
+        \item Longitud este: -63.775
+    \end{itemize}
+\end{que}
+
+\begin{que}
+    Procese la imagen para como se realizó en la clase 3. Calíbrela para obtener el coeficiente de backscatter, aplique los filtros correspondientes y proyectela en terreno utilizando un DEM. Exporte la vista obtenida en dB para cada imagen.
+\end{que}
+
+\begin{que}
+    En la imagen, identifique cuerpos de agua, vegetación y suelos sin cobertura. Mida su coeficiente de retrodispersión en las bandas VH. Identifique un valor de umbral para separar zonas úrbanas de no úrbanas.
+\end{que}
+
+\begin{que}
+  Obtenga un mapa de zonas anegadas. Utilice la herramienta \menu{Band math...} (Apéndice \ref{ap:HA}) con click derecho sobre el nombre de la imagen e ingrese la formula
+  \begin{center}
+      \path{BANDA < T}
+  \end{center}
+  donde T es el valor obtenido en el punto anterior.
+\end{que}
+
+\begin{que}
+    Exporte el mapa como KMZ (Apéndice \ref{ap:GE}).
+\end{que}
+
+\section{Incendios}
 
 % Imagen antes
-% S1A_IW_GRDH_1SDV_20171204T155928_20171204T155953_019555_021343_887D
-% S1A_IW_GRDH_1SDV_20141009T155904_20141009T155929_002755_003184_0439
+% S1A_IW_GRDH_1SDV_20170108T092431_20170108T092456_014738_017FDD_E8CA
+% S1A_IW_GRDH_1SDV_20161227T092433_20161227T092458_014563_017A8D_133A
 % Subset
-% N = 40.597
-% W = 28.450
-% S = 41.268
-% E = 29.534
+% N = -38.966
+% W = -63.391
+% S = -39.566
+% E = -64.662
+
+\begin{que}
+    Descargue las imagenes
+    \begin{center}\path{ S1A_IW_GRDH_1SDV_20170108T092431_20170108T092456_014738_017FDD_E8CA}\end{center}
+    \begin{center}\path{ S1A_IW_GRDH_1SDV_20161227T092433_20161227T092458_014563_017A8D_133A}\end{center}
+
+      del \href{https://vertex.daac.asf.alaska.edu/}{Alaska Satellite Facility}. Utilice la búsqueda por \emph{Granule} en lugar de la \emph{Geospatial}.
+\end{que}
+
+\begin{que}
+    Con la herramienta \menu{Raster>Subset} (Apéndice \ref{ap:HA}) haga un recorte entre las coordenadas geográficas
+    \begin{itemize}
+        \item Latitud norte: -38.966
+        \item Longitud oeste: -63.391
+        \item Latitud sur: -39.566
+        \item Longitud este: -64.662
+    \end{itemize}
+\end{que}
+
+\begin{que}
+    Procese la imagen para como se realizó en la clase 3. Calíbrela para obtener el coeficiente de backscatter, aplique los filtros correspondientes y proyectela en terreno utilizando un DEM. Exporte la vista obtenida en dB para cada imagen.
+\end{que}
+
+\begin{que}
+    En la imagen, identifique cuerpos de agua, vegetación y suelos sin cobertura. Mida su coeficiente de retrodispersión en las bandas VV y VH.
+\end{que}
+
+\begin{que}
+  Apile las bandas VV para ambas imágenes utilizando la herramienta \menu{Raster>Geometric Operations>Collocation}.
+\end{que}
+
+\begin{que}
+  Obtenga un mapa de zonas incendiadas. Utilice la herramienta \menu{Band math...} (Apéndice \ref{ap:HA}) con click derecho sobre el nombre de la imagen e ingrese la formula
+  \begin{center}
+      \path{Sigma0_VV_M/Sigma0_VV_S > 2}
+  \end{center}
+\end{que}
+
+\begin{que}
+    Exporte el mapa como KMZ (Apéndice \ref{ap:GE}).
+\end{que}
