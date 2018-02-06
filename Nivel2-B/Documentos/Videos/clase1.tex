@@ -3,8 +3,8 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{01938fig3_2.jpg}
-    \caption{RAdio Detection And Ranging}
+    \includegraphics[width=\textwidth]{fig:espectro.png}
+    \caption{Espectro electromagnético en longitud de onda (abajo) y frecuencia (arriba).}
     \label{}
   \end{figure}
 \end{frame}
@@ -14,10 +14,21 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}
       \centering
-      \includegraphics[scale=0.7]{01938fig10_1.jpg}
-      \caption{RAdio Detection And Ranging}
+      \includegraphics[scale=0.7]{fig:radar.png}
+      \caption{RAdio Detection And Ranging. Funcionamiento esquemático.}
       \label{}
     \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{¿Cómo detecta un radar?}
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \movie[width = \textwidth,loop,autostart]{\centering\includegraphics[width=\textwidth]{fig:funcionamiento.png}}{./figs/fig:funcionamiento.mp4}
+    \caption{Ecos detectados por un radar en función del tiempo}
+    \label{}
+  \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
@@ -32,14 +43,15 @@
 \end{frame}
 %--- Next Frame ---%
 
-\subsection{¿Cómo detecta un radar?}
+\subsection{decibels}
 \begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{01938fig10_5.jpg}
-    \caption{RAdio Detection And Ranging}
-    \label{}
-  \end{figure}
+    \begin{block}{Definición}
+      Es común expresar la potencia de un radar en decibels cómo
+      \begin{equation}
+        P [dB] = 10\log_{10}\left( \frac{P}{P_0}\right)
+      \end{equation}
+      donde $P_0$ es una potencia de referencia.
+    \end{block}
 \end{frame}
 %--- Next Frame ---%
 
@@ -53,8 +65,8 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{01938fig13_1.jpg}
-    \caption{RAdio Detection And Ranging}
+    \includegraphics[scale=0.7]{01938fig10_3.jpg}
+    \caption{Geometría de observación de un radar en dos dimensiones viso en un corte transversal.}
     \label{}
   \end{figure}
 \end{frame}
@@ -63,23 +75,14 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{01938fig10_3.jpg}
-    \caption{RAdio Detection And Ranging}
+    \includegraphics[scale=0.7]{01938fig13_1.jpg}
+    \caption{Geometría de observación de un radar completa en la direcciones perpendiculares y paralelas al movimiento (accross track y along track)}
     \label{}
   \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
 \subsection{Modos de adquisición}
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{01938fig13_11.jpg}
-    \caption{RAdio Detection And Ranging}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
     \begin{block}{SCANSAR}
@@ -120,6 +123,7 @@
        \item Detecta luz solar reflejada por la tierra.
        \item Bloqueado por las nubes.
        \item Detecta luz incoherente.
+       \item Depende de una fuente de iluminación externa.
      \end{itemize}
    \end{block}
   \end{column}
@@ -130,6 +134,7 @@
         \item Emite una señal y mide la intesidad del eco.
         \item Independiente de las condiciones atmosféricas.
         \item Emite y detecta una onda coherente.
+        \item Cuenta con su propia fuente de iluminación.
       \end{itemize}
     \end{block}
   \end{column}
