@@ -113,34 +113,23 @@
     \subfloat[Banda C ($5.7cm$)]{\includegraphics[width=0.2\textwidth]{fig:C.png}}\hspace{1cm}
     \subfloat[Banda L ($24cm$)]{\includegraphics[width=0.2\textwidth]{fig:L.png}}\hspace{1cm}
     \subfloat[Banda P ($68cm$)]{\includegraphics[width=0.2\textwidth]{fig:P.png}}
-    \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\subsection{Resolución}
-\begin{frame}{\secname : \subsecname}
-    \begin{figure}
-      \centering
-      \includegraphics[width=0.5\textwidth]{fig:bandwidth.jpg}
-      \caption{}
-      \label{}
-    \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-
-\begin{frame}{\secname : \subsecname}
-    \begin{figure}
-      \centering
-      \includegraphics[width=0.5\textwidth]{fig:rgaz.png}
-      \caption{}
-      \label{}
+    \caption{Misma región vista en las bandas C, L y P.}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
-  \begin{columns}
+    A diferencia de la mayoría de los sistemas ópticos, los sistemas de radar tienen dos resoluciones:
+    \begin{itemize}
+      \item En rango, perdendicular a la dirección de movimiento del satélite.
+      \item En acimut, paralelo a la dirección de movimiento del satélite.
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  Se calculan como:
+    \begin{columns}
     \begin{column}{0.5\textwidth}
      \begin{block}{Resolución en rango}
       \begin{equation}
@@ -159,60 +148,3 @@
     con $c$ la velocidad de la luz, $B$ el \emph{bandwidth} del sistema y $L$ la longitud de la antena.
 \end{frame}
 %--- Next Frame ---%
-
-\subsection{Distorciones geométricas}
-
-\begin{frame}{\secname : \subsecname}
-  \begin{columns}[t]
-    \begin{column}{0.5\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{fig:dist.png}
-        \caption{}
-        \label{}
-      \end{figure}
-    \end{column}
-    \begin{column}{0.5\textwidth}  %%<--- here
-        \begin{figure}
-          \centering
-          \includegraphics[width=\textwidth]{fig:dist2.jpg}
-          \caption{}
-          \label{}
-        \end{figure}
-    \end{column}
-    \end{columns}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-    \begin{figure}
-      \centering
-      \includegraphics[width=0.5\textwidth]{fig:ba.png}
-      \caption{}
-      \label{}
-    \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-  \begin{columns}[t]
-    \begin{column}{0.5\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[height=0.7\textheight]{fig:slantground.png}
-        \caption{}
-        \label{}
-      \end{figure}
-    \end{column}
-    \begin{column}{0.5\textwidth}  %%<--- here
-        \begin{figure}
-
-          \includegraphics[height=0.2\textwidth]{fig:slant.jpg}\\
-          \includegraphics[height=0.2\textwidth]{fig:ground.jpg}
-          \caption{}
-          \label{}
-        \end{figure}
-    \end{column}
-    \end{columns}
-\end{frame}
-%--- Next Frame ---
