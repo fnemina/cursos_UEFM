@@ -3,8 +3,8 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{fig:onda}
-    \caption{Algunos SAR pueden emitir y recibir tanto en H como en V. Combinado distintas emisiones y recepciones se obtienen 4 combinaciones polarimétrica:{\bf HH HV VH y VV}}
+    \includegraphics[scale=0.5]{fig:onda.png}
+    \caption{Una onda electromagnética está caracterizada además de por la fase y la potencia por el plano de polarización.}
     \label{}
   \end{figure}
 \end{frame}
@@ -13,8 +13,8 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{fig:HH}
-    \caption{HH}
+    \includegraphics[width=0.6\textwidth]{fig:polarizacion.png}
+    \caption{Algunos SAR pueden emitir y recibir tanto en H -perpendicular al plano de incidencia- como en V -paralela al plano de incidencia-. Combinado distintas emisiones y recepciones se obtienen 4 combinaciones polarimétrica:{\bf HH HV VH y VV}}
     \label{}
   \end{figure}
 \end{frame}
@@ -23,42 +23,26 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{fig:HV}
-    \caption{HV}
-    \label{}
+    \subfloat[Polarización HH]{\includegraphics[width=0.25\textwidth]{fig:HH.jpg}}\hspace{1cm}
+    \subfloat[Polarización HV]{\includegraphics[width=0.25\textwidth]{fig:HV.jpg}}
+    \\
+    \subfloat[Polarización VH]{\includegraphics[width=0.25\textwidth]{fig:VH.jpg}}\hspace{1cm}
+    \subfloat[Polarización VV]{\includegraphics[width=0.25\textwidth]{fig:VV.jpg}}
+    \caption{Distintas polarizaciones para una misma región.}
   \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{fig:VH}
-    \caption{VH}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{fig:VV}
-    \caption{VV}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
+  En este caso la representación del coeficiente de backscatter es matricial
   \begin{columns}
     \begin{column}{0.5\textwidth}
-     \begin{block}{??}
+     \begin{block}{Matriz de potencia}
       \begin{equation}
         S=
   \begin{bmatrix}
-    S_{HH} & S{HV} \\
-    S_{VH} & S{VV}
+    S_{HH} & S_{HV} \\
+    S_{VH} & S_{VV}
   \end{bmatrix}
       \end{equation}
      \end{block}
@@ -68,8 +52,8 @@
         \begin{equation}
           \sigma_0=
   \begin{bmatrix}
-    |S_{HH}|^2 & |S{HV}|^2 \\
-    |S_{VH}|^2 & |S{VV}|^2
+    |S_{HH}|^2 & |S_{HV}|^2 \\
+    |S_{VH}|^2 & |S_{VV}|^2
   \end{bmatrix}
         \end{equation}
       \end{block}
@@ -78,22 +62,10 @@
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{fig:rgbpol}
-    \caption{Rojo: HV, Verde: HH, Azul: HH-VV}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
 \subsection{Descoposición de Pauli}
 
 \begin{frame}{\secname : \subsecname}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \begin{block}{??}
+     \begin{block}{Descomposición de Paulo}
       \begin{equation}
         R = \left(\frac{HH-VV}{\sqrt{2}}\right)^2
       \end{equation}
@@ -104,25 +76,15 @@
         R = \left(\frac{HH+VV}{\sqrt{2}}\right)^2
       \end{equation}
      \end{block}
-    \end{column}
-    \begin{column}{0.5\textwidth}  %%<--- here
-      \begin{figure}
-        \centering
-        \includegraphics[height=0.7\textheight]{fig:pauli.png}
-        \caption{}
-        \label{}
-      \end{figure}
-    \end{column}
-    \end{columns}
-    La descomposición de Pauli es una manera de visual de ver los distintos mecanismo de scattering presentes
+    La descomposición de Pauli es una manera de visual de ver los distintos mecanismo de scattering presentes: rojo -especular-, verde -en volumen- y azul -doble rebote-.
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{fig:rgbpauli}
-    \caption{}
+    \includegraphics[width=0.5\textwidth]{fig:rgbpauli}
+    \caption{Descomposición de Pauli en combinación RGB.}
     \label{}
   \end{figure}
 \end{frame}
