@@ -32,26 +32,14 @@
 \end{frame}
 %--- Next Frame ---%
 
-\subsection{Ecuación de radar}
+\subsection{Geometría}
 \begin{frame}{\secname : \subsecname}
-    \begin{block}{Definición}
-      \begin{equation}
-        P_r = \frac{P_t G_t G_r \lambda^2 \sigma}{(4\pi)^3 R^4}
-      \end{equation}
-      Con $P_r$ y $P_t$ las las potencias recibidas y transmitidas, $G_r$ y $G_t$ las ganancias del emisor y receptor, $\lambda$ la longitud de onda, $\sigma$ el coeficiente de backscatter y $R$ la distancia entre el emisor y el blanco.
-    \end{block}
-\end{frame}
-%--- Next Frame ---%
-
-\subsection{decibels}
-\begin{frame}{\secname : \subsecname}
-    \begin{block}{Definición}
-      Es común expresar la potencia de un radar en decibels cómo
-      \begin{equation}
-        P [dB] = 10\log_{10}\left( \frac{P}{P_0}\right)
-      \end{equation}
-      donde $P_0$ es una potencia de referencia.
-    \end{block}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{01938fig10_3.jpg}
+    \caption{Geometría de observación de un radar en dos dimensiones viso en un corte transversal.}
+    \label{}
+  \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
@@ -66,16 +54,6 @@
 \end{frame}
 %--- Next Frame ---%
 
-\subsection{Geometría}
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{01938fig10_3.jpg}
-    \caption{Geometría de observación de un radar en dos dimensiones viso en un corte transversal.}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
@@ -84,37 +62,6 @@
     \caption{Geometría de observación de un radar completa en la direcciones perpendiculares y paralelas al movimiento (accross track y along track)}
     \label{}
   \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\subsection{Modos de adquisición}
-
-\begin{frame}{\secname : \subsecname}
-    \begin{block}{SCANSAR}
-      \begin{itemize}
-        \item El RADAR Va distribuyendo pulsos de  a bursts entre varios swaths
-        \item Gran swath
-        \item Baja resolución
-        \item Mala relación señal ruido en algunas partes y buena en otras
-        \item Mala distribución de potencia generando scalloping
-        \item Un poco mas complicado de procesar
-        \item Hace falta reapuntar la antena en elevación entre burst
-      \end{itemize}
-    \end{block}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-    \begin{block}{TOPSAR}
-      \begin{itemize}
-        \item El RADAR Va distribuyendo pulsos entre varios swaths y variando el apuntamiento en acimut para iluminar la pisada de manera mas homogénea
-        \item Gran swath
-        \item Baja resolución
-        \item Aceptable relación señal ruido y uniforme en la imagen.
-        \item Buena distribución de potencia. No hay scalloping
-        \item Un poco mas complicado de procesar
-      \end{itemize}
-    \end{block}
 \end{frame}
 %--- Next Frame ---%
 
@@ -144,5 +91,89 @@
     \end{block}
   \end{column}
   \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Modos de adquisición}
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \movie[width = 0.5\textwidth,loop,autostart]{\centering\includegraphics[width=0.45\textwidth]{fig:strip.png}}{./figs/fig:strip.mp4}
+    \caption{Modo de adquisición STRIPMAP.}
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Propiedades STRIPMAP}
+      \begin{itemize}
+        \item
+      \end{itemize}
+    \end{block}
+\end{frame}
+%--- Next Frame ---%
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \movie[width = 0.5\textwidth,loop,autostart]{\centering\includegraphics[width=0.45\textwidth]{fig:spot.png}}{./figs/fig:spot.mp4}
+    \caption{Modo de adquisición SPOTLIGHT.}
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Propiedades SPOTLIGHT}
+      \begin{itemize}
+        \item
+      \end{itemize}
+    \end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \movie[width = 0.5\textwidth,loop,autostart]{\centering\includegraphics[width=0.45\textwidth]{fig:scan.png}}{./figs/fig:scan.mp4}
+    \caption{Modo de adquisición SCANSAR.}
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Propiedades SCANSAR}
+      \begin{itemize}
+        \item El RADAR Va distribuyendo pulsos de  a bursts entre varios swaths
+        \item Gran swath
+        \item Baja resolución
+        \item Mala relación señal ruido en algunas partes y buena en otras
+        \item Mala distribución de potencia generando scalloping
+        \item Hace falta reapuntar la antena en elevación entre burst
+      \end{itemize}
+    \end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \movie[width = 0.5\textwidth,loop,autostart]{\centering\includegraphics[width=0.45\textwidth]{fig:top.png}}{./figs/fig:top.mp4}
+    \caption{Modo de adquisición TOPSAR.}
+    \label{}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{TOPSAR}
+      \begin{itemize}
+        \item El RADAR Va distribuyendo pulsos entre varios swaths y variando el apuntamiento en acimut para iluminar la pisada de manera mas homogénea
+        \item Gran swath
+        \item Baja resolución
+        \item Aceptable relación señal ruido y uniforme en la imagen.
+        \item Buena distribución de potencia. No hay scalloping
+      \end{itemize}
+    \end{block}
 \end{frame}
 %--- Next Frame ---%
