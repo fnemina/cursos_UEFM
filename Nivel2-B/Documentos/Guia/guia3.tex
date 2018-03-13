@@ -54,11 +54,7 @@ Para calibrar la imagen, dirijase al menu \menu{Radar>Radiometric>Calibrate} (Fi
 
  \section{Filtrado}
 
- Para disminuir el ruido speckle en la imagen se pueden realizar dos procesos distintos.
-
- \subsection{Multilooking}
-
- El multilooking genera una nueva imagen a partir de los píxeles en una ventana. Para realizarlo utilice la herramienta \menu{Radar>Multilooking}.
+ Para disminuir el ruido speckle en la imagen utilizaremos el proceso de multilook. El multilooking genera una nueva imagen a partir de los píxeles en una ventana. Para realizarlo utilice la herramienta \menu{Radar>Multilooking}.
 
  En \texttt{source} seleccione la imagen
  \begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} \end{center}
@@ -73,36 +69,18 @@ Para calibrar la imagen, dirijase al menu \menu{Radar>Radiometric>Calibrate} (Fi
     \label{fig:multilook}
 \end{figure}
 
-\subsection{Speckle filter}
-
-Existen otros filtros que ayudan a disminuir el ruido de la imagen. Uno de los más comunes es  \menu{Lee Sigma}, que se encuentra en \menu{Radar>Speckle Filter>Single Product Speckle Filter}.
-
-\begin{figure}[h!]
-    \centering
-    \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:lee1.png}}
-    \hspace{1cm}
-    \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:lee2.png}}
-    \caption{Filtrado para reducir el ruido Speckle utilizando el filtro \emph{Lee Sigma}.}
-    \label{fig:lee}
-\end{figure}
-
-En \menu{I/O Parameters}, \texttt{source} seleccione la imagen
-\begin{center}
-  \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML}
-  \end{center}
-  que generó al aplicar el multilook. En processing parameter, elija el filtro de \texttt{Lee Sigma} con un número de looks igual a 1 y una ventana de 7x7 (Figura \ref{fig:lee})
 
 \section{Proyección}
 
 Finalmente, es común proyectar la imagen del \emph{slant range} al \emph{ground range}, para que luego se pueda abrir en cualquier softwarae de GIS sin problemas. Existen dos opciones: proyectar la imagen sobre el elipsoide o sobre un modelo de elevación digital.
 
 {\bf Importante:} En las imágenes ALOS PALSAR 1, es necesario aplicar un proceso antes de proyectarla en el terreno, denominado \emph{deskewing}. En el menú \menu{Radar>Geometric>ALOS deskewing} ejecute el proceso sobre la imagen
-\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML\_Spk} \end{center} sin modificar los parámetros por defecto. Este proceso no es necesario en otras imágenes.
+\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML} \end{center} sin modificar los parámetros por defecto. Este proceso no es necesario en otras imágenes.
 
 \subsection{Elipsoide - GEC}
 
 Para proyectar la imagen sobre el elipsoide vaya al menú \menu{Radar>Geometric>Ellipsoid Correction>Average Height Range Doppler}. Seleccione la imagen
-\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML\_Spk\_DSk} \end{center} y deje los parametros por defecto (Figura \ref{fig:elipsoide}).
+\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML\_DSk} \end{center} y deje los parametros por defecto (Figura \ref{fig:elipsoide}).
 
 \begin{figure}[h!]
     \centering
@@ -116,7 +94,7 @@ Para proyectar la imagen sobre el elipsoide vaya al menú \menu{Radar>Geometric>
 \subsection{Elipsoide - GTC}
 
 Para proyectar la imagen sobre un modelo de elevación digital vaya al menú \menu{Radar>Geometric>Terrain Correction>Range Doppler Terrain Correction}. Seleccione la imagen
-\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML\_Spk\_DSk}
+\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML\_DSk}
   \end{center}
   y en \menu{processing parameters} destilde la opción \emph{Mask out areas without elevation} (Figura \ref{fig:gtc}).
 

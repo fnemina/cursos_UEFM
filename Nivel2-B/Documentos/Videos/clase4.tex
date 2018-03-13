@@ -14,7 +14,7 @@
   \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{fig:polarizacion.png}
-    \caption{Algunos SAR pueden emitir y recibir tanto en H -perpendicular al plano de incidencia- como en V -paralela al plano de incidencia-. Combinado distintas emisiones y recepciones se obtienen 4 combinaciones polarimétrica:{\bf HH HV VH y VV}}
+    \caption{Algunos SAR pueden emitir y recibir tanto en H -perpendicular al plano de incidencia- como en V -paralela al plano de incidencia-. Combinado distintas emisiones y recepciones se obtienen 4 combinaciones polarimétrica: {\bf HH HV VH y VV}}
     \label{}
   \end{figure}
 \end{frame}
@@ -37,7 +37,7 @@
   En este caso la representación del coeficiente de backscatter es matricial
   \begin{columns}
     \begin{column}{0.5\textwidth}
-     \begin{block}{Matriz de potencia}
+     \begin{block}{Matriz de scattering}
       \begin{equation}
         S=
   \begin{bmatrix}
@@ -50,12 +50,13 @@
     \begin{column}{0.5\textwidth}  %%<--- here
       \begin{block}{Matriz de backscatter}
         \begin{equation}
-          \sigma_0=
+          \sigma_0= \frac{1}{A}
   \begin{bmatrix}
     |S_{HH}|^2 & |S_{HV}|^2 \\
     |S_{VH}|^2 & |S_{VV}|^2
   \end{bmatrix}
         \end{equation}
+        con $A$ el area del píxel.
       \end{block}
     \end{column}
     \end{columns}
@@ -76,7 +77,7 @@
         R = \left(\frac{HH+VV}{\sqrt{2}}\right)^2
       \end{equation}
      \end{block}
-    La descomposición de Pauli es una manera de visual de ver los distintos mecanismo de scattering presentes: rojo -especular-, verde -en volumen- y azul -doble rebote-.
+    La descomposición de Pauli es una manera de visual de ver los distintos mecanismo de scattering presentes: azul -especular-, verde -en volumen- y rojo -doble rebote-.
 \end{frame}
 %--- Next Frame ---%
 
