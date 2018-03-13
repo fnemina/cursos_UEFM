@@ -94,57 +94,33 @@
 \subsection{Distorciones geométricas}
 
 \begin{frame}{\secname : \subsecname}
-  \begin{columns}[t]
-    \begin{column}{0.5\textwidth}
       \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{fig:dist.png}
-        \caption{}
+        \caption{Distorciones geométricas típicas en una imagen radar: a. foreshortening, b. layover, c. shadowing.}
         \label{}
       \end{figure}
-    \end{column}
-    \begin{column}{0.5\textwidth}  %%<--- here
-        \begin{figure}
-          \centering
-          \includegraphics[width=\textwidth]{fig:dist2.jpg}
-          \caption{}
-          \label{}
-        \end{figure}
-    \end{column}
-    \end{columns}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
     \begin{figure}
       \centering
-      \includegraphics[width=0.5\textwidth]{fig:ba.png}
-      \caption{}
+      \includegraphics[width=0.5\textwidth]{fig:dist2.jpg}
+      \caption{Vista de una imagen radar sin correcciones geométricas.}
       \label{}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
-  \begin{columns}[t]
-    \begin{column}{0.5\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[height=0.7\textheight]{fig:slantground.png}
-        \caption{}
-        \label{}
-      \end{figure}
-    \end{column}
-    \begin{column}{0.5\textwidth}  %%<--- here
-        \begin{figure}
-
-          \includegraphics[height=0.2\textwidth]{fig:slant.jpg}\\
-          \includegraphics[height=0.2\textwidth]{fig:ground.jpg}
-          \caption{}
-          \label{}
-        \end{figure}
-    \end{column}
-    \end{columns}
+  \begin{block}{Correcciones geométricas}
+    Para resolver parte de las distorciones geométricas es util para la imagen del \emph{slant range} al \emph{ground range}. Para esto deberemos proyectarla y podemos hacerlo de dos maneras
+    \begin{itemize}
+      \item Sobre el elipsoide.
+      \item Sobre un modélo de elevación digital.
+    \end{itemize}
+  \end{block}
 \end{frame}
 %--- Next Frame --- %
 
