@@ -6,13 +6,15 @@
 \input{preamble.tex}
 \usepackage{multimedia}
 \usepackage{subfig}
+\includeonly{clase5}
 \title{Introducción a la teledetección SAR}
-\subtitle{Nivel 2b}
+\subtitle{Nivel 2}
 
-\author{Tomás Zajc \and Francisco Nemiña}
+\author{Francisco Nemiña$^{*}$ \and Tomás Zajc$^{**}$}
 
 
-\institute{SAOCOM \\ Comisión Nacional de Actividades Espaciales}
+\institute{$^{*}$ Unidad de Educación y Formación Masiva, Comisión Nacional de Actividades Espaciales\\
+$^{**}$ Misión SAOCOM, Comisión Nacional de Actividades Espaciales}
 
 \date{}
 \graphicspath{{./figs/}}
@@ -21,15 +23,15 @@
 
 \maketitle
 
-\begin{frame}{Esquema de la presentación}
-  \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents[hideallsubsections]
-\end{frame}
+%\begin{frame}{Esquema de la presentación}
+%  \setbeamertemplate{section in toc}[sections numbered]
+%  \tableofcontents[hideallsubsections]
+%\end{frame}
 
-\input{clase1.tex}
-\input{clase2.tex}
-\input{clase3.tex}
-\input{clase4.tex}
-\input{clase5.tex}
+\include{clase1}
+\include{clase2}
+\include{clase3}
+\include{clase4}
+\include{clase5}
 
 \end{document}
