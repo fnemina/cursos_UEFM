@@ -1,6 +1,6 @@
 \chapter{Speckle y procesamiento}
 
-Esta clase tiene como objetivo comprender los pasos básicos de procesamiento de imágenes radar. Para ello se descargarán imágenes de la web y se procesarán a distintos niveles de corrección geométrica y radiométrica.
+Esta clase tiene como objetivo comprender los pasos básicos para procesar imágenes radar. Para ello se descargarán imágenes de la web y se procesarán a distintos niveles de correcciones geométricas y radiométricas para poder luego visualizarlas.
 
 \section{Descarga de imágenes}
 
@@ -29,7 +29,7 @@ Descarge el producto \emph{Level 1.1 Complex (661.42 MB)} (Figura \ref{fig:desca
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{fig:descarga.png}
-    \caption{Slección de producto para la descarga en el catálogo \emph{Vertex} del \emph{Alaska Satellite Facility}}
+    \caption{Selección de producto para la descarga en el catálogo \emph{Vertex} del \emph{Alaska Satellite Facility}}
     \label{fig:descarga}
 \end{figure}
 
@@ -39,14 +39,14 @@ El producto descargado corresponde a una imagen \emph{Single look complex} en \e
 
 Abra la imagen \directory{ALPSRP278916070-L1.1.zip} en SNAP. Despliegue la banda \texttt{intensity\_HH} y observe que se encuentra comprimida horizontalmente.
 
-Para calibrar la imagen, dirijase al menu \menu{Radar>Radiometric>Calibrate} (Figura \ref{fig:calibrar}) y asigne una ruta de guardado.
+Para calibrar la imagen, diríjase a \menu{Radar>Radiometric>Calibrate} (Figura \ref{fig:calibrar}) y asigne una ruta de guardado.
 
  \begin{figure}[h!]
      \centering
      \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar1.png}}
      \hspace{1cm}
      \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar2.png}}
-     \caption{Calibración de productos SAR utilizando el SNAP. Recuerde seleccionar el directorio de salida en \emph{Directory}.} % arreglar figura
+     \caption{Calibración de productos SAR utilizando el SNAP. Recuerde seleccionar la ruta de guardado en \emph{Directory}.} % arreglar figura
      \label{fig:calibrar}
  \end{figure}
 
@@ -58,7 +58,7 @@ Para calibrar la imagen, dirijase al menu \menu{Radar>Radiometric>Calibrate} (Fi
 
  En \texttt{source} seleccione la imagen
  \begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} \end{center}
- que generó en el paso anterior. La solapa Processing Parameters permite indicar el numero de looks y sobre que bandas se ejecutará; de no seleccionar ninguna, el proceso se realizará sobre todas las bandas. En éste caso utilice 1 look y la totalidad de las bandas de la imagen (Figura \ref{fig:multilook}).
+ que generó en el paso anterior. La solapa Processing Parameters permite indicar el numero de looks y sobre que bandas se ejecutará; de no seleccionar ninguna, el proceso se realizará sobre todas las bandas. En este caso utilice 1 look y la totalidad de las bandas de la imagen (Figura \ref{fig:multilook}).
 
 \begin{figure}[h!]
     \centering
@@ -70,7 +70,7 @@ Para calibrar la imagen, dirijase al menu \menu{Radar>Radiometric>Calibrate} (Fi
 \end{figure}
 
 
-\section{Proyección}
+\section{Proyección}\label{sec:proyeccion}
 
 Finalmente, es común proyectar la imagen del \emph{slant range} al \emph{ground range}, para que luego se pueda abrir en cualquier softwarae de GIS sin problemas. Existen dos opciones: proyectar la imagen sobre el elipsoide o sobre un modelo de elevación digital.
 
@@ -115,14 +115,14 @@ Puede convertir la imagen a dB haciendo click derecho sobre la banda y seleccion
 
 Convierta a dB la banda \texttt{sigma\_0\_HH} y explore visualmente el resultado. Conviene siempre explorar las imagenes en dB pues es una medida más natural para nuestro ojo.
 
-\section{Preguntas disparadoras}
+\section{Preguntas para debate}
 
 \begin{que}
     Observe y compare la banda \texttt{sigma\_0\_HH} de la imagen con y sin filtro.
 \end{que}
 
 \begin{que}
-    Compare visualmente las imágenes GTC y GEC obtenidas por los métodos anteriores. ¿Qué sucede con las montañas? ¿Hacia donde parecen estar inclinadas?
+    Compare visualmente las imágenes GTC y GEC obtenidas por los métodos anteriores para la banda \texttt{sigma\_0\_HH\_dB}. ¿Qué sucede con las montañas? ¿Hacia donde parecen estar inclinadas?
 \end{que}
 
 \begin{que}
@@ -130,15 +130,11 @@ Convierta a dB la banda \texttt{sigma\_0\_HH} y explore visualmente el resultado
 \end{que}
 
 \begin{que}
-    Obtenga los valores de dB para las coberturas de agua, urbano y bosque.
+    Obtenga los valores de dB para las coberturas de agua, urbano y bosque para la banda \texttt{sigma\_0\_HH\_dB}.
 \end{que}
 
 \begin{que}
-    Dentro del agua encontrará un punto muy brillante cerca de la ciudad de Ushuahia. ¿A qué se debe este punto? ¿Qué aplicación le encuentra a las imágenes SAR sobre el agua?
+    Dentro del Canal de Beagle encontrará un punto muy brillante cerca de la ciudad de Ushuahia. ¿A qué se debe este punto? ¿Qué aplicación le encuentra a las imágenes SAR sobre el agua?
 \end{que}
 
-\begin{que}
-    ¿Qué sucede con la imagen luego de la proyección?
-\end{que}
-
-Estas preguntas no serán evaluadas. Su objetivo es servir de disparador en el foros de discusión.
+Estas preguntas no serán evaluadas. Su objetivo es discutirlas en el foro de sonsultas e intercambio de la clase.
