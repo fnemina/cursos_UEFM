@@ -1,8 +1,8 @@
 \chapter{Introducción al radar}
 
-Esta clase tiene como objetivo familiarizarce con el entorno gráfico del \emph{SNAP}. El \emph{SNAP (Sentinel Aplication Toolbox)} es un  software de procesamiento de imágenes diseñado por la \emph{Agencia Espacial Europea (ESA)}, cuyas herramientas simplifican el trabajo con imágenes radar y ópticas.
+Esta clase tiene como objetivo familiarizarze con el entorno gráfico del \emph{SNAP}. El \emph{SNAP (Sentinel Aplication Toolbox)} es un  software de procesamiento de imágenes diseñado por la \emph{Agencia Espacial Europea (ESA)}, cuyas herramientas simplifican el trabajo con imágenes radar y ópticas.
 
-Durante el cuerso utilizaremos imágenes ópticas y radar de la zona del Canal de Beagle frente a la ciudad de Ushuaia, Tierra del Fuego, Argentina.
+Durante el cuerso utilizaremos imágenes de la zona del Canal de Beagle frente a la ciudad de Ushuaia, Tierra del Fuego, Antártida e Islas del Atlántico Sur, Argentina.
 
 \section{Sobre esta guía}
 
@@ -10,7 +10,7 @@ A lo largo de la guía usaremos como referencia:
 
 \begin{itemize}
   \item \menu{Archivo>Abrir...} para indicar una ruta en el menú de un programa o una herramienta.
-  \item \directory{Docucmentos/archivo.doc} para indicar una carpeta o archivo dentro de una carpeta.
+  \item \directory{Documentos/archivo.doc} para indicar una carpeta o archivo dentro de una carpeta.
   \item \texttt{Opción} para indicar una opción de configuración de un programa.
   \item \keys{ctrl + c} para indicar una combinación de teclas.
   \item \emph{SAR} para indicar un termino específico o importante para la clase.
@@ -25,7 +25,7 @@ Descomprima el archivo \directory{material.zip}. Abra el programa SNAP, allí en
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{fig:int.png}
-    \caption{Interfaz gráfica del usuario. El área de visualización con el \menu{Product Explorer} a la izquierda.}
+    \caption{Interfaz gráfica del usuario. El área de visualización -en azul- con el \menu{Product Explorer} a la izquierda -en rojo-.}
     \label{fig:int}
 \end{figure}
 
@@ -37,19 +37,21 @@ Desde el menú \menu{File>Open product...} abra la imagen óptica
 Haga doble click sobre el nombre de la imágen y se desplegará, en el \menu{Product Explorer} un árbol que incluye:
 \\
 \dirtree{%
-    .1 [1] S2\_MSIL2A\_20170702.
+    .1 [1] S2A\_USER\_MTD\_SAFL2A\_PDMC\_20161206.
     .2 Metadata.
     .2 Vector Data.
     .2 Bands.
+    .2 Masks.
 }
 
 En esta cobertura encontramos
 
 \begin{itemize}
-    \item \emph{[1] S2\_MSIL2A\_20170702}: El número de elemento entre corchetes, que marca en que orden se abrieron los productos y el nombre de la imagen.
+    \item \emph{[1] S2A\_USER\_MTD\_SAFL2A\_PDMC\_20161206}: El número de elemento entre corchetes, que marca en que orden se abrieron los productos y el nombre de la imagen.
     \item \emph{Metadata}: Los metadatos asociados a la imagen y su historial de procesamiento.
     \item \emph{Index Codings}: Los valores de referencia para interpretar los números digitales de la imagen.
     \item \emph{Bands}: Las bandas de la imagen y las operaciones de álgebra entre bandas.
+    \item \emph{Masks}: Las mascaras de la imagen y si las hubiera.
 \end{itemize}
 
 \section{Visualización}
@@ -103,7 +105,7 @@ Si selecciona \menu{View as image} generará archivos \texttt{.GeoTiff} o \textt
 
 Si selecciona \menu{View as Google Earth KMZ} obtendrá un archivo \directory{.kmz} que luego podrá abrir desde Google Earth (Apéndice \ref{ap:GE}).
 
-\section{Preguntas disparadoras}
+\section{Preguntas para debate}
 
 Abra la imagen radar correspondiente al satélite \emph{COSMO-SKYMED} que se encuentra en
 \begin{center}
@@ -112,7 +114,7 @@ Abra la imagen radar correspondiente al satélite \emph{COSMO-SKYMED} que se enc
 Abra la banda \texttt{Sigma0\_HH\_db}.
 
 \begin{que}
-    Identifique en la imagen zonas brillantes o oscuras. ¿A que cobertura pertenecen?
+    Identifique en la imagen zonas brillantes u oscuras. ¿A que cobertura pertenecen?
 \end{que}
 
 \begin{que}
@@ -123,4 +125,4 @@ Abra la banda \texttt{Sigma0\_HH\_db}.
     ¿Cuales son las coordenadas aproximadas del aeropuerto que se encuentra en el centro de la imagen?
 \end{que}
 
-Estas preguntas no serán evaluadas. Su objetivo es servir de disparador en el foros de discusión.
+Estas preguntas no serán evaluadas. Su objetivo es discutirlas en el foro de sonsultas e intercambio de la clase.

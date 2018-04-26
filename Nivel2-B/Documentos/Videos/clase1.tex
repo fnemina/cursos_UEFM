@@ -34,12 +34,13 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{01938fig10_3.jpg}
-    \caption{Geometría de observación de un radar en dos dimensiones viso en un corte transversal.}
+    \includegraphics[scale=0.7]{01938fig13_1.jpg}
+    \caption{Geometría de observación de un radar completa en la direcciones perpendiculares y paralelas al movimiento (accross track y along track)}
     \label{}
   \end{figure}
 \end{frame}
 %--- Next Frame ---%
+
 
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
@@ -51,14 +52,101 @@
 \end{frame}
 %--- Next Frame ---%
 
+\subsection{Modos de adquisición}
 
 \begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{01938fig13_1.jpg}
-    \caption{Geometría de observación de un radar completa en la direcciones perpendiculares y paralelas al movimiento (accross track y along track)}
-    \label{}
-  \end{figure}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+       \begin{figure}
+         \centering
+         \movie[width = 0.95\textwidth,loop,autostart]{\centering\includegraphics[width=0.95\textwidth]{fig:strip.png}}{./figs/fig:strip.mp4}
+         %\caption{Modo de adquisición STRIPMAP.}
+         \label{}
+       \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+      \begin{block}{Modo de adquisición STRIPMAP}
+        \begin{itemize}
+          \item El RADAR toma datos de un solo Swadth
+          \item Es el método de más básico de adquisición.
+          \item Resolución espacial intermedia.
+          \item Cobertura limitada.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+       \begin{figure}
+         \centering
+         \movie[width = 0.95\textwidth,loop,autostart]{\centering\includegraphics[width=0.95\textwidth]{fig:spot.png}}{./figs/fig:spot.mp4}
+         %\caption{Modo de adquisición STRIPMAP.}
+         \label{}
+       \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+      \begin{block}{Modo de adquisición SPOTLIGHT}
+        \begin{itemize}
+          \item El RADAR observa un único blanco durante toda la pasada.
+          \item Alta resolución espacial.
+          \item Baja cobertura.
+          \item Necesita reorientar la antena dentro de la adquisición.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+       \begin{figure}
+         \centering
+         \movie[width = 0.95\textwidth,loop,autostart]{\centering\includegraphics[width=0.95\textwidth]{fig:scan.png}}{./figs/fig:scan.mp4}
+         %\caption{Modo de adquisición STRIPMAP.}
+         \label{}
+       \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+      \begin{block}{Modo de adquisición SCANSAR}
+        \begin{itemize}
+          \item El RADAR Va distribuyendo pulsos de a bursts entre varios swaths.
+          \item Baja resolución.
+          \item Gran cobertura.
+          \item Mala distribución espacial de potencia.
+          \item Hace falta reapuntar la antena en elevación entre burst.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \end{columns}
+\end{frame}
+%--- Next Frame ---%
+\begin{frame}{\secname : \subsecname}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+       \begin{figure}
+         \centering
+         \movie[width = 0.95\textwidth,loop,autostart]{\centering\includegraphics[width=0.95\textwidth]{fig:top.png}}{./figs/fig:top.mp4}
+         %\caption{Modo de adquisición STRIPMAP.}
+         \label{}
+       \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+      \begin{block}{Modo de adquisición TOPSAR}
+        \begin{itemize}
+          \item El RADAR Va distribuyendo pulsos entre varios swaths y variando el apuntamiento en acimut para iluminar la pisada de manera mas homogénea.
+          \item Baja resolución.
+          \item Gran cobertura.
+          \item Buena distribución de potencia.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \end{columns}
 \end{frame}
 %--- Next Frame ---%
 
@@ -68,9 +156,9 @@
    \begin{block}{Óptico}
      \begin{itemize}
        \item Rango de trabajo en los micrometros ($0.3\mu$ m a $2.5\mu m$).
-       \item Detecta luz solar reflejada por la tierra.
-       \item Bloqueado por las nubes.
-       \item Detecta luz incoherente.
+       %\item Detecta luz solar reflejada por la tierra.
+       \item Afectado por las condiciones atmosféricas.
+       %\item Detecta luz incoherente.
        \item Depende de una fuente de iluminación externa.
      \end{itemize}
    \end{block}
@@ -79,9 +167,9 @@
     \begin{block}{Radar}
       \begin{itemize}
         \item Rango de trabajo en los microondas ($1cm$ m a $100cm$).
-        \item Emite una señal y mide la intesidad del eco.
+        %\item Emite una señal y mide la intesidad del eco.
         \item Independiente de las condiciones atmosféricas.
-        \item Emite y detecta una onda coherente.
+        %\item Emite y detecta una onda coherente.
         \item Cuenta con su propia fuente de iluminación.
       \end{itemize}
     \end{block}
@@ -90,90 +178,7 @@
 \end{frame}
 %--- Next Frame ---%
 
-\subsection{Modos de adquisición}
 \begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \movie[width = 0.5\textwidth,loop,autostart]{\centering\includegraphics[width=0.45\textwidth]{fig:strip.png}}{./figs/fig:strip.mp4}
-    \caption{Modo de adquisición STRIPMAP.}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-    \begin{block}{Propiedades STRIPMAP}
-      \begin{itemize}
-        \item El RADAR toma datos de un solo Swadth
-        \item Es el método de adquisición por defecto de la mayoría de los satélites.
-        \item Resolución intermedia.
-      \end{itemize}
-    \end{block}
-\end{frame}
-%--- Next Frame ---%
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \movie[width = 0.5\textwidth,loop,autostart]{\centering\includegraphics[width=0.45\textwidth]{fig:spot.png}}{./figs/fig:spot.mp4}
-    \caption{Modo de adquisición SPOTLIGHT.}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-    \begin{block}{Propiedades SPOTLIGHT}
-      \begin{itemize}
-        \item El RADAR enfoca la toma de datos en una región específica.
-        \item Alta resolución espacial en la tema de datos.
-        \item Tiene menor cobertura espacial y necesita reorientar la antena para realizar la toma de datos.
-      \end{itemize}
-    \end{block}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \movie[width = 0.5\textwidth,loop,autostart]{\centering\includegraphics[width=0.45\textwidth]{fig:scan.png}}{./figs/fig:scan.mp4}
-    \caption{Modo de adquisición SCANSAR.}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-    \begin{block}{Propiedades SCANSAR}
-      \begin{itemize}
-        \item El RADAR Va distribuyendo pulsos de a bursts entre varios swaths.
-        \item Gran swath.
-        \item Baja resolución.
-        \item Mala relación señal ruido en algunas partes y buena en otras.
-        \item Mala distribución de potencia generando scalloping.
-        \item Hace falta reapuntar la antena en elevación entre burst.
-      \end{itemize}
-    \end{block}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    \movie[width = 0.5\textwidth,loop,autostart]{\centering\includegraphics[width=0.45\textwidth]{fig:top.png}}{./figs/fig:top.mp4}
-    \caption{Modo de adquisición TOPSAR.}
-    \label{}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{\secname : \subsecname}
-    \begin{block}{TOPSAR}
-      \begin{itemize}
-        \item El RADAR Va distribuyendo pulsos entre varios swaths y variando el apuntamiento en acimut para iluminar la pisada de manera mas homogénea.
-        \item Gran swath.
-        \item Baja resolución.
-        \item Aceptable relación señal ruido y uniforme en la imagen.
-        \item Buena distribución de potencia. No hay scalloping.
-      \end{itemize}
-    \end{block}
+Muchas gracias.
 \end{frame}
 %--- Next Frame ---%

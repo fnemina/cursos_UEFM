@@ -6,9 +6,9 @@
      \begin{block}{SAR}
        \begin{itemize}
          \item Una imagen SAR es un mapa de reflectividad.
-         \item Indica cuanta energía es devuelta al sensor.
-         \item La cantidad de energía retrodispersaada depende de la geometría del blanco y su conductividad eléctrica.
-         \item Las zonas oscurar y brillantes son zonas de baja y alta reflectividad.
+         \item Indica cuanta energía vuelve al sensor.
+         \item La cantidad de energía retrodispersada depende de la geometría del blanco y su conductividad eléctrica.
+         \item Las zonas oscuras y brillantes son zonas de baja y alta reflectividad.
        \end{itemize}
      \end{block}
     \end{column}
@@ -40,7 +40,7 @@
     \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{fig:blancos.png}
-      \caption{Interpretación visual de distintos blancos en una imagen SAR considerando tono y textura.}
+      \caption{Interpretación visual de distintos blancos en una imagen SAR considerando tono y textura. Pueden verse los mecanismos de interacción especular, en volumen y doble rebote.}
       \label{}
     \end{figure}
 \end{frame}
@@ -66,14 +66,14 @@
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}{\secname : \subsecname}
-    \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{fig:interacciones.png}
-      \caption{Interacciones entre los distintos blancos según la longitud de onda. De izquierda a derecha: especular, absorción, doble rebote y en volumen.}
-      \label{}
-    \end{figure}
-\end{frame}
+%\begin{frame}{\secname : \subsecname}
+%    \begin{figure}
+%      \centering
+%      \includegraphics[width=0.9\textwidth]{fig:interacciones.png}
+%      \caption{Interacciones entre los distintos blancos según la longitud de onda. De izquierda a derecha: especular, absorción, doble rebote y en volumen.}
+%      \label{}
+%    \end{figure}
+%\end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
@@ -99,7 +99,7 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}
       \centering
-      \includegraphics[width=\textwidth]{fig:interacciones-3.png}
+      \includegraphics[width=\textwidth]{fig:interacciones-4.png}
       \caption{Interacciones entre los distintos blancos según la longitud de onda.}
       \label{}
     \end{figure}
@@ -109,12 +109,14 @@
 \begin{frame}{\secname : \subsecname}
     \begin{figure}
       \centering
-      \includegraphics[width=\textwidth]{fig:interacciones-4.png}
+      \includegraphics[width=\textwidth]{fig:interacciones-3.png}
       \caption{Interacciones entre los distintos blancos según la longitud de onda.}
       \label{}
     \end{figure}
 \end{frame}
 %--- Next Frame ---%
+
+
 
 
 \begin{frame}{\secname : \subsecname}
@@ -157,12 +159,15 @@
     \end{column}
     \end{columns}
     con $c$ la velocidad de la luz, $B$ el \emph{bandwidth} del sistema y $L$ la longitud de la antena.
+
+    \begin{block}{Observación:}
+      A diferencia de los satélites ópticos, la resolución en un sistema SAR no depende de la distancia entre el satélite y el blanco.
+    \end{block}
 \end{frame}
 %--- Next Frame ---%
 
+
 \begin{frame}{\secname : \subsecname}
-  \begin{block}{Observación:}
-    A diferencia de los satélites ópticos, la resolución en un sistema SAR no depende de la distancia entre el satélite y el blanco.
-  \end{block}
+Muchas gracias.
 \end{frame}
 %--- Next Frame ---%
