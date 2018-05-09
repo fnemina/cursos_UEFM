@@ -159,13 +159,16 @@ En esta aplicación se verá como detectar zonas deforestadas, utilizando imáge
 \end{que}
 
 \begin{que}
+  Apile las bandas VV para ambas imágenes utilizando la herramienta \menu{Raster>Geometric Operations>Collocation}.
+\end{que}
+
+\begin{que}
     Obtenga un mapa de cambio. Utilice la herramienta \menu{Band math...} (Apéndice \ref{ap:HA}) haga la diferencia entre las bandas de las imágenes
     \begin{center}
-        \path{IMAGEN2017.Sigma0_VV - IMAGEN2014.Sigma0_VV}
+        \path{Sigma0_VV_M - Sigma0_VV_S}
     \end{center}
     Puede utilizar la opción \menu{Edit expression...} para ingresar la formula.
 \end{que}
-
 
 \begin{que}
     Utilizando la herraamienta \menu{Pixel info} obtenga un valor de umbral por debajo del cual considera que hubo deforestación
@@ -207,10 +210,10 @@ En esta aplicación se verá como detectar áreas urbanas, utilizando imágenes 
 \begin{que}
     Con la herramienta \menu{Raster>Subset} (Apéndice \ref{ap:HA}) haga un recorte entre las coordenadas geográficas
     \begin{itemize}
-        \item Latitud norte: -31.752
-        \item Longitud oeste: -64.014
-        \item Latitud sur: -31.546
-        \item Longitud este: -63.775
+        \item Latitud norte: 33.323
+        \item Longitud oeste: -102.433
+        \item Latitud sur: 33.789
+        \item Longitud este: -101.763
     \end{itemize}
 \end{que}
 
