@@ -1,61 +1,55 @@
 \chapter{Adquisición de datos}
 
-Esta clase tiene como objetivo comprender los pasos básicos para adquirir y procesar imágenes satelitales. Para ello se descargarán imágenes de la web del \emph{level-2 collection} del USGS y se procesarán para poder ser utilizadas en el SNAP.
+Esta clase tiene como objetivo comprender los pasos básicos para adquirir imágenes satelitales. Para ello se descargarán imágenes de la web del  USGS y se procesarán para poder ser utilizadas en el SNAP.
 
 \section{Descarga de imágenes}
 
-Para descargar imágenes utilizaremos el catálogo del \href{https://earthexplorer.usgs.gov/}{Earth Explorer}\footnote{\href{https://earthexplorer.usgs.gov/}{https://earthexplorer.usgs.gov/}}. Para esto debe ingresar a la página y registrarse.
+Para descargar imágenes utilizaremos el catálogo del \href{https://earthexplorer.usgs.gov/}{USGS}\footnote{\href{https://earthexplorer.usgs.gov/}{https://earthexplorer.usgs.gov/}}. Para utilizarló deberá registrarse en el sitio web. Diríjase luego a la página y en la pestaña \texttt{Seach Criteria} seleccione \texttt{Address/Place} y escriba \texttt{Iguazú} haciendo luego click en \menu{Show} (Figura \ref{fig:busqueda}).
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{fig:busqueda.png}
-    \caption{Selección de un área de interés y rango de fechas en el catálogo del \emph{USGS}. Puede observarse el área de busqueda en rojo, el área seleccionada en azul y la selección temporal en verde.}
+    \includegraphics[width=0.6\textwidth]{fig:busqueda.png}
+    \caption{Busqueda en el catálogo del \emph{USGS}. Puede observarse el área de busqueda en rojo, el área seleccionada en azul y la selección temporal en verde.}
     \label{fig:busqueda}
 \end{figure}
 
-Diríjase a la página y en la pestaña \texttt{Seach Criteria} seleccione \texttt{Address/Place} y escriba \texttt{Iguazú} haciendo luego click en \menu{Show} . Luego haga click sobre el nombre \texttt{Misiones Province, Argentina} para seleccionar dicha zona en el mapa (Figura \ref{fig:busqueda}).
-
-Seleccione luego en \menu{Data Range} las fechas 1 de julio de 2017 y 31 de julio de 2017.
-
-\textbf{Observación:} Es posible también dibujar una zona de interés directamente sobre el mapa.
-\textbf{Observación:} Para eliminar un punto del mapa haga click en la cruz roja que se encuentra al lado de el en el menú.
+Luego haga click sobre el nombre \texttt{Misiones Province, Argentina} para seleccionar dicha zona en el mapa. Seleccione luego en \menu{Data Range} las fechas 1 de julio de 2017 y 31 de julio de 2017.
 
 Haga click en \menu{Data Sets} y en el cuadro \texttt{Data Set Search:} escriba \texttt{Landsat 8} y seleccione del menú la opción \texttt{Landsat 8 OLI/TIRS C1 Level-2} (Figura \ref{fig:dataset}) para seleccionarlo. Haga luego click en \menu{Results}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{fig:dataset.png}
+    \includegraphics[width=0.6\textwidth]{fig:dataset.png}
     \caption{Selección de un set de datos en el catálogo del \emph{USGS}. Puede observarse el área de busqueda en rojo y los set de datós seleccionados en verde.}
     \label{fig:dataset}
 \end{figure}
 
-A la izquierda de la pantalla aparecerá una lista de productos. Busque de ellos el de nombre \emph{LC08\_L1TP\_224078\_20170713\_20170726\_01\_T1
-} del 13 de julio del 2017, pertenenciente al path 224 y el row 78. Haga click sobre \menu{Order scene}. (Figura \ref{fig:descarga})
+A la izquierda de la pantalla aparecerá una lista de productos. Busque de ellos el del 13 de julio del 2017, del path 224 y el row 78. Haga click sobre \menu{Order scene} (Figura \ref{fig:descarga}).
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \subfloat[]{\includegraphics[width=0.7\textwidth]{fig:descarga.png}}
+    \subfloat[]{\includegraphics[width=0.6\textwidth]{fig:descarga.png}}
     \\
     \subfloat[]{\includegraphics[scale=0.5]{fig:operaciones.png}}
-    \caption{Selección de producto para la descarga en el catálogo \emph{Vertex} del \emph{USGS}. En rojo el botón para ver el pedido. Herramientas del catálogo. De izquierda a derecha en -b- se observa: Footprint, Show Browse Overlay, Compare Browse, Show Metadata and Brose, Order Scene  y Exlude escene from Results.}
+    \caption{Selección de producto para la descarga en el catálogo \emph{Vertex} del \emph{USGS}. En rojo el botón para ver el pedido. Herramientas del catálogo. De izquierda a derecha se observa: Footprint, Show Browse Overlay, Compare Browse, Show Metadata and Brose, Order Scene  y Exlude escene from Results.}
     \label{fig:descarga}
 \end{figure}
 
 Para corroborar el pedido haga click en \menu{View Item Basket} y luego en \menu{Proceed to Checkout}. Finalmente deberá solicitar la imagen haciendo click en \menu{Submit Order}.
 
-El producto descargado pertenece a una serie de producto \emph{on demand} \footnote{A demananda.}. Cuando el mismo esté disponible para descargar se le enviará un correo electrónico notificandolo \footnote{Recibirá 3 correos electrónicos en total: dos confirmando el pedido y uno cuando la descarga esté disponible}. El asunto será
+El producto descargado pertenece a una serie de productos a demanda.  Cuando  esté disponible para descargar se le enviará un correo electrónico notificandolo \footnote{Recibirá 3 correos electrónicos en total: dos confirmando el pedido y uno cuando la descarga esté disponible}. El asunto será
 
 \begin{center}
 \texttt{USGS ESPA product request order number [] available for download}
 \end{center}
 
-con \texttt{[]]} el número de pedido. Haga click en el link dentro del correo y en la página que se abre seleccione su pedido en la columna \texttt{Order ID}. Finalmente haga click en \texttt{Download} en la columna \texttt{Product URL} para descargar la imagen.
+con \texttt{[]} el número de pedido. Haga click en el link dentro del correo y en la página que se abre seleccione su pedido en la columna \texttt{Order ID}. Finalmente haga click en \texttt{Download} en la columna \texttt{Product URL} para descargar la imagen.
 
 \begin{figure}[h!]
     \centering
-    \subfloat[]{\includegraphics[width=0.7\textwidth]{fig:descarga2.png}}
+    \subfloat[]{\includegraphics[width=0.6\textwidth]{fig:descarga2.png}}
     \\
-    \subfloat[]{\includegraphics[width=0.7\textwidth]{fig:descarga3.png}}
+    \subfloat[]{\includegraphics[width=0.6\textwidth]{fig:descarga3.png}}
     \caption{Descarga de productos una vez obtenido el pedido.}
     \label{fig:descarga2}
 \end{figure}
@@ -84,11 +78,21 @@ Dentro de la carpeta descomprimida las distintas bandas de la imagen se encuentr
 
 Aparecerán en el \emph{Product explorer} a la derecha y podrá visualizar las bandas por separado.
 
-Vaya a \menu{Radar > Coregistration > Stack tools > Create Stack} y en la pestañá \menu{1-ProductSet-Reader} haga click en \menu{Add oppened}. Usando los botones \menu{Move up} y \menu{Move down} ordene las bandas según su nombre.
+Vaya a \menu{Radar > Coregistration > Stack tools > Create Stack} y en la pestañá \menu{1-ProductSet-Reader} haga click en \menu{Add oppened}. Usando los botones \menu{Move up} y \menu{Move down} ordene las bandas según su nombre (Figura \ref{fig:stack1}).
 
-En la pestaña \menu{2-CreateStack} seleccione la opción \emph{Product Geolocation} para el parámetro \menu{Initial Offset method}.
+En la pestaña \menu{2-CreateStack} seleccione la opción \emph{Product Geolocation} para el parámetro \menu{Initial Offset method} (Figura \ref{fig:stack2}).
 
-Finalmente en la pestaña \menu{3-Write} elija el nombre del archivo de salida y la carpeta donde se guardarán los datos. Haga luego click en \menu{Run}. El resultado se agregará al \emph{Product explorer}.
+Finalmente en la pestaña \menu{3-Write} elija el nombre del archivo de salida y la carpeta donde se guardarán los datos. Haga luego click en \menu{Run}. El resultado se agregará al \emph{Product explorer}(Figura \ref{fig:stack3}).
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[1-ProductSet-Reader]{\includegraphics[width=0.4\textwidth]{fig:stack1.png}\label{fig:stack1}}
+    \hspace{1cm}
+    \subfloat[2-CreateStack]{\includegraphics[width=0.4\textwidth]{fig:stack2.png}\label{fig:stack2}}\\
+    \subfloat[3-Write]{\includegraphics[width=0.4\textwidth]{fig:stack3.png}\label{fig:stack3}}
+    \caption{Apilado de productos en el SNAP usando la herramienta \menu{Create Stack}.}
+
+\end{figure}
 
 \section{Propiedades de la imagen}
 Es de utilidad editar las propiedades de la imagen para agregar los nombres de las bandas, su longitud de onda central y tipo de dato.
@@ -97,11 +101,16 @@ En la sección de bandas de la imagen creada, haga click derecho sobre
 \begin{center}
 \texttt{band\_1\_mst\_01Jan2000}
 \end{center}
-y luego seleccione \menu{Properties}. En al ventana que se despliega es posible cambiar el nombre de la banda, la unidad en la que está medida, el valor digital no valido, la longitud de onda central de la banda y su ancho.
+y luego seleccione \menu{Properties}. En al ventana que se despliega es posible cambiar el nombre de la banda, la unidad en la que está medida, el valor digital no valido, la longitud de onda central de la banda y su ancho (Figura \ref{fig:prop}).
 
-Es posible además conocer el tamaño, en píxeles, de la imagen.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\textwidth]{fig:prop.png}
+    \caption{Propiedades de una banda de la imagen. Se observan los valores de nombre y longitud de onda, entre otros.}
+    \label{fig:prop}
+\end{figure}
 
-Edite los campos \emph{Name} con el valor \texttt{ca} y el campo \emph{Spectral Wavelength} con el valor $442$. Repita el proceso para el resto de las bandas (Tabla \ref{tab:landsat8}).
+Edite los campos \emph{Name} con el valor \texttt{ca} y el campo \emph{Spectral Wavelength} con el valor \texttt{442}. Repita el proceso para el resto de las bandas (Tabla \ref{tab:landsat8}).
 
 \begin{table}[h!]
   \centering
@@ -125,9 +134,17 @@ Para guardar los cambios realizados en la imagen haga click derecho sobre ella y
 \section{Subset espacial y espectral}
 Es posible hacer un subset, tanto espacial como espectral, de la imagen. Esto es de utilidad para trabajar solo con nuestra región de interés reduciendo el tamaño de la imagen y por lo tanto los tiempos de procesamiento.
 
-Para hacerlo seleccione la imagen apilada y dirijasé a \menu{Raster > Subset}. En la pestañá \menu{Spatial subset} seleccione la pestaña \menu{Geo Coordinates}.
+Para hacerlo seleccione la imagen apilada y dirijasé a \menu{Raster > Subset}. En la pestañá \menu{Spatial subset} seleccione la pestaña \menu{Geo Coordinates} (Figura \ref{fig:subset}).
 
-Haga un recorte entre las coordenadas geográficas
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{fig:subset.png}
+    \caption{Subset espacial de una imagen Landsat 8 por coordenadas geográficas.}
+    \label{fig:subset}
+\end{figure}
+
+Haga un recorte introduciendo las coordenadas geográficas
+
 \begin{itemize}
     \item North latitude bound: -25.4
     \item West longitude bound: -54.8
@@ -135,8 +152,23 @@ Haga un recorte entre las coordenadas geográficas
     \item East longitude bound: -54.2
 \end{itemize}
 
+y haciendo click en \menu{Ok}.
+
+Es posible también hacer un subset de bandas eligiendolas de la pestaña \menu{Band subset}.
+
 \section{Reproyección}
-Para algunas aplicacione la proyección por defecto de la imagen puede no ser la más indicada. Para cambiar la proyección dirijasé a \menu{Raster > Geometric operations > Reprojection}. Seleccione en la pestaña \menu{I/O parameters} la imagen recortada como imagen de entrada. Puede aquí seleccionar el nombre y la carpeta del archivo de salida. Utilice el nombre
+Para algunas aplicacione la proyección por defecto de la imagen puede no ser la más indicada. Para cambiar la proyección dirijasé a \menu{Raster > Geometric operations > Reprojection} (Figura \ref{fig:repro}). 
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[I/O Parameters]{\includegraphics[width=0.4\textwidth]{fig:reproj1.png}}
+    \hspace{1cm}
+    \subfloat[Processing parameters]{\includegraphics[width=0.4\textwidth]{fig:reproj2.png}}
+    \caption{Herramienta de reproyección del SNAP. La imagen se proyecta en coordenadas geográficas.}
+    \label{fig:repro}
+\end{figure}
+
+Seleccione en la pestaña \menu{I/O parameters} la imagen recortada como imagen de entrada. Puede aquí seleccionar el nombre y la carpeta del archivo de salida. Utilice el nombre
 
 \begin{center}
   \directory{LC08\_224-078\_2017-07-13.dim}
