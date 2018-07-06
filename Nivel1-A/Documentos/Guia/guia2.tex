@@ -6,43 +6,24 @@ El objetivo de esta clase es familiarizarze con los conceptos de combinación de
 
 
 
-\section{Combinación Color Real}
+\section{Combinación de bandas}
+En esta ocasión vamos a realizar diferentes combinaciones de bandas analizando la variación en la visualización de los diferentes usos y coberturas. 
 
-En esta ocasión vamos a visualizar una imagen en color real. Abra la imagen \begin{center} \directory{S2B\_MSIL2A\_2018-01-31.dim}.
-\end{center} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación que utiliza las bandas \emph{red}, \emph{green} y \emph{blue} de \emph{Sentinel-2}, desplieguela haciendo click en OK.
+%desarrollar un poco
 
-Incluir mapa/intro sobre la combinacion de bandas.
+\section{Combinación color real}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.7]{fig:RGB.png}
-    \caption{Ventana de combinación de bandas. Puede eligir una banda para cada canal del monitor (\emph{Red, Green, Blue}) o puede optar por una preseleccionada del menú \emph{Profile}}
-    \label{fig:RGB}
-\end{figure}
+Abra la imagen \begin{center} \directory{S2B\_MSIL2A\_2018-01-31.dim}.
+\end{center} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación color real que utiliza las bandas \emph{rojo (4)}, \emph{verde(3)} y \emph{azul(2)} de \emph{Sentinel-2}. Desplieguela haciendo click en OK. En esta combinación las características del suelo aparecen en colores similares a su apariencia para el sistema visual humano, la vegetación sana se observa en tonalidades de verde, suelos recientemente cosechados o compactados se observan brillantes, en tanto que la vegetación senescente o de escasa cobertura se observa en tonos de marrón y amarillo. Por otro lado, esta combinación de bandas presenta mayor respuesta a cuerpos de agua, resaltando características como sedimentos, profundidad o presencia de floraciones algales. 
 
-Utilice el mapa con puntos de interés para identificar los diferentes usos y coberturas (Figura \ref{fig:mono}). Analice y compare las tonalidades de cada uno en dicha combinación de bandas.
+Utilice el mapa con puntos de interés para identificar y familiarizarse con los diferentes usos y coberturas (Figura \ref{fig:mapa}). Explore la ubicación de los puntos mencionados utilizando las herramientas de navegación y zoom  (Figura \ref{fig:mono}). Compare color, tono y textura para cada punto. 
 
-\begin{figure}[h!]
-    \centering
-    \subfloat[]{\includegraphics[width=0.7\textwidth]{fig:mono.png}}
-    \\
-    \subfloat[]{\includegraphics[scale=0.5]{fig:NAV.png}}
-    \caption{Imagen monobanda desplegada en el visualizador. Herramientas de navegación. De izquierda a derecha: \menu{Selection tool}, para seleccionar objetos, \menu{Panning tool}, para moverse, y \menu{Zooming tool}, para hacer zoom.}
-    \label{fig:mono}
-\end{figure}
 
-\section{Combinaciones de color}
+\section{Combinación infrarrojo color}
 
-Para medir la distancia entre dos puntos o a lo largo de una poligonal usando la herramienta \menu{Determines the distance between two points} (Figura \ref{fig:distancia}) que se encuentra en la barra de herramientas.
+Seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Seleccione las bandas \emph{infrarrojo cercano (8)}, \emph{verde(3)} y \emph{azul(2)} de \emph{Sentinel-2}. Desplieguela haciendo click en OK. En esta combinación las características del suelo aparecen en colores similares a su apariencia para el sistema visual humano, la vegetación sana se observa en tonalidades de verde, suelos recientemente cosechados o compactados se observan brillantes, en tanto que la vegetación senescente o de escasa cobertura se observa en tonos de marrón y amarillo. Por otro lado, esta combinación de bandas presenta mayor respuesta a cuerpos de agua, resaltando características como sedimentos, profundidad o presencia de floraciones algales. 
 
-\begin{figure}[h!]
-    \centering
-    %\includegraphics[width=0.3\textwidth]{fig:distancia.png}
-    \caption{Herramienta medición de distancia.}
-    \label{fig:distancia}
-\end{figure}
-
-Para utilizarla haga click sobre la herramienta y luego en un punto de la imagen para comenzar a medir. Dibuje una linea haciendo click en distintos puntos y finalice la medición haciendo doble click en el punto final. El largo de la poligonal y su error aparecerán en kilometros en una ventana emergente.
+Utilice el mapa con puntos de interés para identificar y familiarizarse con los diferentes usos y coberturas (Figura \ref{fig:mapa}). Explore la ubicación de los puntos mencionados utilizando las herramientas de navegación y zoom  (Figura \ref{fig:mono}). Compare color, tono y textura para cada punto. 
 
 \section{Consulta de píxel}
 
