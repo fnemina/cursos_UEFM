@@ -14,77 +14,92 @@ En esta ocasión vamos a realizar diferentes combinaciones de bandas analizando 
 \section{Combinación color real}
 
 Abra la imagen \begin{center} \directory{S2B\_MSIL2A\_2018-01-31.dim}.
-\end{center} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación color real que utiliza las bandas \emph{rojo (4)}, \emph{verde(3)} y \emph{azul(2)} de \emph{Sentinel-2}. Desplieguela haciendo click en OK. En esta combinación las características del suelo aparecen en colores similares a su apariencia para el sistema visual humano, la vegetación sana se observa en tonalidades de verde, suelos recientemente cosechados o compactados se observan brillantes, en tanto que la vegetación senescente o de escasa cobertura se observa en tonos de marrón y amarillo. Por otro lado, esta combinación de bandas presenta mayor respuesta a cuerpos de agua, resaltando características como sedimentos, profundidad o presencia de floraciones algales. 
+\end{center} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación color real que utiliza las bandas \emph{rojo (B4)}, \emph{verde(B3)} y \emph{azul(B2)} de \emph{Sentinel-2}. Desplieguela haciendo click en \menu{OK}. 
+
+En esta combinación las características del suelo aparecen en colores similares a su apariencia para el sistema visual humano, la vegetación sana se observa en tonalidades de verde, suelos recientemente cosechados o compactados se observan brillantes, en tanto que la vegetación senescente o de escasa cobertura se observa en tonos de marrón y amarillo. Por otro lado, esta combinación de bandas presenta mayor respuesta a cuerpos de agua, resaltando características como sedimentos, profundidad o presencia de floraciones algales. 
 
 Utilice el mapa con puntos de interés para identificar y familiarizarse con los diferentes usos y coberturas (Figura \ref{fig:mapa}). Explore la ubicación de los puntos mencionados utilizando las herramientas de navegación y zoom  (Figura \ref{fig:mono}). Compare color, tono y textura para cada punto. 
 
 
 \section{Combinación infrarrojo color}
 
-Seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Seleccione las bandas \emph{infrarrojo cercano (8)}, \emph{verde(3)} y \emph{azul(2)} de \emph{Sentinel-2}. Desplieguela haciendo click en OK. En esta combinación las características del suelo aparecen en colores similares a su apariencia para el sistema visual humano, la vegetación sana se observa en tonalidades de verde, suelos recientemente cosechados o compactados se observan brillantes, en tanto que la vegetación senescente o de escasa cobertura se observa en tonos de marrón y amarillo. Por otro lado, esta combinación de bandas presenta mayor respuesta a cuerpos de agua, resaltando características como sedimentos, profundidad o presencia de floraciones algales. 
+Seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Seleccione las bandas \emph{infrarrojo cercano (B8)}, \emph{verde(B3)} y \emph{azul(B2)} de \emph{Sentinel-2}. Desplieguela haciendo click en \menu{OK}. 
 
-Utilice el mapa con puntos de interés para identificar y familiarizarse con los diferentes usos y coberturas (Figura \ref{fig:mapa}). Explore la ubicación de los puntos mencionados utilizando las herramientas de navegación y zoom  (Figura \ref{fig:mono}). Compare color, tono y textura para cada punto. 
+En esta combinación la vegetación aparece en tonos de rojo y magenta, las áreas urbanas se pueden observar en tonos de cian y los suelos varían en tonos de verde. El agua en tonos de azul. La vegetación leñosa (bosques) puede observarse en tonos rojizos en tanto que la vegetación herbácea (pastizales y cultivos) puede observarse en magenta. Esta combinación es útil para estudios de vegetación ya que resalta la relación entre el infrarrojo cercano y el rojo. Las áreas urbanas densamente pobladas se muestran en azul claro. 
 
-\section{Consulta de píxel}
+Utilice el mapa con puntos de interés para identificar diferentes tipos de vegetación (Figura \ref{fig:mapa}). Explore la ubicación de los puntos mencionados utilizando las herramientas de navegación y zoom  (Figura \ref{fig:mono}). Compare color, tono y textura para cada punto. 
 
-Para obtener información sobre un pixel seleccione la pestaña \menu{Pixel info}, junto al \menu{Product explorer} (Figura \ref{fig:pixel}), y posicionese  sobre uno en la imagen.
+\section{Combinación vegetación sana}
+
+Seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Seleccione las bandas \emph{infrarrojo cercano (B8)}, \emph{infrarrojo onda corta(B11)} y \emph{azul(B2)} de \emph{Sentinel-2}. Desplieguela haciendo click en \menu{OK}. 
+
+La vegetación saludable aparece en tonos de rojos, marrones, naranjas y amarillos. Los suelos pueden estar en verdes y marrones, las áreas urbanas pueden observarse en blanco y cian, las áreas de color azul intenso representan suelos sin cobertura vegetal y las áreas color rosa muestran vegetación en crecimiento . El agua clara y profunda se observa oscura; si el agua es poco profunda o contiene sedimentos, aparecería como tonos de azul más claro. Para estudios de vegetación, la adición de la banda del infrarrojo de onda corta aumenta la sensibilidad para identificar stress hídrico y variaciones en el contenido de humedad en la vegetación y suelos. 
+
+Utilice el mapa con puntos de interés para identificar diferentes tipos de vegetación (Figura \ref{fig:mapa}). Explore la ubicación de los puntos mencionados utilizando las herramientas de navegación y zoom  (Figura \ref{fig:mono}). Compare color, tono y textura para cada punto.
+
+\section{Actividad práctica I}
+
+\begin{enumerate}
+  \item Despliegue las tres combinaciones realizadas utilizando múltiples visualizadores(Figura \ref{fig:mono}). Utilice las herramientas \menu{Panning tool} y \menu{Zooming tool} e identifique la intersección río Paraná y río Iguazú (\ref{fig:mapa} punto de referencia 4):
+  \begin{enumerate}
+    \item Compare color y tono de los ríos Paraná e Iguazú. En base a interpretación visual ¿Que combinación considera la más adecuada para identificar sedimentos? ¿Cuál  considera que tiene mayor concentración de sedimentos? 
+        \item  Desplácese hasta Puerto Iguazú (\ref{fig:mapa} punto de referencia 11) y analice el área urbana. ¿En qué combinación puede ver con mayor nitidez la red víal? 
+          \item  Identifique el emblase Urugua-í (\ref{fig:mapa} punto de referencia 6) y compare presencia de sedimentos con los ríos Paraná y Iguazú. ¿Cuál de ellos presenta menor concentración de sedimentos? 
+
+  \end{enumerate}
+
+  \item Identifique en el mapa de referencia los puntos                       1 y 4 correspondientes a Selva Paraense y Bosque Implantado respectivamente (\ref{fig:mapa}) y compare:
+  \begin{enumerate}
+    \item  Compare color y tono de la selva paranaense y el bosque implantado para color natural.
+     \item  Compare color y tono de la selva paranaense y el bosque implantado para infrarrojo color.
+      \item  Compare color y tono de la selva paranaense y el bosque implantado para la combinación "vegetación sana".
+    \item Compare ahora ambas coberturas con los tres visualizadores. ¿En qué combinación encuentra mayor heterogeneidad? ¿Cuál considera que es la más útil para separar diferentes tipos de vegetación?
+     \item Compare un cultivo con cobertura vegetal contra un lote de suelo sin cobertura (\ref{fig:mapa} punto de referencia 8 y 9) ¿Qué combinación considera más útil para medir heterogeneidad para suelo sin cobertura vegetal? ¿y para suelos con vegetación?
+  \end{enumerate}
+
+\section{Firmas espectrales}
+
+
+En esta ocasión vamos a analizar el comportamiento espectral de diferentes usos y coberturas. 
+
+\section{Seleccion de imagen}
+
+Seleccione la combinación "vegetación sana" \emph{infrarrojo cercano (B8)}, \emph{infrarrojo onda corta(B11)} y \emph{azul(B2)} de \emph{Sentinel-2} y visualicela utilizando una sola ventana de la vista. Para ello vaya a \menu{Window} y seleccione \menu{Tile Single}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.3\textwidth]{fig:pixel.png}
-    \caption{Herramienta de consulta de píxel. Puede verse la posición del píxel en la imagen, su latitud y longitud y el valor del píxel para la banda desplegada.}
-    \label{fig:pixel}
+    \includegraphics[width=0.6\textwidth]{fig:multiple-single.png}
+    \caption{Distintas imágenes desplegadas en multiples visualizadores en simultaneo.}
+    \label{fig:multiples}
 \end{figure}
 
-Allí encontrará la latitud y longitud, las coordenadas dentro del mapa y el valor del pixel en la banda abierta.
+\section{Utilización de puntos}
 
-\section{Multiples visualizadores}
+El siguiente paso será seleccionar puntos de interés en los cuales evaluaremos el comportamiento espectral de diferentes usos y coberturas del suelo. A tal fin utilizaremos la herramienta \menu{pin placing tool} para tomar puntos de muestreo para firmas espectrales.
 
-Abra las imágenes
-\begin{center} \directory{S2B\_MSIL2A\_2018-01-31.dim}.
-\end{center}
-y
-\begin{center} \directory{MCD43A4.A2018039.h13v11.0065.dim}.
-\end{center}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.05\textwidth]{fig:pin.png}
+    \caption{Herramienta pin placing tool.}
+    \label{fig:pin}
+\end{figure}
 
-y desplieguelas en combinación de color RGB. Las tres corresponden a la misma zona durante el mes de enero de 2018.
+Identifique en el mapa (Figura \ref{fig:mapa}) un parche homogéneo de selva paranense y añada un pin con la herramienta \menu{pin placing tool}: 
 
-Para ver las tres en simultaneo haga click en \menu{Window>Tile Horizontally} mostrandose de esa manera las imágenes vinculadas una junto a la otra. Moverse o hacer zoom en una imagen lo reproducirá en las otras. Para volver al modo habitual haga click en \menu{Window>Tile Single}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.2\textwidth]{fig:pin-selva.png}
+    \caption{Pin en un parche homogéneo de selva paranaense.}
+    \label{fig:selva}
+\end{figure}
 
-\section{Actividad práctica}
+Para cambiar del Pin características como nombre o color ir a  \menu{View>Tool Windows>Pin Manager}. Seleccionar en la columna \menu{label} el nombre Pin 1 y cambiar por "selva paranaense". En la columna \menu{color} asignar el color deseado. 
 
-\begin{enumerate}
-  \item Identifique en la imagen los siguientes objetos:
-  \begin{enumerate}
-    \item El río Iguazú que recorre la imagen de izquierda a derecha en color gris/marron.
-    \item El río Paraná que corta la imagen de arriba a abajo celestre.
-    \item La ciudad de Puerto Iguazú al sur-este del cruce de los rios Iguazú y Paraná.
-    \item La zonas cultivadas al norte del río Iguazú con formas de parches en color verde.
-    \item Laz onas cultivadas al oeste del río Paraná formadas por parches de color verde, con cultivo, y rosa, sin cultivo.
-    \item La selva Paranaense al sur del río Iguazú en color verde.
-    \item El embalse Urugua-í al sur de la imagen.
-    \item La zona de forestaciones en color verde más oscuro entre la selva Paranaense y el embalse Urugua-í.
-    \item El aeropuerto de cataratas del Iguazú en medio de la selva Paranaense.
-  \end{enumerate}
+Ahora procederemos a visualizar la firma espectral. Seleccione \menu{Optical>Spectrum View}. Se desplegará el visor de firmas espectrales. Para visualizar el Pin creado, seleccione la herramienta \menu{Show spectra for all pins}
 
-  \item Mida dentro de las tres imágenes los siguientes objetos:
-  \begin{enumerate}
-    \item El largo de la pista de aterrizaje del aeropuerto.
-    \item El ancho del río Paraná frente a la ciudad de Puerto Iguazú.
-    \item El perímetro de la ciudad de puerto Iguazú.
-    \item El perímetro del parche de selva Paranaense al norte del río Iguazú.
-    \item El tamaño de un píxel.
-  \end{enumerate}
-
-  \item Identifique las coordenadas geográficas de los siguientes objetos:
-  \begin{enumerate}
-    \item El aeropuerto de las cataratas del Iguazú.
-    \item La ciudad de Puerto Iguazú.
-    \item La ciudad de Foz de Iguazú.
-    \item Ciudad del este.
-    \item La desembocadura del embalse Urugua-Í.
-    \item El cruce entre los ríos Paraná y Iguazú.
-    \item Las cataratas del Iguazú donde el río Iguazú se angosta.
-  \end{enumerate}
-
-\end{enumerate}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.05\textwidth]{fig:pin-spectral.png}
+    \caption{Selector de firmas para un Pin}
+    \label{fig:selva}
+\end{figure}
