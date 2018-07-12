@@ -11,7 +11,7 @@ En esta ocasión vamos a realizar diferentes combinaciones de bandas analizando 
 
 %desarrollar un poco
 
-\section{Combinación color real}
+\section{Combinación color real}\label{sec:colorreal}
 
 Abra la imagen \begin{center} \directory{S2B\_MSIL2A\_2018-01-31.dim}.
 \end{center} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación color real que utiliza las bandas \emph{rojo (B4)}, \emph{verde(B3)} y \emph{azul(B2)} de \emph{Sentinel-2}. Desplieguela haciendo click en \menu{OK}. 
@@ -22,6 +22,7 @@ Utilice el mapa con puntos de interés para identificar y familiarizarse con los
 
 
 \section{Combinación infrarrojo color}
+\label{sec:infrarrojocolor}
 
 Seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Seleccione las bandas \emph{infrarrojo cercano (B8)}, \emph{verde(B3)} y \emph{azul(B2)} de \emph{Sentinel-2}. Desplieguela haciendo click en \menu{OK}. 
 
@@ -30,6 +31,7 @@ En esta combinación la vegetación aparece en tonos de rojo y magenta, las áre
 Utilice el mapa con puntos de interés para identificar diferentes tipos de vegetación (Figura \ref{fig:mapa}). Explore la ubicación de los puntos mencionados utilizando las herramientas de navegación y zoom  (Figura \ref{fig:mono}). Compare color, tono y textura para cada punto. 
 
 \section{Combinación vegetación sana}
+\label{sec:vegetacionsana}
 
 Seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Seleccione las bandas \emph{infrarrojo cercano (B8)}, \emph{infrarrojo onda corta(B11)} y \emph{azul(B2)} de \emph{Sentinel-2}. Desplieguela haciendo click en \menu{OK}. 
 
@@ -95,11 +97,37 @@ Identifique en el mapa (Figura \ref{fig:mapa}) un parche homogéneo de selva par
 
 Para cambiar del Pin características como nombre o color ir a  \menu{View>Tool Windows>Pin Manager}. Seleccionar en la columna \menu{label} el nombre Pin 1 y cambiar por "selva paranaense". En la columna \menu{color} asignar el color deseado. 
 
-Ahora procederemos a visualizar la firma espectral. Seleccione \menu{Optical>Spectrum View}. Se desplegará el visor de firmas espectrales. Para visualizar el Pin creado, seleccione la herramienta \menu{Show spectra for all pins}
+\section{Visualización de firmas espectrales}
+
+Ahora procederemos a visualizar la firma espectral correspondiente al Pin creado. Seleccione \menu{Optical>Spectrum View}. Se desplegará el visor de firmas espectrales. Para visualizar el Pin creado, seleccione la herramienta \menu{Show spectra for all pins}
+
+
+Ahora procederemos a identificar y comparar firmas espectrales de diferentes usos y coberturas. Con la ayuda del mapa (Figura \ref{fig:mapa}) dentifique parches homogéneos de bosque implantado, cultivo, suelo sin cobertura vegetal y cuerpo de agua e inserte en cada uno de ellos un pin con la herramienta \menu{pin placing tool}. A medida que vaya generando cada pin, recuerde modificarle las caracteristicas con la herramienta  \menu{View>Tool Windows>Pin Manager}. A continuación visualice las firmas correspondientes a los pins generados utilizando la herramienta \menu{Optical>Spectrum View}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.05\textwidth]{fig:pin-spectral.png}
-    \caption{Selector de firmas para un Pin}
-    \label{fig:selva}
+    \includegraphics[width=0.7\textwidth]{fig:spectral-signature.png}
+    \caption{Ejemplo de firmas espectrales obtenidas}
+    \label{fig:spectral-signature}
 \end{figure}
+
+\section{Actividad práctica II}
+
+\begin{enumerate}
+  \item Seleccione entre las pestañas abiertas la que corresponda a la combinación color real (Sección \ref{sec:colorreal}). Inserte un pin para el río Paraná, río Iguazú y embalse Urugua-í. Modifique el nombre y color de los mismos con la herramienta \menu{Pin Manager} y grafique con la herramienta \menu{Spectrum View}
+\begin{enumerate}
+    \item Compare las tres firmas espectrales. Analice el patrón de reflectancia. ¿Presentan todas el mismo patrón?
+    \item Identifique picos y valles de reflectancia. ¿Que cuerpo de agua presenta mayor reflectancia en el visible-NIR? ¿Cuál presenta menor? Analice los factores biofísicos que modelan este comportamiento.
+
+  \end{enumerate}
+
+  \item Seleccione entre las pestañas abiertas la que corresponda a la combinación vegetación sana (Sección \ref{sec:vegetacionsana}). Inserte un pin para selva paranaense, bosque implantado, cultivo y suelo sin cobertura vegetal. Modifique el nombre y color de los mismos con la herramienta \menu{Pin Manager} y grafique con la herramienta \menu{Spectrum View}
+  \begin{enumerate}
+    \item Analice las cuatro firmas espectrales teniendo en cuenta los picos y valles de reflectancia de acuerdo a la longitud de onda correspondiente. ¿En qué longitudes de onda presenta mayor reflectancia la vegetación? ¿En cuáles presenta menor reflectancia? Analice teniendo en cuenta los parámetros fisiológicos que modelan este comportamiento.
+    \item Compare una firma de vegetación fotosintéticamente activa (e.g. selva paranaense) con otra de suelo sin cobertura vegetal. ¿Muestra una separación en el visible? ¿Y en el infrarrojo cercano? Analice donde se observan mayores diferencias.
+	\item Identifique un área urbana, añada un pin. Modifique nombre y color. Compare con el resto de las firmas espectrales. ¿Que diferencias observa con respecto a suelo sin cobertura vegetal? ¿En qué regiones del espectro las observa? 
+  \end{enumerate}
+  
+%Ver cómo manejar el tema de borrar pines en las comparaciones
+% Añadir al anexo las longitudes de onda x mision satelital.
+ 
