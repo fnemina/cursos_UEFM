@@ -1,1 +1,108 @@
-\chapter{NOMBRE CLASE 6}
+\chapter{Aplicaciones}
+
+\section{Deforestación en el noroeste argentino}
+
+El objetivo de esta aplicación es estimar la superficie cubierta por vegetación y su variación en los alrededores de la ciudad de Joaquin V. Gonzalez, Salta, Argentina, entre los meses de enero de 1986 y diciembre de 2017.
+
+Para hacerlo siga los siguientes pasos:
+
+\begin{enumerate}
+\item Descargue las imagenes de las inmediaciones de la ciudad de Joaquin V. Gonzales del 7 de enero de 1986 y 30 de diciembre de 2018, correspondientes a los satélites LANDSAT 5 y LANDSAT 8.
+
+\item Apile y recorte cada una de las imágenes según las coordenadas
+
+\begin{itemize}
+    \item Latitud norte: -24.867
+    \item Longitud oeste: -64.539
+    \item Latitud sur: -25.290
+    \item Longitud este: -63.829
+\end{itemize}
+
+Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
+
+\item Cálcule el NDVI para cada una de las escenas y apilelos. Modifique el nombre de las bandas del apilado para que sean \texttt{ndvi\_1986} y \texttt{ndvi\_2017}.
+
+\item Clasifique el apilado de índices utilizando el método de k-means con 3 clases espectrales y seleccionando solo las bandas \texttt{ndvi\_1986} y \texttt{ndvi\_2017}.
+
+\item Reclasifique la escena según la tabla \ref{tab:def}
+
+\begin{table}[]
+\centering
+\begin{tabular}{@{}cll@{}}
+\toprule
+Categoría & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}          \\ \midrule
+V-SC      & Zonas con alto NDVI que no cambiaron. & \textcolor{P1}{$\blacksquare$}\texttt{\#91cf60} \\
+SV-SC     & Zonas con bajo NDVI que no cambiaron  & \textcolor{P2}{$\blacksquare$}\texttt{\#ffffbf} \\
+D         & Zonas donde disminuyo el NDVI.        & \textcolor{P3}{$\blacksquare$}\texttt{\#fc8d59} \\ \bottomrule
+\end{tabular}
+\caption{Tabla de colores para un mapa de deforestación.}
+\label{tab:def}
+\end{table}
+
+\item Guarde el mapa obtenido como una imagen en jpg.
+
+\end{enumerate}
+
+\section{Detección de glaciares en Cuyo}
+
+El objetivo de esta aplicación es detectar zonas cubiertas por nieve y hielo tanto que varien periodicamente como de forma permanente en la zona de Cerro de la Majadita, San Juan, Argentina.
+
+Para hacerlo siga los siguientes pasos:
+
+\begin{enumerate}
+\item Descargue las imagenes de las inmediaciones de Cerro de la Majadita, San Juan, Argentina de los días 15 de julio de 2018 y 4 de enero de 2018.
+
+\item Apile y recorte cada una de las imágenes según las coordenadas
+
+\begin{itemize}
+    \item Latitud norte: -30.052
+    \item Longitud oeste: -70.112
+    \item Latitud sur: -30.610
+    \item Longitud este: -69.026
+\end{itemize}
+
+Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
+
+\item Cálcule el NDSI para cada una de las escenas y apilelos. Nombrelos \texttt{ndsi\_verano} y \texttt{ndsi\_invierno}. La formula es
+
+\begin{verbatim}
+  red/swir1 o red/swir2
+\end{verbatim}
+
+Destilde la opción \emph{Virtual}.
+
+\item Clasifique el apilado de índices utilizando el método de k-means con 4 clases espectrales y seleccionando solo las bandas \texttt{ndvi\_1986} y \texttt{ndvi\_2017}.
+
+\item Reclasifique la escena según la tabla \ref{tab:def}
+
+\begin{table}[]
+\centering
+\begin{tabular}{@{}cll@{}}
+\toprule
+Categoría & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}          \\ \midrule
+HN-P      & Zonas con alto NDSI que no cambiaron. & \textcolor{P1}{$\blacksquare$}\texttt{\#91cf60} \\
+HN-NP     & Zonas con bajo NDSI en invierno y alto en verano  & \textcolor{P2}{$\blacksquare$}\texttt{\#ffffbf} \\
+O         & Zonas con NDSI bajo todo el año o bajo en verano y alto en invierno        & \textcolor{P3}{$\blacksquare$}\texttt{\#fc8d59} \\ \bottomrule
+\end{tabular}
+\caption{Tabla de colores para un mapa de deforestación.}
+\label{tab:def}
+\end{table}
+
+\item Guarde el mapa obtenido como una imagen en jpg.
+
+
+\section{Clasificación de uso y cobertura en Patagonia}
+
+El Bolsón, Río Negro, Argentina
+29/Enero/2018
+
+\section{Deteccion de camalotes en la región Pampeana}
+
+La Plata, Buenos Aires, Argentina
+16/Enero/2016
+
+\section{Floraciones algales en la región Patagónica}
+
+Bahía Camarones, Chubut, Argentina
+14/Noviembre/2017
+30/Noviembre/2017
