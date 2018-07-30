@@ -63,46 +63,107 @@ Para hacerlo siga los siguientes pasos:
 
 Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
 
-\item Cálcule el NDSI para cada una de las escenas y apilelos. Nombrelos \texttt{ndsi\_verano} y \texttt{ndsi\_invierno}. La formula es
+\item Cálcule un índice de nieve para cada una de las escenas. Nombrelos \texttt{si\_verano} y \texttt{si\_invierno}. La formula a utilizar es
 
 \begin{verbatim}
-  red/swir1 o red/swir2
+  red/swir1
 \end{verbatim}
 
-Destilde la opción \emph{Virtual}.
+Destilde la opción \emph{Virtual}. Apile luego ambas imágenes con los índices, conviene utilizar la herramienta \menu{Raster > Geometric operations > Colocation}.
 
-\item Clasifique el apilado de índices utilizando el método de k-means con 4 clases espectrales y seleccionando solo las bandas \texttt{ndvi\_1986} y \texttt{ndvi\_2017}.
+\item Mediante inspección visual encuentre un valor umbral por arriba del cual considera que hay presencia de nieve. Construya con este valor un mapa de presencia de nieve en verano e invierno utilizando la formula
 
-\item Reclasifique la escena según la tabla \ref{tab:def}
+\begin{verbatim}
+(si_invierno_S > UMBRAL)*2 + (si_verano_M > UMBRAL)*1
+\end{verbatim}
+
+donde \texttt{UMBRAL} es el umbral encontrado. Esto construye un mapa como el de la tabla \ref{tab:nieve}
+
+\item Asigne a cada valor de la escena los colores \ref{tab:nieve}
 
 \begin{table}[]
 \centering
 \begin{tabular}{@{}cll@{}}
 \toprule
-Categoría & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}          \\ \midrule
-HN-P      & Zonas con alto NDSI que no cambiaron. & \textcolor{P1}{$\blacksquare$}\texttt{\#91cf60} \\
-HN-NP     & Zonas con bajo NDSI en invierno y alto en verano  & \textcolor{P2}{$\blacksquare$}\texttt{\#ffffbf} \\
-O         & Zonas con NDSI bajo todo el año o bajo en verano y alto en invierno        & \textcolor{P3}{$\blacksquare$}\texttt{\#fc8d59} \\ \bottomrule
+Valor & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}          \\ \midrule
+0      & Zonas sin nieve. & \textcolor{N1}{$\blacksquare$}\texttt{\#eff3ff} \\
+1      & Zonas con nieve solo en verano   & \textcolor{N2}{$\blacksquare$}\texttt{\#bdd7e7} \\
+2      & Zonas con nieve solo en invierno        & \textcolor{N3}{$\blacksquare$}\texttt{\#6baed6} \\
+3      & Zonas con nieve todo el año        & \textcolor{N4}{$\blacksquare$}\texttt{\#2171b5} \\ \bottomrule
 \end{tabular}
 \caption{Tabla de colores para un mapa de deforestación.}
-\label{tab:def}
+\label{tab:nieve}
 \end{table}
 
 \item Guarde el mapa obtenido como una imagen en jpg.
 
 
-\section{Clasificación de uso y cobertura en Patagonia}
+\section{Incendios en la patagonia}
 
-El Bolsón, Río Negro, Argentina
-29/Enero/2018
+Lago Cholila, Chubut, Argentina
+11/Abril/2015
+21/Enero/2015
+
+El objetivo de esta aplicación es detectar zonas afectadas durante los incendios en Lago Cholila, Chubut, Argentina durante los meses de febrero, marzo y abril de 2015.
+
+Para hacerlo siga los siguientes pasos:
+
+\begin{enumerate}
+\item Descargue las imagenes de las inmediaciones de Lago Cholila, Chubut, Argentina de los días 21 de enero y 11 de abril de 2015.
+
+\item Apile y recorte cada una de las imágenes según las coordenadas
+
+\begin{itemize}
+    \item Latitud norte: -42.054
+    \item Longitud oeste: -72.323
+    \item Latitud sur: -42.578
+    \item Longitud este: -71.347
+\end{itemize}
+
+Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
+
+\item Cálcule un índice de nieve para cada una de las escenas. Nombrelos \texttt{nbr\_pre} y \texttt{nbr\_pos}. La formula a utilizar es
+
+\begin{verbatim}
+(nir-swir2)/(nir+swir2)
+\end{verbatim}
+
+Destilde la opción \emph{Virtual}. Apile luego ambas imágenes con los índices, conviene utilizar la herramienta \menu{Raster > Geometric operations > Colocation}.
+
+\item Calcule la variación de NBR como
+
+\begin{verbatim}
+nbr_pre_M - nbr_pos_S
+\end{verbatim}
+
+\item Asigne a cada valor de la escena los colores \ref{tab:inc}
+
+\begin{table}[]
+\centering
+\begin{tabular}{@{}cll@{}}
+\toprule
+Valor & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}          \\ \midrule
+menor a $-0.25$      & Recrecimiento alto & \textcolor{NB1}{$\blacksquare$}\texttt{\#1a9850} \\
+$-0.25$ a $-0.1$      & Recrecimiento bajo   & \textcolor{NB2}{$\blacksquare$}\texttt{\#91cf60} \\
+$-0.1$ a $0.1$      & No incenciado        & \textcolor{NB3}{$\blacksquare$}\texttt{\#d9ef8b} \\
+$0.1$ a $0.27$     & Incendio, severidad baja        & \textcolor{NB4}{$\blacksquare$}\texttt{\#ffffbf} \\
+$0.27$ a $0.44$     & Incendio, severidad baja-moderada        & \textcolor{NB5}{$\blacksquare$}\texttt{\#fee08b} \\
+$0.44$ a $0.66$     & Incendio, severidad moderada-alta        & \textcolor{NB6}{$\blacksquare$}\texttt{\#fc8d59} \\
+mayor a $0.66$     & Incendio, severidad alta        & \textcolor{NB7}{$\blacksquare$}\texttt{\#d73027} \\ \bottomrule
+\end{tabular}
+\caption{Tabla de colores para un mapa de deforestación.}
+\label{tab:inc}
+\end{table}
 
 \section{Deteccion de camalotes en la región Pampeana}
 
 La Plata, Buenos Aires, Argentina
 16/Enero/2016
+29/Noviembre/2015
 
-\section{Floraciones algales en la región Patagónica}
+\section{Inundaciones en la región noreste}
 
-Bahía Camarones, Chubut, Argentina
-14/Noviembre/2017
+Resistencia, Chaco Province, Argentina
+
+19/Julio/2014
 30/Noviembre/2017
