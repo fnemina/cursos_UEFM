@@ -46,7 +46,13 @@ Para calcularlo, seleccione \menu{Optical>Tematic Land Processing > Vegetation R
 
 Una forma práctica de visualizar productos monobanda como el NDVI o SAVI es utilizando una paleta de colores mediante la cual puede observar los valores bajos con un determinado color, los valores intermedios con otro y así con los valores más altos, permitiendo además un gradiente de colores. %ver redacción
 
-Seleccione en el \menu {Área de visualización} el producto \emph{NDVI}. En \menu {Colour manipulation} podrá ver la distribución estadística de los pixeles del producto (Figura \ref{fig:color-man}). Seleccione la función \menu{import color palette from text file}. En el menú encontrará varias paletas de color, seleccione  \folder{meris\_veg\_index.cpd}. 
+Seleccione en el \menu {Área de visualización} (Figura \ref{fig:color-man} el producto \emph{NDVI}. En \menu {Colour manipulation} podrá ver la distribución estadística de los pixeles del producto (Figura \ref{fig:color-man}). Seleccione la función \menu{import color palette from text file}. En el menú encontrará varias paletas de color, 
+
+seleccione  \directory{meris\_veg\_index}. En "Automatically distribuite points of colour palette between min/max?" seleccionar "Yes".
+
+Se desplegará la imagen en tonos de verde, amarillo y naranja. Los valores NDVI altos se visualizarán en verde, en tanto que los valores intermedios en amarillo y los valores bajos en marrón oscuro. Relacione los valores con los colores observados (Figura \ref{fig:color-man-meris}).
+
+Realice el mismo procedimiento para el \emp {SAVI}.
 
 \begin{figure}[h!]
     \centering
@@ -55,8 +61,43 @@ Seleccione en el \menu {Área de visualización} el producto \emph{NDVI}. En \me
     \label{fig:color-man}
 \end{figure}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{fig:colour-man-meris.png}
+    \caption{Herramienta de Manipulación de Color. En sliders se observa la distribución estadístca de valores de NDVI para la paleta de color meris.}
+    \label{fig:color-man-meris}
+\end{figure}
+
+
 
 \section{Actividad práctica II}
+
+
+\begin{enumerate}
+  \item Seleccione la imagen de NDVI aplicando la paleta de color \emp {meris}. Navegue con el cursor y obtenga el valor con la herramienta \menu {pixel info} para las siguientes coberturas.
+  \begin{enumerate}
+   
+   
+   
+   
+    \item Un parche homogéneo de selva paranaense que se observe en verde oscuro.
+    \item Un parche homogéneo de selva paranaense que se observe en verde claro.
+    \item Un parche hoomogéneo de suelo sin cobertura vegetal que se observa en marrón oscuro (cultivo en descanso).
+    \item El embalse Urugua-í
+    \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos? ¿Qué significado tiene los valores negativos?
+    \item Grafique las firmas espectrales utilizando las herrramientas de la guía dos y analice para cada cobertura la relación entre infrarrojo cercano y rojo.
+    \end{enumerate}
+
+
+  \item Seleccione la imagen de SAVI aplicando la paleta de color \emp {meris} y repita el mismo procedimiento que para el NDVI.
+  \begin{enumerate}
+   
+   \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos? 
+     \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?  
+
+\end{enumerate}
+
+
 
 %Comparar NDVI entre coberturas
 %Comparar NDWI entre coberturas
@@ -64,24 +105,7 @@ Seleccione en el \menu {Área de visualización} el producto \emph{NDVI}. En \me
 % Comparar la relacioon GEMI vs NDVI
 % Hacer tabla comparativa entre indices
 
-\begin{enumerate}
-  \item Identifique parches homogéneos de vegetación, suelo sin cobertura y agua. Compare los valores de \emph{NDVI} utilizando la herramienta \menu{Pixel info}.
-  
-  
-   herramienta \menu{Pin Manager} y grafique con la herramienta \menu{Spectrum View}
-\begin{enumerate}
-    \item Compare las tres firmas espectrales. Analice el patrón de reflectancia. ¿Presentan todas el mismo patrón?
-    \item Identifique picos y valles de reflectancia. ¿Que cuerpo de agua presenta mayor reflectancia en el visible-NIR? ¿Cuál presenta menor? Analice los factores biofísicos que modelan este comportamiento.
 
-  \end{enumerate}
-
-  \item Seleccione entre las pestañas abiertas la que corresponda a la combinación vegetación sana (Sección \ref{sec:vegetacionsana}). Inserte un pin para selva paranaense, bosque implantado, cultivo y suelo sin cobertura vegetal. Modifique el nombre y color de los mismos con la herramienta \menu{Pin Manager} y grafique con la herramienta \menu{Spectrum View}
-  \begin{enumerate}
-    \item Analice las cuatro firmas espectrales teniendo en cuenta los picos y valles de reflectancia de acuerdo a la longitud de onda correspondiente. ¿En qué longitudes de onda presenta mayor reflectancia la vegetación? ¿En cuáles presenta menor reflectancia? Analice teniendo en cuenta los parámetros fisiológicos que modelan este comportamiento.
-    \item Compare una firma de vegetación fotosintéticamente activa (e.g. selva paranaense) con otra de suelo sin cobertura vegetal. ¿Muestra una separación en el visible? ¿Y en el infrarrojo cercano? Analice donde se observan mayores diferencias.
-	\item Identifique un área urbana, añada un pin. Modifique nombre y color. Compare con el resto de las firmas espectrales. ¿Que diferencias observa con respecto a suelo sin cobertura vegetal? ¿En qué regiones del espectro las observa? 
-  \end{enumerate}
- \end{enumerate}
 %Ver cómo manejar el tema de borrar pines en las comparaciones
 % Añadir al anexo las longitudes de onda x mision satelital.
  
