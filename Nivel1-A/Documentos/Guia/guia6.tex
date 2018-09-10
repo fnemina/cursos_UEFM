@@ -30,7 +30,7 @@ Para ambas modifique los nombres de las bandas y las longitudes de onda de cada 
 \centering
 \begin{tabular}{@{}cll@{}}
 \toprule
-Categoría & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}          \\ \midrule
+Categoría & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}                       \\ \midrule
 V-SC      & Zonas con alto NDVI que no cambiaron. & \textcolor{P1}{$\blacksquare$}\texttt{\#91cf60} \\
 SV-SC     & Zonas con bajo NDVI que no cambiaron  & \textcolor{P2}{$\blacksquare$}\texttt{\#ffffbf} \\
 D         & Zonas donde disminuyo el NDVI.        & \textcolor{P3}{$\blacksquare$}\texttt{\#fc8d59} \\ \bottomrule
@@ -85,11 +85,11 @@ donde \texttt{UMBRAL} es el umbral encontrado. Esto construye un mapa como el de
 \centering
 \begin{tabular}{@{}cll@{}}
 \toprule
-Valor & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}          \\ \midrule
-0      & Zonas sin nieve. & \textcolor{N1}{$\blacksquare$}\texttt{\#eff3ff} \\
+Valor  & \multicolumn{1}{c}{Definición}   & \multicolumn{1}{c}{Color}                       \\ \midrule
+0      & Zonas sin nieve.                 & \textcolor{N1}{$\blacksquare$}\texttt{\#eff3ff} \\
 1      & Zonas con nieve solo en verano   & \textcolor{N2}{$\blacksquare$}\texttt{\#bdd7e7} \\
-2      & Zonas con nieve solo en invierno        & \textcolor{N3}{$\blacksquare$}\texttt{\#6baed6} \\
-3      & Zonas con nieve todo el año        & \textcolor{N4}{$\blacksquare$}\texttt{\#2171b5} \\ \bottomrule
+2      & Zonas con nieve solo en invierno & \textcolor{N3}{$\blacksquare$}\texttt{\#6baed6} \\
+3      & Zonas con nieve todo el año      & \textcolor{N4}{$\blacksquare$}\texttt{\#2171b5} \\ \bottomrule
 \end{tabular}
 \caption{Tabla de colores para un mapa de deforestación.}
 \label{tab:nieve}
@@ -142,15 +142,15 @@ nbr_pre_M - nbr_pos_S
 \centering
 \begin{tabular}{@{}cll@{}}
 \toprule
-Valor & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}          \\ \midrule
-menor a $-0.25$      & Recrecimiento alto & \textcolor{NB1}{$\blacksquare$}\texttt{\#1a9850} \\
-$-0.25$ a $-0.1$      & Recrecimiento bajo   & \textcolor{NB2}{$\blacksquare$}\texttt{\#91cf60} \\
-$-0.1$ a $0.1$      & No incenciado        & \textcolor{NB3}{$\blacksquare$}\texttt{\#d9ef8b} \\
-$0.1$ a $0.27$     & Incendio, severidad baja        & \textcolor{NB4}{$\blacksquare$}\texttt{\#ffffbf} \\
-$0.27$ a $0.44$     & Incendio, severidad baja-moderada        & \textcolor{NB5}{$\blacksquare$}\texttt{\#fee08b} \\
-$0.44$ a $0.66$     & Incendio, severidad moderada-alta        & \textcolor{NB6}{$\blacksquare$}\texttt{\#fc8d59} \\
-mayor a $0.66$     & Incendio, severidad alta        & \textcolor{NB7}{$\blacksquare$}\texttt{\#d73027} \\ \bottomrule
-\end{tabular}
+Valor              & \multicolumn{1}{c}{Definición}       & \multicolumn{1}{c}{Color}                        \\ \midrule
+menor a $-0.25$    & Recrecimiento alto                   & \textcolor{NB1}{$\blacksquare$}\texttt{\#1a9850} \\
+$-0.25$ a $-0.1$   & Recrecimiento bajo   		  & \textcolor{NB2}{$\blacksquare$}\texttt{\#91cf60} \\
+$-0.1$ a $0.1$     & No incenciado     		 	  & \textcolor{NB3}{$\blacksquare$}\texttt{\#d9ef8b} \\
+$0.1$ a $0.27$     & Incendio, severidad baja		  & \textcolor{NB4}{$\blacksquare$}\texttt{\#ffffbf} \\
+$0.27$ a $0.44$    & Incendio, severidad baja-moderada    & \textcolor{NB5}{$\blacksquare$}\texttt{\#fee08b} \\
+$0.44$ a $0.66$    & Incendio, severidad moderada-alta    & \textcolor{NB6}{$\blacksquare$}\texttt{\#fc8d59} \\
+mayor a $0.66$     & Incendio, severidad alta             & \textcolor{NB7}{$\blacksquare$}\texttt{\#d73027} \\ \bottomrule
+\end{tabular} 
 \caption{Tabla de colores para un mapa de deforestación.}
 \label{tab:inc}
 \end{table}
