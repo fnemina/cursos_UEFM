@@ -4,50 +4,28 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Formación de un píxel.}
+    \movie[width = 0.8\textwidth,loop,autostart]{\centering\includegraphics[width=0.8\textwidth]{fig:fimagen.png}}{./figs/fig:fimagen.mp4}
+    \caption{Formación de una imagen.}
     \label{}
   \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Concepto de píxel.}
-    \label{}
-  \end{figure}
+\begin{block}{Píxel}
+  Un píxel es el mínimo elemento de una imagen. Cada píxel tiene un único valor numérico y no es posible separar su composición.
+\end{block}\pause
+\begin{block}{Banda}
+  Una banda es un agrupamiento de píxeles en dos dimensiones. Una banda puede estar asociada a una longitud de ona específica o a una combinación matemática de estas últimas.
+\end{block}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Formación de una banda.}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Concepto de banda.}
-    \label{}
-  \end{figure}
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Imagen raster como arreglo de píxeles y bandas.}
-    \label{}
-  \end{figure}
+  \begin{block}{Imagen}
+    En general vamos a hablar de una imagen, o un raster, como el conjunto de bandas y sus metadatos.
+  \end{block}
 \end{frame}
 %--- Next Frame ---%
 
@@ -56,8 +34,8 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Resolución radiométrica sobre la firma espectral.}
+    \includegraphics[width=0.7\textwidth]{fig:8bit.jpg}
+    \caption{Imagen con resolución radiométrica de 8bit.}
     \label{}
   \end{figure}
 \end{frame}
@@ -66,8 +44,8 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Comparación de imágnes con distintas resoluciones radiométricas.}
+    \includegraphics[width=0.7\textwidth]{fig:4bit.jpg}
+    \caption{Imagen con resolución radiométrica de 4bit.}
     \label{}
   \end{figure}
 \end{frame}
@@ -76,53 +54,97 @@
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
+    \includegraphics[width=0.7\textwidth]{fig:2bit.jpg}
+    \caption{Imagen con resolución radiométrica de 2bit.}
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig:1bit.jpg}
+    \caption{Imagen con resolución radiométrica de 1bit.}
+    \label{}
+  \end{figure}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Definición}
+        En la capacidad de distinguir cambios en la radiancia que proviene de un píxel y como esta se cuantifica.
+    \end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig:eslo.png}
     \caption{Resolución espectral sobre la firma espectral.}
     \label{}
   \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
-\subsection{Proyección sobre el terreno}
-
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Asignación de coordenadas a píxeles.}
+    \includegraphics[width=0.8\textwidth]{fig:eshi.png}
+    \caption{Resolución espectral sobre la firma espectral.}
     \label{}
   \end{figure}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
-    %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Proyección de una esfera en un plano.}
-    \label{}
-  \end{figure}
+    \begin{block}{Definición}
+        Es la capacidad del sensor de distinguir regiones del espectro electromagnético.
+    \end{block}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
+%\subsection{Proyección sobre el terreno}
+
+%\begin{frame}{\secname : \subsecname}
+%  \begin{figure}
+%    \centering
     %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Métodos de interpolación.}
-    \label{}
-  \end{figure}
-\end{frame}
+%    \caption{Asignación de coordenadas a píxeles.}
+%    \label{}
+%  \end{figure}
+%\end{frame}
 %--- Next Frame ---%
 
-\begin{frame}{\secname : \subsecname}
-  \begin{figure}
-    \centering
+%\begin{frame}{\secname : \subsecname}
+%  \begin{figure}
+%    \centering
     %\includegraphics[width=\textwidth]{fig:espectro.png}
-    \caption{Tipos de proyecciones.}
-    \label{}
-  \end{figure}
-\end{frame}
+%    \caption{Proyección de una esfera en un plano.}
+%    \label{}
+%  \end{figure}
+%\end{frame}
+%--- Next Frame ---%
+
+%\begin{frame}{\secname : \subsecname}
+%  \begin{figure}
+%    \centering
+    %\includegraphics[width=\textwidth]{fig:espectro.png}
+%    \caption{Métodos de interpolación.}
+%    \label{}
+%  \end{figure}
+%\end{frame}
+%--- Next Frame ---%
+
+%\begin{frame}{\secname : \subsecname}
+%  \begin{figure}
+%    \centering
+%    %\includegraphics[width=\textwidth]{fig:espectro.png}
+%    \caption{Tipos de proyecciones.}
+%    \label{}
+%  \end{figure}
+%\end{frame}
 %--- Next Frame ---%
 
 
