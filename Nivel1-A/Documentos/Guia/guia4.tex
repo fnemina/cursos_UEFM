@@ -15,8 +15,9 @@ Para calcularlo, seleccione:
 
 \begin{center}
 \menu{Optical>Tematic Land Processing > Vegetation Radiometric Indices>NDVI Processor}
-  
-\end{center}Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Seleccione \menu {Run}. El producto ndvi se cargará en \menu{Product Explorer}. Para visualizarlo despliegue con doble click sobre el producto \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph {ndvi}. En el visualizador se desplegará la imagen en escala de grises.
+\end{center}
+
+Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Seleccione \menu {Run}. El producto ndvi se cargará en \menu{Product Explorer}. Para visualizarlo despliegue con doble click sobre el producto \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph {ndvi}. En el visualizador se desplegará la imagen en escala de grises.
 
 \begin{figure}[h!]
     \centering
@@ -68,6 +69,43 @@ Realice el mismo procedimiento para el \emp {SAVI}.
     \label{fig:color-man-meris}
 \end{figure}
 
+\section{Cálculo de estadísticas zonales}
+
+En la práctica diaria es bastante común calcular las estadísticas básicas de un parche (e.g. media, varianza) para un conjunto de pixeles en lugar de un valor único. Para ello utilizaremos un conjunto de herramientas de análisis raster y vectorial.%ver redacción
+
+En primer lugar crearemos polígonos para calcular sobre una parche las estadísticas para un determinado índice, por ejemplo NDVI. 
+
+\begin{enumerate}
+\item Seleccione en \menu{Vector>New Vector Data Container}. Coloque el nombre del vector que corresponderá a una cobertura a estimar. Por ejemplo \emph{Selva Paranaense} (Figura \ref{fig:vector-container}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{fig:vector-container.png}
+    \caption{Herramienta Vector Container}
+    \label{fig:vector-container}
+\end{figure}
+
+ 
+\item Repita el paso anterior para las coberturas \emph{sin cobertura vegetal} y \emph {cuerpo de agua}. Seleccione la herramienta \menu {Polygon Drawing Tool} (Figura xx). Se desplegará la ventana \menu{Select Vector Data Container}. Seleccione la cobertura correspondiente (e.g. Selva Paranaense). A continuación identifique el parche en el cual calculará las estadísticas y realice el polígono. De ese modo se generará un poligono correspondiente a ese uso y cobertura. Luego genere los vertices del polígono se haciendo click en la imagen. El cierre del polígono con dos clicks.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{fig:}
+    \caption{Herramienta Vector Container}
+    \label{fig:vector-container}
+\end{figure}
+
+\item Cree el resto de los polígonos.
+\end{enumerate}  
+
+%1 crear el vector container /va foto
+% 2 poner los nombres de los usos y coberturas /va foto
+% 3 generar los polígonos: 1 seleccionar selection tool, 2 seleccionar Polygon Drawning tool, 3  va foto
+%
+
+
+
+
 
 
 \section{Actividad práctica II}
@@ -76,10 +114,7 @@ Realice el mismo procedimiento para el \emp {SAVI}.
 \begin{enumerate}
   \item Seleccione la imagen de NDVI aplicando la paleta de color \emp {meris}. Navegue con el cursor y obtenga el valor con la herramienta \menu {pixel info} para las siguientes coberturas.
   \begin{enumerate}
-   
-   
-   
-   
+     
     \item Un parche homogéneo de selva paranaense que se observe en verde oscuro.
     \item Un parche homogéneo de selva paranaense que se observe en verde claro.
     \item Un parche hoomogéneo de suelo sin cobertura vegetal que se observa en marrón oscuro (cultivo en descanso).
@@ -91,12 +126,17 @@ Realice el mismo procedimiento para el \emp {SAVI}.
 
   \item Seleccione la imagen de SAVI aplicando la paleta de color \emp {meris} y repita el mismo procedimiento que para el NDVI.
   \begin{enumerate}
-   
    \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos? 
-     \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?  
+   \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?  
 
 \end{enumerate}
 
+\item Seleccione la imagen de NDWI aplicando la paleta de color \emp {meris} y repita el mismo procedimiento que para el NDVI.
+  \begin{enumerate}
+   \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos? 	
+   \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?  
+
+\end{enumerate}
 
 
 %Comparar NDVI entre coberturas
