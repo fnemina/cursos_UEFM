@@ -17,7 +17,7 @@ Para calcularlo, seleccione:
 \menu{Optical>Tematic Land Processing > Vegetation Radiometric Indices>NDVI Processor}
 \end{center}
 
-Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Seleccione \menu {Run}. El producto ndvi se cargará en \menu{Product Explorer}. Para visualizarlo despliegue con doble click sobre el producto \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph {ndvi}. En el visualizador se desplegará la imagen en escala de grises.
+Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Seleccione \menu {Run}. El producto ndvi se cargará en \menu{Product Explorer}. Para visualizarlo despliegue con doble click sobre el producto \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph{ndvi}. En el visualizador se desplegará la imagen en escala de grises.
 
 \begin{figure}[h!]
     \centering
@@ -28,20 +28,20 @@ Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} se
     \label{fig:NDVI}
 \end{figure}
 
-Identifique los diferentes usos y coberturas (Figura \ref{fig:mapa}) en el producto NDVI. Seleccione alguna cobertura y posicione el cursor en algún pixel de un parche homogéneo. Visualice el valor de \emp {NDVI} para ese parche. Para ello utilice la herramienta  \menu {pixel info}. Desplácece sobre la imagen con el cursor y visualice  los valores que toma el \emph{NDVI} para cada cobertura. Relacione estos valores con la escala de grises de la imagen.
+Identifique los diferentes usos y coberturas (Figura \ref{fig:mapa}) en el producto NDVI. Seleccione alguna cobertura y posicione el cursor en algún pixel de un parche homogéneo. Visualice el valor de \emph{NDVI} para ese parche. Para ello utilice la herramienta  \menu {pixel info}. Desplácece sobre la imagen con el cursor y visualice  los valores que toma el \emph{NDVI} para cada cobertura. Relacione estos valores con la escala de grises de la imagen.
 
 
 \section{NDWI}
 
 El NDWI (Normalized Difference Water Index) es un estimador del contenido de agua en el canopeo vegetal que interactua con la radación solar incidente. Es sensible a cambios en el contenido de agua en las hojas. Puede ser utilizado de manera complementaria al NDVI para monitoreo de contenido de agua y estado fisiológico en vegetación. Sin embargo es sensible al ruido del suelo sin cobertura.
 
-Para calcularlo, seleccione \menu{Optical>Tematic Land Processing > Water Radiometric Indices>NDWI Processor}.  Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Seleccione \menu {Run}. El producto \emp{NDWI} se cargará en \menu{Product Explorer}. Para visualizarlo despliegue con doble click sobre el producto \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph {ndwi}. En el visualizador se desplegará la imagen en escala de grises. Compare y analice tal como lo hizo con el \emph{NDVI}
+Para calcularlo, seleccione \menu{Optical>Tematic Land Processing > Water Radiometric Indices>NDWI Processor}.  Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Seleccione \menu {Run}. El producto \emph{NDWI} se cargará en \menu{Product Explorer}. Para visualizarlo despliegue con doble click sobre el producto \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph{ndwi}. En el visualizador se desplegará la imagen en escala de grises. Compare y analice tal como lo hizo con el \emph{NDVI}
 
 \section{SAVI}
 
 El SAVI (Soil Adjusted Vegetation Index)  tal como el NDVI utiliza la diferencia entre la absorción de la clorofila en el rojo y la reflectancia del infrarrojo cercano. Tiene la ventaja de reducir el ruido de la reflectancia del suelo. Además permite ajustar el mismo de acuerdo al tipo de sustrato y porcentaje de cobertura. %re-redactar, está horrible.
 
-Para calcularlo, seleccione \menu{Optical>Tematic Land Processing > Vegetation Radiometric Indices>SAVI Processor}.  Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Seleccione \menu {Run}. El producto \emp{SAVI} se cargará en \menu{Product Explorer}. Para visualizarlo despliegue con doble click sobre el producto \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph {savi}. En el visualizador se desplegará la imagen en escala de grises. Compare y analice tal como lo hizo con el \emph{NDVI}.
+Para calcularlo, seleccione \menu{Optical>Tematic Land Processing > Vegetation Radiometric Indices>SAVI Processor}.  Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Seleccione \menu {Run}. El producto \emph{SAVI} se cargará en \menu{Product Explorer}. Para visualizarlo despliegue con doble click sobre el producto \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph{savi}. En el visualizador se desplegará la imagen en escala de grises. Compare y analice tal como lo hizo con el \emph{NDVI}.
 
 \section{Visualización con paleta de colores}
 
@@ -53,7 +53,7 @@ seleccione  \directory{meris\_veg\_index}. En "Automatically distribuite points 
 
 Se desplegará la imagen en tonos de verde, amarillo y naranja. Los valores NDVI altos se visualizarán en verde, en tanto que los valores intermedios en amarillo y los valores bajos en marrón oscuro. Relacione los valores con los colores observados (Figura \ref{fig:color-man-meris}).
 
-Realice el mismo procedimiento para el \emp {SAVI}.
+Realice el mismo procedimiento para el \emph{SAVI}.
 
 \begin{figure}[h!]
     \centering
@@ -80,17 +80,17 @@ En primer lugar crearemos polígonos para calcular sobre una parche las estadís
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{fig:vector-container.png}
+    \includegraphics[width=0.6\textwidth]{fig:vector-cont.png}
     \caption{Herramienta Vector Container}
     \label{fig:vector-container}
 \end{figure}
 
 
-\item Repita el paso anterior para las coberturas \emph{sin cobertura vegetal} y \emph {cuerpo de agua}. Seleccione la herramienta \menu {Polygon Drawing Tool} (Figura xx). Se desplegará la ventana \menu{Select Vector Data Container}. Seleccione la cobertura correspondiente (e.g. Selva Paranaense). A continuación identifique el parche en el cual calculará las estadísticas y realice el polígono. De ese modo se generará un poligono correspondiente a ese uso y cobertura. Luego genere los vertices del polígono se haciendo click en la imagen. El cierre del polígono con dos clicks.
+\item Repita el paso anterior para las coberturas \emph{sin cobertura vegetal} y \emph{cuerpo de agua}. Seleccione la herramienta \menu {Polygon Drawing Tool} (Figura xx). Se desplegará la ventana \menu{Select Vector Data Container}. Seleccione la cobertura correspondiente (e.g. Selva Paranaense). A continuación identifique el parche en el cual calculará las estadísticas y realice el polígono. De ese modo se generará un poligono correspondiente a ese uso y cobertura. Luego genere los vertices del polígono se haciendo click en la imagen. El cierre del polígono con dos clicks.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{fig:}
+    %\includegraphics[width=0.6\textwidth]{fig:}
     \caption{Herramienta Vector Container}
     \label{fig:vector-container}
 \end{figure}
@@ -110,7 +110,7 @@ En primer lugar crearemos polígonos para calcular sobre una parche las estadís
 
 \section{Actividad práctica}
 \begin{enumerate}
-  \item Seleccione la imagen de NDVI aplicando la paleta de color \emp {meris}. Navegue con el cursor y obtenga el valor con la herramienta \menu {pixel info} para las siguientes coberturas.
+  \item Seleccione la imagen de NDVI aplicando la paleta de color \emph{meris}. Navegue con el cursor y obtenga el valor con la herramienta \menu {pixel info} para las siguientes coberturas.
   \begin{enumerate}
 
     \item Un parche homogéneo de selva paranaense que se observe en verde oscuro.
@@ -122,14 +122,14 @@ En primer lugar crearemos polígonos para calcular sobre una parche las estadís
     \end{enumerate}
 
 
-  \item Seleccione la imagen de SAVI aplicando la paleta de color \emp {meris} y repita el mismo procedimiento que para el NDVI.
+  \item Seleccione la imagen de SAVI aplicando la paleta de color \emph{meris} y repita el mismo procedimiento que para el NDVI.
   \begin{enumerate}
    \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos?
    \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?
 
 \end{enumerate}
 
-\item Seleccione la imagen de NDWI aplicando la paleta de color \emp {meris} y repita el mismo procedimiento que para el NDVI.
+\item Seleccione la imagen de NDWI aplicando la paleta de color \emph{meris} y repita el mismo procedimiento que para el NDVI.
   \begin{enumerate}
    \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos?
    \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?
