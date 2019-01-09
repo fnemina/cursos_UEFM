@@ -6,7 +6,7 @@ El objetivo de esta clase es la generación e intepretación de índices espectr
 \section{Combinación color real}\label{sec:colorreal}
 
 Abra la imagen \begin{center} \directory{S2B\_MSIL2A\_2018-01-31.dim}.
-\end{center} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación color real que utiliza las bandas \emph{rojo (B4)}, \emph{verde(B3)} y \emph{azul(B2)} de \emph{Sentinel-2}. Desplieguela haciendo click en \menu{OK}. 
+\end{center} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación color real que utiliza las bandas \emph{rojo (B4)}, \emph{verde(B3)} y \emph{azul(B2)} de \emph{Sentinel-2}. Desplieguela haciendo click en \menu{OK}.
 
 \section{NDVI}
 El NDVI (Normalized Difference Vegetation Index) es uno de los índices más extendidos en teledetección. Utiliza la diferencia entre la absorción de la clorofila en el rojo y la reflectancia del infrarrojo cercano que se relaciona con la biomasa fotosintéticamente activa.
@@ -28,7 +28,7 @@ Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} se
     \label{fig:NDVI}
 \end{figure}
 
-Identifique los diferentes usos y coberturas (Figura \ref{fig:mapa}) en el producto NDVI. Seleccione alguna cobertura y posicione el cursor en algún pixel de un parche homogéneo. Visualice el valor de \emp {NDVI} para ese parche. Para ello utilice la herramienta  \menu {pixel info}. Desplácece sobre la imagen con el cursor y visualice  los valores que toma el \emph{NDVI} para cada cobertura. Relacione estos valores con la escala de grises de la imagen. 
+Identifique los diferentes usos y coberturas (Figura \ref{fig:mapa}) en el producto NDVI. Seleccione alguna cobertura y posicione el cursor en algún pixel de un parche homogéneo. Visualice el valor de \emp {NDVI} para ese parche. Para ello utilice la herramienta  \menu {pixel info}. Desplácece sobre la imagen con el cursor y visualice  los valores que toma el \emph{NDVI} para cada cobertura. Relacione estos valores con la escala de grises de la imagen.
 
 
 \section{NDWI}
@@ -47,7 +47,7 @@ Para calcularlo, seleccione \menu{Optical>Tematic Land Processing > Vegetation R
 
 Una forma práctica de visualizar productos monobanda como el NDVI o SAVI es utilizando una paleta de colores mediante la cual puede observar los valores bajos con un determinado color, los valores intermedios con otro y así con los valores más altos, permitiendo además un gradiente de colores. %ver redacción
 
-Seleccione en el \menu {Área de visualización} (Figura \ref{fig:color-man} el producto \emph{NDVI}. En \menu {Colour manipulation} podrá ver la distribución estadística de los pixeles del producto (Figura \ref{fig:color-man}). Seleccione la función \menu{import color palette from text file}. En el menú encontrará varias paletas de color, 
+Seleccione en el \menu {Área de visualización} (Figura \ref{fig:color-man} el producto \emph{NDVI}. En \menu {Colour manipulation} podrá ver la distribución estadística de los pixeles del producto (Figura \ref{fig:color-man}). Seleccione la función \menu{import color palette from text file}. En el menú encontrará varias paletas de color,
 
 seleccione  \directory{meris\_veg\_index}. En "Automatically distribuite points of colour palette between min/max?" seleccionar "Yes".
 
@@ -73,7 +73,7 @@ Realice el mismo procedimiento para el \emp {SAVI}.
 
 En la práctica diaria es bastante común calcular las estadísticas básicas de un parche (e.g. media, varianza) para un conjunto de pixeles en lugar de un valor único. Para ello utilizaremos un conjunto de herramientas de análisis raster y vectorial.%ver redacción
 
-En primer lugar crearemos polígonos para calcular sobre una parche las estadísticas para un determinado índice, por ejemplo NDVI. 
+En primer lugar crearemos polígonos para calcular sobre una parche las estadísticas para un determinado índice, por ejemplo NDVI.
 
 \begin{enumerate}
 \item Seleccione en \menu{Vector>New Vector Data Container}. Coloque el nombre del vector que corresponderá a una cobertura a estimar. Por ejemplo \emph{Selva Paranaense} (Figura \ref{fig:vector-container}).
@@ -85,7 +85,7 @@ En primer lugar crearemos polígonos para calcular sobre una parche las estadís
     \label{fig:vector-container}
 \end{figure}
 
- 
+
 \item Repita el paso anterior para las coberturas \emph{sin cobertura vegetal} y \emph {cuerpo de agua}. Seleccione la herramienta \menu {Polygon Drawing Tool} (Figura xx). Se desplegará la ventana \menu{Select Vector Data Container}. Seleccione la cobertura correspondiente (e.g. Selva Paranaense). A continuación identifique el parche en el cual calculará las estadísticas y realice el polígono. De ese modo se generará un poligono correspondiente a ese uso y cobertura. Luego genere los vertices del polígono se haciendo click en la imagen. El cierre del polígono con dos clicks.
 
 \begin{figure}[h!]
@@ -96,7 +96,7 @@ En primer lugar crearemos polígonos para calcular sobre una parche las estadís
 \end{figure}
 
 \item Cree el resto de los polígonos.
-\end{enumerate}  
+\end{enumerate}
 
 %1 crear el vector container /va foto
 % 2 poner los nombres de los usos y coberturas /va foto
@@ -108,13 +108,11 @@ En primer lugar crearemos polígonos para calcular sobre una parche las estadís
 
 
 
-\section{Actividad práctica II}
-
-
+\section{Actividad práctica}
 \begin{enumerate}
   \item Seleccione la imagen de NDVI aplicando la paleta de color \emp {meris}. Navegue con el cursor y obtenga el valor con la herramienta \menu {pixel info} para las siguientes coberturas.
   \begin{enumerate}
-     
+
     \item Un parche homogéneo de selva paranaense que se observe en verde oscuro.
     \item Un parche homogéneo de selva paranaense que se observe en verde claro.
     \item Un parche hoomogéneo de suelo sin cobertura vegetal que se observa en marrón oscuro (cultivo en descanso).
@@ -126,18 +124,19 @@ En primer lugar crearemos polígonos para calcular sobre una parche las estadís
 
   \item Seleccione la imagen de SAVI aplicando la paleta de color \emp {meris} y repita el mismo procedimiento que para el NDVI.
   \begin{enumerate}
-   \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos? 
-   \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?  
+   \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos?
+   \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?
 
 \end{enumerate}
 
 \item Seleccione la imagen de NDWI aplicando la paleta de color \emp {meris} y repita el mismo procedimiento que para el NDVI.
   \begin{enumerate}
-   \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos? 	
-   \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?  
+   \item Vuelque los valores en una tabla y compare. ¿En qué tipo de coberturas encuentra los valores más altos? ¿Los más bajos?
+   \item Compare en la misma tabla los valores obtenidos para el NDVI.¿Cómo varían? ¿Son más altos o más bajos para SAVI? ¿Porqué?
 
 \end{enumerate}
 
+Estas preguntas y actividades no serán evaluadas. Su objetivo es discutirlas en el foro de consultas e intercambio de la clase.
 
 %Comparar NDVI entre coberturas
 %Comparar NDWI entre coberturas
@@ -148,4 +147,3 @@ En primer lugar crearemos polígonos para calcular sobre una parche las estadís
 
 %Ver cómo manejar el tema de borrar pines en las comparaciones
 % Añadir al anexo las longitudes de onda x mision satelital.
- 
