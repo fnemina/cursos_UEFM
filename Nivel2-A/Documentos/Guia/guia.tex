@@ -1,34 +1,40 @@
-\documentclass[a4paper,10pt]{book}
+\documentclass[a4paper,12pt]{report}
 \input{preamble.tex}
 \usepackage{float}
+\includeonly{guia4}
 \graphicspath{{./figs/}}
-\title{{\large Nivel 2} \\ Extracción de variables biofísicas}
+% Renombro lo capitulos
+\addto\captionsspanish{\renewcommand{\chaptername}{Clase}}
 
+\title{{\large Nivel 2} \\ Introducción a la teledetección SAR}
 \author[*]{Francisco Nemiña\thanks{fnemina@conae.gov.ar}}
-\author[*]{Laura Rouco}
+
+\author[**]{Tomas Zajc}
+
+%\author[**]{Laura Rouco}
 
 \affil[*]{Unidad de Educación y Formación Masiva \\ Comisión Nacional de Actividades Espaciales}
+\affil[**]{Misión SAOCOM \\ Comisión Nacional de Actividades Espaciales}
 
+\date{}
 \begin{document}
-\frontmatter
+%\frontmatter
 \maketitle
-\titlepage
-\tableofcontents
+%\titlepage
+%\tableofcontents
+%\include{prefacio}
 
-\input{prefacio.tex}
-
-\mainmatter
-
-\input{guia1.tex}
-\input{guia2.tex}
-\input{guia3.tex}
-\input{guia4.tex}
+%\mainmatter
+\include{guia1}
+\include{guia2}
+\include{guia3}
+\include{guia4}
+\include{guia5}
 
 \appendix
-\input{apendice1.tex}
-\input{apendice2.tex}
+\include{apendice1}
+\include{apendice2}
 
-\backmatter
-
+%\backmatter
 
 \end{document}

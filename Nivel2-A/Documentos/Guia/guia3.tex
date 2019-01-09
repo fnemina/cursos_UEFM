@@ -1,200 +1,140 @@
-\chapter{Variables biofísicas}
-El objetivo de esta clase es obtener, de distintas maneras, variables biofísicas utilizando imágenes satelitales. Para hacerlo se utilizarán dos tipos de modelos:
+\chapter{Speckle y procesamiento}
 
-\begin{itemize}
-    \item Semi-empiricos: obtenidos a partir de datos de campo.
-    \item Multiespectrales: obtenidos utilizando el \emph{Biophysical processor} del SNAP.
-\end{itemize}
+Esta clase tiene como objetivo comprender los pasos básicos para procesar imágenes radar. Para ello se descargarán imágenes de la web y se procesarán a distintos niveles de correcciones geométricas y radiométricas para poder luego visualizarlas.
 
-\section{Diagramas de dispersión}
+\section{Descarga de imágenes}
 
-Abra la imágen \path{S2A_MSIL2A_20170720.dim} que se encuentra en la carpeta \path{material/raster_data}.
-
-Una herramienta util para explorer el comportamiento de la capa raster es observar los distintos cortes del espacio espectral. Para ello habra la herramienta \emph{Analysis/Scatter plot} (Figura \ref{fig:scatter}).
+Para descargar imágenes SAR utilizaremos el catálogo del \href{https://vertex.daac.asf.alaska.edu/}{Alaska Satellite Facility}\footnote{\href{https://vertex.daac.asf.alaska.edu/}{https://vertex.daac.asf.alaska.edu/}}. Diríjase a la página y en la sección de \texttt{Geographic Region} seleccione un área que incluya a la ciudad de Ushuaia (Figura \ref{fig:region}).
 
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:scatter.png}
-    \caption{}
-    \label{fig:scatter}
+    \includegraphics[width=0.7\textwidth]{fig:region.png}
+    \caption{Selección de un área de interés en el catálogo \emph{Vertex} del \emph{Alaska Satellite Facility}}
+    \label{fig:region}
 \end{figure}
 
-Seleccione la imagen y banda que corresponde a cada eje. Use en este caso la banda 4 (B4 - correspondiente a la region del rojo) y la banda 8 (B8 - correspodiente a la region del infrarrojo cercano) y haga click en el boton \emph{Refresh}.
-
-Es posible cambiar los minimos y máximos para cada una de las bandas o dejar que el SNAP los configure automaticamente. Luego de cada cambio deberá presionar el boton refresh. Configure los valores para observar mejor el scatterplot.
-
-Es posible también mostrar el scatterplot para una sola región de la imagen. Puede hacer esto seleccionando la opción \emph{Use ROI mask} y luego la mascara correspodiente. Utilice las máscaras
-
-\begin{itemize}
-    \item scl\_vegetation
-    \item scl\_bare\_soil\_desert
-    \item scl\_water
-\end{itemize}
-
-para comparar que regiones del scatterplot corresponden a cada tipo de cobertura (Figura \ref{fig:scatterVSW}).
+Seleccione en \texttt{Dataset} el set de datos de \texttt{ALOS PALSAR} (Figura \ref{fig:dataset}) y presione search.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:scatterVSW.png}
-    \caption{}
-    \label{fig:scatterVSW}
+    \includegraphics[width=0.7\textwidth]{fig:dataset.png}
+    \caption{Selección de \emph{Dataset} en el catálogo \emph{Vertex} del \emph{Alaska Satellite Facility}}
+    \label{fig:dataset}
 \end{figure}
 
-Muevase en el scatterplot a la región correspodiente al agua y cambie los limites de los ejes para centrarse en dicha region. Haciendo click derecho sobre el gráfico seleccione la opción \emph{Select Mask 'scatter\_plot\_area'} y seleccione los daatos correspondientes a los pixeles con reflectancia en rojo de 0.07 y en nir de 0.005. (Figura \ref{fig:scatterwater}).
+A la derecha de la pantalla aparecerá una lista de productos. Seleccione de ellos el de nombre \emph{ALOS PALSAR PLR} del 20 de abril del 2011, pertenenciente al frame 6070 y el path 119.
+
+Descarge el producto \emph{Level 1.1 Complex (661.42 MB)} (Figura \ref{fig:descarga}). En caso de que el sistema así se lo pida, regístrese.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics{fig:scatterwater}
-    \caption{}
-    \label{fig:scatterwater}
+    \includegraphics[width=0.7\textwidth]{fig:descarga.png}
+    \caption{Selección de producto para la descarga en el catálogo \emph{Vertex} del \emph{Alaska Satellite Facility}}
+    \label{fig:descarga}
 \end{figure}
 
-Observe en la imagen cuales son los pixeles enmascarados y  que cobertura pertenecen.
+El producto descargado corresponde a una imagen \emph{Single look complex} en \emph{slant range}.
+
+\section{Calibración}
+
+Abra la imagen \directory{ALPSRP278916070-L1.1.zip} en SNAP. Despliegue la banda \texttt{intensity\_HH} y observe que se encuentra comprimida horizontalmente.
+
+Para calibrar la imagen, diríjase a \menu{Radar>Radiometric>Calibrate} (Figura \ref{fig:calibrar}) y asigne una ruta de guardado.
+
+ \begin{figure}[h!]
+     \centering
+     \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar1.png}}
+     \hspace{1cm}
+     \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:calibrar2.png}}
+     \caption{Calibración de productos SAR utilizando el SNAP. Recuerde seleccionar la ruta de guardado en \emph{Directory}.} % arreglar figura
+     \label{fig:calibrar}
+ \end{figure}
+
+ Obtendrá una imagen con los coeficientes de backscatter \texttt{sigma\_0}. En este caso tendrá las bandas correspondientes a las 4 formas de interacción entre el blanco y la radiación (HH, HV, VH y VV). Este tema será desarrollado en la próxima clase.
+
+ \section{Filtrado}
+
+ Para disminuir el ruido speckle en la imagen utilizaremos el proceso de multilook. El multilooking genera una nueva imagen a partir de los píxeles en una ventana. Para realizarlo utilice la herramienta \menu{Radar>Multilooking}.
+
+ En \texttt{source} seleccione la imagen
+ \begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal} \end{center}
+ que generó en el paso anterior. La solapa Processing Parameters permite indicar el numero de looks y sobre que bandas se ejecutará; de no seleccionar ninguna, el proceso se realizará sobre todas las bandas. En este caso utilice 1 look y la totalidad de las bandas de la imagen (Figura \ref{fig:multilook}).
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:multilook1.png}}
+    \hspace{1cm}
+    \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:multilook2.png}}
+    \caption{Multilook de una imagen SAR utilizando el SNAP.}
+    \label{fig:multilook}
+\end{figure}
+
+
+\section{Proyección}\label{sec:proyeccion}
+
+Finalmente, es común proyectar la imagen del \emph{slant range} al \emph{ground range}, para que luego se pueda abrir en cualquier softwarae de GIS sin problemas. Existen dos opciones: proyectar la imagen sobre el elipsoide o sobre un modelo de elevación digital.
+
+{\bf Importante:} En las imágenes ALOS PALSAR 1, es necesario aplicar un proceso antes de proyectarla en el terreno, denominado \emph{deskewing}. En el menú \menu{Radar>Geometric>ALOS deskewing} ejecute el proceso sobre la imagen
+\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML} \end{center} sin modificar los parámetros por defecto. Este proceso no es necesario en otras imágenes.
+
+\subsection{Elipsoide - GEC}
+
+Para proyectar la imagen sobre el elipsoide vaya al menú \menu{Radar>Geometric>Ellipsoid Correction>Average Height Range Doppler}. Seleccione la imagen
+\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML\_DSk} \end{center} y deje los parametros por defecto (Figura \ref{fig:elipsoide}).
+
+\subsection{Modelo de elevación digital - GTC}
+
+Para proyectar la imagen sobre un modelo de elevación digital vaya al menú \menu{Radar>Geometric>Terrain Correction>Range Doppler Terrain Correction}. Seleccione la imagen
+\begin{center} \texttt{ALOS-P1\_1\_\_A-ORBIT\_\_ALPSRP278916070\_Cal\_ML\_DSk}
+  \end{center}
+  y en \menu{processing parameters} destilde la opción \emph{Mask out areas without elevation} (Figura \ref{fig:gtc}).
+
+  \begin{figure}[h!]
+      \centering
+      \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:elipsoide1.png}}
+      \hspace{1cm}
+      \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:elipsoide2.png}}
+      \caption{Proyección de un producto SAR sobre el elipsoide.}
+      \label{fig:elipsoide}
+  \end{figure}
+
+{\bf Importante:} Al realizar la proyección sobre un DEM el SNAP lo descarga automaticamente. Esto puede tomar varios minutos dependiendo de su conexión.
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[I/O Parameters]{\includegraphics[width=0.35\textwidth]{fig:gtc1.png}}
+    \hspace{1cm}
+    \subfloat[Processing parameters]{\includegraphics[width=0.35\textwidth]{fig:gtc2.png}}
+    \caption{Proyección de un producto SAR sobre un DEM.}
+    \label{fig:gtc}
+\end{figure}
+
+\section{Conversión a dB}
+
+Puede convertir la imagen a dB haciendo click derecho sobre la banda y seleccionando la opción \menu{Linear to/from dB}.
+
+Convierta a dB la banda \texttt{sigma\_0\_HH} y explore visualmente el resultado. Conviene siempre explorar las imagenes en dB pues es una medida más natural para nuestro ojo.
+
+\section{Preguntas para debate}
 
 \begin{que}
-    ¿Puede distinguir en el scatterplot red-nir los distintos tipos de coberturas de agua? ¿Cual de las dos bandas le permite distinguirlos mejor? ¿Que pasa con las coberturas de vegetacion? ¿Es posible distinguir en este scatterplot las coberturas de selva y forestacion?  ¿Y con las de suelo desnudo? ¿Es posible distinguir en este scatterplot las zonas correspondientes a areas urbanas y con suelo desnudo? ¿Como interpreta la linea por debajo de la cual no hay valores? ¿A que cobertura pertenece?
+    Observe y compare la banda \texttt{sigma\_0\_HH} de la imagen con y sin filtro.
 \end{que}
-
-\section{Cálculo de índices}
-
-Existen distintos índices de vegetación que puede calcular utilizando el SNAP. En el menú \emph{Optical/Thematic Land processing/Vegetation Radiometric Indices} puede encontrar distintos indices de vegetación. Seleccione el NDVI de la lista y calculelo para la imagen. Deberá elegir en la sección de \emph{Processing parameters} las bandas a utilizar. Elija la banda 4 y 8 para los parametros red y nir respectivamente (Figura \ref{fig:ndviconfig}). El proceso tomara unos segundos y creará un nuevo archivo con los indices de vegetacion.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:ndviconfig.png}
-    \caption{}
-    \label{fig:ndviconfig}
-\end{figure}
-
-Muestre el NDVI generado. Puede cambiar los colores y la parte del histograma en la que se muestra la imagen desde la pestaña \emph{Colour managment} (Figura \ref{fig:cman}). Es posible además guardar y cargar paletass externas. Utilice en este caso la paleta \path{ndvi.cpd} que se encuentra en la carpeta \path{material/aux_data} para mostrar el NDVI haciendo click en \emph{Import colour palette from text file}.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:cman.png}
-    \caption{}
-    \label{fig:cman}
-\end{figure}
-
-Calcule el SAVI para la misma imagen (Figura \ref{fig:saviconfig}). comparelo con el NDVI. Puede ver ambas imagenes en simultaneo haciendo click en \emph{Windows/Tile horizontaly} o \emph{Windows/Tile vertically}. Para volver a la vista de una sola imagen haga click en \emph{Windows/Tile single}.
-
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:saviconfig.png}
-    \caption{}
-    \label{fig:saviconfig}
-\end{figure}
-
-Finalmente, construya el scatterplot entre el NDVI y el SAVI. Deberá en este caso seleccionar 2 imágenes distintas como fuente. Restrinja ademas el NDVI a los valores mayores que 0 (Figura \ref{fig:ndviscat}).
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:ndviscat.png}
-    \caption{}
-    \label{fig:ndviscat}
-\end{figure}
 
 \begin{que}
-    ¿En que regiones es más alto el NDVI? ¿En que regiones es más bajo? ¿Coinciden estas regiones para el SAVI? ¿Cual de los dos índices le permite distinguir mayor variabilidad en las coberturas? ¿Que le dice esto sobre la saturación de los índices? ¿Por debajo de que valores el NDVI y el SAVI se comportan linealmente? ¿Por arriba de que valores dejan de hacer? ¿Que le dice esto sobre la saturación del SAVI comparada con el NDVI?
+    Compare visualmente las imágenes GTC y GEC obtenidas por los métodos anteriores para la banda \texttt{sigma\_0\_HH\_dB}. ¿Qué sucede con las montañas? ¿Hacia donde parecen estar inclinadas?
 \end{que}
-
-\section{Modelos de inversión}
-
-Para construir los dinstintos tipos de modelo será de utilidad incorporar datos de campo con los que comparar. Para hacerlo seleccione la imagen \path{S2A_MSIL2A_20170720} del \emph{Product Explorer} y luego haga click en la herramienta \emph{Vector/Import/Vector from CSV}. Seleccione el archivo \path{mediciones.csv} de la carpeta \path{material/vector_data}. Se abrirá una nueva ventana que le pedirá el sistema de referencia (Figura \ref{fig:importV}) y luego otra que le pedira como interpretar los puntos importantes (Figura \ref{fig:importVI}).
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:importV.png}
-    \caption{}
-    \label{fig:importV}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:importVI.png}
-    \caption{}
-    \label{fig:importVI}
-\end{figure}
-
-Mantenga en ambas las opciones por defecto haciendo click en \emph{Ok}.
-
-Puede explorar los contenidos del vector haciendo click en el vector \emph{Mediciones} dentor de \emph{Vector\_data} en el product explorer.
-
-Incorpore estos datos a las imágenes creadas para el NDVI y el SAVI como lo hizo para la imagen multiespectral.
-
-\subsection{Modelos semi-empiricos}
-
-La herramienta \emph{Analysys/Correlative Plot} permite hacer gráficos entre los valores de un vector de tipo punto y los correspondientes valores en una imagen. Seleccione la banda \emph{ndvi} del NDVI en el arbol de capas y abrá la herramienta. Luego elija el \emph{Poing data source} como \emph{Mediciones} y el \emph{data field} como \emph{Lai mean}. (Figura \ref{fig:corndvi})
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:corndvi.png}
-    \caption{}
-    \label{fig:corndvi}
-\end{figure}
-
-Verá en este caso la linea 1:1 junto con los puntos medidos (en el eje horizontal) y los puntos de la imagen (en el eje vertical).
-
-Agregue marcando la casilla \emph{Show regression line} la linea de tendencia y obtenga el valor que relaciona el NDVI con el LAI. Repita el proceso utilizando ahora la imagen correspondiente al SAVI.
-
-Es posible utilizar este modelo sencillo para calcular un mapa de LAI. Para ello hacemos click derecho sobre la banda de NDVI y seleccionamos la opción \emph{Band maths...} (Figura \ref{fig:bm})
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:bm.png}
-    \caption{}
-    \label{fig:bm}
-\end{figure}
-
-Recuerde que la relación aquí obtenida es
-\begin{equation}
-    \nu = m \times \beta + b
-\end{equation}
-donde $\nu$ es el índice de vegetación y $\beta$ alguna variable biofísica. Por lo tanto la ecuación que debemos utilizar es
-\begin{equation}
-    \beta = \frac{\nu - b}{m}
-\end{equation}
-
-Utilice la ecuación
-
-\begin{verbatim}
-    (ndvi - 0.532)/0.153
-\end{verbatim}
-
-y ponga como nombre a la banda \emph{LAI}. Repita el proceso para el SAVI.
-
-Compare utilizando la herramienta \emph{Correlative plot} el resultado del modelo obtenido con los datos medidos a campo.
 
 \begin{que}
-    ¿Cual de los dos índices se comporta de forma más lineal con el LAI? ¿Que pasa para el NDVI a medida que el LAI aumenta? ¿En que zona es lineal el NDVI y el LAI? ¿En que zona es lineal el SAVI y el LAI? ¿Cual de los dos modélos ajusta mejor a los datos a campo?
+    ¿Por qué las montañas parecen mas brillantes de un lado que del otro?
 \end{que}
-
-\subsection{Modelos multiespectrales}
-
-Otra opción para calcular parametros biofísicos, en el caso de SENTINEL 2, es utilizar el \emph{Biophysical processor}. Este algorítmo considera en simultaneo todas las bandas de la imagen y medienta un modelo de inversión, obtiene los parametros biofísicos para la imagen.
-
-Para utilizarlo elija la herramienta en \emph{Optical/Thematic Land processing/Vegetation Radiometric Indices}. Seleccione la imagen \path{S2A_MSIL2A_20170720} y elija computar el LAI (Figura \ref{fig:bio}). Haga click en \emph{Run} para ejecutar el modelo.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=1.2]{fig:bio.png}
-    \caption{}
-    \label{fig:bio}
-\end{figure}
-
-\textbf{Importante:} Este proceso puede tomar entre algunos minutos y varias horas según el tamaño de la imagen y la computadora utilizada.
-
-Compare los resultados medidos a campo con los obtenidos aplicando el procesador incluido en el SNAP \footnote{En este caso, el coeficiente de correlación será artificialmente alto. Los valores obtenidos a campo utilizados en el curso fueron obtenidos utilizando el \emph{Biophysical processor} e incorporandoles ruido gaussiano.}.
-
-Por último, es posible comparar los resultados obtenidos para el LAI por los distintos métodos. Una forma de hacer esto es utilizar la herramienta \emph{Band maths...} para calcular la diferencia entre el LAI calculado por cada uno. En este caso utilice la opción \emph{Edit expression...} para poder utilizar bandas de distintas imágenes. Luego de hacer este proceso, utilice la herramienta de estadistica en \emph{Analysis/Statistics} para calcular los parametros de la imagen y el histograma (Figura \ref{fig:sta}).
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics{fig:sta.png}
-    \caption{}
-    \label{fig:sta}
-\end{figure}
 
 \begin{que}
-    ¿Cómo es el ajuste de los datos medidos a campo del procesador comparado con los índices? ¿Cual es la diferencia promedio entre el LAI calculado con cada uno de los índices y el del biophysical processor? ¿Cómo es el desvio? ¿Que modelos coincide?
+    Obtenga los valores de dB para las coberturas de agua, urbano y bosque para la banda \texttt{sigma\_0\_HH\_dB}.
 \end{que}
+
+\begin{que}
+    Dentro del Canal de Beagle encontrará un punto muy brillante cerca de la ciudad de Ushuahia. ¿A qué se debe este punto? ¿Qué aplicación le encuentra a las imágenes SAR sobre el agua?
+\end{que}
+
+Estas preguntas no serán evaluadas. Su objetivo es discutirlas en el foro de sonsultas e intercambio de la clase.

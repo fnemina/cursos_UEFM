@@ -57,6 +57,16 @@
 % Subfiguras
 \usepackage{subfig}
 
+% Tablas largas
+\usepackage{longtable}
+% Fechas automáticas
+\usepackage{advdate}    % Advancing/saving dates
+\usepackage{datetime}   % Dates formatting
+\usepackage{datenumber} % Counters for dates
+
+\newdateformat{mydate}{\THEDAY\ de \shortmonthname[\THEMONTH]}
+\renewcommand\AdvanceDate[1][\@ne]{\global\advance\day#1 \FixDate}
+
 % Menues y path
 \usepackage[os=win]{menukeys}
 \renewmenumacro{\directory}{pathswithfolder}
