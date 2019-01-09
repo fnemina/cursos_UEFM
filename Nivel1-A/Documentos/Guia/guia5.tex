@@ -91,29 +91,6 @@ Para mejorar la clasificación obtenida es posible cambiar cuatro parametros en 
   \item \emph{Source band names}: Las bandas que se utilizarán para la clasificación. Si no se selecciona ninguna se utilizaran todas.
 \end{itemize}
 
-\section{Actividad práctica}
-
-\begin{enumerate}
-  \item Identifique en la imagen las clases que podría asignar a una categoría de uso y cobertura u otra.
-  \item Que categorías de uso y cobertura son las que más se confunden dentro de la imagen.
-  \item Clasifique la imagen con los siguientes Parámetros
-\end{enumerate}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{cccl}
-\toprule
-Number of clusters & Number of iterations & Random seed & Source band name \\ \midrule
-7                  & 30                   & 31415       & Todas            \\
-14                 & 30                   & 31415       & Todas            \\
-14                 & 30                   & 198674      & Todas            \\
-28                 & 30                   & 31415       & Todas            \\
-28                 & 60                   & 31415       & Todas            \\
-14                 & 30                   & 31415       & blue,green,red   \\
-14                 & 30                   & 31415       & red,nir,swir1    \\ \bottomrule
-\end{tabular}
-\end{table}
-
 \section{Exportar visualización}
 
 En el SNAP es posible exportar la vista como imagen para utilizar en otro software. Para ello dirijase a \menu{File > Export > Other > View as image}. Selecciona luego si quiere exportar la región que está viendo (\emph{View region}) o toda la imagen (\emph{Full scene}) y el formato de archivo (Figura \ref{fig:vista}).
@@ -128,3 +105,31 @@ En el SNAP es posible exportar la vista como imagen para utilizar en otro softwa
 Es posible en este caso mantener la georreferenciación eligiendo el formato de archivo \emph{GeoTIFF - TIFF with geo-location}.
 
 En el caso de querer exportar la vista como KMZ debe primero reproyectar la imagen a coordenadas geográficas. En este caso deberá volver a hacer la asignación de colores a cada clase espectral. Luego elija la herramienta \menu{File > Export > Other > View as Google Earth KMZ}.
+
+
+\section{Actividad práctica}
+
+\begin{enumerate}
+  \item Identifique en la imagen las clases que podría asignar a una categoría de uso y cobertura u otra.
+  \item Que categorías de uso y cobertura son las que más se confunden dentro de la imagen.
+  \item Clasifique la imagen con los siguientes Parámetros
+  \begin{table}[h]
+  \centering
+  \begin{tabular}{cccl}
+  \toprule
+  Number of clusters & Number of iterations & Random seed & Source band name \\ \midrule
+  7                  & 30                   & 31415       & Todas            \\
+  14                 & 30                   & 31415       & Todas            \\
+  14                 & 30                   & 198674      & Todas            \\
+  28                 & 30                   & 31415       & Todas            \\
+  28                 & 60                   & 31415       & Todas            \\
+  14                 & 30                   & 31415       & blue,green,red   \\
+  14                 & 30                   & 31415       & red,nir,swir1    \\ \bottomrule
+  \end{tabular}
+  \end{table}
+  \item ¿Que sucede con la clasificación al aumentar el número de clusters? ¿Y al aumentar el número de iteraciones?
+  \item ¿A mismo número de clusters, que bandas conviene utilizar: \emph{blue, green, red} o \emph{red, nir,swir1}? ¿Puede explicar esto en termino de las coberturas de la imagen?
+  \item ¿Que parametrós elegiría para una mejor clasificación de la zona?
+\end{enumerate}
+
+Estas preguntas y actividades no serán evaluadas. Su objetivo es discutirlas en el foro de consultas e intercambio de la clase.
