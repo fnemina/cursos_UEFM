@@ -4,10 +4,10 @@
 
 El objetivo de esta aplicación es estimar la superficie cubierta por vegetación y su variación en los alrededores de la ciudad de Joaquin V. Gonzalez, Salta, Argentina, entre los meses de enero de 1986 y diciembre de 2017.
 
-Para hacerlo siga los siguientes pasos:
+Para hacerlo, siga los siguientes pasos:
 
 \begin{enumerate}
-\item Descargue las imagenes de las inmediaciones de la ciudad de Joaquin V. Gonzales del 7 de enero de 1986 y 30 de diciembre de 2018, correspondientes a los satélites LANDSAT 5 y LANDSAT 8.
+\item Descargue las imágenes de las inmediaciones de la ciudad de Joaquin V. Gonzales del 7 de enero de 1986 y 30 de diciembre de 2018, correspondientes a los satélites LANDSAT 5 y LANDSAT 8.
 
 \item Apile y recorte cada una de las imágenes según las coordenadas
 
@@ -20,7 +20,7 @@ Para hacerlo siga los siguientes pasos:
 
 Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
 
-\item Cálcule el NDVI para cada una de las escenas y apilelos. Modifique el nombre de las bandas del apilado para que sean \texttt{ndvi\_1986} y \texttt{ndvi\_2017}.
+\item Calcule el NDVI para cada una de las escenas y apílelos. Modifique el nombre de las bandas del apilado para que sean \texttt{ndvi\_1986} y \texttt{ndvi\_2017}.
 
 \item Clasifique el apilado de índices utilizando el método de k-means con 3 clases espectrales y seleccionando solo las bandas \texttt{ndvi\_1986} y \texttt{ndvi\_2017}.
 
@@ -47,10 +47,10 @@ D         & Zonas donde disminuyo el NDVI.        & \textcolor{P3}{$\blacksquare
 
 El objetivo de esta aplicación es detectar zonas cubiertas por nieve y hielo tanto que varien periodicamente como de forma permanente en la zona de Cerro de la Majadita, San Juan, Argentina.
 
-Para hacerlo siga los siguientes pasos:
+Para hacerlo, siga los siguientes pasos:
 
 \begin{enumerate}
-\item Descargue las imagenes de las inmediaciones de Cerro de la Majadita, San Juan, Argentina de los días 15 de julio de 2018 y 4 de enero de 2018.
+\item Descargue las imágenes de las inmediaciones de Cerro de la Majadita, San Juan, Argentina de los días 15 de julio de 2018 y 4 de enero de 2018.
 
 \item Apile y recorte cada una de las imágenes según las coordenadas
 
@@ -63,7 +63,7 @@ Para hacerlo siga los siguientes pasos:
 
 Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
 
-\item Cálcule un índice de nieve para cada una de las escenas. Nombrelos \texttt{si\_verano} y \texttt{si\_invierno}. La formula a utilizar es
+\item Calcule un índice de nieve para cada una de las escenas. Nombrelos \texttt{si\_verano} y \texttt{si\_invierno}. La formula a utilizar es
 
 \begin{verbatim}
   red/swir1
@@ -106,10 +106,10 @@ Lago Cholila, Chubut, Argentina
 
 El objetivo de esta aplicación es detectar zonas afectadas durante los incendios en Lago Cholila, Chubut, Argentina durante los meses de febrero, marzo y abril de 2015.
 
-Para hacerlo siga los siguientes pasos:
+Para hacerlo, siga los siguientes pasos:
 
 \begin{enumerate}
-\item Descargue las imagenes de las inmediaciones de Lago Cholila, Chubut, Argentina de los días 21 de enero y 11 de abril de 2015.
+\item \item Descargue las imágenes de las inmediaciones de Lago Cholila, Chubut, Argentina de los días 21 de enero y 11 de abril de 2015.
 
 \item Apile y recorte cada una de las imágenes según las coordenadas
 
@@ -122,7 +122,7 @@ Para hacerlo siga los siguientes pasos:
 
 Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
 
-\item Cálcule un índice de nieve para cada una de las escenas. Nombrelos \texttt{nbr\_pre} y \texttt{nbr\_pos}. La formula a utilizar es
+\item Calcule un índice de nieve para cada una de las escenas. Nombrelos \texttt{nbr\_pre} y \texttt{nbr\_pos}. La formula a utilizar es
 
 \begin{verbatim}
 (nir-swir2)/(nir+swir2)
