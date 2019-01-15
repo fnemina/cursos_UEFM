@@ -1,6 +1,6 @@
 \chapter{Clasificación de imágenes}
 
-Esta clase tiene como objetivo comprender los conceptos de clasificación espectral y la forma de realizarla en el SNAP utilizando algorítmos de clustering. Para ello clasificaremos una imagen de la zona de la Triple Frontera.
+Esta clase tiene como objetivo comprender los conceptos de clasificación espectral y la forma de realizarla en el SNAP utilizando algoritmos de clustering. Para ello clasificaremos una imagen de la zona de la Triple Frontera.
 
 \section{Clasificación por k-means}
 
@@ -10,7 +10,7 @@ Abra la imagen
 \directory{LC08\_224-078\_2018-01-05.dim}.
 \end{center}
 
-dirijase luego a \menu{Raster > Classification > Unsupervised classification > K-Means cluster analysis}.
+diríjase luego a \menu{Raster > Classification > Unsupervised classification > K-Means cluster analysis}.
 
 En la pestaña \menu{I/O Parameters} seleccione la imagen que acaba de abrir, junto con el nombre de salida y la carpeta donde guardará la imagen (Figura \ref{fig:kmeans}) y haga click en \menu{Run}.
 
@@ -25,11 +25,11 @@ En la pestaña \menu{I/O Parameters} seleccione la imagen que acaba de abrir, ju
 
 Luego de realizada la clasificación obtendrá una imagen clasificada en el \menu{Product explorer}. Despliegue la banda \menu{class\_indices}.
 
-Es posible ver tambien los nombres de las clases y el centroide obtenido para cada uno en \emph{Index Codings, Cluster\_classes} dentro de la imagen.
+Es posible ver también los nombres de las clases y el centroide obtenido para cada uno en \emph{Index Codings, Cluster\_classes} dentro de la imagen.
 
 \section{Reclasificación}
 
-La imagen obtenida por el método de clasificación es de clases espectrales. Para obtener una imagen con clases de información es necesario reclasificar los valores asignando nombres y colores a cada clase espectral. Para hacerlo despliegue en simultaneo la imagen clasificada y una combinación de bandas conveniente.
+La imagen obtenida por el método de clasificación es de clases espectrales. Para obtener una imagen con clases de información es necesario reclasificar los valores asignando nombres y colores a cada clase espectral. Para hacerlo despliegue en simultáneo la imagen clasificada y una combinación de bandas conveniente.
 
 Seleccione la imagen clasificada y haga click en \menu{View > Tool windows > Colour manipulation} (Figura \ref{fig:colman}).
 
@@ -82,7 +82,7 @@ Es posible obtener en la pestaña de \menu{Colour manipulation} el porcentaje de
 
 \section{Parámetros de clasificación}
 
-Para mejorar la clasificación obtenida es posible cambiar cuatro parametros en al pestaña \menu{Processing parameters}
+Para mejorar la clasificación obtenida es posible cambiar cuatro parámetros en la pestaña \menu{Processing parameters}
 
 \begin{itemize}
   \item \emph{Number of clusters}: El número de clases espectrales en la que se clasificará la imagen.
@@ -128,8 +128,8 @@ En el caso de querer exportar la vista como KMZ debe primero reproyectar la imag
   \end{tabular}
   \end{table}
   \item ¿Que sucede con la clasificación al aumentar el número de clusters? ¿Y al aumentar el número de iteraciones?
-  \item ¿A mismo número de clusters, que bandas conviene utilizar: \emph{blue, green, red} o \emph{red, nir,swir1}? ¿Puede explicar esto en termino de las coberturas de la imagen?
-  \item ¿Que parametrós elegiría para una mejor clasificación de la zona?
+  \item A mismo número de clusters ¿qué bandas conviene utilizar: \emph{blue, green, red} o \emph{red, nir,swir1}? ¿Puede explicar esto en términos de las coberturas de la imagen?
+  \item ¿Que parámetros elegiría para una mejor clasificación de la zona?
 \end{enumerate}
 
 Estas preguntas y actividades no serán evaluadas. Su objetivo es discutirlas en el foro de consultas e intercambio de la clase.
