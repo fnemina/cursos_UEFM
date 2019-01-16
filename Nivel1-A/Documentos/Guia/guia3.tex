@@ -1,10 +1,10 @@
 \chapter{Adquisición de datos}
 
-Esta clase tiene como objetivo comprender los pasos básicos para adquirir imágenes satelitales. Para ello se descargarán imágenes de la web del  USGS y se procesarán para poder ser utilizadas en el SNAP.
+Esta clase tiene como objetivo comprender los pasos básicos para adquirir imágenes satelitales. Para ello se descargarán imágenes de la web del USGS y se procesarán para poder ser utilizadas en el SNAP.
 
 \section{Descarga de imágenes}
 
-Para descargar imágenes utilizaremos el catálogo del \href{https://earthexplorer.usgs.gov/}{USGS}\footnote{\href{https://earthexplorer.usgs.gov/}{https://earthexplorer.usgs.gov/}}. Para utilizarló deberá registrarse en el sitio web. Diríjase luego a la página y en la pestaña \texttt{Seach Criteria} seleccione \texttt{Address/Place} y escriba \texttt{Iguazú} haciendo luego click en \menu{Show} (Figura \ref{fig:busqueda}).
+Para descargar imágenes utilizaremos el catálogo del \href{https://earthexplorer.usgs.gov/}{USGS}\footnote{\href{https://earthexplorer.usgs.gov/}{https://earthexplorer.usgs.gov/}}. Para utilizarlo deberá registrarse en el sitio web. Diríjase luego a la página y en la pestaña \texttt{Seach Criteria} seleccione \texttt{Address/Place} y escriba \texttt{Iguazú} haciendo luego click en \menu{Show} (Figura \ref{fig:busqueda}).
 
 \begin{figure}[h!]
     \centering
@@ -20,18 +20,18 @@ Haga click en \menu{Data Sets} y en el cuadro \texttt{Data Set Search:} escriba 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth]{fig:dataset.png}
-    \caption{Selección de un set de datos en el catálogo del \emph{USGS}. Puede observarse el área de busqueda en rojo y los set de datós seleccionados en verde.}
+    \caption{Selección de un set de datos en el catálogo del \emph{USGS}. Puede observarse el área de busqueda en rojo y los set de datos seleccionados tildados dentro del recuadro verde.}
     \label{fig:dataset}
 \end{figure}
 
-A la izquierda de la pantalla aparecerá una lista de productos. Busque de ellos el del 13 de julio del 2017, del path 224 y el row 78. Haga click sobre \menu{Order scene} (Figura \ref{fig:descarga}).
+A la izquierda de la pantalla aparecerá una lista de productos. Busque entre ellos al correspondiente al 13 de julio del 2017, del path 224 y el row 78. Haga click sobre \menu{Order scene} (Figura \ref{fig:descarga}).
 
 \begin{figure}[H]
     \centering
     \subfloat[]{\includegraphics[width=0.6\textwidth]{fig:descarga.png}}
     \\
     \subfloat[]{\includegraphics[scale=0.5]{fig:operaciones.png}}
-    \caption{Selección de producto para la descarga en el catálogo \emph{Vertex} del \emph{USGS}. En rojo el botón para ver el pedido. Herramientas del catálogo. De izquierda a derecha se observa: Footprint, Show Browse Overlay, Compare Browse, Show Metadata and Brose, Order Scene  y Exlude escene from Results.}
+    \caption{a) Selección de producto para la descarga en el catálogo \emph{Vertex} del \emph{USGS}. En rojo el botón para ver el pedido. b)Herramientas del catálogo. De izquierda a derecha se observa: Footprint, Show Browse Overlay, Compare Browse, Show Metadata and Brose, Order Scene y Exlude escene from Results.}
     \label{fig:descarga}
 \end{figure}
 
@@ -59,7 +59,7 @@ con \texttt{[]} el número de pedido. Haga click en el link dentro del correo y 
 Una vez finalizada la descarga descomprima el archivo. Para ello necesitara un descompresor como winrar, 7zip o similar.
 
 \section{Apilado de bandas}
-Dentro de la carpeta descomprimida las distintas bandas de la imagen se encuentras en archivos separados. Abra en el SNAP los archivos
+Dentro de la carpeta descomprimida, las distintas bandas de la imagen se encuentran en archivos separados. Abra en el SNAP los archivos
 
 \begin{center} \directory{LC08\_L1TP\_224078\_20170713\_20170726\_01\_T1\_sr\_band1},
 \end{center}
@@ -132,9 +132,10 @@ Edite los campos \emph{Name} con el valor \texttt{ca} y el campo \emph{Spectral 
 Para guardar los cambios realizados en la imagen haga click derecho sobre ella y elija \menu{Save product}.
 
 \section{Subset espacial y espectral}
-Es posible hacer un subset, tanto espacial como espectral, de la imagen. Esto es de utilidad para trabajar solo con nuestra región de interés reduciendo el tamaño de la imagen y por lo tanto los tiempos de procesamiento.
+Para trabajar solo con nuestra región de interés reduciendo el tamaño de la imagen y por
+lo tanto los tiempos de procesamiento, es posible hacer un recorte o subset, tanto espacial como espectral, de la imagen.
 
-Para hacerlo seleccione la imagen apilada y dirijasé a \menu{Raster > Subset}. En la pestañá \menu{Spatial subset} seleccione la pestaña \menu{Geo Coordinates} (Figura \ref{fig:subset}).
+Para hacerlo, seleccione la imagen apilada y diríjase a \menu{Raster > Subset}. En la pestaña \menu{Spatial subset} seleccione la pestaña \menu{Geo Coordinates} (Figura \ref{fig:subset}).
 
 \begin{figure}[h!]
     \centering
@@ -154,10 +155,10 @@ Haga un recorte introduciendo las coordenadas geográficas
 
 y haciendo click en \menu{Ok}.
 
-Es posible también hacer un subset de bandas eligiendolas de la pestaña \menu{Band subset}.
+Es posible también hacer un subset de bandas eligiéndolas de la pestaña \menu{Band subset}.
 
 \section{Reproyección}
-Para algunas aplicacione la proyección por defecto de la imagen puede no ser la más indicada. Para cambiar la proyección dirijasé a \menu{Raster > Geometric operations > Reprojection} (Figura \ref{fig:repro}).
+Para algunas aplicaciones la proyección por defecto de la imagen puede no ser la más indicada. Para cambiar la proyección diríjase a \menu{Raster > Geometric operations > Reprojection} (Figura \ref{fig:repro}).
 
 \begin{figure}[h!]
     \centering
@@ -204,7 +205,7 @@ En la pestaña \menu{Reprojection parameters} elija la opción \emph{Custom CRS}
     \item Suelo en descanso.
   \end{enumerate}
 
-  \item Compare visualmente la imagen Landsat 8 del 5 de enero de 2018 y el 13 de julio de 2017. Elija la combinación de bandas que considere adecuada.
+  \item Compare visualmente la imagen Landsat 8 del 5 de enero de 2018 y del 13 de julio de 2017. Elija la combinación de bandas que considere adecuada.
   \begin{enumerate}
     \item Que observa sobre el río Paraná e Iguazú.
     \item Que observa sobre la selva paranaense.
@@ -213,7 +214,7 @@ En la pestaña \menu{Reprojection parameters} elija la opción \emph{Custom CRS}
   \end{enumerate}
   ¿En que se parecen? ¿Que coberturas cambian de color entre las dos imágenes?
 
-  \item Compare las firmas espectrales obtenidas de la imagen Landsat 8 del 5 de enero de 2018 y el 13 de julio de 2017.
+  \item Compare las firmas espectrales obtenidas de la imagen Landsat 8 del 5 de enero de 2018 y del 13 de julio de 2017.
   \begin{enumerate}
     \item Sobre el río Paraná.
     \item Sobre el río Iguazú.
