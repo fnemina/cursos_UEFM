@@ -70,56 +70,115 @@
   \end{figure}
 \end{frame}
 %--- Next Frame ---%
+\begin {frame}
+\begin{block}{Hablamos de radiancia}
+      ¿qué es?
+               \end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+\si{\watt\per\square\meter\per\steradian}
+\end{frame}
+
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+ Interacciones entre radiación electromagnética y la superficie terrestre.
+\end{frame}
+
+%--- Next Frame ---%
+
 
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \movie[width = 0.8\textwidth,loop,autostart]{\centering\includegraphics[width=0.8\textwidth]{fig:transmision.png}}{./figs/fig:transmision.mp4}
+    \movie[width = 0.8\textwidth,loop,autostart]{\centering\includegraphics[width=0.2\textwidth]{fig:transmision.png}}{./figs/fig:transmision.mp4}
     \caption{Interacción entre materia y radiación: transmitancia.}
     \label{}
   \end{figure}
 \end{frame}
+
+
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \movie[width = 0.8\textwidth,loop,autostart]{\centering\includegraphics[width=0.8\textwidth]{fig:absorcion.png}}{./figs/fig:absorcion.mp4}
+    \movie[width = 0.8\textwidth,loop,autostart]{\centering\includegraphics[width=0.3\textwidth]{fig:absorcion.png}}{./figs/fig:absorcion.mp4}
     \caption{Interacción entre materia y radiación: absorvancia.}
     \label{}
   \end{figure}
 \end{frame}
+
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
   \begin{figure}
     \centering
-    \movie[width = 0.8\textwidth,loop,autostart]{\centering\includegraphics[width=0.8\textwidth]{fig:refleccion.png}}{./figs/fig:refleccion.mp4}
+    \movie[width = 0.8\textwidth,loop,autostart]{\centering\includegraphics[width=0.4\textwidth]{fig:refleccion.png}}{./figs/fig:refleccion.mp4}
     \caption{Interacción entre materia y radiación: reflectancia.}
     \label{}
   \end{figure}
+\end{frame}
+
+%--- Next Frame ---%
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Definición}
+      radiancia absorbida sobre radiancia incidente:
+        \begin{equation}
+         A_\lambda = \frac{L_{a,\lambda}}{L_{0,\lambda}} ,
+        \end{equation}
+         \end{block}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
     \begin{block}{Definición}
-        En función de las radiancias podemos definir la absorvancia, la transmitancia y la reflectancia como:
+       radiancia transmitida sobre incidente:
         \begin{equation}
-          A_\lambda = \frac{L_{a,\lambda}}{L_{0,\lambda}} ,
+         T_\lambda = \frac{L_{t,\lambda}}{L_{0,\lambda}} ,
         \end{equation}
-        \begin{equation}
-          T_\lambda = \frac{L_{t,\lambda}}{L_{0,\lambda}} ,
-        \end{equation}
-        \begin{equation}
-          R_\lambda = \frac{L_{r,\lambda}}{L_{0,\lambda}}
-        \end{equation}
-    \end{block}
+         \end{block}
 \end{frame}
+
+
+
+%--- Next Frame ---%
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Definición}
+       radiancia reflejada sobre incidente:
+        \begin{equation}
+         P_\lambda = \frac{L_{p,\lambda}}{L_{0,\lambda}} ,
+        \end{equation}
+         \end{block}
+\end{frame}
+
+%--- Next Frame ---%
+
+
+%--- Next Frame ---%
+
+
+
+
+%--- Next Frame ---%
+
+
+\begin{frame}{\secname : \subsecname}
+    \begin{block}{Reflectancia}
+               \begin{equation}
+         \rho_\lambda = \frac{L_{p,\lambda}}{L_{0,\lambda}} ,
+        \end{equation}
+         \end{block}
+\end{frame}
+
 %--- Next Frame ---%
 
 \begin{frame}{\secname : \subsecname}
     \begin{block}{Reflectancia}
-        Usaremos la siguiente definición:
+        Incorporando la irradiancia solar:
         \begin{equation}
           \rho_\lambda = \frac{\pi L_{r,\lambda}}{E_{0,\lambda} \cos \theta_{sol}}
         \end{equation}
