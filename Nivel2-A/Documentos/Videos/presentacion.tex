@@ -1,27 +1,29 @@
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169,hyperref={pdfencoding=auto}]{beamer}
 %\usepackage{pgfpages}
 %\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm]
-\usetheme[block=fill,progressbar=frametitle,numbering=none]{metropolis}
+\usetheme[]{conae}
 \usepackage{animate}
 \input{preamble.tex}
 \usepackage{multimedia}
 \usepackage{subfig}
-\includeonly{clase5}
-\title{Introducción a la teledetección SAR}
-\subtitle{Curso Nivel 2:}
+%\includeonly{clase5}
+\title{\\[2cm]Introducción a la teledetección SAR}
+\author{Francisco Nemiña y Tomás Zajc}
+\email{fnemina@conae.gov.ar}
+\place{Buenos Aires, Argentina}
+\logoext{./logos/logo-ext.png}
 
-\author{Francisco Nemiña$^{*}$ \and Tomás Zajc$^{**}$}
-
-
-\institute{$^{*}$ Unidad de Educación y Formación Masiva, Comisión Nacional de Actividades Espaciales\\
-$^{**}$ Misión SAOCOM, Comisión Nacional de Actividades Espaciales}
-
-\date{}
+\date{Abril de 2019}
 \graphicspath{{./figs/}}
 
 \begin{document}
 
-\maketitle
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[noframenumbering]
+  \titlepage
+\end{frame}
+}
 
 %\begin{frame}{Esquema de la presentación}
 %  \setbeamertemplate{section in toc}[sections numbered]

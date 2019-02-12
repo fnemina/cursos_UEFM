@@ -1,26 +1,30 @@
- \documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169,hyperref={pdfencoding=auto}]{beamer}
 %\usepackage[•]{•}sepackage{pgfpages}
 %\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm]
-\usetheme[block=fill,progressbar=frametitle,numbering=none]{metropolis}
+\usetheme[]{conae}
 \usepackage{animate}
 \input{preamble.tex}
 \usepackage{multimedia}
 \usepackage{subfig}
 %\includeonly{clase1}
-\title{Introducción a la teledetección}
-\subtitle{Curso Nivel 1:}
+\title{\\[2cm]Introducción a la teledetección}
 
-\author{Francisco Nemiña$^{*}$ \and Diego Schell$^{*}$}
+\author{Francisco Nemiña y Diego Schell$^{*}$}
+\email{dschell@conae.gov.ar}
+\place{Buenos Aires, Argentina}
+\logoext{./logos/logo-ext.png}
 
-
-\institute{$^{*}$ Unidad de Educación y Formación Masiva, Comisión Nacional de Actividades Espaciales}
-
-\date{}
+\date{Abril de 2019}
 \graphicspath{{./figs/}}
 
 \begin{document}
 
-\maketitle
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[noframenumbering]
+  \titlepage
+\end{frame}
+}
 
 %\begin{frame}{Esquema de la presentación}
 %  \setbeamertemplate{section in toc}[sections numbered]
