@@ -1,0 +1,70 @@
+\mode<presentation>
+
+% Fuente arial
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\usefonttheme{serif} % default family is serif
+\RequirePackage{fontspec}
+\setmainfont{arial}
+
+% Requerimientos
+\RequirePackage{tikz}
+
+% Colores de conae
+\RequirePackage{xcolor}
+\definecolor{conae-azul}{HTML}{006699}
+\definecolor{fondo-azul}{HTML}{daf1f8}
+\definecolor{borde-azul}{HTML}{85d0e7}
+\definecolor{fondo-verde}{HTML}{d9f4e3}
+\definecolor{borde-verde}{HTML}{5ad083}
+\definecolor{fondo-amarillo}{HTML}{fff0c9}
+\definecolor{borde-amarillo}{HTML}{fed054}
+\definecolor{fondo-rojo}{HTML}{fde4e2}
+\definecolor{borde-rojo}{HTML}{f4857a}
+
+% Configuracion
+\useinnertheme{conae}
+\useoutertheme{conae}
+\usecolortheme{conae}
+
+% Sin simbolos de navegacion
+\setbeamertemplate{navigation symbols}{}
+
+% Comandos a usar
+\def\@email{}
+\newcommand{\email}[1]{
+  \def\@email{#1}
+}
+
+\def\@place{}
+\newcommand{\place}[1]{
+  \def\@place{#1}
+}
+
+\def\@logoext{}
+\newcommand{\logoext}[1]{
+  \def\@logoext{#1}
+}
+
+\def\gracias{%
+\setbeamertemplate{footline}[text line]{%
+  \hskip-0.9cm\parbox{0.98\pagewidth}{\vskip-1.6cm\textcopyright 2019 CONAE \newline Todos los derechos reservados\hfill www.argentina.gob.ar/ciencia/conae\newline}}
+
+  \begin{frame}{}
+
+  \textcolor{conae-azul}{{\Huge ¡Muchas Gracias!}
+  \newline
+  \vskip0.5cm
+  {\Large \@email}
+}
+\end{frame}
+}
+
+% Pie de pagina
+\setbeamertemplate{footline}[text line]{%
+  \hskip-0.9cm\parbox{0.98\pagewidth}{\vskip-1.6cm\textcopyright 2019 CONAE \newline Todos los derechos reservados\hfill\insertframenumber\newline}}
+
+% Margenes
+\addtolength{\headsep}{0.6cm}
+
+
+\mode<all>
