@@ -1,0 +1,29 @@
+\mode<presentation>
+
+% Configuracion de colores y formatos
+\setbeamerfont{title}{size=\huge}
+\setbeamercolor*{title page header}{fg=conae-azul}
+\setbeamercolor*{author}{fg=black}
+\setbeamercolor*{date}{fg=black}
+
+\setbeamercolor*{item}{fg=conae-azul}
+
+\setbeamercolor{section in toc}{fg=conae-azul}
+\setbeamercolor{subsection in toc}{fg=gray}
+
+% Configuracion de bloques
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+  color(0pt)=(lower.bg); color(4pt)=(lower.bg); color(4pt)=(upper.bg)}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block body}{fg=black, bg=fondo-azul}
+\setbeamercolor{block title}{fg=black, bg=borde-azul}
+\setbeamercolor{block body theorem}{fg=black, bg=fondo-azul}
+\setbeamercolor{block title theorem}{fg=black, bg=borde-azul}
+\setbeamercolor{block body example}{fg=black, bg=fondo-verde}
+\setbeamercolor{block title example}{fg=black, bg=borde-verde}
+\setbeamercolor{block body alerted}{fg=black, bg=fondo-amarillo}
+\setbeamercolor{block title alerted}{fg=black, bg=borde-amarillo}
+
+\mode
+<all>
