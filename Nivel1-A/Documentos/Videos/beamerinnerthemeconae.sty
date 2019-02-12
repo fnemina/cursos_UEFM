@@ -1,0 +1,60 @@
+\mode<presentation>
+
+% Fondo
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  % Logo ministerio
+  \node[anchor=north west] (ministerio) at (0.03in,\the\paperheight-0.02in) {\includegraphics[height=0.31in]{logos/logo-ministerio.png}};
+  % Logo conae
+  \node[anchor=north east] (conae) at (\the\paperwidth-.03in,\the\paperheight-0.02in) {\includegraphics[height=0.31in]{logos/logo-conae.png}};
+  % Linea
+  \draw[ultra thick, conae-azul] (0cm,\the\paperheight-0.41in) -- ++(\the\paperwidth,0);
+  \end{tikzpicture}
+}
+
+
+% Titulo
+\defbeamertemplate*{title page}{conae}[1][]
+{
+% Titulo y autor en negrita
+{\bfseries
+% Titulo
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north,yshift=-0.45in] at (current page.north) {
+    \begin{beamercolorbox}[center]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}
+    };
+\end{tikzpicture}
+
+%Autor
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north,yshift=-2.53in] at (current page.north) {
+    \begin{beamercolorbox}[center]{author}
+      \usebeamerfont{author}\insertauthor\newline\@email%
+    \end{beamercolorbox}
+    };
+\end{tikzpicture}
+}
+% Lugar y fecha
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east] at (current page.south east) {
+    \begin{beamercolorbox}[right]{date}
+      \usebeamerfont{author}\@place\newline\insertdate%
+    \end{beamercolorbox}
+    };
+\end{tikzpicture}
+
+% Logo externo solo si existe
+\ifx\@logoext\empty
+\else
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south west] at (current page.south west) {
+    \begin{beamercolorbox}[left]{logo}
+      \includegraphics[height=0.31in]{\@logoext}
+    \end{beamercolorbox}
+    };
+\end{tikzpicture}
+\fi
+}
