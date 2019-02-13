@@ -66,5 +66,14 @@
 % Margenes
 \addtolength{\headsep}{0.6cm}
 
+% TItulo de secciones
+\AtBeginSection[]{
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[noframenumbering]
+  \sectionpage
+\end{frame}
+}
+}
 
 \mode<all>

@@ -17,4 +17,27 @@
   \end{beamercolorbox}
 }
 
+\defbeamertemplate*{section page}{conae}[1][]
+{
+    % Titulo de desccion
+    \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{section title}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north,yshift=-1.5in, conae-azul, font=\huge] at (current page.north) {
+          {\insertsection}%
+        };
+    \end{tikzpicture}
+  \end{beamercolorbox}
+  % Logo externo solo si existe
+  \ifx\@logoext\empty
+  \else
+  \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south west] at (current page.south west) {
+      \begin{beamercolorbox}[left]{logo}
+        \includegraphics[height=0.31in]{\@logoext}
+      \end{beamercolorbox}
+      };
+  \end{tikzpicture}
+  \fi
+}
+
 \mode<all>
