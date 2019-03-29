@@ -1,10 +1,8 @@
-\chapter{Fundamentos sensores remotos}
+\chapter{Fundamentos de teledetección}
 
-Esta clase tiene como objetivo familiarizarze con el entorno gráfico del \emph{SNAP (Sentinel Aplication Toolbox)}, un software de procesamiento de imágenes diseñado por la \emph{Agencia Espacial Europea (ESA)}, cuyas herramientas simplifican el trabajo con imágenes radar y ópticas.
+Esta clase tiene como objetivo familiarizarze con el entorno gráfico del \emph{Sentinel Aplication Toolbox (SNAP)}, un software de procesamiento de imágenes diseñado por la \emph{Agencia Espacial Europea (ESA)}, cuyas herramientas simplifican el trabajo con imágenes radar y ópticas.
 
-Durante el curso se trabajará con imágenes de la región de triple frontera, que incluye el límite entre la provincia de Misiones, en Argentina, Brasil y Paraguay.
-
-En esta zona (Figura \ref{fig:mapa}) se encuentran los Parques Nacionales Iguazú (Argentino) e Iguaçu (Brasil), el aeropuerto internacional de cataratas del Iguazú, los ríos Iguazú (frontera entre Argentina y Brasil) y Paraná (frontera entre Paraguay y Argentina), las ciudades de Foz de Iguaçu (Brasil), ciudad del Este (Paraguay) y Puerto Iguazú (Argentina) y el embalse Ugugua-Í.
+Durante el curso se trabajará con imágenes de la región de triple frontera, que incluye el límite entre la provincia de Misiones en Argentina, Brasil y Paraguay. En esta zona (Figura \ref{fig:mapa}) se encuentra el Parque Nacional Iguazú (Argentina), el Parque Nacional Iguaçu (Brasil), el Aeropuerto Internacional Cataratas del Iguazú, los ríos Iguazú (frontera entre Argentina y Brasil) y Paraná (frontera entre Paraguay y Argentina), las ciudades de Foz de Iguaçu (Brasil), Ciudad del Este (Paraguay) y Puerto Iguazú (Argentina) y el embalse Ugugua-Í.
 
 \begin{figure}[h!]
     \centering
@@ -15,7 +13,7 @@ En esta zona (Figura \ref{fig:mapa}) se encuentran los Parques Nacionales Iguaz�
 
 \section{Sobre esta guía}
 
-A lo largo de la guía usaremos como referencia la siguiente simbología:
+A lo largo de la guía se utilizará como referencia la siguiente simbología:
 
 \begin{itemize}
   \item \menu{Archivo>Abrir...} para indicar una ruta en el menú de un programa o una herramienta.
@@ -25,7 +23,7 @@ A lo largo de la guía usaremos como referencia la siguiente simbología:
   \item \emph{SAR} para indicar un término específico o importante para la clase.
 \end{itemize}
 
-Además las rutas estarán siempre definidas a partir de la carpeta \directory{material}.
+Las rutas estarán siempre definidas a partir de la carpeta \directory{material}.
 
 \section{Interfaz gráfica del SNAP}
 
@@ -34,7 +32,7 @@ Descomprima el archivo \directory{material.zip}. Abra el programa SNAP, allí en
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth]{fig:int.png}
-    \caption{Interfaz gráfica del usuario. El área de visualización -en azul- con el \menu{Product Explorer} a la izquierda -en rojo-.}
+    \caption{Interfaz gráfica del usuario. En recuadro azul muestra el área de visualización y el recuadro rojo al \menu{Product Explorer}.}
     \label{fig:int}
 \end{figure}
 
@@ -52,18 +50,18 @@ Haga doble click sobre el nombre de la imágen y se desplegará, en el \menu{Pro
     .2 Bands.
 }
 
-En esta cobertura encontramos
+En esta cobertura encontrará
 
 \begin{itemize}
-    \item \emph{[1] LC08\_224-078\_2018-01-05}: El número de elemento entre corchetes, que marca en que orden se abrieron los productos y el nombre de la imagen.
-    \item \emph{Metadata}: Los metadatos asociados a la imagen y su historial de procesamiento.
+    \item \emph{[1] LC08\_224-078\_2018-01-05}: El número de elemento entre corchetes, indicando el orden en que se abrieron los productos y el nombre de la imagen.
+    \item \emph{Metadata}: Los metadatos de la imagen y su historial de procesamiento.
     \item \emph{Vector Data}: Los vectores contenidos dentro de la imagen.
     \item \emph{Bands}: Las bandas de la imagen y las operaciones de álgebra entre bandas.
 \end{itemize}
 
 \section{Visualización}
 
-Es posible visualizar la imagen en color real. Para ello en el \menu{Product Explorer} seleccione \menu{Open RGB image windows} haciendo click derecho sobre el nombre de la imagen. Se desplegará una nueva ventana (Figura \ref{fig:RGB}) que le permitirá elegir la combinación de bandas. Por defecto aparecerá la combinación que utiliza las bandas \emph{red}, \emph{green} y \emph{blue} de \emph{Landsat-8}, desplieguela haciendo click en OK.
+Visualice la imagen en color real. Para ello, en el \menu{Product Explorer}, haga click derecho sobre el nombre de la imagen y seleccione \menu{Open RGB image windows}. En la ventana que se despliega podrá elegir las bandas (Figura \ref{fig:RGB}). Por defecto aparecerá la combinación que utiliza las bandas \emph{red}, \emph{green} y \emph{blue} de \emph{Landsat-8}. Para finalizar presione OK.
 
 \begin{figure}[h!]
     \centering
@@ -72,39 +70,39 @@ Es posible visualizar la imagen en color real. Para ello en el \menu{Product Exp
     \label{fig:RGB}
 \end{figure}
 
-Explore la imagen utilizando las herramientas de navegación y zoom (Figura \ref{fig:mono})
+Explore la imagen con las herramientas de navegación y zoom (Figura \ref{fig:mono})
 
 \begin{figure}[h!]
     \centering
     \subfloat[]{\includegraphics[width=0.6\textwidth]{fig:mono.png}}
     \\
     \subfloat[]{\includegraphics[scale=0.5]{fig:NAV.png}}
-    \caption{Imagen desplegada en el visualizador. Herramientas de navegación. De izquierda a derecha: \menu{Selection tool}, para seleccionar objetos, \menu{Panning tool}, para moverse, y \menu{Zooming tool}, para hacer zoom.}
+    \caption{(a) Imagen desplegada en el visualizador. (b) Herramientas de navegación. De izquierda a derecha: \menu{Selection tool}, para seleccionar objetos, \menu{Panning tool}, para moverse, y \menu{Zooming tool}, para hacer zoom.}
     \label{fig:mono}
 \end{figure}
 
-Localice dentro de la imagen el aeropuerto de cataratas del Iguazú.
+Localice dentro de la imagen el Aeropuerto Cataratas del Iguazú.
 
 \section{Mediciones}
 
-Para medir la distancia entre dos puntos o a lo largo de una poligonal se usa la herramienta \menu{Determines the distance between two points} (Figura \ref{fig:distancia}) que se encuentra en la barra de herramientas.
+Para medir una distancia entre puntos se utiliza la herramienta \menu{Determines the distance between two points} (Figura \ref{fig:distancia} a) que se encuentra en la barra de herramientas.
 
 \begin{figure}[h!]
     \centering
     \subfloat[]{\includegraphics[scale=0.5]{fig:dico.png}}
     \\
     \subfloat[]{\includegraphics[width=0.3\textwidth]{fig:distancia.png}}
-    \caption{Herramienta de medición de distancia \menu{Determines the distance between two points} y resultado de la medición.}
+    \caption{(a). Herramienta de medición de distancia \menu{Determines the distance between two points}. (b) Ventana con el resultado de la medición.}
     \label{fig:distancia}
 \end{figure}
 
-Para utilizarla haga click sobre la herramienta y luego en un punto de la imagen para comenzar a medir. Dibuje una linea haciendo click en distintos puntos y finalice la medición haciendo doble click en el punto final. El largo de la poligonal y su error aparecerán en kilometros en una ventana emergente.
+Una vez seleccionado el icono, haga click derecho para trazar una linea entre los puntos a medir y finalice con doble click. El resultado y su incerteza (en Km), apareceran en una ventana emergente (Figura \ref{fig: distancia} b)Para utilizarla haga click sobre la herramienta y luego en un punto de la imagen para comenzar a medir.
 
-Mida la longitud de la pista de aterrizaje del aeropuerto de cataratas del Iguazú.
+Mida la longitud de la pista de aterrizaje del Aeropuerto Cataratas del Iguazú.
 
 \section{Consulta de píxel}
 
-Para obtener información sobre un pixel seleccione la pestaña \menu{Pixel info}, junto al \menu{Product explorer} (Figura \ref{fig:pixel}), y posiciónese sobre un pixel en la imagen.
+Para obtener información sobre un pixel seleccione la pestaña \menu{Pixel info}, junto al \menu{Product explorer} (Figura \ref{fig:pixel}, y posiciónese sobre un pixel en la imagen.
 
 \begin{figure}[h!]
     \centering
@@ -115,42 +113,42 @@ Para obtener información sobre un pixel seleccione la pestaña \menu{Pixel info
 
 Allí encontrará la latitud y longitud, las coordenadas dentro del mapa y el valor del pixel en la banda abierta.
 
-Halle las coordenadas en latitud y longitud del aeropuerto de cataratas del Iguazú.
+Halle las coordenadas en latitud y longitud Aeropuerto Cataratas del Iguazú.
 
 \section{Multiples visualizadores}
 
-Abra las imágenes
+Abra  y despliegue en color RGB las imágenes:
 \begin{center} \directory{S2B\_MSIL2A\_2018-01-31.dim}.
 \end{center}
 y
 \begin{center} \directory{MCD43A4.A2018039.h13v11.0065.dim}.
 \end{center}
 
-y desplieguelas en combinación de color RGB. Las tres corresponden a la misma zona durante el mes de enero de 2018.
+Ambas imágenes, junto con la anterior, corresponden a la misma zona y época del año.
 
-Para ver las tres en simultáneo haga click en \menu{Window>Tile Horizontally} mostrándose de esa manera las imágenes vinculadas una junto a la otra. Moverse o hacer zoom en una imagen, reproducirá esa acción en las otras. Para volver al modo habitual haga click en \menu{Window>Tile Single} (Figura \ref{fig:multiples}).
+Para ver las tres en simultáneo haga click en \menu{Window>Tile Horizontally}. Puede sincronizarlas con el botón \menu{Synchronises view across multiple image windows} (Figura \ref{fig:multiples}) y, al moverse o hacer zoom sobre una imagen, la acción se reproducirá en el resto, mostrándose las imágenes vinculadas. Para volver al modo habitual haga click en \menu{Window>Tile Single}. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth]{fig:multiples.png}
-    \caption{Distintas imágenes, de la misma área geográfica, desplegadas en múltiples visualizadores en simultáneo.}
+    \caption{Múltiples visualizadores. Se destaca el botón \\ \menu{Synchronises view across multiple image windows}}
     \label{fig:multiples}
 \end{figure}
 
 \section{Actividad práctica}
 
 \begin{enumerate}
-  \item Identifique en la imagen los siguientes objetos:
+  \item Con ayuda de la figura 1.1 identifique en la imagen los siguientes objetos:
   \begin{enumerate}
-    \item El río Iguazú que recorre la imagen de izquierda a derecha en color gris/marron.
-    \item El río Paraná que corta la imagen de arriba a abajo celeste.
-    \item La ciudad de Puerto Iguazú al sur-este del cruce de los ríos Iguazú y Paraná.
+    \item El río Iguazú.
+    \item El río Paraná.
+    \item La ciudad de Puerto Iguazú.
     \item La zonas cultivadas al norte del río Iguazú con formas de parches en color verde.
-    \item Las zonas cultivadas al oeste del río Paraná formadas por parches de color verde, con cultivo, y rosa, sin cultivo.
-    \item La selva Paranaense al sur del río Iguazú en color verde.
-    \item El embalse Urugua-í al sur de la imagen.
-    \item La zona de forestaciones en color verde más oscuro entre la selva Paranaense y el embalse Urugua-í.
-    \item El aeropuerto de cataratas del Iguazú en medio de la selva Paranaense.
+    \item Las zonas cultivadas al oeste del río Paraná.
+    \item La selva Paranaense.
+    \item El embalse Urugua-í.
+    \item La zona de forestaciones que rodea el embalse Urugua-í.
+    \item El Aeropuerto Cataratas del Iguazú.
   \end{enumerate}
 
   \item Mida dentro de las tres imágenes los siguientes objetos:
