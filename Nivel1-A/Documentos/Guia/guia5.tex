@@ -1,6 +1,6 @@
 \chapter{Clasificación de imágenes}
 
-Esta clase tiene como objetivo comprender los conceptos de clasificación espectral y la forma de realizarla en el SNAP utilizando algoritmos de clustering. Para ello clasificaremos una imagen de la zona de la Triple Frontera.
+Esta clase tiene como objetivo comprender los conceptos de clasificación espectral utilizando algoritmos de clustering. Para ello se clasificá una imagen de la zona de la Triple Frontera.
 
 \section{Clasificación por k-means}
 
@@ -12,7 +12,7 @@ Abra la imagen
 
 diríjase luego a \menu{Raster > Classification > Unsupervised classification > K-Means cluster analysis}.
 
-En la pestaña \menu{I/O Parameters} seleccione la imagen que acaba de abrir, junto con el nombre de salida y la carpeta donde guardará la imagen (Figura \ref{fig:kmeans}) y haga click en \menu{Run}.
+En la pestaña \menu{I/O Parameters} seleccione la imagen, el nombre de salida y la carpeta donde guardará el resultado (Figura \ref{fig:kmeans}). Presione \menu{Run} para finalizar.
 
 \begin{figure}[h!]
     \centering
@@ -23,26 +23,25 @@ En la pestaña \menu{I/O Parameters} seleccione la imagen que acaba de abrir, ju
     \label{fig:kmeans}
 \end{figure}
 
-Luego de realizada la clasificación obtendrá una imagen clasificada en el \menu{Product explorer}. Despliegue la banda \menu{class\_indices}.
+Obtendrá una imagen clasificada en el \menu{Product explorer}. Despliegue la banda \emph{class\_indices}.
 
-Es posible ver también los nombres de las clases y el centroide obtenido para cada uno en \emph{Index Codings, Cluster\_classes} dentro de la imagen.
+Podrá verlos nombres de las clases y su centroide en \emph{Index Codings, Cluster\_classes}, dentro de la imagen.
 
 \section{Reclasificación}
 
-La imagen obtenida por el método de clasificación es de clases espectrales. Para obtener una imagen con clases de información es necesario reclasificar los valores asignando nombres y colores a cada clase espectral. Para hacerlo despliegue en simultáneo la imagen clasificada y una combinación de bandas conveniente.
 
-Seleccione la imagen clasificada y haga click en \menu{View > Tool windows > Colour manipulation} (Figura \ref{fig:colman}).
+El producto obtenido representa las clases espectrales encontradas por el metodo de clasificación. Para generar la imagen con las clases informacionales, es necesario reclasificarla asignando un nombre y color a cada clase espectral.
+
+Comience desplegando en simultaneo la imagen clasificada y la original, en una combinación de bandas conveniente. Seleccione la imagen clasificada y haga click en \menu{View > Tool windows > Colour manipulation}. Aparecerála lista de clases espectrales (Figura \ref{fig:colman}).
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\textwidth]{fig:colman.png}
-    \caption{Herramienta para manejar colores y su asignación en la imagen.}
+    \caption{Herramienta para asignar colores en la imagen.}
     \label{fig:colman}
 \end{figure}
 
-Para la clase uno seleccione un color contrastante como puede ser rojo o amarillo haciendo click arriba del color y seleccionandolo del menú desplegable.
-
-Identifique dentro de la imagen a que categoría de uso y cobertura pertenece la clase que acaba de identificar.  Cambie el nombre de la columna \emph{Label} por el que figura en la tabla de categorías de uso y cobertura en la columna \emph{Codigo} (Tabla \ref{tab:usos}). Vuelva a cambiar el color de la clase 1 a negro. Repita el proceso para todas las clases.
+Una forma sencilla de reconocer cada clase espectral en la imagen, es asignarle un color contrastante. Cambie el color haciendo click sobre la celda del color. En el menú desplegable elija, por ejemplo rojo o amarillo y verifique que el resto de las clases no lo tenga. Identifique a que uso o cobertura pertenece, comparándola con la imagen sin clasificar. Modifique el nombre de la columna \emph{Label} por los que figuran en la columna \emph{Codigo} (Tabla \ref{tab:usos}). Vuelva a cambiar el color de la clase identificada a negro y repita el procedimiento para el resto.
 
 \begin{table}[hbt]
     \centering
@@ -69,7 +68,7 @@ Identifique dentro de la imagen a que categoría de uso y cobertura pertenece la
 \caption{\label{tab:usos}Categorias usos del suelo segun el esquema LCCS2 de la FAO.}
 \end{table}
 
-Una vez terminado el proceso asigne a cada categoría de uso y cobertura en color que figura en la tabla (Figura \ref{fig:resclass}). Guarde la imagen con los cambios haciendo click derecho sobre ella y luego en \menu{Save product}.
+Una vez terminado el procedimiento, asigne a cada categoría de uso y cobertura el color que figura en la tabla . Guarde la imagen con los cambios, haga click derecho sobre el nombre y presione en \menu{Save product} (Figura \ref{fig:resclass}).
 
 \begin{figure}[h!]
     \centering
@@ -78,22 +77,23 @@ Una vez terminado el proceso asigne a cada categoría de uso y cobertura en colo
     \label{fig:resclass}
 \end{figure}
 
-Es posible obtener en la pestaña de \menu{Colour manipulation} el porcentaje de cada clase espectral dentro de la imagen en la columna \emph{Frequency}.
+
+Puede observar el porcentaje de cada clase espectral en la columna \emph{Frequency} en la pestaña \menu{Colour manipulation}.
 
 \section{Parámetros de clasificación}
 
-Para mejorar la clasificación obtenida es posible cambiar cuatro parámetros en la pestaña \menu{Processing parameters}
+Para mejorar la clasificación, es posible cambiar cuatro parámetros en la pestaña \menu{Processing parameters} del \menu{ K-Means cluster analysis} (Figura \ref{fig:kmeans2}).
 
 \begin{itemize}
   \item \emph{Number of clusters}: El número de clases espectrales en la que se clasificará la imagen.
-  \item \emph{Number of iterations}: El número de veces que se repetirá el proceso de k-means antes de detenerlo si no hay convergencia.
-  \item \emph{Random seed}: La semilla que se utiliza para asignar de forma aleatoria las clases iniciales.
-  \item \emph{Source band names}: Las bandas que se utilizarán para la clasificación. Si no se selecciona ninguna se utilizaran todas.
+  \item \emph{Number of iterations}: El número de veces que se repetirá el proceso de k-means, si no hubiera convergencia antes.
+  \item \emph{Random seed}: La semilla que se utiliza para asignar las clases iniciales de forma aleatoria.
+  \item \emph{Source band names}: Bandas para la clasificación. En caso de no seleccionar alguna/s en particular, se utilizaran todas.
 \end{itemize}
 
 \section{Exportar visualización}
 
-En el SNAP es posible exportar la vista como imagen para utilizar en otro software. Para ello dirijase a \menu{File > Export > Other > View as image}. Selecciona luego si quiere exportar la región que está viendo (\emph{View region}) o toda la imagen (\emph{Full scene}) y el formato de archivo (Figura \ref{fig:vista}).
+En el SNAP es posible exportar la vista como imagen y utilizarla en otro software. Para ello, diríjase a \menu{File > Export > Other > View as image}. Seleccione si quiere exportar la región que está viendo (\emph{View region}) o toda la imagen (\emph{Full scene}) y el formato de archivo (Figura \ref{fig:vista}).
 
 \begin{figure}[h!]
     \centering
@@ -102,12 +102,12 @@ En el SNAP es posible exportar la vista como imagen para utilizar en otro softwa
     \label{fig:vista}
 \end{figure}
 
-Es posible en este caso mantener la georreferenciación eligiendo el formato de archivo \emph{GeoTIFF - TIFF with geo-location}.
+Para mantener la georreferenciación elija el formato de archivo \emph{GeoTIFF - TIFF with geo-location}.
 
-En el caso de querer exportar la vista como KMZ debe primero reproyectar la imagen a coordenadas geográficas. En este caso deberá volver a hacer la asignación de colores a cada clase espectral. Luego elija la herramienta \menu{File > Export > Other > View as Google Earth KMZ}.
+Para exportar la vista como KMZ, primero deberá reproyectar la imagen a coordenadas geográficas. En este caso, tendrá que reasignar los colores a cada clase espectral. La herramienta a utilizar es \menu{File > Export > Other > View as Google Earth KMZ}.
 
 
-\section{Actividad práctica}
+\section{Actividad práctica REVISAR PREGUNTA 1 y 2}
 
 \begin{enumerate}
   \item Identifique en la imagen las clases que podría asignar a una categoría de uso y cobertura u otra.
@@ -127,8 +127,8 @@ En el caso de querer exportar la vista como KMZ debe primero reproyectar la imag
   14                 & 30                   & 31415       & red,nir,swir1    \\ \bottomrule
   \end{tabular}
   \end{table}
-  \item ¿Que sucede con la clasificación al aumentar el número de clusters? ¿Y al aumentar el número de iteraciones?
-  \item A mismo número de clusters ¿qué bandas conviene utilizar: \emph{blue, green, red} o \emph{red, nir,swir1}? ¿Puede explicar esto en términos de las coberturas de la imagen?
+  \item ¿Qué sucede con la clasificación al aumentar el número de clusters? ¿Y al aumentar el número de iteraciones?
+  \item A mismo número de clusters ¿qué bandas conviene utilizar: \emph{blue, green, red} o \emph{red, nir,swir1}? ¿Puede explicarlo en términos de las coberturas de la imagen?
   \item ¿Que parámetros elegiría para una mejor clasificación de la zona?
 \end{enumerate}
 
