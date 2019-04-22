@@ -30,7 +30,21 @@ Identifique los diferentes usos y coberturas en el producto NDVI. Visualice un p
 
 El NDWI \emph{(Normalized Difference Water Index)} es un estimador del contenido de agua en el canopeo vegetal que interactua con la radación solar incidente. Puede ser utilizado de manera complementaria al NDVI para monitorear el estado fisiológico de la vegetación. Sin embargo, es sensible al ruido que produce el suelo sin cobertura.
 
-Para calcularlo, seleccione \menu{Optical>Tematic Land Processing > Water Radiometric Indices>NDWI Processor}.  Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Para finalizar presione \menu {Run}. El producto \emph{NDWI} se cargará en \menu{Product Explorer}. Para visualizarlo realice doble click sobre \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph{ndwi}. Se desplegará la imagen en escala de grises. Compare y analice tal como lo hizo con el NDVI.
+
+En este caso se utilizará una herramienta que permite realizar operaciones matemáticas. Seleccione \menu{Raster>Band maths...} (Figura \ref{fig:bm}).
+
+
+En el casillero \emph{Band math expression} deberá escribir la expresión matemática utilizando el nombre de las bandas y los correspondientes operadores. En este caso:
+ 
+\begin{center}
+\texttt{(B11-B8)/(B11+B8)}
+\end{center}
+ 
+Asigne un nombre a la banda creada en la opción \emph{Name} y presione \emph{OK}, para finalizar.
+
+ {\bf Importante:} Por defecto se crea una banda virtual que calcula los valores \emph{al vuelo}. Para forzar el cálculo de la banda destilde la opción \emph{Virtual}.
+
+El producto \emph{NDWI} se cargará en \menu{Product Explorer}. Para visualizarlo realice doble click sobre \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph{ndwi}. Se desplegará la imagen en escala de grises. Compare y analice tal como lo hizo con el NDVI.
 
 \section{SAVI}
 
