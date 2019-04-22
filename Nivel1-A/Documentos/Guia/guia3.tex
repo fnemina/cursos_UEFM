@@ -15,7 +15,7 @@ Una vez que ingresa con su usuario y contraseña, en el margen superior izquierd
     \label{fig:busqueda}
 \end{figure}
 
-Haga click sobre el nombre \texttt{Misiones Province, Argentina} y se mostrará la zona en el mapa. 
+Haga click sobre el nombre \texttt{Misiones Province, Argentina} y se mostrará la zona en el mapa.
 
 La opción \menu{Data Range} permite definir un rango de tiempo dentro de la búsqueda. Indique la fecha desde el 1 de julio de 2017 hasta el 31 de julio de 2017, deplegando el calendario y haciendo click sobre el número correspondiente.
 
@@ -30,15 +30,6 @@ En la solapa \menu{Data Sets} encontrará la lista de satélites disponibles. En
 
 A la izquierda de la pantalla aparecerá una lista de productos. Busque el correspondiente al 13 de julio del 2017, del path 224 y row 78. Haga click sobre \menu{Order scene} (Figura \ref{fig:descarga}-b).
 
-\begin{figure}[H]
-    \centering
-    \subfloat[]{\includegraphics[width=0.6\textwidth]{fig:descarga.png}}
-    \\
-    \subfloat[]{\includegraphics[scale=0.5]{fig:operaciones.png}}
-    \caption{a) Productos disponibles para la descarga en el catálogo del \emph{USGS}. En rojo se destaca el botón para ver el pedido. b)Herramientas del catálogo. De izquierda a derecha: Footprint, Show Browse Overlay, Compare Browse, Show Metadata and Brose, Order Scene y Exlude escene from Results.}
-    \label{fig:descarga}
-\end{figure}
-
 Para corroborar el pedido haga click en \menu{View Item Basket} y luego en \menu{Proceed to Checkout}. Finalice presionando \menu{Submit Order}.
 
 La imagen solicitada pertenece a una serie de productos a demanda.  Cuando  esté disponible su descarga, le enviarán un correo electrónico notificándolo \footnote{Recibirá 3 correos electrónicos en total: dos confirmando el pedido y uno cuando la descarga esté disponible}. El asunto será
@@ -49,6 +40,19 @@ La imagen solicitada pertenece a una serie de productos a demanda.  Cuando  est�
 
 entre \texttt{[]} estará el número de pedido. Ingrese al link que figura en el correo recibido y, en la nueva página, seleccione su pedido en la columna \texttt{Order ID}. Descargue la imagen presionando \texttt{Download}.
 
+\textbf{Observación:} El producto puede demorar hasta 48 horas para estar disponible.
+
+\begin{figure}[H]
+    \centering
+    \subfloat[]{\includegraphics[width=0.6\textwidth]{fig:descarga.png}}
+    \\
+    \subfloat[]{\includegraphics[scale=0.5]{fig:operaciones.png}}
+    \caption{a) Productos disponibles para la descarga en el catálogo del \emph{USGS}. En rojo se destaca el botón para ver el pedido. b)Herramientas del catálogo. De izquierda a derecha: Footprint, Show Browse Overlay, Compare Browse, Show Metadata and Brose, Order Scene y Exlude escene from Results.}
+    \label{fig:descarga}
+\end{figure}
+
+
+
 \begin{figure}[h!]
     \centering
     \subfloat[]{\includegraphics[width=0.6\textwidth]{fig:descarga2.png}}
@@ -57,8 +61,6 @@ entre \texttt{[]} estará el número de pedido. Ingrese al link que figura en el
     \caption{Descarga de productos.}
     \label{fig:descarga2}
 \end{figure}
-
-\textbf{Observación:} El producto puede demorar hasta 48 horas para estar disponible.
 
 Una vez finalizada la descarga descomprima el archivo. Necesitará un descompresor como winrar, 7zip o similar.
 
@@ -161,7 +163,7 @@ Finalice presionando \menu{Ok}. Haga click derecho sobre el nombre y seleccione 
 
 
 \section{Reproyección}
-En algunas aplicaciones, la proyección por defecto que contiene la imagen, podría no ser la adecuada. Cambie la proyección desde: \menu{Raster > Geometric operations > Reprojection} (Figura \ref{fig:repro}). 
+En algunas aplicaciones, la proyección por defecto que contiene la imagen, podría no ser la adecuada. Cambie la proyección desde: \menu{Raster > Geometric operations > Reprojection} (Figura \ref{fig:repro}).
 
 \begin{figure}[h!]
     \centering
@@ -208,7 +210,7 @@ En la pestaña \menu{Reprojection parameters} elija la opción \emph{Custom CRS}
     \item Suelo en descanso.
   \end{enumerate}
 
-  \item Compare visualmente la imagen Landsat 8 del 5 de enero de 2018 y del 13 de julio de 2017. Elija la combinación de bandas que considere adecuada. 
+  \item Compare visualmente la imagen Landsat 8 del 5 de enero de 2018 y del 13 de julio de 2017. Elija la combinación de bandas que considere adecuada.
   \begin{enumerate}
     \item ¿Qué observa sobre el río Paraná e Iguazú?.
     \item ¿Qué observa sobre la selva paranaense?.
