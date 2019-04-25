@@ -16,7 +16,7 @@ Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} se
 
 \begin{figure}[h!]
     \centering
-    \subfloat[1-I/O Parameters]{\includegraphics[width=0.4\textwidth]{fig:NDVI.png}\label{fig:NDVI}}
+    \subfloat[1-I/O Parameters]{\includegraphics[width=0.4\textwidth]{fig:NDVI.png}\label{fig:NDVI-impar}}
     \hspace{1cm}
     \subfloat[Processing parameters]{\includegraphics[width=0.4\textwidth]{fig:NDVI-par.png}\label{fig:NDVI-par}}
     \caption{Generación del \emph{NDVI}.}
@@ -88,11 +88,18 @@ Realice el mismo procedimiento para el SAVI.
 En la práctica es bastante común calcular las estadísticas básicas de un conjunto de pixeles de una misma cobertura, en lugar de observar un valor único. El procedimiento requiere varios pasos ya que es indispensable primero crear los polígonos de parches homogéneos, sobre los cuales se obtendrán los estadísticos.
 \begin{enumerate}
 	\item Creación de vectores
-	
-	En primer lugar se deberán crear los contenedores vectoriales. Para ello, seleccione \menu{Vector>New Vector Data Container}, coloque Selva paranaense como nombre del vector y presione \menu{OK} (Figura \ref{vector-container}). Luego, usando  \menu {Polygon Drawing Tool} (FIGURAXXX FALTA!!), deberá dibujar el polígono sobre un parche homogéneo de la cobertura. Una vez que selecciona la herramienta, haga click sobre la imagen y se abrirá la ventana \menu{Select vector data container}, elija en éste caso Selva paranaense y dibuje el vector. Sobre la imagen, haga un click por cada vértice que considere necesario y finalice el polígono con doble click. Puede crear varias geometrías dentro de un mismo contenedor. Repita este paso para todas las coberturas observadas.
-	
+
+	En primer lugar se deberán crear los contenedores vectoriales. Para ello, seleccione \menu{Vector>New Vector Data Container}, coloque Selva paranaense como nombre del vector y presione \menu{OK} (Figura \ref{vector-container}). Luego, usando  \menu {Polygon Drawing Tool} (Figura \ref{fig:drawing}), deberá dibujar el polígono sobre un parche homogéneo de la cobertura. Una vez que selecciona la herramienta, haga click sobre la imagen y se abrirá la ventana \menu{Select vector data container}, elija en éste caso Selva paranaense y dibuje el vector. Sobre la imagen, haga un click por cada vértice que considere necesario y finalice el polígono con doble click. Puede crear varias geometrías dentro de un mismo contenedor. Repita este paso para todas las coberturas observadas.
+
+  \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{fig:drawing.png}
+      \caption{Herramientas para generar poligonos.}
+      \label{fig:drawing}
+  \end{figure}
+
 	\item Cálculo de estadísticos
-	
+
 	Seleccione \menu{Analisis>Statistics} y se abrirá una nueva ventan (FIGURA  XXX FALTA). Tilde la opción \menu{Use ROI mask(s)} para que se habilite la lista de vectores creados anteriormente. Elija el vector deseado y presione \menu{Refresh view}.
 \end{enumerate}
 
