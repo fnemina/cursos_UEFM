@@ -33,6 +33,13 @@ El NDWI \emph{(Normalized Difference Water Index)} es un estimador del contenido
 
 En este caso se utilizará una herramienta que permite realizar operaciones matemáticas. Seleccione \menu{Raster>Band maths...} (Figura \ref{fig:bm}).
 
+ \begin{figure}[h!]
+     \centering
+     \includegraphics[width=0.4\textwidth]{fig:bm.png}
+     \caption{Álgebra de bandas.}
+     \label{fig:bm}
+ \end{figure}
+
 
 En el casillero \emph{Band math expression} deberá escribir la expresión matemática utilizando el nombre de las bandas y los correspondientes operadores. En este caso:
  
@@ -40,7 +47,7 @@ En el casillero \emph{Band math expression} deberá escribir la expresión matem
 \texttt{(B11-B8)/(B11+B8)}
 \end{center}
  
-Asigne un nombre a la banda creada en la opción \emph{Name} y presione \emph{OK}, para finalizar.
+En la opción \emph{Name} escriba ndwi, para asignarle un nombre a la nueva banda creada y presione \emph{OK}, para finalizar.
 
  {\bf Importante:} Por defecto se crea una banda virtual que calcula los valores \emph{al vuelo}. Para forzar el cálculo de la banda destilde la opción \emph{Virtual}.
 
