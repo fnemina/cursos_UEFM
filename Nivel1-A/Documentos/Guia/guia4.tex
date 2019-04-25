@@ -12,7 +12,7 @@ Para calcularlo, seleccione:
 \menu{Optical>Tematic Land Processing > Vegetation Radiometric Indices>NDVI Processor}
 \end{center}
 
-Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Presione \menu {Run} para finalizar. El producto \emph{NDVI} se cargará en el \menu{Product Explorer}. Para visualizarlo realice doble click sobre \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph{ndvi}. En el visualizador se desplegará la imagen obtenida en escala de grises.
+Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Presione \menu {Run} para finalizar. El producto \emph{NDVI} se cargará en el \menu{Product Explorer}. Para visualizarlo realice doble click sobre el producto recién creado y seleccione \emph{ndvi}. En el visualizador se desplegará la imagen obtenida en escala de grises.
 
 \begin{figure}[h!]
     \centering
@@ -31,22 +31,22 @@ Identifique los diferentes usos y coberturas en el producto NDVI. Visualice un p
 El NDWI \emph{(Normalized Difference Water Index)} es un estimador del contenido de agua en el canopeo vegetal que interactua con la radación solar incidente. Puede ser utilizado de manera complementaria al NDVI para monitorear el estado fisiológico de la vegetación. Sin embargo, es sensible al ruido que produce el suelo sin cobertura.
 
 
-En este caso se utilizará una herramienta que permite realizar operaciones matemáticas. Seleccione \menu{Raster>Band maths...} (Figura \ref{fig:bm}).
+En este caso se utilizará una herramienta que permite realizar operaciones matemáticas. Seleccione \menu{Raster>Band maths...} (Figura \ref{fig:bm2}).
 
  \begin{figure}[h!]
      \centering
      \includegraphics[width=0.4\textwidth]{fig:bm.png}
      \caption{Álgebra de bandas.}
-     \label{fig:bm}
+     \label{fig:bm2}
  \end{figure}
 
 
 En el casillero \emph{Band math expression} deberá escribir la expresión matemática utilizando el nombre de las bandas y los correspondientes operadores. En este caso:
- 
+
 \begin{center}
 \texttt{(B11-B8)/(B11+B8)}
 \end{center}
- 
+
 En la opción \emph{Name} escriba ndwi, para asignarle un nombre a la nueva banda creada y presione \emph{OK}, para finalizar.
 
  {\bf Importante:} Por defecto se crea una banda virtual que calcula los valores \emph{al vuelo}. Para forzar el cálculo de la banda destilde la opción \emph{Virtual}.
@@ -57,13 +57,19 @@ El producto \emph{NDWI} se cargará en \menu{Product Explorer}. Para visualizarl
 
 El SAVI \emph{(Soil Adjusted Vegetation Index)}, al igual que el NDVI utiliza la diferencia entre la absorción de la clorofila en el rojo y la reflectancia del infrarrojo cercano, con la ventaja de reducir el error que aporta la reflectancia del suelo, ajustandolo según el tipo de sustrato y porcentaje de cobertura.
 
-Para calcularlo, seleccione \menu{Optical>Tematic Land Processing > Vegetation Radiometric Indices>SAVI Processor}.  Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Para finalizar presione \menu {Run}. El producto \emph{SAVI} se cargará en \menu{Product Explorer}. Para visualizarlo realice doble click sobre \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph{savi}. Se desplegará la imagen en escala de grises. Compare y analice tal como lo hizo con el NDVI.
+Para calcularlo, seleccione
+
+\begin{center}
+\menu{Optical>Tematic Land Processing > Vegetation Radiometric Indices>SAVI Processor}.
+\end{center}
+
+Se desplegará una nueva ventana (Figura \ref{fig:NDVI}). En \menu{Directory} seleccione la carpeta de salida para guardar el archivo en formato BEAM-DIMAP. Para finalizar presione \menu {Run}. El producto \emph{SAVI} se cargará en \menu{Product Explorer}. Para visualizarlo realice doble click sobre \menu {S2B\_MSIL2A\_2018-01-31>Bands} y seleccione \emph{savi}. Se desplegará la imagen en escala de grises. Compare y analice tal como lo hizo con el NDVI.
 
 \section{Visualización con paleta de colores}
 
 Una forma práctica de visualizar productos monobanda como el NDVI o SAVI es utilizando una paleta de colores, donde los valores bajos, intermedios y altos se muestren en forma de gradiente.
 
-Despliegue el producto NDVI. En \menu {Colour manipulation} podrá ver la distribución estadística de los pixeles (Figura \ref{fig:color-man}). Seleccione la función \menu{import color palette from text file}, allí encontrará disponibles varias paletas de colores, seleccione \directory{meris\_veg\_index}. Se abrirá una pequeña ventana en la que figura la siguiente pregunta: ``Automatically distribuite points of colour palette between min/max?'', presione ``Yes''.
+Despliegue el producto NDVI. En \menu {Colour manipulation} podrá ver la distribución estadística de los pixeles (Figura \ref{fig:color-man}). Seleccione la función \menu{import color palette from text file}, allí encontrará disponibles varias paletas de colores, seleccione \directory{meris\_veg\_index}. Se abrirá una pequeña ventana en la que figura la siguiente pregunta: \emph{Automatically distribuite points of colour palette between min/max?}, presione \menu{Yes}.
 
 La imagen aparecerá en tonos de verde, amarillo, naranja y marrón. Los valores NDVI altos se visualizarán en verde, los intermedios en amarillo y los valores bajos en marrón oscuro. Analice la relación entre los valores de los pixeles y los colores observados (Figura \ref{fig:color-man-meris}).
 
@@ -86,39 +92,37 @@ Realice el mismo procedimiento para el SAVI.
 \section{Cálculo de estadísticas zonales}
 
 En la práctica es bastante común calcular las estadísticas básicas de un conjunto de pixeles de una misma cobertura, en lugar de observar un valor único. El procedimiento requiere varios pasos ya que es indispensable primero crear los polígonos de parches homogéneos, sobre los cuales se obtendrán los estadísticos.
-\begin{enumerate}
-	\item Creación de vectores
+\subsection{Creación de vectores}
 
-	En primer lugar se deberán crear los contenedores vectoriales. Para ello, seleccione \menu{Vector>New Vector Data Container}, coloque Selva paranaense como nombre del vector y presione \menu{OK} (Figura \ref{vector-container}). Luego, usando  \menu {Polygon Drawing Tool} (Figura \ref{fig:drawing}), deberá dibujar el polígono sobre un parche homogéneo de la cobertura. Una vez que selecciona la herramienta, haga click sobre la imagen y se abrirá la ventana \menu{Select vector data container}, elija en éste caso Selva paranaense y dibuje el vector. Sobre la imagen, haga un click por cada vértice que considere necesario y finalice el polígono con doble click. Puede crear varias geometrías dentro de un mismo contenedor. Repita este paso para todas las coberturas observadas.
+	En primer lugar se deberán crear los contenedores vectoriales. Para ello, seleccione \menu{Vector>New Vector Data Container}, coloque Selva paranaense como nombre del vector y presione \menu{OK} (Figura \ref{fig:vector-container}). Luego, usando  \menu {Polygon Drawing Tool} (Figura \ref{fig:drawing}), deberá dibujar el polígono sobre un parche homogéneo de la cobertura.
+
+  Una vez que selecciona la herramienta, haga click sobre la imagen y se abrirá la ventana \menu{Select vector data container}, elija en éste caso Selva paranaense y dibuje el vector. Sobre la imagen, haga un click por cada vértice que considere necesario y finalice el polígono con doble click. Puede crear varias geometrías dentro de un mismo contenedor. Repita este paso para todas las coberturas observadas.
+
+  \begin{figure}[h!]
+      \centering
+      \includegraphics[width=0.4\textwidth]{fig:vector-cont.png}
+      \caption{Herramienta Vector Container}
+      \label{fig:vector-container}
+  \end{figure}
+
 
   \begin{figure}[H]
       \centering
-      \includegraphics[scale=0.5]{fig:drawing.png}
+      \includegraphics[scale=0.4]{fig:drawing.png}
       \caption{Herramientas para generar poligonos.}
       \label{fig:drawing}
   \end{figure}
 
-	\item Cálculo de estadísticos
+\subsection{Cálculo de estadísticos}
 
-	Seleccione \menu{Analisis>Statistics} y se abrirá una nueva ventan (FIGURA  XXX FALTA). Tilde la opción \menu{Use ROI mask(s)} para que se habilite la lista de vectores creados anteriormente. Elija el vector deseado y presione \menu{Refresh view}.
-\end{enumerate}
-
+	Seleccione \menu{Analisis>Statistics} y se abrirá una nueva ventan (Figura \ref{fig:estadistica-b}). Tilde la opción \menu{Use ROI mask(s)} para que se habilite la lista de vectores creados anteriormente. Elija el vector deseado y presione \menu{Refresh view}.
 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{fig:vector-cont.png}
-    \caption{Herramienta Vector Container}
-    \label{fig:vector-container}
-\end{figure}
-
-
-
-\begin{figure}[h!]
-    \centering
-    %\includegraphics[width=0.6\textwidth]{fig:}
-    \caption{Herramienta Vector Container}
-    \label{fig:vector-container}
+    \includegraphics[width=0.8\textwidth]{fig:estadistica.png}
+    \caption{Cálculo de estadísticas en un polígono.}
+    \label{fig:estadistica-b}
 \end{figure}
 
 
