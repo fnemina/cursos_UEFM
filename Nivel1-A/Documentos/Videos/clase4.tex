@@ -4,6 +4,17 @@
 \begin{frame}{}
   \begin{figure}
     \centering
+    \subfloat[1-Color Real]{\includegraphics[width=0.4\textwidth]{fig:RGBim.jpg}}
+    \hspace{1cm}
+    \subfloat[2-Índice de vegetación]{\includegraphics[width=0.4\textwidth]{fig:NDVIim.jpg}}
+    \caption{Imágenes en color real y un índice de vegetación.}
+    \label{}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{}
+  \begin{figure}
+    \centering
     \includegraphics[width=0.8\textwidth]{fig:firmasin.png}
     \caption{Firma espectral del suelo y de la vegetación.}
     \label{}
@@ -45,13 +56,7 @@
 \end{frame}
 
 %--- Next Frame ---%
-\begin{frame}
-\begin{equation}
-    SR = \frac{\rho_{nir}}{\rho_{nir}}
-  \end{equation}
-  \end{frame}
-%--- Next Frame ---%
-  
+
 \begin{frame}{}
   \begin{figure}
     \centering
@@ -63,6 +68,13 @@
 
 %--- Next Frame ---%
 
+\begin{frame}
+\begin{equation}
+    SR = \frac{\rho_{nir}}{\rho_{red}}
+  \end{equation}
+  \end{frame}
+%--- Next Frame ---%
+
 \begin{frame}{}
 \begin{block}{Normalized Difference Vegetation Index - NDVI}
   Definimos al NDVI como
@@ -70,10 +82,10 @@
     NDVI = \frac{\rho_{nir}-\rho_{red}}{\rho_{nir}+\rho_{red}}
   \end{equation}
   con $\rho_{nir}$, $\rho_{red}$ las reflectancias en el infrarrojo cercano y el rojo, respectivamente.
-\end{block}
+\end{block}\pause
 \begin{block}{Observación}
-    \begin{itemize}[<+->]
-        \item La reflectancia del suelo lo puede afectar.
+    \begin{itemize}
+        \item El NDVI puede tomar valores entre -1 y 1.
         \item Satura cuando el canopeo es muy denso.
     \end{itemize}
 \end{block}
@@ -97,7 +109,7 @@
         \end{equation}
     \end{block}\pause\
     \begin{block}{Observación}
-        \begin{itemize}[<+->]
+        \begin{itemize}
             \item Suele ajustar mejor a las variaciones de reflectancia del
                 suelo.
             \item Es difícil conocer el valor de $L$ a priori. \begin{equation}
@@ -110,7 +122,7 @@
 \begin{frame}{}
     \begin{block}{Enhanced Vegetation Index - EVI}
         \begin{equation}
-            EVI = G\frac{\rho_n - \rho_r}{\rho_n+C_1\rho_r-C_2\rho_b+L}(1+L)
+            EVI = G\frac{\rho_{nir} - \rho_{red}}{\rho_{nir}+C_1\rho_{red}-C_2\rho_{blue}+L}(1+L)
         \end{equation}
     \end{block}
     donde
