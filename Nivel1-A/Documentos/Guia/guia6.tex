@@ -18,7 +18,23 @@ Realice los siguientes pasos:
     \item Longitud este: -63.829
 \end{itemize}
 
-Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
+Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla \ref{tab:landsat8} y \ref{tab:landsat5}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{@{}lclc@{}}
+  \toprule
+  Bands designation          & Número & Name  & Wavelength {[}nm{]} \\ \midrule
+  Azul                       & 1      & blue  & 485                 \\
+  Verde                      & 2      & green & 560                 \\
+  Rojo                       & 3      & red   & 660                 \\
+  Infrarrojo cercano         & 4      & nir   & 835                 \\
+  Infrarrojo de onda corta 1 & 5      & swir1 & 1650                \\
+  Infrarrojo de onda corta 2 & 6      & swir2 & 2220                \\ \bottomrule
+  \end{tabular}
+\caption{Nombre y longitud de onda de cada banda para el producto Landsat 5 - level 2 collection.}
+\label{tab:landsat5}
+\end{table}
 
 \item Calcule el NDVI para cada una de las escenas y apílelos. Modifique el nombre de las bandas del apilado para que sean \texttt{ndvi\_1986} y \texttt{ndvi\_2017}.
 
@@ -30,12 +46,12 @@ Para ambas modifique los nombres de las bandas y las longitudes de onda de cada 
 \centering
 \begin{tabular}{@{}cll@{}}
 \toprule
-Categoría & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color}                       \\ \midrule
-V-SC      & Zonas con alto NDVI que no cambiaron. & \textcolor{P1}{$\blacksquare$}\texttt{\#91cf60} \\
-SV-SC     & Zonas con bajo NDVI que no cambiaron  & \textcolor{P2}{$\blacksquare$}\texttt{\#ffffbf} \\
-D         & Zonas donde disminuyo el NDVI.        & \textcolor{P3}{$\blacksquare$}\texttt{\#fc8d59} \\ \bottomrule
+Categoría & \multicolumn{1}{c}{Definición}        & \multicolumn{1}{c}{Color (R,G,B)}                       \\ \midrule
+V-SC      & Zonas con alto NDVI que no cambiaron. & \textcolor{P1}{$\blacksquare$}\texttt{145,207,96} \\
+SV-SC     & Zonas con bajo NDVI que no cambiaron  & \textcolor{P2}{$\blacksquare$}\texttt{255,255,191} \\
+D         & Zonas donde disminuyo el NDVI.        & \textcolor{P3}{$\blacksquare$}\texttt{252,141,89} \\ \bottomrule
 \end{tabular}
-\caption{Tabla de colores para un mapa de deforestación.}
+\caption{Tabla de colores sugerida para un mapa de deforestación.}
 \label{tab:def}
 \end{table}
 
@@ -50,7 +66,7 @@ El objetivo de esta aplicación es detectar zonas cubiertas por nieve y hielo, c
 Para hacerlo, siga los siguientes pasos:
 
 \begin{enumerate}
-\item Descargue las imágenes de las inmediaciones de Cerro de la Majadita, San Juan, Argentina de los días 15 de julio de 2018 y 4 de enero de 2018.
+\item Descargue las imágenes de las inmediaciones de Cerro de la Majadita, San Juan, Argentina de los días 15 de julio de 2018 y 4 de enero de 2018 correspondientes al satélite LANDSAT 8.
 
 \item Apile y recorte cada una de las imágenes según las coordenadas
 
@@ -61,7 +77,7 @@ Para hacerlo, siga los siguientes pasos:
     \item Longitud este: -69.026
 \end{itemize}
 
-Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
+Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla \ref{tab:landsat8}.
 
 \item Calcule un índice de nieve para cada una de las escenas. Nombrelos \texttt{si\_verano} y \texttt{si\_invierno}. La formula a utilizar es
 
@@ -85,13 +101,13 @@ donde \texttt{UMBRAL} es el umbral encontrado. Esto construye un mapa como el de
 \centering
 \begin{tabular}{@{}cll@{}}
 \toprule
-Valor  & \multicolumn{1}{c}{Definición}   & \multicolumn{1}{c}{Color}                       \\ \midrule
-0      & Zonas sin nieve.                 & \textcolor{N1}{$\blacksquare$}\texttt{\#eff3ff} \\
-1      & Zonas con nieve solo en verano   & \textcolor{N2}{$\blacksquare$}\texttt{\#bdd7e7} \\
-2      & Zonas con nieve solo en invierno & \textcolor{N3}{$\blacksquare$}\texttt{\#6baed6} \\
-3      & Zonas con nieve todo el año      & \textcolor{N4}{$\blacksquare$}\texttt{\#2171b5} \\ \bottomrule
+Valor  & \multicolumn{1}{c}{Definición}   & \multicolumn{1}{c}{Color (R,G,B)}                       \\ \midrule
+0      & Zonas sin nieve.                 & \textcolor{N1}{$\blacksquare$}\texttt{239,243,255} \\
+1      & Zonas con nieve solo en verano   & \textcolor{N2}{$\blacksquare$}\texttt{189,215,241} \\
+2      & Zonas con nieve solo en invierno & \textcolor{N3}{$\blacksquare$}\texttt{107,174,214} \\
+3      & Zonas con nieve todo el año      & \textcolor{N4}{$\blacksquare$}\texttt{33,113,181} \\ \bottomrule
 \end{tabular}
-\caption{Tabla de colores para un mapa de deforestación.}
+\caption{Tabla de colores sugerida para un mapa de nieve. Puede usar el archivo \directory{blues.cpd} de la clase 6 como paleta de color sin cambiar la distribución de valores.}
 \label{tab:nieve}
 \end{table}
 
@@ -105,7 +121,7 @@ El objetivo de esta aplicación es detectar zonas afectadas durante los incendio
 Para hacerlo, siga los siguientes pasos:
 
 \begin{enumerate}
-\item \item Descargue las imágenes de las inmediaciones de Lago Cholila, Chubut, Argentina de los días 21 de enero y 11 de abril de 2015.
+\item Descargue las imágenes de las inmediaciones de Lago Cholila, Chubut, Argentina de los días 21 de enero y 11 de abril de 2015 correspondientes al satélite LANDSAT 8.
 
 \item Apile y recorte cada una de las imágenes según las coordenadas
 
@@ -116,7 +132,7 @@ Para hacerlo, siga los siguientes pasos:
     \item Longitud este: -71.347
 \end{itemize}
 
-Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla del apéndice ap:satelites.
+Para ambas modifique los nombres de las bandas y las longitudes de onda de cada una según la tabla \ref{tab:landsat8}.
 
 \item Calcule un índice de área quemada para cada una de las escenas. Nombrelos \texttt{nbr\_pre} y \texttt{nbr\_pos}. La formula a utilizar es
 
@@ -138,16 +154,16 @@ nbr_pre_M - nbr_pos_S
 \centering
 \begin{tabular}{@{}cll@{}}
 \toprule
-Valor              & \multicolumn{1}{c}{Definición}       & \multicolumn{1}{c}{Color}                        \\ \midrule
-menor a $-0.25$    & Recrecimiento alto                   & \textcolor{NB1}{$\blacksquare$}\texttt{\#1a9850} \\
-$-0.25$ a $-0.1$   & Recrecimiento bajo   		  & \textcolor{NB2}{$\blacksquare$}\texttt{\#91cf60} \\
-$-0.1$ a $0.1$     & No incenciado     		 	  & \textcolor{NB3}{$\blacksquare$}\texttt{\#d9ef8b} \\
-$0.1$ a $0.27$     & Incendio, severidad baja		  & \textcolor{NB4}{$\blacksquare$}\texttt{\#ffffbf} \\
-$0.27$ a $0.44$    & Incendio, severidad baja-moderada    & \textcolor{NB5}{$\blacksquare$}\texttt{\#fee08b} \\
-$0.44$ a $0.66$    & Incendio, severidad moderada-alta    & \textcolor{NB6}{$\blacksquare$}\texttt{\#fc8d59} \\
-mayor a $0.66$     & Incendio, severidad alta             & \textcolor{NB7}{$\blacksquare$}\texttt{\#d73027} \\ \bottomrule
+Valor              & \multicolumn{1}{c}{Definición}       & \multicolumn{1}{c}{Color (R,G,B)}                        \\ \midrule
+menor a $-0.25$    & Recrecimiento alto                   & \textcolor{NB1}{$\blacksquare$}\texttt{26,152,80} \\
+$-0.25$ a $-0.1$   & Recrecimiento bajo   		  & \textcolor{NB2}{$\blacksquare$}\texttt{145,207,96} \\
+$-0.1$ a $0.1$     & No incenciado     		 	  & \textcolor{NB3}{$\blacksquare$}\texttt{217,239,139} \\
+$0.1$ a $0.27$     & Incendio, severidad baja		  & \textcolor{NB4}{$\blacksquare$}\texttt{255,255,191} \\
+$0.27$ a $0.44$    & Incendio, severidad baja-moderada    & \textcolor{NB5}{$\blacksquare$}\texttt{254,224,139} \\
+$0.44$ a $0.66$    & Incendio, severidad moderada-alta    & \textcolor{NB6}{$\blacksquare$}\texttt{252,141,89} \\
+mayor a $0.66$     & Incendio, severidad alta             & \textcolor{NB7}{$\blacksquare$}\texttt{215,48,39} \\ \bottomrule
 \end{tabular}
-\caption{Tabla de colores para un mapa de deforestación.}
+\caption{Tabla de colores sugerida para un mapa de incendios. Puede usar el archivo \directory{incendio.cpd} de la clase 6 como paleta de color sin cambiar la distribución de valores.}
 \label{tab:inc}
 \end{table}
 \end{enumerate}
