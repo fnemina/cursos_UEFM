@@ -10,7 +10,10 @@ Abra la imagen
 \directory{LC08\_224-078\_2018-01-05.dim}.
 \end{center}
 
-diríjase luego a \menu{Raster > Classification > Unsupervised classification > K-Means cluster analysis}.
+diríjase luego a
+\begin{center}
+\menu{Raster > Classification > Unsupervised classification > K-Means cluster analysis}
+\end{center}
 
 En la pestaña \menu{I/O Parameters} seleccione la imagen, el nombre de salida y la carpeta donde guardará el resultado (Figura \ref{fig:kmeans}). Presione \menu{Run} para finalizar.
 
@@ -43,32 +46,32 @@ Comience desplegando en simultaneo la imagen clasificada y la original, en una c
 
 Una forma sencilla de reconocer cada clase espectral en la imagen, es asignarle un color contrastante. Cambie el color haciendo click sobre la celda del color. En el menú desplegable elija, por ejemplo rojo o amarillo y verifique que el resto de las clases no lo tenga. Identifique a que uso o cobertura pertenece, comparándola con la imagen sin clasificar. Modifique el nombre de la columna \emph{Label} por los que figuran en la columna \emph{Codigo} (Tabla \ref{tab:usos}). Vuelva a cambiar el color de la clase identificada a negro y repita el procedimiento para el resto.
 
+Una vez terminado el procedimiento, asigne a cada categoría de uso y cobertura el color que figura en la tabla . Guarde la imagen con los cambios, haga click derecho sobre el nombre y presione en \menu{Save product} (Figura \ref{fig:resclass}).
+
 \begin{table}[hbt]
     \centering
     \begin{tabular}{p{11cm}cc}
         \toprule
-        Nombre & Codigo & Color \\
+        Nombre & Codigo & Color (R,G,B) \\
         \midrule
-        Áreas terrestres cultivadas y manejada & A11 & \textcolor{A11}{$\blacksquare$}\texttt{\#b2df8a}
+        Áreas terrestres cultivadas y manejada & A11 & \textcolor{A11}{$\blacksquare$}\texttt{178,223,138}
         \\
-        Vegetación natural y semi-natural & A12 & \textcolor{A12}{$\blacksquare$}\texttt{\#33a02c}\\
+        Vegetación natural y semi-natural & A12 & \textcolor{A12}{$\blacksquare$}\texttt{51,160,44}\\
         Áreas acuáticas o regularmente inundadas cultivadas & A23  &
-        \textcolor{A23}{$\blacksquare$}\texttt{\#fdbf6f}\\
+        \textcolor{A23}{$\blacksquare$}\texttt{253,191,111}\\
         Vegetación natural y semi-natural acuática o
-	regularmente inundadas & A24 & \textcolor{A24}{$\blacksquare$}\texttt{\#ff7f00}\\
+	regularmente inundadas & A24 & \textcolor{A24}{$\blacksquare$}\texttt{255,127,0}\\
         Superficies artificiales y áreas asociadas & B15  &
-        \textcolor{B15}{$\blacksquare$}\texttt{\#fb9a99}\\
-        Áreas descubiertas o desnudas & B16 & \textcolor{B16}{$\blacksquare$}\texttt{\#e31a1c}\\
+        \textcolor{B15}{$\blacksquare$}\texttt{251,154,153}\\
+        Áreas descubiertas o desnudas & B16 & \textcolor{B16}{$\blacksquare$}\texttt{227,26,28}\\
         Cuerpos artificiales de agua, nieve y hielo & B27 &
-        \textcolor{B27}{$\blacksquare$}\texttt{\#a6cee3}\\
+        \textcolor{B27}{$\blacksquare$}\texttt{166,206,227}\\
         Cuerpos naturales de agua, nieve y hielo & B28&
-        \textcolor{B28}{$\blacksquare$}\texttt{\#1f78b4}\\
+        \textcolor{B28}{$\blacksquare$}\texttt{31,120,180}\\
         \bottomrule
     \end{tabular}
 \caption{\label{tab:usos}Categorias usos del suelo segun el esquema LCCS2 de la FAO.}
 \end{table}
-
-Una vez terminado el procedimiento, asigne a cada categoría de uso y cobertura el color que figura en la tabla . Guarde la imagen con los cambios, haga click derecho sobre el nombre y presione en \menu{Save product} (Figura \ref{fig:resclass}).
 
 \begin{figure}[h!]
     \centering
@@ -107,11 +110,9 @@ Para mantener la georreferenciación elija el formato de archivo \emph{GeoTIFF -
 Para exportar la vista como KMZ, primero deberá reproyectar la imagen a coordenadas geográficas. En este caso, tendrá que reasignar los colores a cada clase espectral. La herramienta a utilizar es \menu{File > Export > Other > View as Google Earth KMZ}.
 
 
-\section{Actividad práctica REVISAR PREGUNTA 1 y 2}
+\section{Actividad práctica}
 
 \begin{enumerate}
-  \item Identifique en la imagen las clases que podría asignar a una categoría de uso y cobertura u otra.
-  \item Que categorías de uso y cobertura son las que más se confunden dentro de la imagen.
   \item Clasifique la imagen con los siguientes Parámetros
   \begin{table}[h]
   \centering
